@@ -5,7 +5,9 @@
     text-transform: uppercase;
     letter-spacing: 0.4em;
     position: fixed;
+    width: 100%
 }
 .nav-item {
+    border-spacing: 1em;
     padding: 0.6em;
 }
