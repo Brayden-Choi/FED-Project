@@ -42,7 +42,7 @@ h5 {
 .bg-image {
     background-image: url("../multimedia/zoo-images/main_entrance2.jpg");
     background-repeat: no-repeat;
-    background-attachment: scroll;
+    background-attachment: fixed;
     background-position: center;
     background-size: 1300px 761px;
     height: 761px;
@@ -75,11 +75,10 @@ h5 {
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.7);
     height: 504px;
-    width: 1005px;
+    width: 1300px;
     padding: 80px;
     font-family: 'Architects Daughter', cursive;
     font-weight: bold;
-    border: 2px solid #f1f1f1;
     text-align: center;
     position: relative;
     z-index: 2;
