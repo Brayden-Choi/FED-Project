@@ -1,13 +1,33 @@
+.border {
+    border-top: 6px solid #000000;
+}
+
 .navbar {
-    background-color: #686968;
+    background-color: white;
     padding: 0.6em;
     font-size: 0.9em;
+    font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 0.4em;
+    letter-spacing: 0.2em;
+    width: 100%;
     position: fixed;
-    width: 100%
+    z-index: 3;
 }
+
+#navbarSupportedContent {
+    padding-left: 500px;
+}
+
 .nav-item {
     border-spacing: 1em;
     padding: 0.6em;
+}
+
+ul li a {
+    list-style: none;
+    margin: 0;
+    display: block;
+    padding: 0.5rem 1rem;
+    color: white;
+    text-decoration: none;
 }

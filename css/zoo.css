@@ -1,3 +1,7 @@
+.wrapper {
+    margin: 100px;
+}
+
 .main {
     margin-top: 30px;
     padding: 10px;
@@ -40,21 +44,29 @@ h5 {
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center;
-    background-size: 1000px 586px;
-    height: 500px;
+    background-size: 1300px 761px;
+    height: 761px;
     margin: 10px;
     display: block;
     position: relative;
     opacity: 0.8;
 }
 
-.text{
+.about{
     font-size: 60px;
+    font-family: 'Architects Daughter', cursive;
+}
+
+.about-text{
+    font-size: 35px;
     font-family: 'Architects Daughter', cursive;
 }
 
 @media (max-width: 850px ){
     .bg-text {
+        display: none;
+    }
+    .zone-text {
         display: none;
     }
 }
@@ -64,14 +76,13 @@ h5 {
     background-color: rgba(0,0,0,0.7);
     height: 504px;
     width: 1005px;
-    padding: 100px;
+    padding: 80px;
     font-family: 'Architects Daughter', cursive;
     font-weight: bold;
     border: 2px solid #f1f1f1;
     text-align: center;
     position: relative;
     z-index: 2;
-    font-size: 45px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -83,5 +94,5 @@ h5 {
     font-weight: bold;
     color: #0D5510;
     font-family: 'Architects Daughter', cursive;
-    font-size: 30px;
+    font-size: 35px;
 }
