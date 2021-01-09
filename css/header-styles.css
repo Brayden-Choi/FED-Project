@@ -11,8 +11,8 @@
     z-index: 3;
 }
 
-.navbar-brand {
-    margin-left: 40px;
+.navbar-custom {
+    margin-left: 1em;
 }
 
 .nav-item {
