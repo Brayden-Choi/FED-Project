@@ -1,5 +1,5 @@
 .navbar {
-    border-top: 6px solid #000000;
+    border-top: 2px solid #000000;
     background-color: white;
     padding: 0.6em;
     font-size: 0.9em;
@@ -11,8 +11,12 @@
     z-index: 3;
 }
 
+.navbar-brand {
+    margin-left: 40px;
+}
+
 #navbarSupportedContent {
-    padding-left: 500px;
+    padding-left: 450px;
 }
 
 .nav-item {
