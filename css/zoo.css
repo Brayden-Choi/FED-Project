@@ -1,3 +1,4 @@
+/*General*/
 .wrapper {
     margin: 100px;
 }
@@ -36,9 +37,21 @@ h5 {
 }
 
 .dividerline {
-    border-bottom: 2px solid #0D5510;
+    border-top: 2px solid #0D5510;
 }
 
+/*About*/
+.about{
+    font-size: 60px;
+    font-family: 'Architects Daughter', cursive;
+}
+
+.about-text{
+    font-size: 35px;
+    font-family: 'Architects Daughter', cursive;
+}
+
+/*Main Gallery*/
 .bg-image {
     background-image: url("../multimedia/zoo-images/main_entrance2.jpg");
     background-repeat: no-repeat;
@@ -50,16 +63,6 @@ h5 {
     display: block;
     position: relative;
     opacity: 0.8;
-}
-
-.about{
-    font-size: 60px;
-    font-family: 'Architects Daughter', cursive;
-}
-
-.about-text{
-    font-size: 35px;
-    font-family: 'Architects Daughter', cursive;
 }
 
 @media (max-width: 850px ){
@@ -88,10 +91,30 @@ h5 {
     color: white;
 }
 
+/*Zone Gallery*/
 .zone-text {
     text-align: center;
     font-weight: bold;
     color: #0D5510;
     font-family: 'Architects Daughter', cursive;
     font-size: 35px;
+}
+
+/*Ticket Prices*/
+table {
+    font-family: 'Architects Daughter', cursive;
+    text-align: center;
+    border-collapse: collapse;
+    font-size: 35px;
+}
+
+tr, th, td {
+    border: solid black;
+    padding: 50px;
+}
+
+.tablehead {
+    background-color: #0D5510;
+    color: white;
+    font-size: 45px;
 }
