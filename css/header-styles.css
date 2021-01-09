@@ -1,8 +1,5 @@
-.border {
-    border-top: 6px solid #000000;
-}
-
 .navbar {
+    border-top: 6px solid #000000;
     background-color: white;
     padding: 0.6em;
     font-size: 0.9em;
