@@ -100,21 +100,21 @@ h5 {
     font-size: 35px;
 }
 
-/*Ticket Prices*/
+/*Ticket Prices & Operating Hours*/
 table {
     font-family: 'Architects Daughter', cursive;
     text-align: center;
     border-collapse: collapse;
-    font-size: 35px;
+    font-size: 30px;
 }
 
 tr, th, td {
     border: solid black;
-    padding: 50px;
+    padding: 40px;
 }
 
 .tablehead {
     background-color: #0D5510;
     color: white;
-    font-size: 45px;
+    font-size: 40px;
 }
