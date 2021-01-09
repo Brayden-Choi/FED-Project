@@ -1,5 +1,5 @@
 .navbar {
-    border-top: 2px solid #000000;
+    border-top: 2px solid black;
     background-color: white;
     padding: 0.6em;
     font-size: 0.9em;
@@ -18,6 +18,18 @@
 .nav-item {
     border-spacing: 1em;
     padding: 0.6em;
+}
+.active a {
+    border-bottom: 2px solid black;
+}
+
+.nav-touch {
+    border-bottom: 2px solid transparent;
+    transition: color 0.5s, border-bottom-color 0.5s;
+}
+
+.nav-touch:hover {
+    border-bottom-color: black;
 }
 
 ul li a {
