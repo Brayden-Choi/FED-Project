@@ -1,14 +1,18 @@
-.navbar {
-    border-top: 2px solid black;
+.navbar-main {
     background-color: white;
+    width: 100%;
+    position: fixed;
+    z-index: 3;
+    padding-top: 1em;
+}
+
+.navbar-format {
+    border-top: 2px solid black;
     padding: 0.6em;
     font-size: 0.9em;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.2em;
-    width: 100%;
-    position: fixed;
-    z-index: 3;
 }
 
 .navbar-custom {
