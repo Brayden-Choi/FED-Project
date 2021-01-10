@@ -1,5 +1,5 @@
 .navbar-main {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.9);
     width: 100%;
     position: fixed;
     z-index: 3;
@@ -64,4 +64,8 @@ ul li a {
     padding: 0.5rem 1rem;
     color: white;
     text-decoration: none;
+}
+
+.content-main {
+    margin-top: 100px;
 }
