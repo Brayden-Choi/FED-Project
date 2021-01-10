@@ -125,6 +125,9 @@ tr, th, td {
 }
 
 /*Getting There*/
+#location {
+    padding-bottom: 5%;
+}
 
  #location dt{
     padding: 10px;
@@ -140,4 +143,14 @@ tr, th, td {
     color: black;
     font-size: 25px;
     font-family: 'Caveat Brush', cursive;
+}
+
+
+/*Videos*/
+
+.videowrapper {
+    position: relative;
+    height: auto;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
