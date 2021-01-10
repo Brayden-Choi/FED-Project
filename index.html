@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-<head>
+<head id="head">
   <!-- Misc config -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,23 +10,18 @@
   <meta name="author" content="Group 2" />
   <title>Singapore Tourist Attractions</title>
 
-  <!-- Bootstrap and jQuery -->
-  <link rel="stylesheet" href="css/common/bootstrap.min.css">
+  <!-- Common dependencies -->
   <script src="js/common/jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" href="css/common/bootstrap.min.css">
   <script src="js/common/bootstrap.min.js"></script>
-
+  <script src="js/common/common.js"></script>
+  
   <!-- Other dependencies -->
   <link rel="stylesheet" href="css/home.css">
-  <script src="https://www.w3schools.com/lib/w3.js"></script>
 </head>
 
 <body>
-<div class="container-fluid">
-  <div class="row">
-      <div w3-include-html="header.html"></div>
-  </div>
-</div>
+<div id="header" content="Home"></div>
 </body>
 
-<script>w3.includeHTML()</script>
 </html>

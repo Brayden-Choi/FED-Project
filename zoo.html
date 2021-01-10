@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-<head>
+<head id="head">
     <!-- Misc config -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,11 +9,12 @@
     <meta name="description" content="Singapore Zoo Webpage" />
     <meta name="author" content="Elsa Lee" />
     <title>Singapore Zoo Webpage</title>
-    
-    <!-- Bootstrap and jQuery -->
-    <link rel="stylesheet" href="css/common/bootstrap.min.css">
+
+    <!-- Common dependencies -->
     <script src="js/common/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="css/common/bootstrap.min.css">
     <script src="js/common/bootstrap.min.js"></script>
+    <script src="js/common/common.js"></script>
     
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -23,13 +24,12 @@
     <!-- Other dependencies -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="css/zoo.css">
-    <script src="https://www.w3schools.com/lib/w3.js"></script>
 </head>
-<body>
 
+<body>
 <div class="container-fluid">
     <div class="row">
-        <div w3-include-html="header.html"></div>
+        <div id="header" content="Home"></div>
     </div>
     
     <div class="wrapper">
@@ -249,9 +249,7 @@
         </section>
     </div>
     </div>
-    
 
-<script>w3.includeHTML()</script>
 <script src="js/zoo-js/wow.min.js"></script>
 <script>
     new WOW().init();
