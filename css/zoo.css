@@ -8,7 +8,7 @@
     padding: 10px;
     text-align: center;
     color:  #0D5510 ;
-    font-family: 'Architects Daughter', cursive;
+    font-family: 'Caveat Brush', cursive;
     font-weight: bold;
     font-size: 60px;
     
@@ -19,7 +19,7 @@
     padding: 10px;
     text-align: center;
     color:  #0D5510 ;
-    font-family: 'Architects Daughter', cursive;
+    font-family: 'Caveat Brush', cursive;
     font-size: 60px;
 }
 
@@ -29,7 +29,7 @@ h5 {
     color: black;
     background: rgba(255, 255, 255, 0.5);
     font-size: 40px;
-    font-family: 'Architects Daughter', cursive;
+    font-family: 'Caveat Brush', cursive;
 }
 
 .slides {
@@ -43,12 +43,12 @@ h5 {
 /*About*/
 .about{
     font-size: 60px;
-    font-family: 'Architects Daughter', cursive;
+    font-family: 'Caveat Brush', cursive;
 }
 
 .about-text{
     font-size: 35px;
-    font-family: 'Architects Daughter', cursive;
+    font-family: 'Caveat Brush', cursive;
 }
 
 /*Main Gallery*/
@@ -80,7 +80,7 @@ h5 {
     height: 504px;
     width: 1300px;
     padding: 80px;
-    font-family: 'Architects Daughter', cursive;
+    font-family: 'Caveat Brush', cursive;
     font-weight: bold;
     text-align: center;
     position: relative;
@@ -94,15 +94,14 @@ h5 {
 /*Zone Gallery*/
 .zone-text {
     text-align: center;
-    font-weight: bold;
     color: #0D5510;
-    font-family: 'Architects Daughter', cursive;
+    font-family: 'Caveat Brush', cursive;
     font-size: 35px;
 }
 
 /*Ticket Prices & Operating Hours*/
 table {
-    font-family: 'Architects Daughter', cursive;
+    font-family: 'Caveat Brush', cursive;
     text-align: center;
     border-collapse: collapse;
     font-size: 30px;
@@ -117,4 +116,10 @@ tr, th, td {
     background-color: #0D5510;
     color: white;
     font-size: 40px;
+}
+
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-delay: 0.5s;
 }
