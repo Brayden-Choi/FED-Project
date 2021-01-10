@@ -1,6 +1,59 @@
-.video-wrapper {
+/* Global Styles */
+html, body {
+    height: 100%;
+}
+
+/* Video Overlay */
+.video-overlay {
+    background-color: rgba(0, 0, 0, .30);
+    height: 100%;
+    left: 0;
+    position: relative;
+    top: 0;
+    transition: background-color 300ms ease;
+    width: 100%;
+    min-height: 768px;
+}
+
+.fade {
+    background-color: rgba(0, 0, 0, .85) !important;
+}
+
+/* Title */
+#title {
+    backface-visibility: hidden;
+    left: 0;
     position: fixed;
-    height: 600px;
+    width: 100%;
+    margin-top: 40vh;
+}
+
+#title h1 {
+    color: white;
+    text-align: center;
+    font-size: calc(4vh + 5vw);
+}
+
+/* Drone Video */
+#drone-vid {
+    backface-visibility: hidden;
+    background-size: cover;
+    bottom: 0;
+    height: auto;
+    min-height: 100%;
+    min-width: 100%;
+    position: fixed;
+    right: 0;
+    width: auto;
+    z-index: -1;
+}
+
+/* Content Styles */
+.content {
+    background-color: white;
+    padding: 2.5rem;
+    position: relative;
+    z-index: 1;
 }
 
 .test {
