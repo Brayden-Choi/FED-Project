@@ -121,7 +121,7 @@ tr, th, td {
 .animated {
     animation-duration: 1s;
     animation-fill-mode: both;
-    animation-delay: 0.5s;
+    animation-delay: 0.2s;
 }
 
 /*Getting There*/
