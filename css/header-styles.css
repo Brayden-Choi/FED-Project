@@ -1,5 +1,5 @@
 .navbar-main {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.9);
     width: 100%;
     position: fixed;
     z-index: 3;
@@ -37,11 +37,6 @@
     background: black !important;
 }
 
-.nav-touch {
-/*    border-bottom: 2px solid transparent;
-    transition: border-bottom 0.4s;*/
-}
-
 .nav-item:after {
     content: '';
     display: block;
@@ -50,6 +45,11 @@
     width: 0;
     background: transparent;
     transition: width .5s ease, background-color .5s ease;
+}
+
+.nav-item:hover:after {
+    width: 100%;
+    background: black;
 }
 
 ul li a {
@@ -61,11 +61,6 @@ ul li a {
     text-decoration: none;
 }
 
-.navbar a {
-    float: left;
-    font-size: 16px;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+.content-main {
+    margin-top: 100px;
 }
