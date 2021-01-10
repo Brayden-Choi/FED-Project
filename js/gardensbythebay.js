@@ -30,8 +30,10 @@ class VideoManager {
         this.currentVideo = 0
         this.currentShow = 0
 
+        $("#drone-vid-0").fadeOut(0)
+        $("#drone-vid-1").fadeOut(0)
+        $("#drone-vid-0").fadeIn(2000);
         $("#drone-vid-0").trigger('play');
-        $("#drone-vid-1").fadeOut();
     }
 
     swap() {

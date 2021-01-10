@@ -1,4 +1,6 @@
 /* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
 html, body {
     height: 100%;
 }
@@ -13,6 +15,18 @@ html, body {
     transition: background-color 300ms ease;
     width: 100%;
     min-height: 768px;
+    animation: fadein-overlay 4s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes fadein-overlay {
+    from {
+        background-color: rgba(0, 0, 0, 1.0);
+
+    }
+    to {
+        background-color: rgba(0, 0, 0, .30);
+    }
 }
 
 .fade {
@@ -26,17 +40,29 @@ html, body {
     position: fixed;
     width: 100%;
     margin-top: 40vh;
+    animation: fadein 2.5s;
 }
 
 #title h1 {
+    font-family: 'Dancing Script', cursive;
     color: white;
     text-align: center;
     font-size: calc(4vh + 5vw);
 }
 
+@keyframes fadein {
+    from {
+        margin-top: 30vh;
+        opacity: 0;
+    }
+    to {
+        margin-top: 40vh;
+        opacity: 1;
+    }
+}
+
 /* Drone Video */
 .video-frame {
-    background-color: black;
     backface-visibility: hidden;
     background-size: cover;
     bottom: 0;
