@@ -1,4 +1,9 @@
 /*General*/
+
+html {
+    scroll-behavior: smooth;
+}
+
 .wrapper {
     margin: 100px;
 }
@@ -33,17 +38,19 @@ h5 {
 
 .slides {
     margin: 50px;
-    z-index: -1;
+    z-index: 1;
 }
 
 .dividerline {
     border-top: 2px solid #0D5510;
 }
 
-/*About*/
-.about{
+/*About*/  
+
+.about {
     font-size: 60px;
     font-family: 'Caveat Brush', cursive;
+    padding-bottom: 5%;
 }
 
 .about-text{
@@ -52,6 +59,11 @@ h5 {
 }
 
 /*Main Gallery*/
+
+#maingallery {
+    padding-bottom: 5%;
+}
+
 .bg-image {
     background-image: url("../multimedia/zoo-images/main_entrance2.jpg");
     background-repeat: no-repeat;
@@ -92,6 +104,10 @@ h5 {
 }
 
 /*Zone Gallery*/
+#zonegallery {
+    padding-bottom: 5%;
+}
+
 .zone-text {
     text-align: center;
     color: #0D5510;
@@ -100,6 +116,10 @@ h5 {
 }
 
 /*Ticket Prices & Operating Hours*/
+#ticketandtime {
+    padding-bottom: 5%;
+}
+
 table {
     font-family: 'Caveat Brush', cursive;
     text-align: center;
@@ -147,6 +167,10 @@ tr, th, td {
 
 
 /*Videos*/
+
+#videos {
+    padding-bottom: 5%;
+}
 
 .videowrapper {
     position: relative;
