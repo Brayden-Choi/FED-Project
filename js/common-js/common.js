@@ -11,18 +11,29 @@ $(document).ready(function() {
     $("#header").load("header.html #nav", setActivePage);
 });
 
+$(window).scroll(function () {
+    addNavShadow();
+});
+
 function setActivePage() {
     let targetPage = $("#header").attr("content").toLowerCase();
     let pages = $("#navbarSupportedContent ul li");
-
-    console.log(pages)
-    console.log(pages.length)
     
     for (let page of pages) {
         let pageName = $(page).find('a:first')[0].innerHTML.toLowerCase();
         if (pageName === targetPage) {
-            $(page).addClass("active")
+            $(page).addClass("active");
             break;
         }
+    }
+
+    addNavShadow();
+}
+
+function addNavShadow() {
+    if ($(window).scrollTop() >= 30) {
+        $('#nav').addClass('navbar-shadow');
+    } else {
+        $('#nav').removeClass('navbar-shadow');
     }
 }
