@@ -35,7 +35,8 @@ html, body {
 }
 
 /* Drone Video */
-#drone-vid {
+.video-frame {
+    background-color: black;
     backface-visibility: hidden;
     background-size: cover;
     bottom: 0;

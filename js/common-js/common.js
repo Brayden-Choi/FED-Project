@@ -6,34 +6,79 @@ headerCSS.setAttribute("rel", "stylesheet");
 headerCSS.setAttribute("href", "css/header-styles.css");
 head.appendChild(headerCSS);
 
-// Add header to html
-$(document).ready(function() {
-    $("#header").load("header.html #nav", setActivePage);
-});
-
-$(window).scroll(function () {
-    addNavShadow();
-});
-
-function setActivePage() {
-    let targetPage = $("#header").attr("content").toLowerCase();
-    let pages = $("#navbarSupportedContent ul li");
+class NavManager {
+    constructor() {
+        this.usingWhite = false;
+    }
     
-    for (let page of pages) {
-        let pageName = $(page).find('a:first')[0].innerHTML.toLowerCase();
-        if (pageName === targetPage) {
-            $(page).addClass("active");
-            break;
+    setActivePage() {
+        let style = $("#header").attr("type");
+
+        if (style === "white") {
+            this.usingWhite = true;
+            $('#nav').addClass('navbar-white');
+            $('#nav').addClass('navbar-dark');
+        }
+
+        let targetPage = $("#header").attr("content").toLowerCase();
+        let pages = $("#navbarSupportedContent ul li");
+
+        for (let page of pages) {
+            let pageName = $(page).find('a:first')[0].innerHTML.toLowerCase();
+            if (pageName === targetPage) {
+                $(page).addClass("active");
+                break;
+            }
         }
     }
 
-    addNavShadow();
-}
+    addNavShadow() {
+        let canSee = $("#navbar-toggle-button").attr("aria-expanded");
 
-function addNavShadow() {
-    if ($(window).scrollTop() >= 30) {
-        $('#nav').addClass('navbar-shadow');
-    } else {
-        $('#nav').removeClass('navbar-shadow');
+        if ($(window).scrollTop() >= 30) {
+            if (this.usingWhite) {
+                $('#nav').removeClass('navbar-white');
+                $('#nav').removeClass('navbar-dark');
+            }
+            $('#nav').addClass('navbar-shadow');
+        } else if (canSee === "false") {
+            if (this.usingWhite) {
+                $('#nav').addClass('navbar-white');
+                $('#nav').addClass('navbar-dark');
+            }
+            $('#nav').removeClass('navbar-shadow');
+        }
+    }
+
+    clickToggle() {
+        let canSee = $("#navbar-toggle-button").attr("aria-expanded");
+        
+        if (canSee === "false") {
+            if (this.usingWhite) {
+                $('#nav').removeClass('navbar-white');
+                $('#nav').removeClass('navbar-dark');
+                $('#nav').addClass('navbar-shadow');
+            }
+            return;
+        }
+        if (this.usingWhite) {
+            $('#nav').addClass('navbar-white');
+            $('#nav').addClass('navbar-dark');
+            $('#nav').removeClass('navbar-shadow');
+        }
     }
 }
+
+let navManager = new NavManager();
+
+$(document).ready(function() {
+    
+    $("#header").load("header.html #nav", function () {
+        navManager.setActivePage();
+        navManager.addNavShadow();
+    });
+
+    $(window).scroll(function () {
+        navManager.addNavShadow();
+    });
+});
