@@ -28,7 +28,7 @@ h5 {
     text-align: center;
     color: black;
     background: rgba(255, 255, 255, 0.5);
-    font-size: 40px;
+    font-size: 45px;
     font-family: 'Caveat Brush', cursive;
 }
 
@@ -122,4 +122,22 @@ tr, th, td {
     animation-duration: 1s;
     animation-fill-mode: both;
     animation-delay: 0.5s;
+}
+
+/*Getting There*/
+
+ #location dt{
+    padding: 10px;
+    text-align: center;
+    color: #0D5510;
+    font-size: 30px;
+    font-family: 'Caveat Brush', cursive;
+}
+
+#location dd{
+    padding: 10px;
+    text-align: center;
+    color: black;
+    font-size: 25px;
+    font-family: 'Caveat Brush', cursive;
 }
