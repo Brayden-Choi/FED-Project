@@ -28,17 +28,33 @@
     padding: 0.5em;
 }
 
-.active a {
-    border-bottom: 2px solid black;
+.active:after {
+    content: '';
+    display: block;
+    margin: auto;
+    height: 3px;
+    width: 100% !important;
+    background: black !important;
 }
 
 .nav-touch {
-    border-bottom: 2px solid transparent;
-    transition: border-bottom 0.4s;
+/*    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.4s;*/
 }
 
-.nav-touch:hover {
-    border-bottom-color: black;
+.nav-item:after {
+    content: '';
+    display: block;
+    margin: auto;
+    height: 3px;
+    width: 0;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+}
+
+.nav-item:hover:after {
+    width: 100%;
+    background: black;
 }
 
 ul li a {
