@@ -3,35 +3,36 @@
 <head id="head">
     <!-- Misc config -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
 
     <!-- Meta info -->
-    <meta name="description" content="Singapore Zoo Webpage" />
-    <meta name="author" content="Elsa Lee" />
+    <meta content="Singapore Zoo Webpage" name="description"/>
+    <meta content="Elsa Lee" name="author"/>
     <title>Singapore Zoo Webpage</title>
 
     <!-- Common dependencies -->
-    <script src="js/common/jquery-3.3.1.min.js"></script>
-    <link rel="stylesheet" href="css/common/bootstrap.min.css">
-    <script src="js/common/bootstrap.min.js"></script>
-    <script src="js/common/common.js"></script>
-    
+    <script src="js/common-js/jquery-3.3.1.min.js"></script>
+    <link href="css/common-css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/common-js/bootstrap.min.js"></script>
+    <script src="js/common-js/common.js"></script>
+
     <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
 
     <!-- Other dependencies -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link rel="stylesheet" href="css/zoo.css">
+    <script src="js/zoo-js/wow.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
+    <link href="css/zoo.css" rel="stylesheet">
 </head>
 
 <body>
 <div class="container-fluid">
     <div class="row">
-        <div id="header" content="Singapore Zoo"></div>
+        <div content="Singapore Zoo" id="header"></div>
     </div>
-    
+
     <div class="wrapper">
         <h1 class="main">Singapore Zoo</h1>
 
@@ -42,7 +43,10 @@
             <div class="bg-image">
                 <div class="bg-text">
                     <h1 class="about">About</h1>
-                    <h3 class="about-text">The Singapore Zoo is located on the north-western side of the island and is home to over 2800 animals from about 315 species. It first opened to the public in 1973 and as one of the best rainforest zoos in the world, it attracts over 2 million visitors every year. </h3>
+                    <h3 class="about-text">The Singapore Zoo is located on the north-western side of the island and is
+                        home to over 2800 animals from about 315 species. It first opened to the public in 1973 and as
+                        one of the best rainforest zoos in the world, it attracts over 2 million visitors every
+                        year. </h3>
                 </div>
             </div>
 
@@ -54,76 +58,75 @@
 
         <section id="maingallery">
             <h3 class="header">Animals</h3>
-            <div id="carouselExampleIndicatorsmain" class="carousel slide slides" data-ride="carousel">
+            <div class="carousel slide slides" data-ride="carousel" id="carouselExampleIndicatorsmain">
                 <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicatorsmain" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicatorsmain" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicatorsmain" data-slide-to="2"></li>
-                    <li data-target="#carouselExampleIndicatorsmain" data-slide-to="3"></li>
-                    <li data-target="#carouselExampleIndicatorsmain" data-slide-to="4"></li>
-                    <li data-target="#carouselExampleIndicatorsmain" data-slide-to="5"></li>
-                    <li data-target="#carouselExampleIndicatorsmain" data-slide-to="6"></li>
-                    <li data-target="#carouselExampleIndicatorsmain" data-slide-to="7"></li>
-                    <li data-target="#carouselExampleIndicatorsmain" data-slide-to="8"></li>
+                    <li class="active" data-slide-to="0" data-target="#carouselExampleIndicatorsmain"></li>
+                    <li data-slide-to="1" data-target="#carouselExampleIndicatorsmain"></li>
+                    <li data-slide-to="2" data-target="#carouselExampleIndicatorsmain"></li>
+                    <li data-slide-to="3" data-target="#carouselExampleIndicatorsmain"></li>
+                    <li data-slide-to="4" data-target="#carouselExampleIndicatorsmain"></li>
+                    <li data-slide-to="5" data-target="#carouselExampleIndicatorsmain"></li>
+                    <li data-slide-to="6" data-target="#carouselExampleIndicatorsmain"></li>
+                    <li data-slide-to="7" data-target="#carouselExampleIndicatorsmain"></li>
+                    <li data-slide-to="8" data-target="#carouselExampleIndicatorsmain"></li>
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="d-block w-100" src="multimedia/zoo-images/orangutan.jpg" alt="Orangutan">
+                        <img alt="Orangutan" class="d-block w-100" src="multimedia/zoo-images/orangutan.jpg">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Orangutan</h5>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="multimedia/zoo-images/white_tiger.jpg" alt="White Tiger">
+                        <img alt="White Tiger" class="d-block w-100" src="multimedia/zoo-images/white_tiger.jpg">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>White Tiger</h5>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="multimedia/zoo-images/elephants.jpg" alt="Asian Elephant">
+                        <img alt="Asian Elephant" class="d-block w-100" src="multimedia/zoo-images/elephants.jpg">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Asian Elephant</h5>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="multimedia/zoo-images/giraffe.jpg" alt="Giraffe">
+                        <img alt="Giraffe" class="d-block w-100" src="multimedia/zoo-images/giraffe.jpg">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Giraffe</h5>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="multimedia/zoo-images/penguins.jpg" alt="African Penguin">
+                        <img alt="African Penguin" class="d-block w-100" src="multimedia/zoo-images/penguins.jpg">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>African Penguin</h5>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="multimedia/zoo-images/lion.jpg" alt="African Lions">
+                        <img alt="African Lions" class="d-block w-100" src="multimedia/zoo-images/lion.jpg">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>African Lions</h5>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="multimedia/zoo-images/cheetah.jpg" alt="Cheetahs">
+                        <img alt="Cheetahs" class="d-block w-100" src="multimedia/zoo-images/cheetah.jpg">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Cheetahs</h5>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="multimedia/zoo-images/asianotters.jpg" alt="Asian Otters">
+                        <img alt="Asian Otters" class="d-block w-100" src="multimedia/zoo-images/asianotters.jpg">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Asian Otters</h5>
                         </div>
                     </div>
 
-
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicatorsmain" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <a class="carousel-control-prev" data-slide="prev" href="#carouselExampleIndicatorsmain" role="button">
+                    <span aria-hidden="true" class="carousel-control-prev-icon"></span>
                     <span class="sr-only">Previous</span>
                 </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicatorsmain" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <a class="carousel-control-next" data-slide="next" href="#carouselExampleIndicatorsmain" role="button">
+                    <span aria-hidden="true" class="carousel-control-next-icon"></span>
                     <span class="sr-only">Next</span>
                 </a>
 
@@ -143,46 +146,52 @@
             </div>
             <div class="row">
                 <div class="zone-text col-sm-4 align-self-center">
-                    <p>From Australasia to Wild Africa, the Singapore Zoo has zones that replicate diverse animal habitats around the world.</p>
+                    <p>From Australasia to Wild Africa, the Singapore Zoo has zones that replicate diverse animal
+                        habitats around the world.</p>
                 </div>
 
                 <div class="col-sm-8">
-                    <div id="carouselExampleIndicatorszone" class="carousel slide slides" data-ride="carousel">
+                    <div class="carousel slide slides" data-ride="carousel" id="carouselExampleIndicatorszone">
                         <ol class="carousel-indicators">
-                            <li data-target="#carouselExampleIndicatorszone" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselExampleIndicatorszone" data-slide-to="1"></li>
-                            <li data-target="#carouselExampleIndicatorszone" data-slide-to="2"></li>
-                            <li data-target="#carouselExampleIndicatorszone" data-slide-to="3"></li>
-                            <li data-target="#carouselExampleIndicatorszone" data-slide-to="4"></li>
-                            <li data-target="#carouselExampleIndicatorszone" data-slide-to="5"></li>
+                            <li class="active" data-slide-to="0" data-target="#carouselExampleIndicatorszone"></li>
+                            <li data-slide-to="1" data-target="#carouselExampleIndicatorszone"></li>
+                            <li data-slide-to="2" data-target="#carouselExampleIndicatorszone"></li>
+                            <li data-slide-to="3" data-target="#carouselExampleIndicatorszone"></li>
+                            <li data-slide-to="4" data-target="#carouselExampleIndicatorszone"></li>
+                            <li data-slide-to="5" data-target="#carouselExampleIndicatorszone"></li>
                         </ol>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img class="d-block w-100" src="multimedia/zoo-images/australasia.jpg" alt="Australasia">
+                                <img alt="Australasia" class="d-block w-100"
+                                     src="multimedia/zoo-images/australasia.jpg">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>Australasia</h5>
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="multimedia/zoo-images/fragileforest.jpg" alt="Fragile Forest">
+                                <img alt="Fragile Forest" class="d-block w-100"
+                                     src="multimedia/zoo-images/fragileforest.jpg">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>Fragile Forest</h5>
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="multimedia/zoo-images/primatekingdom.jpg" alt="Primate Kingdom">
+                                <img alt="Primate Kingdom" class="d-block w-100"
+                                     src="multimedia/zoo-images/primatekingdom.jpg">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>Primate Kingdom</h5>
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="multimedia/zoo-images/reptilegarden.jpg" alt="Reptile Kingdom">
+                                <img alt="Reptile Kingdom" class="d-block w-100"
+                                     src="multimedia/zoo-images/reptilegarden.jpg">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>Reptile Kingdom</h5>
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="multimedia/zoo-images/wildafrica.jpg" alt="Wild Africa">
+                                <img alt="Wild Africa" class="d-block w-100"
+                                     src="multimedia/zoo-images/wildafrica.jpg">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>Wild Africa</h5>
                                 </div>
@@ -190,12 +199,14 @@
 
                         </div>
 
-                        <a class="carousel-control-prev" href="#carouselExampleIndicatorszone" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <a class="carousel-control-prev" data-slide="prev" href="#carouselExampleIndicatorszone"
+                           role="button">
+                            <span aria-hidden="true" class="carousel-control-prev-icon"></span>
                             <span class="sr-only">Previous</span>
                         </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicatorszone" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <a class="carousel-control-next" data-slide="next" href="#carouselExampleIndicatorszone"
+                           role="button">
+                            <span aria-hidden="true" class="carousel-control-next-icon"></span>
                             <span class="sr-only">Next</span>
                         </a>
                     </div>
@@ -210,24 +221,24 @@
             <h3 class="header">Ticket Prices & Operating Hours</h3>
             <div class="row">
                 <div class="col-sm-6 d-flex justify-content-center wow animate__fadeInLeft">
-                <table>
-                    <tr class="tablehead">
-                        <td>Age Group</td>
-                        <td>Price</td>
-                    </tr>
-                    <tr>
-                        <td>Adult/Youth</td>
-                        <td>S$39</td>
-                    </tr>
-                    <tr>
-                        <td>Child</td>
-                        <td>S$26</td>
-                    </tr>
-                    <tr>
-                        <td>Senior Citizen</td>
-                        <td>S$18</td>
-                    </tr>
-                </table>
+                    <table>
+                        <tr class="tablehead">
+                            <td>Age Group</td>
+                            <td>Price</td>
+                        </tr>
+                        <tr>
+                            <td>Adult/Youth</td>
+                            <td>S$39</td>
+                        </tr>
+                        <tr>
+                            <td>Child</td>
+                            <td>S$26</td>
+                        </tr>
+                        <tr>
+                            <td>Senior Citizen</td>
+                            <td>S$18</td>
+                        </tr>
+                    </table>
                 </div>
                 <div class="col-sm-6 d-flex justify-content-center wow animate__fadeInRight">
                     <table>
@@ -263,11 +274,14 @@
                     <dt>By shuttle</dt>
                     <dd>Mandai-Khatib, Bedok, Sengkang, Tampines</dd>
                 </dl>
-                
+
             </div>
-            
+
             <div class="col-sm-6 d-flex justify-content-center">
-                <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=singapore%20zoo&key=AIzaSyCOqjBghJOcrO9kcN7mWHadj1Q_FLLKZ_k" allowfullscreen></iframe>
+                <iframe allowfullscreen frameborder="0" height="450"
+                        src="https://www.google.com/maps/embed/v1/place?q=singapore%20zoo&key=AIzaSyCOqjBghJOcrO9kcN7mWHadj1Q_FLLKZ_k"
+                        style="border:0"
+                        width="600"></iframe>
             </div>
         </div>
     </section>
@@ -278,18 +292,23 @@
         <h3 class="header">Videos</h3>
         <div class="row">
             <div class="videowrapper col-sm-6 d-flex justify-content-center">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/1Md_5R_69zg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen frameborder="0" height="315"
+                        src="https://www.youtube.com/embed/1Md_5R_69zg"
+                        width="560"></iframe>
             </div>
-    
+
             <div class="videowrapper col-sm-6 d-flex justify-content-center">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/2xlxz1XTBc0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen frameborder="0" height="315"
+                        src="https://www.youtube.com/embed/2xlxz1XTBc0"
+                        width="560"></iframe>
             </div>
         </div>
     </section>
     <div class="dividerline"></div>
 </div>
 
-<script src="js/zoo-js/wow.min.js"></script>
 <script>
     new WOW().init();
 </script>
