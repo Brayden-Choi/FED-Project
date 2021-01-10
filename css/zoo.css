@@ -11,7 +11,6 @@
     font-family: 'Caveat Brush', cursive;
     font-weight: bold;
     font-size: 60px;
-    
 }
 
 .header {
@@ -34,6 +33,7 @@ h5 {
 
 .slides {
     margin: 50px;
+    z-index: -1;
 }
 
 .dividerline {

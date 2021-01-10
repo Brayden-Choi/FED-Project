@@ -1,42 +1,54 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-<head>
+<head id="head">
+    <!-- Misc config -->
     <meta charset="UTF-8">
-    <meta name="description" content="Webpage Header" />
-    <meta name="author" content="Group 2" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/header-styles.css">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <!-- Meta info -->
+    <meta content="Webpage Header" name="description"/>
+    <meta content="Group 2" name="author"/>
     <title>Webpage Header</title>
+
+    <!-- Common dependencies -->
+    <link href="css/common-css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/common-js/bootstrap.min.js"></script>
+
+    <!-- Other dependencies -->
+    <link href="css/header-styles.css" rel="stylesheet">
 </head>
-<div class="navbar-main">
-    <nav class="navbar navbar-format navbar-expand-xl navbar-light">
+
+<!-- Main navbar -->
+<div class="navbar-main" id="nav">
+    <nav class="navbar navbar-format navbar-expand-lg navbar-light">
+
+        <!-- Left home button -->
         <a class="navbar-brand navbar-custom" href="index.html">SG Tourist Attractions</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+        <!-- Right navbar page items -->
+        <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
             <span class="navbar-toggler-icon"></span>
         </button>
-    
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-touch" href="zoo.html">Singapore Zoo</a>
+                    <a class="nav-link" href="zoo.html">Singapore Zoo</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-touch" href="gardensbythebay.html">Gardens By The Bay</a>
+                    <a class="nav-link" href="gardensbythebay.html">Gardens By The Bay</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-touch" href="sea.html">S.E.A. Aquarium</a>
+                    <a class="nav-link" href="sea.html">S.E.A. Aquarium</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-touch" href="sentosa.html">Sentosa</a>
+                    <a class="nav-link" href="sentosa.html">Sentosa</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-touch" href="uss.html">USS</a>
+                    <a class="nav-link" href="uss.html">USS</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nav-touch" href="credits.html">Credits</a>
