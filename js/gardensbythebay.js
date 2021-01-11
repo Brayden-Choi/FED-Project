@@ -40,7 +40,7 @@ class VideoManager {
         console.log("Video change");
         let endedVideo = $("#drone-vid-" + this.currentShow);
         endedVideo.trigger("pause");
-        endedVideo.fadeOut(2000);
+        endedVideo.fadeOut(1000);
         
         this.currentShow = (++this.currentShow) % 2;
         let nextVideo = $("#drone-vid-" + this.currentShow);
