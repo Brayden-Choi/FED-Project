@@ -76,6 +76,30 @@ ul li a {
     text-decoration: none;
 }
 
+.dropdown-custom {
+    border: none;
+    padding: 0;
+    box-shadow: 0 0 1.2em rgba(0, 0, 0, 0.28);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.dropdown-item-top {
+    padding-top: 5px
+}
+
+.dropdown-item-bottom {
+    padding-bottom: 5px
+}
+
+.dropdown-item-style {
+    margin: 0;
+    padding-left: 10%;
+    padding-right: 0;
+    font-weight: 600;
+    color: gray;
+    font-size: 0.9em !important;
+}
+
 .content-main {
     margin-top: 100px;
 }
