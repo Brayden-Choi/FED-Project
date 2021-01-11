@@ -21,6 +21,10 @@
     transition: text-shadow 0.5s;
 }
 
+.navbar-toggler {
+    padding: 0 2px !important;
+}
+
 .navbar-custom:hover {
     text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
 }
@@ -132,5 +136,13 @@ ul li a {
 }
 
 .navbar-white .navbar-format .nav-item .nav-link {
+    color: #DCDCDC;
+}
+
+.navbar-white .navbar-format .nav-item .nav-link .active {
+    color: white;
+}
+
+.navbar-white .navbar-format .nav-item:hover .nav-link {
     color: white;
 }
