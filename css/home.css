@@ -1,0 +1,48 @@
+.slides-home {
+    width: auto;
+}
+
+html, body {
+    height: 100%;
+}
+
+.title-container {
+    width: 100%;
+    height: 10vh;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.title-text {
+    position: absolute;
+    transition: margin-top 1s, visibility 1s;
+}
+
+.title-hidden {
+    color: transparent;
+}
+
+.title-hidden-top {
+    margin-top: -50px;
+    visibility: hidden;
+}
+
+.title-hidden-bottom {
+    margin-top: 50px;
+    visibility: hidden;
+}
+
+.carousel, .carousel-item, .active {
+    height: 100%;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+.carousel-item img {
+    object-fit: cover;
+    height: 300px !important;
+    width: 350px;
+}

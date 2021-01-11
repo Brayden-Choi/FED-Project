@@ -19,7 +19,7 @@ html, body {
     left: 0;
     top: 0;
     transition: background-color 300ms ease;
-    min-height: calc(100% + 100px);
+    min-height: 100%;
     animation: fadein-overlay 4s;
     animation-timing-function: ease-out;
 }

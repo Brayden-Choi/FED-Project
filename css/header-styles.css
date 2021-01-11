@@ -160,7 +160,8 @@ ul li a {
 }
 
 .navbar-white {
-
+    
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
 }
 
 .navbar-white .navbar-format {
