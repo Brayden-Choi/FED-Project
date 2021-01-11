@@ -75,6 +75,13 @@ class NavManager {
             $('#nav').removeClass('navbar-shadow');
         }
     }
+
+    clickDropDown(dropDownID, targetPage) {
+        let isCollapsed = $("#navbar-toggle-button").is(":visible");
+        if (!isCollapsed) {
+            window.open(targetPage, "_self");
+        }
+    }
 }
 
 let navManager = new NavManager();
