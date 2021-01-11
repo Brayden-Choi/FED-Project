@@ -30,12 +30,12 @@ html, body {
 }
 
 .title-hidden-top {
-    bottom: 140px;
+    bottom: calc(15vh + 2.4vw);
     visibility: hidden;
 }
 
 .title-hidden-bottom {
-    bottom: -120px;
+    bottom: calc(-15vh - 2.4vw);
     visibility: hidden;
 }
 

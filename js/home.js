@@ -7,16 +7,16 @@ $(document).ready(function () {
 
     $("#title-" + currentShown).text(titles[currentTitle]);
 
-    $('#overviewSlides').on('slide.bs.carousel', function () {
+    $('#overviewSlides').on('slide.bs.carousel', function (event) {
         let $top = $("#title-" + mod(currentShown - 1, 3));
         let $current = $("#title-" + currentShown);
         let $bottom = $("#title-" + mod(currentShown + 1, 3));
 
-        currentTitle = mod(++currentTitle, titles.length);
+        currentTitle += (event.direction === "left") ? 1 : -1;
+        currentTitle = mod(currentTitle, titles.length);
         $bottom.text(titles[currentTitle]);
         
         console.log(currentShown, mod(currentShown - 1, 3), currentShown, mod(currentShown + 1, 3));
-        
 
         $top.addClass("title-hidden");
         $top.addClass("title-hidden-bottom");
