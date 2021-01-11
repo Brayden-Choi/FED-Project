@@ -50,7 +50,7 @@
 .nav-item:after {
     content: '';
     display: block;
-    margin: auto;
+    margin: initial;
     height: 3px;
     width: 0;
     background: transparent;
@@ -100,6 +100,11 @@ ul li a {
     font-size: 0.9em !important;
 }
 
+.dropdown-item-hidden {
+    position: absolute;
+    left: -1000px;
+}
+
 .content-main {
     margin-top: 100px;
 }
@@ -119,7 +124,10 @@ ul li a {
 }
 
 @media all and (min-width: 992px) {
-    
+    .nav-item:after {
+        margin: auto;
+    }
+
     .navbar .nav-item .dropdown-menu {
         -webkit-transition: all 0.3s;
         -moz-transition: all 0.3s;

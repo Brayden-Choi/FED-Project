@@ -11,7 +11,7 @@ class NavManager {
         this.hasShadow = false;
         this.usingWhite = false;
     }
-    
+
     setActivePage() {
         let style = $("#header").attr("type");
 
@@ -43,8 +43,7 @@ class NavManager {
             }
             $('#nav').addClass('navbar-shadow');
             this.hasShadow = true;
-        }
-        else {
+        } else {
             if (canSee === "false") {
                 if (this.usingWhite) {
                     $('#nav').addClass('navbar-white');
@@ -58,7 +57,7 @@ class NavManager {
 
     clickToggle() {
         let canSee = $("#navbar-toggle-button").attr("aria-expanded");
-        
+
         if (canSee === "false") {
             if (this.usingWhite) {
                 $('#nav').removeClass('navbar-white');
@@ -82,13 +81,19 @@ class NavManager {
             window.open(targetPage, "_self");
             return;
         }
+        let dropDownMain = $($(dropDownID + " li")[0]).find('a:first')[0];
+        console.log(dropDownMain);
+        if ($(dropDownID).hasClass("show")) {
+            $(dropDownMain).addClass("dropdown-item-hidden");
+            return;
+        }
+        $(dropDownMain).removeClass("dropdown-item-hidden");
     }
 }
 
 let navManager = new NavManager();
 
-$(document).ready(function() {
-    
+$(document).ready(function () {
     $("#header").load("header.html #nav", function () {
         navManager.setActivePage();
         navManager.addNavShadow();
