@@ -139,8 +139,8 @@ ul li a {
     color: #DCDCDC;
 }
 
-.navbar-white .navbar-format .nav-item .nav-link .active {
-    color: white;
+.navbar-white .navbar-format .active .nav-link {
+    color: white !important;
 }
 
 .navbar-white .navbar-format .nav-item:hover .nav-link {
