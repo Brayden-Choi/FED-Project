@@ -32,12 +32,14 @@ class VideoManager {
 
         $("#drone-vid-0").fadeOut(0)
         $("#drone-vid-1").fadeOut(0)
-        $("#drone-vid-0").fadeIn(2000);
+
         $("#drone-vid-0").trigger('play');
+        $("#drone-vid-0").fadeIn(2000);
     }
 
     swap() {
         console.log("Video change");
+        
         let endedVideo = $("#drone-vid-" + this.currentShow);
         endedVideo.trigger("pause");
         endedVideo.fadeOut(1000);
@@ -50,7 +52,5 @@ class VideoManager {
         nextVideo.trigger('play');
 
         this.currentVideo %= 4;
-        
-        console.log(nextVideo.duration)
     }
 }
