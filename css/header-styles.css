@@ -18,10 +18,11 @@
 
 .navbar-custom {
     margin-left: 1vw;
+    transition: text-shadow 0.5s;
 }
 
 .navbar-custom:hover {
-    background: white;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-shadow {
@@ -110,6 +111,9 @@ ul li a {
     border-top: 2px solid white;
 }
 
+.navbar-white .navbar-custom:hover {
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.6);
+}
 
 .navbar-white .navbar-format .navbar-custom {
     color: white;
