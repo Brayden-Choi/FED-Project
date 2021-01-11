@@ -8,6 +8,7 @@ head.appendChild(headerCSS);
 
 class NavManager {
     constructor() {
+        this.hasShadow = false;
         this.usingWhite = false;
     }
     
@@ -41,12 +42,17 @@ class NavManager {
                 $('#nav').removeClass('navbar-dark');
             }
             $('#nav').addClass('navbar-shadow');
-        } else if (canSee === "false") {
-            if (this.usingWhite) {
-                $('#nav').addClass('navbar-white');
-                $('#nav').addClass('navbar-dark');
+            this.hasShadow = true;
+        }
+        else {
+            if (canSee === "false") {
+                if (this.usingWhite) {
+                    $('#nav').addClass('navbar-white');
+                    $('#nav').addClass('navbar-dark');
+                }
+                $('#nav').removeClass('navbar-shadow');
             }
-            $('#nav').removeClass('navbar-shadow');
+            this.hasShadow = false;
         }
     }
 
@@ -57,11 +63,13 @@ class NavManager {
             if (this.usingWhite) {
                 $('#nav').removeClass('navbar-white');
                 $('#nav').removeClass('navbar-dark');
+            }
+            if (!this.hasShadow) {
                 $('#nav').addClass('navbar-shadow');
             }
             return;
         }
-        if (this.usingWhite) {
+        if (this.usingWhite && !this.hasShadow) {
             $('#nav').addClass('navbar-white');
             $('#nav').addClass('navbar-dark');
             $('#nav').removeClass('navbar-shadow');

@@ -1,6 +1,11 @@
 /* Global Styles */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 
+@font-face {
+    font-family: 'Fontjek';
+    src: url("../multimedia/gardensbythebay/Fontjek.ttf");
+}
+
 html, body {
     height: 100%;
 }
@@ -44,10 +49,10 @@ html, body {
 }
 
 #title h1 {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Fontjek', cursive;
     color: white;
     text-align: center;
-    font-size: calc(4vh + 5vw);
+    font-size: calc(6vh + 6vw);
 }
 
 @keyframes fadein {
