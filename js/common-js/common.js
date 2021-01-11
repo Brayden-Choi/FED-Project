@@ -80,6 +80,7 @@ class NavManager {
         let isCollapsed = $("#navbar-toggle-button").is(":visible");
         if (!isCollapsed) {
             window.open(targetPage, "_self");
+            return;
         }
     }
 }

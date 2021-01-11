@@ -93,7 +93,7 @@ ul li a {
 
 .dropdown-item-style {
     margin: 0;
-    padding-left: 10%;
+    padding-left: 12px;
     padding-right: 0;
     font-weight: 600;
     color: gray;
@@ -104,7 +104,22 @@ ul li a {
     margin-top: 100px;
 }
 
+.short-text {
+    display: none;
+}
+
+@media (max-width: 1180px) {
+    .short-text {
+        display: inline-block;
+    }
+
+    .full-text {
+        display: none;
+    }
+}
+
 @media all and (min-width: 992px) {
+    
     .navbar .nav-item .dropdown-menu {
         -webkit-transition: all 0.3s;
         -moz-transition: all 0.3s;
