@@ -44,7 +44,7 @@ html, body {
     left: 0;
     position: fixed;
     width: 100%;
-    margin-top: 36vh;
+    margin-top: 37vh;
     animation: fadein 2.5s;
 }
 
@@ -55,13 +55,22 @@ html, body {
     font-size: calc(6vh + 6vw);
 }
 
+.alter {
+    transition: all 0.5s;
+}
+
+.alter:hover {
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+    color: limegreen;
+}
+
 @keyframes fadein {
     from {
-        margin-top: 24vh;
+        margin-top: 28vh;
         opacity: 0;
     }
     to {
-        margin-top: 36vh;
+        margin-top: 37vh;
         opacity: 1;
     }
 }

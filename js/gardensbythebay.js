@@ -23,6 +23,13 @@ $(document).ready(function () {
     $("#drone-vid-1").on('ended', function () {
         vm.swap();
     });
+
+    var letters = $("#title-text").text();
+    var nHTML = "";
+    for (var letter of letters) {
+        nHTML += "<span class='alter'>" + letter + "</span>";
+    }
+    $("#title-text").html(nHTML);
 });
 
 class VideoManager {
