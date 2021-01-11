@@ -1,3 +1,6 @@
-#bg-color{
+#welcome{
     background-color: black;
+}
+.page-wrapper {
+    padding-top: 100px;
 }
