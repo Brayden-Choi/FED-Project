@@ -93,8 +93,6 @@ ul li a {
 
 .dropdown-item-style {
     margin: 0;
-    padding-left: 12px;
-    padding-right: 0;
     font-weight: 600;
     color: gray;
     font-size: 0.9em !important;
@@ -124,6 +122,13 @@ ul li a {
 }
 
 @media all and (min-width: 992px) {
+    .dropdown-custom {
+        left: 50% !important;
+        right: auto !important;
+        text-align: center !important;
+        transform: translate(-50%, 0) !important;
+    }
+    
     .nav-item:after {
         margin: auto;
     }
