@@ -22,12 +22,10 @@ $(document).ready(function () {
         $top.addClass("title-hidden-bottom");
         $top.removeClass("title-hidden-top");
 
-        $current.removeClass("title-show");
         $current.addClass("title-hidden-top");
 
         $bottom.removeClass("title-hidden");
         $bottom.removeClass("title-hidden-bottom");
-        $bottom.addClass("title-show");
         
         currentShown = (currentShown + 1) % 3;
     })
