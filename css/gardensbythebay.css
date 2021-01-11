@@ -13,13 +13,13 @@ html, body {
 /* Video Overlay */
 .video-overlay {
     background-color: rgba(0, 0, 0, .30);
-    height: 150%;
-    left: 0;
+    height: 100%;
+    width: 100%;
     position: relative;
+    left: 0;
     top: 0;
     transition: background-color 300ms ease;
-    width: 100%;
-    min-height: 768px;
+    min-height: calc(100% + 100px);
     animation: fadein-overlay 4s;
     animation-timing-function: ease-out;
 }
@@ -94,5 +94,5 @@ html, body {
     background-color: white;
     padding: 2.5rem;
     position: relative;
-    z-index: 1;
+    z-index: 3;
 }
