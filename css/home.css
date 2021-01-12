@@ -6,11 +6,12 @@ html, body {
     width: 100%;
     height: 100%;
 }
+
 .overview-text {
     color: white;
     position: relative;
     z-index: 2;
-    transform: translateY(60%);
+    top: 28vh;
 }
 
 .overview-overlay {
@@ -30,6 +31,25 @@ html, body {
     width: 100%;
     height: 100%;
     z-index: 0;
+}
+
+.overview-indicators {
+    bottom: 2.6vh;
+}
+
+.overview-indicators .active {
+    background-color: #fff !important;
+}
+
+.indicator {
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 4px !important;
+    width: calc(8% + 20px) !important;
+    transition: all 0.4s !important;
+}
+
+.indicator:hover {
+    width: calc(10% + 24px) !important;
 }
 
 .title-container {
@@ -79,4 +99,10 @@ html, body {
 }
 
 .description {
+}
+
+@media all and (max-width: 640px) {
+    .overview-indicators {
+        visibility: hidden;
+    }
 }
