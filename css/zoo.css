@@ -12,14 +12,20 @@ html {
     z-index: 3;
     width: 100%;
     position: absolute;
-    top: 50px;
     padding: 10px;
+    margin-top: 31vh;
     text-align: center;
     color:  #0D5510 ;
+   /* color: white;*/
     font-family: 'Caveat Brush', cursive;
     font-weight: bold;
-    font-size: calc(6vh + 6vw);
+    font-size: 9.5rem;
+    /*text-decoration: underline overline;*/
+    -webkit-text-stroke-width: 0.3px;
+    -webkit-text-stroke-color: white;
+    -webkit-text-fill-color: inherit;
 }
+
 .header {
     margin-top: 20px;
     padding: 10px;
@@ -34,7 +40,7 @@ h5 {
     text-align: center;
     color: black;
     background: rgba(255, 255, 255, 0.5);
-    font-size: 45px;
+    font-size: 1.5rem;
     font-family: 'Caveat Brush', cursive;
 }
 
@@ -106,14 +112,8 @@ h5 {
 }
 
 .about-text{
-    font-size: 35px;
+    font-size: 2.5rem;
     font-family: 'Caveat Brush', cursive;
-}
-
-/*Main Gallery*/
-
-#maingallery {
-    padding-bottom: 5%;
 }
 
 .bg-image {
@@ -137,7 +137,6 @@ h5 {
         display: none;
     }
 }
-
 .bg-text {
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.7);
@@ -155,6 +154,13 @@ h5 {
     color: white;
 }
 
+
+/*Main Gallery*/
+
+#maingallery {
+    padding-bottom: 5%;
+}
+
 /*Zone Gallery*/
 #zonegallery {
     padding-bottom: 5%;
@@ -164,7 +170,7 @@ h5 {
     text-align: center;
     color: #0D5510;
     font-family: 'Caveat Brush', cursive;
-    font-size: 35px;
+    font-size: 2.2rem;
 }
 
 /*Ticket Prices & Operating Hours*/
@@ -176,18 +182,19 @@ table {
     font-family: 'Caveat Brush', cursive;
     text-align: center;
     border-collapse: collapse;
-    font-size: 30px;
+    font-size: 2rem;
+    margin-top: 1rem;
 }
 
 tr, th, td {
     border: solid black;
-    padding: 40px;
+    padding: 1rem;
 }
 
 .tablehead {
     background-color: #0D5510;
     color: white;
-    font-size: 40px;
+    font-size: 3rem;
 }
 
 .animated {
@@ -196,12 +203,16 @@ tr, th, td {
     animation-delay: 0.2s;
 }
 
+.zoom:hover {
+    transform: scale(1.1);
+}
+
 /*Getting There*/
 #location {
     padding-bottom: 5%;
 }
 
- #location dt{
+ dt{
     padding: 10px;
     text-align: center;
     color: #0D5510;
@@ -209,7 +220,7 @@ tr, th, td {
     font-family: 'Caveat Brush', cursive;
 }
 
-#location dd{
+dd{
     padding: 10px;
     text-align: center;
     color: black;
