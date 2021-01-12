@@ -6,6 +6,7 @@ html {
 
 .wrapper {
     margin: 100px;
+    z-index: 10;
 }
 
 .title {
@@ -28,11 +29,14 @@ html {
 
 .header {
     margin-top: 20px;
-    padding: 10px;
+    padding: 5px;
     text-align: center;
-    color:  #0D5510 ;
+    /*color:  #0D5510 ;*/
+    color: white;
     font-family: 'Caveat Brush', cursive;
-    font-size: 60px;
+    font-size: 4rem;
+    z-index: 4;
+    background-color: rgba(0,0,0,0.6);
 }
 
 h5 {
@@ -56,18 +60,19 @@ h5 {
 /*Header*/
 .air-slider {
     width: auto;
-    z-index: 1;
+    z-index: -10;
 }
 
 .air-slider .slide {
     width:100%;
     height:100%;
-    position: absolute;
+    position: fixed;
     overflow:hidden;
     opacity:0;
-    -webkit-transition:1s ease all;
-    transition:1s ease all;
-    background:#ccc
+    -webkit-transition:3s ease all;
+    transition:3s ease all;
+    background:#ccc;
+    z-index:0;
 }
 
 .air-slider .slide img {
@@ -76,7 +81,7 @@ h5 {
  }
 
 .air-slider .active-slide {
-    opacity: 0.75;
+    opacity: 0.7;
 }
 
 /*
@@ -139,7 +144,7 @@ h5 {
 }
 .bg-text {
     background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0,0,0,0.6);
     height: 504px;
     width: 1300px;
     padding: 80px;
@@ -147,7 +152,7 @@ h5 {
     font-weight: bold;
     text-align: center;
     position: relative;
-    z-index: 2;
+    z-index: 4;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -168,9 +173,10 @@ h5 {
 
 .zone-text {
     text-align: center;
-    color: #0D5510;
+    color: white;
     font-family: 'Caveat Brush', cursive;
     font-size: 2.2rem;
+    background-color: rgba(0,0,0,0.6);
 }
 
 /*Ticket Prices & Operating Hours*/
@@ -182,8 +188,10 @@ table {
     font-family: 'Caveat Brush', cursive;
     text-align: center;
     border-collapse: collapse;
-    font-size: 2rem;
-    margin-top: 1rem;
+    font-size: 2.1rem;
+    margin-top: 3rem;
+    color: white;
+    background-color: rgba(0,0,0,0.6);
 }
 
 tr, th, td {
@@ -204,7 +212,7 @@ tr, th, td {
 }
 
 .zoom:hover {
-    transform: scale(1.1);
+    transform: scale(1.04);
 }
 
 /*Getting There*/
@@ -212,19 +220,31 @@ tr, th, td {
     padding-bottom: 5%;
 }
 
- dt{
-    padding: 10px;
-    text-align: center;
-    color: #0D5510;
-    font-size: 30px;
-    font-family: 'Caveat Brush', cursive;
+.address {
+    background-color: rgba(0,0,0,0.6);
+    margin-top: 3rem;
 }
 
-dd{
-    padding: 10px;
+.map {
+    margin-top: 3rem;
+}
+
+ dt{
+    padding: 0.5rem;
     text-align: center;
-    color: black;
-    font-size: 25px;
+    color: #0D5510;
+    font-size: 2.3rem;
+    font-family: 'Caveat Brush', cursive;
+    -webkit-text-stroke-width: 0.1px;
+    -webkit-text-stroke-color: white;
+    -webkit-text-fill-color: inherit;
+ }
+
+dd{
+    padding: 0.5rem;
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
     font-family: 'Caveat Brush', cursive;
 }
 
