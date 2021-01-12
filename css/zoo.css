@@ -196,6 +196,7 @@ h5 {
     font-family: 'Caveat Brush', cursive;
     font-size: 2.2rem;
     background-color: rgba(0,0,0,0.6);
+    padding: 2rem;
 }
 
 
@@ -205,7 +206,7 @@ h5 {
     padding-bottom: 5%;
 }
 
-table {
+.ticket-table {
     font-family: 'Caveat Brush', cursive;
     text-align: center;
     border-collapse: collapse;
@@ -215,15 +216,38 @@ table {
     background-color: rgba(0,0,0,0.6);
 }
 
-tr, th, td {
-    border: solid black;
-    padding: 1rem;
+.hours-table {
+    font-family: 'Caveat Brush', cursive;
+    text-align: center;
+    border-collapse: collapse;
+    font-size: 2.1rem;
+    margin-top: 3rem;
+    color: white;
+    background-color: rgba(0,0,0,0.6);
 }
 
-.tablehead {
+.ticket-table tr,.ticket-table th,.ticket-table td {
+    border: solid black;
+    padding: 2rem;
+}
+
+.hours-table tr,.hours-table th,.hours-table td {
+    border: solid black;
+    padding: 2.25rem;
+}
+
+.ticket-table .tablehead {
     background-color: #0D5510;
     color: white;
     font-size: 3rem;
+    padding: 2.2rem;
+}
+
+.hours-table .tablehead {
+    background-color: #0D5510;
+    color: white;
+    font-size: 3rem;
+    padding: 0;
 }
 
 .animated {
@@ -244,17 +268,17 @@ tr, th, td {
 .address {
     background-color: rgba(0,0,0,0.6);
     margin-top: 3rem;
+    padding-top: 4rem;
 }
 
 .map {
     margin-top: 3rem;
 }
 
- dt{
-    padding: 0.5rem;
+dt{
     text-align: center;
     color: #0D5510;
-    font-size: 2.3rem;
+    font-size: 2.6rem;
     font-family: 'Caveat Brush', cursive;
     -webkit-text-stroke-width: 0.1px;
     -webkit-text-stroke-color: white;
@@ -262,10 +286,9 @@ tr, th, td {
  }
 
 dd{
-    padding: 0.5rem;
     text-align: center;
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-family: 'Caveat Brush', cursive;
 }
 
