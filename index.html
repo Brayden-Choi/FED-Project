@@ -24,65 +24,67 @@
 <body>
 <div content="Home" id="header" type="white"></div>
 
-<div class="carousel slide carousel-fade slides-home" data-ride="carousel" id="overviewSlides">
-    <div class="carousel-inner">
-
-        <div class="carousel-caption text-left h-75">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-8">
-                        <div class="title-container">
-                            <h1 class="title-text title-hidden-top" id="title-0">Example 0.</h1>
-                            <h1 class="title-text" id="title-1">Example 1.</h1>
-                            <h1 class="title-text title-hidden title-hidden-bottom" id="title-2">Example 2.</h1>
-                        </div>
-                        <div>
-                        <p id="overview-desc">
-                            Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
-                            gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-                        </p>
-                        <p><a id="overview-button" class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
-                            gravida
-                            at
-                            eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                    </div>
+<div class="overview">
+    <div class="container-fluid overview-text">
+        <div class="row ml-3 mr-3">
+            <div class="col-lg-6">
+                <div class="title-container">
+                    <h1 class="title-text title-hidden-top" id="title-0">Example 0.</h1>
+                    <h1 class="title-text" id="title-1">Example 1.</h1>
+                    <h1 class="title-text title-hidden title-hidden-bottom" id="title-2">Example 2.</h1>
+                </div>
+                <div>
+                    <p class="description" id="overview-desc">
+                        Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
+                        gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                    </p>
+                    <p><a id="overview-button" class="btn btn-lg btn-primary" href="#" role="button">Explore ></a></p>
                 </div>
             </div>
-        </div>
-
-        <div class="carousel-item active" content="Gardens by the Bay">
-            <img alt="..." class="d-block w-100 min-vh-100" src="multimedia/home/overview-slides/gardensbythebay.jpg" >
-        </div>
-        <div class="carousel-item" content="Singapore Zoo">
-            <img alt="..." class="d-block w-100 min-vh-100" src="multimedia/home/overview-slides/zoo.jpg">
-        </div>
-        <div class="carousel-item" content="S.E.A. Aquarium">
-            <img alt="..." class="d-block w-100 min-vh-100" src="multimedia/home/overview-slides/sea.jpg">
-        </div>
-        <div class="carousel-item" content="Sentosa">
-            <img alt="..." class="d-block w-100 min-vh-100" src="multimedia/home/overview-slides/santosa.jpg">
-        </div>
-        <div class="carousel-item" content="Universal Studios">
-            <img alt="..." class="d-block w-100 min-vh-100" src="multimedia/home/overview-slides/uss.jpg" >
+            <div class="col-lg-6">
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
+                    gravida
+                    at
+                    eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            </div>
         </div>
     </div>
-    <a class="carousel-control-prev" data-slide="prev" href="#overviewSlides" role="button">
-        <span aria-hidden="true" class="carousel-control-prev-icon"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" data-slide="next" href="#overviewSlides" role="button">
-        <span aria-hidden="true" class="carousel-control-next-icon"></span>
-        <span class="sr-only">Next</span>
-    </a>
+    
+    <div class="overview-overlay"></div>
+    
+    <div class="carousel slide carousel-fade overview-slides" data-ride="carousel" id="overviewSlides">
+        <div class="carousel-inner">
+            <div class="carousel-item active" content="Gardens by the Bay">
+                <img alt="..." class="d-block w-100 min-vh-100" src="multimedia/home/overview-slides/gardensbythebay.jpg" >
+            </div>
+            <div class="carousel-item" content="Singapore Zoo">
+                <img alt="..." class="d-block w-100 min-vh-100" src="multimedia/home/overview-slides/zoo.jpg">
+            </div>
+            <div class="carousel-item" content="S.E.A. Aquarium">
+                <img alt="..." class="d-block w-100 min-vh-100" src="multimedia/home/overview-slides/sea.jpg">
+            </div>
+            <div class="carousel-item" content="Sentosa">
+                <img alt="..." class="d-block w-100 min-vh-100" src="multimedia/home/overview-slides/santosa.jpg">
+            </div>
+            <div class="carousel-item" content="Universal Studios">
+                <img alt="..." class="d-block w-100 min-vh-100" src="multimedia/home/overview-slides/uss.jpg" >
+            </div>
+        </div>
+        <a class="carousel-control-prev" data-slide="prev" href="#overviewSlides" role="button">
+            <span aria-hidden="true" class="carousel-control-prev-icon"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" data-slide="next" href="#overviewSlides" role="button">
+            <span aria-hidden="true" class="carousel-control-next-icon"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
 </div>
 
-<div class="container-fluid content-main">
+<div class="content-main">
     <h1>Stuff</h1>
 </div>
+
 </body>
 
 </html>
