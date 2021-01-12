@@ -1,0 +1,30 @@
+﻿.container-wrapper {
+    position: relative;
+    top: 40px;
+}
+
+
+.person-card {
+    position: relative;
+    margin-top: 40px;
+    justify-content: center;
+    border: none;
+    box-shadow: 0 0 1.2em rgba(0, 0, 0, 0.18);
+}
+
+.card-image {
+    
+}
+
+.person-card:hover {
+    box-shadow: 0 0 1.2em rgba(0, 0, 0, 0.28);
+}
+
+.card-body-center {
+    align-self: center;
+}
+
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+}
