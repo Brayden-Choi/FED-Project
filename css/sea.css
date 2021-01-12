@@ -1,6 +1,7 @@
 .welcome{
     background-color: black;
     height: 840px;
+    z-index: 1;
 }
 
 .page-wrapper {
