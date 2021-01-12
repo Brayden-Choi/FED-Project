@@ -1,22 +1,29 @@
-﻿const titles = ["Gardens by the Bay", 'Singapore Zoo', "S.E.A. Aquarium", "Sentosa", "Universal Studio"]
+﻿$(document).ready(function () {
 
-$(document).ready(function () {
+    let overviewData = {};
+    $.getJSON("multimedia/home/overview.json", function (data) {
+        overviewData = data;
+    }).fail(function () {
+        console.log("Unable to load overview.json");
+    });
 
     let currentShown = 1;
-    let currentTitle = 0;
 
+/*
     $("#title-" + currentShown).text(titles[currentTitle]);
+*/
 
     $('#overviewSlides').on('slide.bs.carousel', function (event) {
+        const targetData = $(event.relatedTarget).attr("content");
+        
         let $top = $("#title-" + mod(currentShown - 1, 3));
         let $current = $("#title-" + currentShown);
         let $bottom = $("#title-" + mod(currentShown + 1, 3));
-
-        currentTitle += (event.direction === "left") ? 1 : -1;
-        currentTitle = mod(currentTitle, titles.length);
-        $bottom.text(titles[currentTitle]);
         
-        console.log(currentShown, mod(currentShown - 1, 3), currentShown, mod(currentShown + 1, 3));
+        console.log(targetData);
+
+        currentShown = (currentShown + 1) % 3;
+        $bottom.text(targetData);
 
         $top.addClass("title-hidden");
         $top.addClass("title-hidden-bottom");
@@ -26,12 +33,8 @@ $(document).ready(function () {
 
         $bottom.removeClass("title-hidden");
         $bottom.removeClass("title-hidden-bottom");
-        
-        currentShown = (currentShown + 1) % 3;
     })
 });
-
-
 
 function mod(n, m) {
     return ((n % m) + m) % m;
