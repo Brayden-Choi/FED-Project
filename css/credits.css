@@ -1,23 +1,59 @@
 ﻿.container-wrapper {
     position: relative;
-    top: 40px;
+    top: 70px;
 }
 
+.shadowable {
+    box-shadow: 0 0 1.2em rgba(0, 0, 0, 0.18);
+    transition: box-shadow 0.5s;
+}
+
+.shadowable:hover {
+    box-shadow: 0 0 1.2em rgba(0, 0, 0, 0.28);
+}
+
+.header-center {
+    margin-bottom: 0;
+    text-align: center;
+    padding: 10px;
+    border-radius: 3px;
+}
 
 .person-card {
+    overflow: hidden;
+    border-radius: 3px;
     position: relative;
-    margin-top: 40px;
+    margin-top: 20px;
     justify-content: center;
     border: none;
-    box-shadow: 0 0 1.2em rgba(0, 0, 0, 0.18);
 }
 
 .card-image {
+    border-radius: 3px;
+    align-self: center;
+    height: calc(16vw + 50px);
+    max-height: 200px;
+    transition: transform .5s ease;
+}
+
+.card-image-small {
     
 }
 
-.person-card:hover {
-    box-shadow: 0 0 1.2em rgba(0, 0, 0, 0.28);
+.card-title {
+    font-size: xx-large;
+}
+
+.card-title-small {
+    font-size: x-large;
+}
+
+.card-prefix {
+    margin-bottom: 0;
+}
+
+.person-card:hover .card-image {
+    transform: scale(1.1);
 }
 
 .card-body-center {
@@ -27,4 +63,19 @@
 .card-horizontal {
     display: flex;
     flex: 1 1 auto;
+}
+
+@media all and (max-width: 1200px) {
+    .card-title {
+        font-size: x-large;
+    }
+    .header-center {
+        font-size: xx-large;
+    }
+}
+
+@media all and (max-width: 400px) {
+    .header-center {
+        font-size: x-large;
+    }
 }
