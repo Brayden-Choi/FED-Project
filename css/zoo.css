@@ -9,8 +9,10 @@ html {
 }
 
 .title {
-    position: relative;
-    margin-top: 30px;
+    z-index: 3;
+    width: 100%;
+    position: absolute;
+    top: 50px;
     padding: 10px;
     text-align: center;
     color:  #0D5510 ;
@@ -46,14 +48,10 @@ h5 {
 }
 
 /*Header*/
-#title {
+.air-slider {
     width: auto;
     z-index: 1;
 }
-/*
-.air-slider {
-    
-}*/
 
 .air-slider .slide {
     width:100%;
