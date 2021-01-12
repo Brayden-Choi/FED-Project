@@ -5,7 +5,7 @@
 }
 
 .page-wrapper {
-    padding-top: 100px;
+    padding-top: 25px;
 }
 
 .welcome-text {
@@ -67,7 +67,6 @@ h1 span {
 
 .carousel-slide {
     display: flex;
-    overflow-x: auto;
     -webkit-overflow-scrolling: touch;
 }
 
