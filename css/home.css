@@ -42,14 +42,14 @@ html, body {
 }
 
 .indicator {
-    background-color: rgba(0, 0, 0, 0.7);
-    height: 4px !important;
-    width: calc(8% + 20px) !important;
-    transition: all 0.4s !important;
+    border-top-width: 16px !important;
+    height: 5px !important;
+    width: calc(9% + 20px) !important;
+    transition: all 0.4s ease-out !important;
 }
 
 .indicator:hover {
-    width: calc(10% + 24px) !important;
+    width: calc(11% + 26px) !important;
 }
 
 .title-container {
