@@ -5,7 +5,9 @@ html {
 }
 
 .wrapper {
-    margin: 100px;
+    margin-top: 50vh;
+    margin-right: 10vh;
+    margin-left: 10vh;
     z-index: 10;
 }
 
@@ -14,7 +16,7 @@ html {
     width: 100%;
     position: absolute;
     padding: 10px;
-    margin-top: 31vh;
+    margin-top: 35vh;
     text-align: center;
     color:  #0D5510 ;
    /* color: white;*/
@@ -35,7 +37,7 @@ html {
     color: white;
     font-family: 'Caveat Brush', cursive;
     font-size: 4rem;
-    z-index: 4;
+    z-index: 3;
     background-color: rgba(0,0,0,0.6);
 }
 
@@ -54,7 +56,8 @@ h5 {
 }
 
 .dividerline {
-    border-top: 2px solid #0D5510;
+    border-top: 5px solid #0D5510;
+    opacity: 1;
 }
 
 /*Header*/
@@ -113,6 +116,7 @@ h5 {
     position: relative;
     width: 100%;
     height: 100%;
+    z-index: 3;
 }
 
 .about {
@@ -170,10 +174,11 @@ h5 {
 #maingallery {
     padding-bottom: 5%;
 }
+/*
 
-/*.bg-animal {
+.bg-animal {
     background-image: url("../multimedia/zoo-images/wallpaper2.jpg");
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: 2000px 800px;
@@ -183,7 +188,8 @@ h5 {
     position: relative;
     opacity: 1;
     z-index: 0;
-}*/
+}
+*/
 
 /*Zone Gallery*/
 #zonegallery {
