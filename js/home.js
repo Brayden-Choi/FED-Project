@@ -1,19 +1,15 @@
-﻿const filePath = "multimedia/home/overview.json";
-let data;
-$.getJSON(filePath, function (d) {
-    data = d;
-    console.log("Data logged from: " + filePath);
-}).fail(function () {
-    console.log("Unable to load file: " + filePath);
-});
-
-$(document).ready(function () {
+﻿$(document).ready(function () {
     let sm = new SlideManager("#overviewSlides", "#title-", "#overview-desc", "#overview-button");
-    sm.setData(data);
-    sm.setOverviewTexts();
-    sm.$slide.on('slide.bs.carousel', function (event) {
-        sm.slideChange(event);
-    });
+    const filePath = "multimedia/home/overview.json";
+    $.getJSON(filePath).then(function (data) {
+        sm.setData(data);
+        sm.setOverviewTexts();
+        sm.$slide.on('slide.bs.carousel', function (event) {
+            sm.slideChange(event);
+        });
+    }).fail(function () {
+        console.log("Unable to load file: " + filePath);
+    })
 });
 
 class SlideManager {
@@ -28,6 +24,7 @@ class SlideManager {
  
     setData(data) {
         this.contentData = data;
+        console.log("Data set to: ", this.contentData);
     }
 
     slideChange (event) {
@@ -59,9 +56,6 @@ class SlideManager {
         
         let $title = this.getTitle(0);
         $title.text(targetData);
-
-        console.log(this.$desc);
-
 
         this.$desc.text(this.contentData[targetData].desc);
         this.$button.attr("href", this.contentData[targetData].page);
