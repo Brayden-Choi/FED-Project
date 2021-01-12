@@ -1,4 +1,4 @@
-﻿const titles = ["Gardens by the Bay", 'Singapore Zoo', "S.E.A. Aquarium", "Santosa", "Universal Studio"]
+﻿const titles = ["Gardens by the Bay", 'Singapore Zoo', "S.E.A. Aquarium", "Sentosa", "Universal Studio"]
 
 $(document).ready(function () {
 
