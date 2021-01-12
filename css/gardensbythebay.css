@@ -8,6 +8,7 @@
 
 html, body {
     height: 100%;
+    scroll-behavior: smooth;
 }
 
 /* Video Overlay */
@@ -95,4 +96,33 @@ html, body {
     padding: 2.5rem;
     position: relative;
     z-index: 3;
+}
+
+body {
+    background: #2d2d37;
+}
+
+.arrow {
+    backface-visibility: hidden;
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+    text-align: center;
+}
+.bounce {
+    animation: arrow-bounce 1.2s infinite alternate;
+}
+
+@keyframes arrow-bounce {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-15px);
+    }
+}
+
+.arrow-tag {
+    color: white;
+    font-size: large;
 }

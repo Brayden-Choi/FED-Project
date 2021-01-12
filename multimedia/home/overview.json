@@ -1,0 +1,22 @@
+﻿{
+  "Gardens by the Bay": {
+    "desc": "Gardens by the Bay",
+    "page": "gardensbythebay.html"
+  },
+  "Singapore Zoo": {
+    "desc": "Singapore Zoo",
+    "page": "zoo.html"
+  }, 
+  "S.E.A. Aquarium": {
+    "desc": "S.E.A. Aquarium",
+    "page": "sea.html"
+  },
+  "Sentosa": {
+    "desc": "Sentosa",
+    "page": "sentosa.html"
+  }, 
+  "Universal Studios": {
+    "desc": "Universal Studios",
+    "page": "uss.html"
+  }
+}

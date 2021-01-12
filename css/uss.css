@@ -1,0 +1,15 @@
+.wrapper {
+    margin: 70px;
+}
+
+.main {
+    font-family: 'Copperplate Gothic';
+    font-weight: bold;
+    font-size: 48px;
+    color: #ffd666;
+    text-align: center;
+}
+.second {
+    color: #c71e1e;
+    text-align: center;
+}
