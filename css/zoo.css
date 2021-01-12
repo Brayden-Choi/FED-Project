@@ -8,16 +8,16 @@ html {
     margin: 100px;
 }
 
-.main {
+.title {
+    position: relative;
     margin-top: 30px;
     padding: 10px;
     text-align: center;
     color:  #0D5510 ;
     font-family: 'Caveat Brush', cursive;
     font-weight: bold;
-    font-size: 60px;
+    font-size: calc(6vh + 6vw);
 }
-
 .header {
     margin-top: 20px;
     padding: 10px;
@@ -43,6 +43,60 @@ h5 {
 
 .dividerline {
     border-top: 2px solid #0D5510;
+}
+
+/*Header*/
+#title {
+    width: auto;
+    z-index: 1;
+}
+/*
+.air-slider {
+    
+}*/
+
+.air-slider .slide {
+    width:100%;
+    height:100%;
+    position: absolute;
+    overflow:hidden;
+    opacity:0;
+    -webkit-transition:1s ease all;
+    transition:1s ease all;
+    background:#ccc
+}
+
+.air-slider .slide img {
+     width:100%;
+     height:100%;
+ }
+
+.air-slider .active-slide {
+    opacity: 0.75;
+}
+
+/*
+.air-slider .controls {
+    width:100%;
+    height:50px;
+    top:calc(50% - 25px);
+    left:0;
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-flex-flow:row nowrap;
+    flex-flow:row nowrap;
+    -webkit-box-pack:justify;
+    -webkit-justify-content:space-between;
+    -ms-flex-pack:justify;
+    justify-content:space-between;
+    position:absolute
+}
+*/
+
+.air-slider .controls button {
+    display: none;
 }
 
 /*About*/  
