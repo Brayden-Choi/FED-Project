@@ -63,7 +63,7 @@
 <script>
     var slider = new airSlider({
         autoPlay: true,
-        autoPlayTime: 3000,
+        autoPlayTime: 5000,
         width: '900px',
         height: '500px'
     });
@@ -90,7 +90,11 @@
         <div id="maingallery"></div>
         <div class="dividerline"></div>
         <section>
-            <h3 class="header">Animals</h3>
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 class="header">Animals</h3>
+                </div>
+            </div>
             <div class="carousel slide slides" data-ride="carousel" id="carouselExampleIndicatorsmain">
                 <ol class="carousel-indicators">
                     <li class="active" data-slide-to="0" data-target="#carouselExampleIndicatorsmain"></li>
@@ -252,7 +256,11 @@
         <div id="ticketandtime"></div>
         <div class="dividerline"></div>
         <section>
-                <h3 class="header">Ticket Prices & Operating Hours</h3>
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 class="header">Ticket Prices & Operating Hours</h3>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-sm-6 d-flex justify-content-center wow animate__fadeInLeft zoom">
                     <table>
@@ -299,9 +307,13 @@
     <div id="location"></div>
     <div class="dividerline"></div>
     <section>
-        <h3 class="header">Getting There</h3>
         <div class="row">
-            <div class="col-sm-6 d-flex justify-content-center">
+            <div class="col-sm-12">
+                <h3 class="header">Getting There</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 address d-flex justify-content-center">
                 <dl>
                     <dt>Address</dt>
                     <dd>80 Mandai Lake Road<br>Singapore 729826</dd>
@@ -313,7 +325,7 @@
 
             </div>
 
-            <div class="col-sm-6 d-flex justify-content-center">
+            <div class="col-sm-6 d-flex map justify-content-center">
                 <iframe allowfullscreen frameborder="0" height="450"
                         src="https://www.google.com/maps/embed/v1/place?q=singapore%20zoo&key=AIzaSyCOqjBghJOcrO9kcN7mWHadj1Q_FLLKZ_k"
                         style="border:0"
@@ -326,7 +338,11 @@
     <div id="videos"></div>
     <div class="dividerline"></div>
     <section>
-        <h3 class="header">Videos</h3>
+        <div class="row">
+            <div class="col-sm-12">
+                <h3 class="header">Videos</h3>
+            </div>
+        </div>
         <div class="row">
             <div class="videowrapper col-sm-6 d-flex justify-content-center wow animate__zoomIn">
                 <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
