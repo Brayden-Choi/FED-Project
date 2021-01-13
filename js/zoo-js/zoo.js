@@ -44,6 +44,3 @@ var _createClass = function () {
         }
     }]), e
 }();
-
-
-

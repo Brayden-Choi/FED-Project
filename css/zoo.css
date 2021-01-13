@@ -387,3 +387,14 @@ dd{
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
+
+.show-text h3 {
+    text-align: center;
+    color: #0D5510;
+    font-size: 4rem;
+    opacity: 1;
+    font-family: 'Caveat Brush', cursive;
+    -webkit-text-stroke-width: 0.1rem;
+    -webkit-text-stroke-color: white;
+    -webkit-text-fill-color: inherit;
+}
