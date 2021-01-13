@@ -1,15 +1,43 @@
 .wrapper {
-    margin: 70px;
+    background-image: url("../multimedia/uss-images/uss-scenery.jpg");
+    background-position: center;
+    background-size: 1300px 761px;
+    height: 400px;
+    margin: 10px;
+    display: block;
+    position: relative;
+    opacity: 0.8;
 }
 
 .main {
+    margin-top: 70px;
     font-family: 'Copperplate Gothic';
-    font-weight: bold;
-    font-size: 48px;
-    color: #ffd666;
+    font-size: 52px;
+    color: white;
     text-align: center;
+    -webkit-text-stroke-color: #c7a761;
+    -webkit-text-stroke-width: 2px;
+    
 }
 .second {
-    color: #c71e1e;
+    color: #dbb247;
     text-align: center;
+    font-family: 'Copperplate Gothic';
+    font-weight: bolder;
+    font-size: 45px;
+}
+
+about {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    
+}
+.bg-text {
+    color: #c7a761;
+    background-color: rgba(0,0,0,0.7);
+    text-align: center;
+    padding: 30px;
+}
+.bg-image {
+    
 }
