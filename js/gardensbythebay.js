@@ -7,8 +7,17 @@ $(document).ready(function () {
     }
     $("#title-text").html(nHTML);
 
+    // Handle video change
+    const vm = new VideoManager();
+    $("#drone-vid-0").on('ended', function () {
+        vm.swap();
+    });
+    $("#drone-vid-1").on('ended', function () {
+        vm.swap();
+    });
+
     // Parallax effect
-    $(window).on('load scroll', function () {
+    $(window).on('load resize scroll', function () {
         var scrolled = $(this).scrollTop();
         $('#title').css({
             'transform': 'translate3d(0, ' + -(scrolled * 0.2) + 'px, 0)', // parallax (20% scroll rate)
@@ -20,15 +29,7 @@ $(document).ready(function () {
         $('#drone-vid-1').css(
             'transform', 'translate3d(0, ' + -(scrolled * 0.25) + 'px, 0)' // parallax (25% scroll rate)
         );
-    });
-
-    // Handle video change
-    const vm = new VideoManager();
-    $("#drone-vid-0").on('ended', function () {
-        vm.swap();
-    });
-    $("#drone-vid-1").on('ended', function () {
-        vm.swap();
+        vm.checkOutOfView();
     });
 
     // Handle section change
@@ -58,6 +59,7 @@ class VideoManager {
     constructor() {
         this.currentVideo = 0
         this.currentShow = 0
+        this.videoOutOfView = false;
 
         $("#drone-vid-0").fadeOut(0)
         $("#drone-vid-1").fadeOut(0)
@@ -65,22 +67,40 @@ class VideoManager {
         $("#drone-vid-0").trigger('play');
         $("#drone-vid-0").fadeIn(2000);
     }
+    
+    getCurrentVideo() {
+        return $("#drone-vid-" + this.currentShow);
+    }
 
     swap() {
         console.log("Video change");
 
-        let endedVideo = $("#drone-vid-" + this.currentShow);
-        endedVideo.trigger("pause");
-        endedVideo.fadeOut(1000);
+        let $endedVideo = this.getCurrentVideo();
+        $endedVideo.trigger("pause");
+        $endedVideo.fadeOut(1000);
 
         this.currentShow = (++this.currentShow) % 2;
-        let nextVideo = $("#drone-vid-" + this.currentShow);
-        nextVideo.attr("src", "multimedia/gardensbythebay/drone-shots/drone_shot_" + (++this.currentVideo) + ".mp4")
-        nextVideo.fadeIn(2000);
+        let $nextVideo = this.getCurrentVideo();
+        $nextVideo.attr("src", "multimedia/gardensbythebay/drone-shots/drone_shot_" + (++this.currentVideo) + ".mp4")
+        $nextVideo.fadeIn(2000);
 
-        nextVideo.trigger('play');
+        $nextVideo.trigger('play');
 
         this.currentVideo %= 4;
+    }
+    
+    checkOutOfView() {
+        const contentInView = $("#content")[0].getBoundingClientRect().top < -10;
+        if (contentInView && !this.videoOutOfView) {
+            this.getCurrentVideo().trigger("pause");
+            this.videoOutOfView = true;
+            console.log("Title video paused.")
+            return;
+        } else if (!contentInView && this.videoOutOfView) {
+            this.getCurrentVideo().trigger("play");
+            this.videoOutOfView = false;
+            console.log("Title video play.")
+        }
     }
 }
 
