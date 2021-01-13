@@ -92,7 +92,7 @@ html, body {
 
 /* Content Styles */
 .content {
-    background-color: white;
+    background-color: black;
     padding: 2.5rem;
     position: relative;
     z-index: 3;
@@ -127,3 +127,54 @@ body {
     color: white;
     font-size: large;
 }
+
+.content-indicators {
+    position: fixed;
+    justify-content: right;
+    color: white;
+    display: block;
+    right: 2vw;
+    top: 23%;
+    z-index: 4;
+}
+
+.content-indicators ol {
+    list-style-type: none;
+}
+
+.indicator {
+    margin: 10px;
+    padding: 10px;
+    height: 12vh;
+    border-right: 5px solid rgba(255, 255, 255, 0.4);
+    transition: height 0.5s, border-right 0.5s;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.indicator:hover {
+    height: 14vh;
+    border-right: 5px solid rgba(255, 255, 255, 0.8);
+}
+
+.active:hover {
+    border-right: 5px solid rgba(255, 255, 255, 1);
+}
+
+.active {
+    border-right: 5px solid rgba(255, 255, 255, 1);
+}
+
+/*
+.indicator:after {
+    margin: 10px;
+    top: 50%;
+    text-align: left;
+    opacity: 0;
+    content: "tickets - ";
+    transition: opacity 0.5s;
+}
+
+.indicator:hover:after {
+    opacity: 1;
+}*/

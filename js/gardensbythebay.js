@@ -1,5 +1,15 @@
+const sections = ["#main"]
+
 $(document).ready(function () {
+    // Cool letter hover
+    var letters = $("#title-text").text();
+    var nHTML = "";
+    for (var letter of letters) {
+        nHTML += "<span class='alter'>" + letter + "</span>";
+    }
+    $("#title-text").html(nHTML);
     
+    // Parallax effect
     $(window).on('load scroll', function () {
         var scrolled = $(this).scrollTop();
         $('#title').css({
@@ -14,22 +24,25 @@ $(document).ready(function () {
         );
     });
 
-    let vm = new VideoManager();
-    
+    // Handle video change
+    const vm = new VideoManager();
     $("#drone-vid-0").on('ended', function () {
         vm.swap();
     });
-
     $("#drone-vid-1").on('ended', function () {
         vm.swap();
     });
+    
+    // Handle section change
+    const sm = new SectionManager("#content-indicators", ["#main", "#main-1", "#main-2", "#main-3"]);
+    sm.indicatorScrollUpdate();
+    $(window).scroll(function () {
+        sm.indicatorScrollUpdate();
+    });
 
-    var letters = $("#title-text").text();
-    var nHTML = "";
-    for (var letter of letters) {
-        nHTML += "<span class='alter'>" + letter + "</span>";
-    }
-    $("#title-text").html(nHTML);
+    $('#content-indicators li').click(function (event) {
+        sm.indicatorClick(event.target);
+    });
 });
 
 class VideoManager {
@@ -59,5 +72,57 @@ class VideoManager {
         nextVideo.trigger('play');
 
         this.currentVideo %= 4;
+    }
+}
+
+class SectionManager {
+    constructor(indicators, sections) {
+        this.$indicators = $(indicators);
+        this.sections = sections;
+        this.currentSectionIndex = -1;
+        this.$indicators.hide()
+    }
+
+    updateCurrentSection() {
+        let currentY = $(window).scrollTop();
+        let index = 0;
+        for (let section of sections) {
+            if ($(section).position().top - currentY <= 0) {
+                this.currentSectionIndex = index;
+                return;
+            }
+            index++;
+        }
+        this.currentSectionIndex = -1;
+    }
+
+    setActive() {
+        if (this.currentSectionIndex === -1) {
+            this.$indicators.fadeOut(400);
+            return;
+        }
+        
+        if (!this.$indicators.is(":visible")) {
+            this.$indicators.fadeIn(400);
+        }
+        
+        for (let indicator of this.$indicators.find("li")) {
+            if ($(indicator).index() == this.currentSectionIndex) {
+                $(indicator).addClass("active");
+                continue;
+            }
+            $(indicator).removeClass("active");
+        }
+    }
+    
+    indicatorClick(indicator) {
+        let index = $(indicator).index();
+        console.log("Clicked on:", index)
+        window.open(this.sections[index], "_self");
+    }
+
+    indicatorScrollUpdate() {
+        this.updateCurrentSection();
+        this.setActive();
     }
 }
