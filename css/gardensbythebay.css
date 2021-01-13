@@ -93,7 +93,6 @@ html, body {
 /* Content Styles */
 .content {
     background-color: black;
-    padding: 2.5rem;
     position: relative;
     z-index: 3;
 }
@@ -137,7 +136,7 @@ body {
     color: white;
     display: block;
     right: 2vw;
-    top: 23%;
+    top: 25%;
     z-index: 4;
 }
 

@@ -1,5 +1,3 @@
-const sections = ["#main"]
-
 $(document).ready(function () {
     // Cool letter hover
     var letters = $("#title-text").text();
@@ -34,7 +32,7 @@ $(document).ready(function () {
     });
     
     // Handle section change
-    const sm = new SectionManager("#content-indicators", ["#main", "#main-1", "#main-2", "#main-3"]);
+    const sm = new SectionManager("#content-indicators", ["#main", "#main-1"]);
     sm.indicatorScrollUpdate();
     $(window).scroll(function () {
         sm.indicatorScrollUpdate();
@@ -85,20 +83,24 @@ class SectionManager {
 
     updateCurrentSection() {
         let currentY = $(window).scrollTop();
-        let index = 0;
-        for (let section of sections) {
-            if ($(section).position().top - currentY <= 0) {
+        let index = -1;
+        for (let section of this.sections) {
+            console.log($(section).offset().top - currentY)
+            if ($(section).offset().top - currentY > 10) {
                 this.currentSectionIndex = index;
                 return;
             }
             index++;
         }
-        this.currentSectionIndex = -1;
+        this.currentSectionIndex = index;
     }
 
     setActive() {
+        console.log("Currently at section: ", this.currentSectionIndex);
+        
         if (this.currentSectionIndex === -1) {
             this.$indicators.fadeOut(400);
+            console.log("Disappear");
             return;
         }
         
