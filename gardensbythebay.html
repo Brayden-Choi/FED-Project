@@ -9,11 +9,12 @@
     <meta content="Gardens By The Bay" name="description"/>
     <meta content="Benedict Woo" name="author"/>
     <title>Gardens By The Bay</title>
+    <link href="multimedia/favicons/gardensbythebay.png" rel="shortcut icon" type="image/png"/>
 
     <!-- Common dependencies -->
     <script src="js/common-js/jquery-3.3.1.min.js"></script>
     <link href="css/common-css/bootstrap.min.css" rel="stylesheet">
-    <script src="js/common-js/bootstrap.min.js"></script>
+    <script src="js/common-js/bootstrap.bundle.min.js"></script>
     <script src="js/common-js/common.js"></script>
 
     <!-- Other dependencies -->
@@ -22,14 +23,62 @@
 </head>
 
 <body>
+<!-- Attractions Modal -->
+<div aria-hidden="true" aria-labelledby="attractionsModalLabel" class="modal fade" id="attractionsModal" role="dialog"
+     tabindex="-1">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="attractionsModalLabel">Modal title</h5>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal" type="button">Close</button>
+                <button class="btn btn-primary" type="button">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div content="Gardens By The Bay" id="header" type="white"></div>
 
+<div class="content-indicators">
+    <ol id="content-indicators">
+        <li class="indicator">
+            <div class="indicator-hover">
+                <p class="indicator-hover-text">Attractions</p>
+            </div>
+        </li>
+        <li class="indicator">
+            <div class="indicator-hover">
+                <p class="indicator-hover-text">Gallery</p>
+            </div>
+        </li>
+        <li class="indicator">
+            <div class="indicator-hover">
+                <p class="indicator-hover-text">Map</p>
+            </div>
+        </li>
+        <li class="indicator">
+            <div class="indicator-hover">
+                <p class="indicator-hover-text">Tickets</p>
+            </div>
+        </li>
+    </ol>
+</div>
+
 <div class="video-overlay">
+
     <div id="title">
         <h1 id="title-text">Gardens by the Bay</h1>
     </div>
     <div class="arrow bounce">
-        <a class="arrow-tag" href="#main"><img src="multimedia/gardensbythebay/arrow-down.svg" alt="Arrow down"></a>
+        <a href="#main"><img alt="Arrow down" class="arrow-image" src="multimedia/gardensbythebay/arrow-down.svg"></a>
     </div>
     <video class="video-frame" id="drone-vid-1" muted playsinline preload>
         <source src="multimedia/gardensbythebay/drone-shots/drone_shot_1.mp4" type="video/mp4">
@@ -39,23 +88,78 @@
     </video>
 </div>
 
-<a id="main"></a>
-<div class="content">
-    <div class="card">
-        <img
-                src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
-                class="card-img-top"
-                alt="..."
-        />
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-                Some quick example text to build on the card title and make up the bulk of the
-                card's content.
-            </p>
-            <a href="#!" class="btn btn-primary">Button</a>
+<div class="content container-fluid">
+    <div class="section" id="main">
+        <div class="card-deck ml-3 mr-3">
+            <div class="card">
+                <img alt="..." class="card-img-top" src="multimedia/home/overview-slides/gardensbythebay.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            <div class="card">
+                <img alt="..." class="card-img-top" src="multimedia/home/overview-slides/zoo.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional
+                        content.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            <div class="card">
+                <img alt="..." class="card-img-top" src="multimedia/home/overview-slides/gardensbythebay.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                        additional content. This card has even longer content than the first to show that equal
+                        height
+                        action.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+        </div>
+        <div class="card-deck mt-4 ml-3 mr-3">
+            <div class="card">
+                <img alt="..." class="card-img-top" src="multimedia/home/overview-slides/gardensbythebay.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            <div class="card">
+                <img alt="..." class="card-img-top" src="multimedia/home/overview-slides/zoo.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional
+                        content.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            <div class="card">
+                <img alt="..." class="card-img-top" src="multimedia/home/overview-slides/gardensbythebay.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                        additional content. This card has even longer content than the first to show that equal
+                        height
+                        action.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
         </div>
     </div>
+
+    <div id="main-1">
+    </div>
+    <!-- Button trigger modal -->
+    <button class="btn btn-primary" data-target="#attractionsModal" data-toggle="modal" type="button">
+        Launch demo modal
+    </button>
 </div>
 </body>
 

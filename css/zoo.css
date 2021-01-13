@@ -5,28 +5,40 @@ html {
 }
 
 .wrapper {
-    margin: 100px;
+    margin-top: 50vh;
+    margin-right: 10vh;
+    margin-left: 10vh;
+    z-index: 10;
 }
 
 .title {
     z-index: 3;
     width: 100%;
     position: absolute;
-    top: 50px;
     padding: 10px;
+    margin-top: 35vh;
     text-align: center;
     color:  #0D5510 ;
+   /* color: white;*/
     font-family: 'Caveat Brush', cursive;
     font-weight: bold;
-    font-size: calc(6vh + 6vw);
+    font-size: 10rem;
+    /*text-decoration: underline overline;*/
+    -webkit-text-stroke-width: 0.3px;
+    -webkit-text-stroke-color: white;
+    -webkit-text-fill-color: inherit;
 }
+
 .header {
     margin-top: 20px;
-    padding: 10px;
+    padding: 5px;
     text-align: center;
-    color:  #0D5510 ;
+    /*color:  #0D5510 ;*/
+    color: white;
     font-family: 'Caveat Brush', cursive;
-    font-size: 60px;
+    font-size: 4rem;
+    z-index: 3;
+    background-color: rgba(0,0,0,0.6);
 }
 
 h5 {
@@ -34,34 +46,36 @@ h5 {
     text-align: center;
     color: black;
     background: rgba(255, 255, 255, 0.5);
-    font-size: 45px;
+    font-size: 1.8rem;
     font-family: 'Caveat Brush', cursive;
 }
 
 .slides {
-    margin: 50px;
-    z-index: 1;
+    padding: 5rem;
+    z-index: 2;
 }
 
 .dividerline {
-    border-top: 2px solid #0D5510;
+    border-top: 5px solid #0D5510;
+    opacity: 1;
 }
 
 /*Header*/
 .air-slider {
     width: auto;
-    z-index: 1;
+    z-index: -10;
 }
 
 .air-slider .slide {
     width:100%;
     height:100%;
-    position: absolute;
+    position: fixed;
     overflow:hidden;
     opacity:0;
-    -webkit-transition:1s ease all;
-    transition:1s ease all;
-    background:#ccc
+    -webkit-transition:3s ease all;
+    transition:3s ease all;
+    background:#ccc;
+    z-index:0;
 }
 
 .air-slider .slide img {
@@ -70,7 +84,7 @@ h5 {
  }
 
 .air-slider .active-slide {
-    opacity: 0.75;
+    opacity: 0.7;
 }
 
 /*
@@ -98,6 +112,12 @@ h5 {
 }
 
 /*About*/  
+#about {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
 
 .about {
     font-size: 60px;
@@ -106,27 +126,21 @@ h5 {
 }
 
 .about-text{
-    font-size: 35px;
+    font-size: 2.5rem;
     font-family: 'Caveat Brush', cursive;
 }
 
-/*Main Gallery*/
-
-#maingallery {
-    padding-bottom: 5%;
-}
-
 .bg-image {
-    background-image: url("../multimedia/zoo-images/main_entrance2.jpg");
+    background-image: url("../multimedia/zoo-images/forest.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    background-size: 1300px 761px;
+    background-size: 95rem 60rem;
     height: 761px;
     margin: 10px;
     display: block;
     position: relative;
-    opacity: 0.8;
+    opacity: 1;
 }
 
 @media (max-width: 850px ){
@@ -137,34 +151,84 @@ h5 {
         display: none;
     }
 }
-
 .bg-text {
     background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0,0,0,0.6);
     height: 504px;
-    width: 1300px;
+    /*width: 1300px;*/
     padding: 80px;
     font-family: 'Caveat Brush', cursive;
     font-weight: bold;
     text-align: center;
     position: relative;
-    z-index: 2;
+    z-index: 4;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
 }
 
+
+/*Main Gallery*/
+
+#maingallery {
+    background-image: url("../multimedia/zoo-images/blackleopard.jpg");
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 30rem 30rem;
+    width: 100%;
+    height: 100%;
+    margin: 10px;
+    display: inline-block;
+    position: relative;
+    opacity: 1;
+}
+
+/*.bg-animal {
+    background-image: url("../multimedia/zoo-images/blackleopard.jpg");
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 2000px 800px;
+    width: 100%;
+    height: 800px;
+    margin: 10px;
+    position: relative;
+    opacity: 1;
+    z-index: 0;
+}*/
+
 /*Zone Gallery*/
 #zonegallery {
-    padding-bottom: 5%;
+    background-image: url("../multimedia/zoo-images/blackzebra.jpg");
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 15rem 8rem;
+    width: 100%;
+    height: 800px;
+    margin: 10px;
+    display: inline-block;
+    position: relative;
+    opacity: 1;
 }
 
 .zone-text {
     text-align: center;
-    color: #0D5510;
+    color: white;
     font-family: 'Caveat Brush', cursive;
-    font-size: 35px;
+    font-size: 2.2rem;
+    background-color: rgba(0,0,0,0.6);
+    padding: 3rem;
+    margin: 3rem 3rem 3rem;
+    width: auto;
+}
+
+video {
+    height: 40vh;
+    width: 40vw;
+    margin-top: 3rem;
 }
 
 /*Ticket Prices & Operating Hours*/
@@ -172,22 +236,49 @@ h5 {
     padding-bottom: 5%;
 }
 
-table {
+.ticket-table {
     font-family: 'Caveat Brush', cursive;
     text-align: center;
     border-collapse: collapse;
-    font-size: 30px;
+    font-size: 2.1rem;
+    margin-top: 3rem;
+    color: white;
+    background-color: rgba(0,0,0,0.6);
 }
 
-tr, th, td {
+.hours-table {
+    font-family: 'Caveat Brush', cursive;
+    text-align: center;
+    border-collapse: collapse;
+    font-size: 2.1rem;
+    margin-top: 3rem;
+    color: white;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.ticket-table tr,.ticket-table th,.ticket-table td {
     border: solid black;
-    padding: 40px;
+    padding: 5vh;
 }
 
-.tablehead {
+.hours-table tr,.hours-table th,.hours-table td {
+    border: solid black;
+    padding: 5.4vh;
+}
+
+.ticket-table .tablehead {
     background-color: #0D5510;
     color: white;
-    font-size: 40px;
+    font-size: 3rem;
+    padding: 6vh;
+}
+
+.hours-table .tablehead {
+    background-color: #0D5510;
+    color: white;
+    font-size: 3rem;
+    /*padding: 6vh;*/
+    padding: 0;
 }
 
 .animated {
@@ -196,24 +287,43 @@ tr, th, td {
     animation-delay: 0.2s;
 }
 
+.zoom:hover {
+    transform: scale(1.04);
+}
+
 /*Getting There*/
 #location {
     padding-bottom: 5%;
 }
 
- #location dt{
-    padding: 10px;
-    text-align: center;
-    color: #0D5510;
-    font-size: 30px;
-    font-family: 'Caveat Brush', cursive;
+.address {
+    width: 100%;
+    position: relative;
+    background-color: rgba(0,0,0,0.6);
+    margin-top: 3rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    margin-left: 3rem;
 }
 
-#location dd{
-    padding: 10px;
+.map {
+    margin-top: 3rem;
+}
+
+dt{
     text-align: center;
-    color: black;
-    font-size: 25px;
+    color: #0D5510;
+    font-size: 2.6rem;
+    font-family: 'Caveat Brush', cursive;
+    -webkit-text-stroke-width: 0.1px;
+    -webkit-text-stroke-color: white;
+    -webkit-text-fill-color: inherit;
+ }
+
+dd{
+    text-align: center;
+    color: white;
+    font-size: 1.8rem;
     font-family: 'Caveat Brush', cursive;
 }
 
@@ -229,4 +339,64 @@ tr, th, td {
     height: auto;
     padding-top: 5%;
     padding-bottom: 5%;
+}
+
+
+/*Shows*/
+#shows {
+    padding-bottom: 5%;
+}
+
+.show-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.image {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.7);
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: 0.7s ease;
+}
+
+.show-container:hover .overlay {
+    height: 100%;
+}
+
+.show-text {
+    text-align: center;
+    color: white;
+    font-family: 'Caveat Brush', cursive;
+    font-size: 2.2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.show-text h3 {
+    text-align: center;
+    color: #0D5510;
+    font-size: 4rem;
+    opacity: 1;
+    font-family: 'Caveat Brush', cursive;
+    -webkit-text-stroke-width: 0.1rem;
+    -webkit-text-stroke-color: white;
+    -webkit-text-fill-color: inherit;
 }

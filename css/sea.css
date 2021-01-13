@@ -5,7 +5,7 @@
 }
 
 .page-wrapper {
-    padding-top: 100px;
+    padding-top: 25px;
 }
 
 .welcome-text {
@@ -19,7 +19,24 @@
 .about-text {
     font-size: 50px;
     color: white;
-    padding-top: 500px;
+    position: relative;
+    padding-top: 100px;
+    padding-left: 400px;
+}
+
+h1 span {
+    background-color: black;
+}
+
+.about-information-text {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    position: center;
+    padding-top: 200px;
+    padding-left: 100px;
+    padding-right: 100px;
+    
 }
 
 .welcome-img {
@@ -33,6 +50,30 @@
 }
 
 .about {
-    background-color: burlywood;
+    background-color: #baac79;
     height: 870px;
+}
+
+.about-img {
+    background-image: url("../multimedia/sea-images/sea-logo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 400px;
+    margin: 10px;
+    display: block;
+    position: relative;
+    padding-top: 100px;
+}
+
+.carousel-slide {
+    display: flex;
+    -webkit-overflow-scrolling: touch;
+}
+
+.carousel-image {
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 800px;
+    width: 400px;
+    margin: 10px;
 }
