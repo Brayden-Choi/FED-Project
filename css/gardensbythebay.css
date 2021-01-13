@@ -95,9 +95,13 @@ html, body {
 
 /* Content Styles */
 .content {
-    background-color: black;
-    position: relative;
+    background-color: white;
+    position: absolute;
     z-index: 3;
+}
+
+.section {
+    padding-top: 75px;
 }
 
 body {
