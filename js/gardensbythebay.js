@@ -118,7 +118,20 @@ class SectionManager {
     }
     
     indicatorClick(indicator) {
-        let index = $(indicator).index();
+        let $indicator = $(indicator);
+        if ($indicator.hasClass("indicator-hover")) {
+            $indicator = $($indicator.parent());
+        }
+        if ($indicator.hasClass("indicator-hover-text")) {
+            $indicator = $($indicator.parent().parent());
+        }
+        
+        if (!$indicator.hasClass("indicator")) {
+            console.log("Not an indicator:", $indicator);
+            return;
+        }
+        
+        let index = $indicator.index();
         console.log("Clicked on:", index)
         window.open(this.sections[index], "_self");
     }
