@@ -351,8 +351,10 @@ dd{
 
 .image {
     display: block;
+    overflow: hidden;
     width: 100%;
-    height: auto;
+    height: 400px;
+    object-fit: cover;
 }
 
 .overlay {
