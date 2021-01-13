@@ -37,10 +37,18 @@ $(document).ready(function () {
     $(window).scroll(function () {
         sm.indicatorScrollUpdate();
     });
-
     $('#content-indicators li').click(function (event) {
         sm.indicatorClick(event.target);
     });
+    
+    // Load attraction cards
+    const am = new AttractionManager("#attractionCards", "#attractionsModal");
+    const filePath = "multimedia/gardensbythebay/attractions.json";
+    $.getJSON(filePath).then(function (data) {
+        am.loadData(data);
+    }).fail(function () {
+        console.log("Unable to load file: " + filePath);
+    })
 });
 
 class VideoManager {
@@ -135,5 +143,38 @@ class SectionManager {
     indicatorScrollUpdate() {
         this.updateCurrentSection();
         this.setActive();
+    }
+}
+
+
+class AttractionManager {
+    constructor(cardsId, modalId) {
+        this.$cardCollection = $(cardsId);
+        this.$modalView = $(modalId);
+        this.data = {};
+    }
+
+    loadData(data) {
+        this.data = data;
+        
+        let index = 0;
+        for (const singleData of this.data) {
+            this.$cardCollection.append(this.buildPreviewCard(singleData, index))
+            console.log("Added card data:", singleData);
+            index++;
+        }
+    }
+    
+    buildPreviewCard(cardData, index) {
+        return `
+        <div class="card">
+            <img alt="..." class="card-img-top" src="${cardData.previewImage}">
+            <div class="card-body">
+                <h5 class="card-title">${cardData.name}</h5>
+                <p class="card-text">${cardData.previewText}</p>
+                <button class="btn btn-primary" data-target="#attractionsModal" data-toggle="modal" type="button" data-index="${index}">learn more!</button>
+            </div>
+        </div>
+        `;
     }
 }
