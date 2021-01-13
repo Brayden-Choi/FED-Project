@@ -49,6 +49,9 @@ $(document).ready(function () {
     }).fail(function () {
         console.log("Unable to load file: " + filePath);
     })
+    $('#attractionsModal').on('show.bs.modal', function (event) {
+        am.setModalData($(event.relatedTarget).data('index'))
+    })
 });
 
 class VideoManager {
@@ -152,6 +155,10 @@ class AttractionManager {
         this.$cardCollection = $(cardsId);
         this.$modalView = $(modalId);
         this.data = {};
+    }
+    
+    setModalData(targetIndex) {
+        console.log("Set modal data for index:", targetIndex);
     }
 
     loadData(data) {
