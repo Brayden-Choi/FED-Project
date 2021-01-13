@@ -343,7 +343,7 @@ dd{
     padding-bottom: 5%;
 }
 
-.container {
+.show-container {
     position: relative;
     width: 100%;
     height: auto;
@@ -367,7 +367,7 @@ dd{
     transition: 0.7s ease;
 }
 
-.container:hover .overlay {
+.show-container:hover .overlay {
     height: 100%;
 }
 
