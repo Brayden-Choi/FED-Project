@@ -51,7 +51,7 @@ h5 {
 }
 
 .slides {
-    margin: 50px;
+    margin-top: 3rem;
     z-index: 2;
 }
 
@@ -172,28 +172,46 @@ h5 {
 /*Main Gallery*/
 
 #maingallery {
-    padding-bottom: 5%;
+    background-image: url("../multimedia/zoo-images/blackleopard.jpg");
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 30rem 20rem;
+    width: 100%;
+    height: 800px;
+    margin: 10px;
+    display: inline-block;
+    position: relative;
+    opacity: 1;
 }
-/*
 
-.bg-animal {
-    background-image: url("../multimedia/zoo-images/wallpaper2.jpg");
+/*.bg-animal {
+    background-image: url("../multimedia/zoo-images/blackleopard.jpg");
     background-repeat: repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: 2000px 800px;
+    width: 100%;
     height: 800px;
     margin: 10px;
-    display: block;
     position: relative;
     opacity: 1;
     z-index: 0;
-}
-*/
+}*/
 
 /*Zone Gallery*/
 #zonegallery {
-    padding-bottom: 5%;
+    background-image: url("../multimedia/zoo-images/blackzebra.jpg");
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 15rem 8rem;
+    width: 100%;
+    height: 800px;
+    margin: 10px;
+    display: inline-block;
+    position: relative;
+    opacity: 1;
 }
 
 .zone-text {
@@ -203,9 +221,13 @@ h5 {
     font-size: 2.2rem;
     background-color: rgba(0,0,0,0.6);
     padding: 2rem;
+    margin-top: 3rem;
+    width: auto;
 }
 
-
+video {
+    margin-top: 3rem;
+}
 
 /*Ticket Prices & Operating Hours*/
 #ticketandtime {
@@ -234,25 +256,26 @@ h5 {
 
 .ticket-table tr,.ticket-table th,.ticket-table td {
     border: solid black;
-    padding: 2rem;
+    padding: 5vh;
 }
 
 .hours-table tr,.hours-table th,.hours-table td {
     border: solid black;
-    padding: 2.25rem;
+    padding: 5.4vh;
 }
 
 .ticket-table .tablehead {
     background-color: #0D5510;
     color: white;
     font-size: 3rem;
-    padding: 2.2rem;
+    padding: 6vh;
 }
 
 .hours-table .tablehead {
     background-color: #0D5510;
     color: white;
     font-size: 3rem;
+    /*padding: 6vh;*/
     padding: 0;
 }
 

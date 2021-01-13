@@ -88,9 +88,9 @@
         </section>
 
         <!-- Main Gallery -->
-        <div id="maingallery"></div>
+        <div ></div>
         <div class="dividerline"></div>
-        <section>
+        <section id="maingallery">
             <div class="row">
                 <div class="col-sm-12">
                     <h3 class="header">Animals</h3>
@@ -175,9 +175,9 @@
       
 
         <!-- Zone Gallery -->
-        <div id="zonegallery"></div>
+        <div></div>
         <div class="dividerline"></div>
-        <section>
+        <section id="zonegallery">
             <div class="row">
                 <div class="col-sm-12">
                     <h3 class="header">Zones</h3>
@@ -188,8 +188,23 @@
                     <p>From Australasia to Wild Africa, the Singapore Zoo has zones that replicate diverse animal
                         habitats around the world.</p>
                 </div>
-
-                <div class="col-sm-8">
+                <div class="video col-sm-8 align-self-center">
+                    <video width="690" height="390" loop>
+                        <source src="multimedia/zoo-images/Singapore Zoo_ World's Best Rainforest Zoo.mp4" type="video/mp4">
+                    </video>
+                </div>
+                
+                <!--
+                <div class="video">
+                    <video class="thevideo" loop preload="none">
+                      <source src="https://giant.gfycat.com/VerifiableTerrificHind.mp4" type="video/mp4">
+                      <source src="https://giant.gfycat.com/VerifiableTerrificHind.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                    </video>
+                  </div>
+                  Hover mouse over video. Desktop only [ Obviously! ;) ]
+                </div>-->
+                <!--<div class="col-sm-8">
                     <div class="carousel slide slides" data-ride="carousel" id="carouselExampleIndicatorszone">
                         <ol class="carousel-indicators">
                             <li class="active" data-slide-to="0" data-target="#carouselExampleIndicatorszone"></li>
@@ -249,8 +264,20 @@
                             <span class="sr-only">Next</span>
                         </a>
                     </div>
-                </div>
+                </div>-->
             </div>
+            <!--/*Zone video js*/-->
+            <script>
+                var figure = $(".video").hover( hoverVideo, hideVideo );
+
+                function hoverVideo(e) {
+                    $('video', this).get(0).play();
+                }
+
+                function hideVideo(e) {
+                    $('video', this).get(0).pause();
+                }
+            </script>
         </section>
         
 
@@ -346,10 +373,9 @@
             </div>
             <div class="row">
                 <div class="videowrapper col-sm-6 d-flex justify-content-center wow animate__zoomIn">
-                    <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen frameborder="0" height="315"
-                            src="https://www.youtube.com/embed/1Md_5R_69zg"
-                            width="560"></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/E9HoDaItB80" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
                 </div>
     
                 <div class="videowrapper col-sm-6 d-flex justify-content-center wow animate__zoomIn">
