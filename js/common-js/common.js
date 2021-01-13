@@ -1,4 +1,19 @@
-﻿// Add header styles
+﻿function isElementInViewport(el) {
+    // Special bonus for those using jQuery
+    if (typeof jQuery === "function" && el instanceof jQuery) {
+        el = el[0];
+    }
+
+    var rect = el.getBoundingClientRect();
+    
+    return (
+        $(el).is(":visible") &&
+        rect.bottom >= 0 &&
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight)
+    );
+}
+
+// Add header styles
 let head = document.getElementById("head");
 
 let headerCSS = document.createElement("link");
@@ -101,5 +116,23 @@ $(document).ready(function () {
 
     $(window).scroll(function () {
         navManager.addNavShadow();
+    });
+    
+    // Stop video if out of view
+    $(window).on('resize scroll', function () {
+        for (let video of $('video')) {
+            const $video = $(video);
+            if (isElementInViewport($video)) {
+                if (video.paused) {
+                    console.log("video play.", video.id)
+                    $video.trigger("play");
+                }
+            } else {
+                if (!video.paused) {
+                    console.log("video paused.", video.id)
+                    $video.trigger("pause");
+                }
+            }
+        }
     });
 });

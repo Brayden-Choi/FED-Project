@@ -85,7 +85,6 @@ class SectionManager {
         let currentY = $(window).scrollTop();
         let index = -1;
         for (let section of this.sections) {
-            console.log($(section).offset().top - currentY)
             if ($(section).offset().top - currentY > 10) {
                 this.currentSectionIndex = index;
                 return;
@@ -96,11 +95,8 @@ class SectionManager {
     }
 
     setActive() {
-        console.log("Currently at section: ", this.currentSectionIndex);
-        
         if (this.currentSectionIndex === -1) {
             this.$indicators.fadeOut(400);
-            console.log("Disappear");
             return;
         }
         
