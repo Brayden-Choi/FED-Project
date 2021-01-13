@@ -195,3 +195,15 @@ body {
 .active {
     border-right: 5px solid rgba(255, 255, 255, 1);
 }
+
+@media (max-width: 922px) {
+    .card-columns {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 512px) {
+    .card-columns {
+        column-count: 1;
+    }
+}
