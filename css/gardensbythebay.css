@@ -142,7 +142,7 @@ body {
     justify-content: right;
     color: white;
     display: block;
-    right: 2vw;
+    right: 0.7vw;
     top: 25%;
     z-index: 4;
 }
@@ -154,7 +154,7 @@ body {
 .indicator {
     margin: 10px;
     height: 12vh;
-    border-right: 5px solid rgba(255, 255, 255, 0.4);
+    border-right: 5px solid rgba(0, 0, 0, 0.4);
     transition: height 0.5s, border-right 0.5s;
     vertical-align: middle;
 }
@@ -180,20 +180,20 @@ body {
     padding: 4px 8px;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 5px;
-    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
 }
 
 .indicator:hover {
     height: 14vh;
-    border-right: 5px solid rgba(255, 255, 255, 0.7);
+    border-right: 5px solid rgba(0, 0, 0, 0.7);
 }
 
 .active:hover {
-    border-right: 5px solid rgba(255, 255, 255, 1);
+    border-right: 5px solid rgba(0, 0, 0, 1);
 }
 
 .active {
-    border-right: 5px solid rgba(255, 255, 255, 1);
+    border-right: 5px solid rgba(0, 0, 0, 1);
 }
 
 @media (max-width: 922px) {
