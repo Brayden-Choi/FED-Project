@@ -6,7 +6,7 @@ $(document).ready(function () {
         nHTML += "<span class='alter'>" + letter + "</span>";
     }
     $("#title-text").html(nHTML);
-    
+
     // Parallax effect
     $(window).on('load scroll', function () {
         var scrolled = $(this).scrollTop();
@@ -30,7 +30,7 @@ $(document).ready(function () {
     $("#drone-vid-1").on('ended', function () {
         vm.swap();
     });
-    
+
     // Handle section change
     const sm = new SectionManager("#content-indicators", ["#main", "#main-1"]);
     sm.indicatorScrollUpdate();
@@ -40,7 +40,7 @@ $(document).ready(function () {
     $('#content-indicators li').click(function (event) {
         sm.indicatorClick(event.target);
     });
-    
+
     // Load attraction cards
     const am = new AttractionManager("#attractionCards", "#attractionsModal");
     const filePath = "multimedia/gardensbythebay/attractions.json";
@@ -68,16 +68,16 @@ class VideoManager {
 
     swap() {
         console.log("Video change");
-        
+
         let endedVideo = $("#drone-vid-" + this.currentShow);
         endedVideo.trigger("pause");
         endedVideo.fadeOut(1000);
-        
+
         this.currentShow = (++this.currentShow) % 2;
         let nextVideo = $("#drone-vid-" + this.currentShow);
         nextVideo.attr("src", "multimedia/gardensbythebay/drone-shots/drone_shot_" + (++this.currentVideo) + ".mp4")
         nextVideo.fadeIn(2000);
-        
+
         nextVideo.trigger('play');
 
         this.currentVideo %= 4;
@@ -110,11 +110,11 @@ class SectionManager {
             this.$indicators.fadeOut(400);
             return;
         }
-        
+
         if (!this.$indicators.is(":visible")) {
             this.$indicators.fadeIn(400);
         }
-        
+
         for (let indicator of this.$indicators.find("li")) {
             if ($(indicator).index() == this.currentSectionIndex) {
                 $(indicator).addClass("active");
@@ -123,7 +123,7 @@ class SectionManager {
             $(indicator).removeClass("active");
         }
     }
-    
+
     indicatorClick(indicator) {
         let $indicator = $(indicator);
         if ($indicator.hasClass("indicator-hover")) {
@@ -132,12 +132,12 @@ class SectionManager {
         if ($indicator.hasClass("indicator-hover-text")) {
             $indicator = $($indicator.parent().parent());
         }
-        
+
         if (!$indicator.hasClass("indicator")) {
             console.log("Not an indicator:", $indicator);
             return;
         }
-        
+
         let index = $indicator.index();
         console.log("Clicked on:", index)
         window.open(this.sections[index], "_self");
@@ -153,17 +153,23 @@ class SectionManager {
 class AttractionManager {
     constructor(cardsId, modalId) {
         this.$cardCollection = $(cardsId);
+        this.modalId = modalId;
         this.$modalView = $(modalId);
         this.data = {};
     }
-    
+
     setModalData(targetIndex) {
+        const targetData = this.data[targetIndex];
+        
+        $(this.modalId + "-title").text(targetData.name);
+        $(this.modalId + "-body").text(targetData.detailText);
+        
         console.log("Set modal data for index:", targetIndex);
     }
 
     loadData(data) {
         this.data = data;
-        
+
         let index = 0;
         for (const singleData of this.data) {
             this.$cardCollection.append(this.buildPreviewCard(singleData, index))

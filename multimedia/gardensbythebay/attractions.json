@@ -2,31 +2,37 @@
   {
     "name": "FLOWER DOME",
     "previewImage": "multimedia/home/overview-slides/gardensbythebay.jpg",
-    "previewText": "Enter a world of perpeptual spring, where unique plants bloom."
+    "previewText": "Enter a world of perpeptual spring, where unique plants bloom.",
+    "detailText": "Amazing"
   },
   {
     "name": "CLOUD FOREST",
     "previewImage": "multimedia/home/overview-slides/gardensbythebay.jpg",
-    "previewText": "Step into a realm high in the mountains."
+    "previewText": "Step into a realm high in the mountains.",
+    "detailText": "Amazing"
   },
   {
     "name": "FLORAL FANTASY",
     "previewImage": "multimedia/home/overview-slides/gardensbythebay.jpg",
-    "previewText": "A brand new exhibit featuring garden landscapes of floral artistry and a 4D multimedia ride."
+    "previewText": "A brand new exhibit featuring garden landscapes of floral artistry and a 4D multimedia ride.",
+    "detailText": "Amazing"
   },
   {
     "name": "WORLD OF PLANTS",
     "previewImage": "multimedia/home/overview-slides/gardensbythebay.jpg",
-    "previewText": "Explore a beautiful botanical world that’s intriguing and always full of surprises."
+    "previewText": "Explore a beautiful botanical world that’s intriguing and always full of surprises.",
+    "detailText": "Amazing"
   },
   {
     "name": "HERITAGE GARDENS",
     "previewImage": "multimedia/home/overview-slides/gardensbythebay.jpg",
-    "previewText": "Bringing the history of Singapore to life through the fascinating story of plants."
+    "previewText": "Bringing the history of Singapore to life through the fascinating story of plants.",
+    "detailText": "Amazing"
   },
   {
     "name": "ART SCULPTURES",
     "previewImage": "multimedia/home/overview-slides/gardensbythebay.jpg",
-    "previewText": "Connecting people with the stories of plants and the world at large."
+    "previewText": "Connecting people with the stories of plants and the world at large.",
+    "detailText": "Amazing"
   }
 ]
