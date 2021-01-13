@@ -8,7 +8,7 @@
     <!-- Meta info -->
     <meta content="Singapore Zoo Webpage" name="description"/>
     <meta content="Elsa Lee" name="author"/>
-    <title>Singapore Zoo Webpage</title>
+    <title>Singapore Zoo</title>
     <link rel="shortcut icon" type="image/png" href="multimedia/favicons/zoo.png"/>
 
     <!-- Common dependencies -->
@@ -73,7 +73,7 @@
 <div class="container-fluid">
     <div class="wrapper">
         <div class="dividerline"></div>
-        
+
         <!-- About -->
         <section id="about">
             <div class="bg-image">
@@ -88,7 +88,7 @@
         </section>
 
         <!-- Main Gallery -->
-        <div ></div>
+        <div></div>
         <div class="dividerline"></div>
         <section id="maingallery">
             <div class="row">
@@ -172,7 +172,7 @@
             </div>
             <br>
         </section>
-      
+
 
         <!-- Zone Gallery -->
         <div></div>
@@ -189,11 +189,12 @@
                         habitats around the world.</p>
                 </div>
                 <div class="col-sm-7 d-flex justify-content-center align-self-center">
-                    <video width="690" height="390" autoplay preload loop>
-                        <source src="multimedia/zoo-images/Singapore Zoo_ World's Best Rainforest Zoo.mp4" type="video/mp4">
+                    <video loop>
+                        <source src="multimedia/zoo-images/Singapore Zoo_ World's Best Rainforest Zoo.mp4"
+                                type="video/mp4">
                     </video>
                 </div>
-                
+
                 <!--
                 <div class="video">
                     <video class="thevideo" loop preload="none">
@@ -268,7 +269,7 @@
             </div>
             <!--/*Zone video js*/-->
             <script>
-                var figure = $(".video").hover( hoverVideo, hideVideo );
+                var figure = $(".video").hover(hoverVideo, hideVideo);
 
                 function hoverVideo(e) {
                     $('video', this).get(0).play();
@@ -279,7 +280,7 @@
                 }
             </script>
         </section>
-        
+
 
         <!-- Ticket Prices & Operating Hours -->
         <div id="ticketandtime"></div>
@@ -329,8 +330,8 @@
                 </div>
             </div>
         </section>
-    
-    
+
+
         <!-- Getting There -->
         <div id="location"></div>
         <div class="dividerline"></div>
@@ -350,9 +351,9 @@
                         <dt>By shuttle</dt>
                         <dd>Mandai-Khatib, Bedok, Sengkang, Tampines</dd>
                     </dl>
-    
+
                 </div>
-    
+
                 <div class="col-sm-6 d-flex map justify-content-center">
                     <iframe allowfullscreen frameborder="0" height="550"
                             src="https://www.google.com/maps/embed/v1/place?q=singapore%20zoo&key=AIzaSyCOqjBghJOcrO9kcN7mWHadj1Q_FLLKZ_k"
@@ -361,7 +362,7 @@
                 </div>
             </div>
         </section>
-    
+
         <!-- Videos -->
         <div id="videos"></div>
         <div class="dividerline"></div>
@@ -377,7 +378,7 @@
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
                 </div>
-    
+
                 <div class="videowrapper col-sm-6 d-flex justify-content-center wow animate__zoomIn">
                     <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen frameborder="0" height="315"
@@ -386,7 +387,58 @@
                 </div>
             </div>
         </section>
+
+
+        <!-- Shows -->
+        <div id="shows"></div>
         <div class="dividerline"></div>
+        <section>
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 class="header">Shows</h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="container">
+                        <img src="multimedia/zoo-images/rainforestfightsback.jpg" alt="Rainforest Fights Back"
+                             class="image">
+                        <div class="overlay">
+                            <div class="show-text">Be awed by the diverse range of animals in the rainforest!</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="container">
+                        <img src="multimedia/zoo-images/splashsafari.jpg" alt="Rainforest Fights Back"
+                             class="image">
+                        <div class="overlay">
+                            <div class="show-text">Watch California sea lions perform tricks!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="container">
+                        <img src="multimedia/zoo-images/elephantshow.jpg" alt="Rainforest Fights Back" class="image">
+                        <div class="overlay">
+                            <div class="show-text">Experience the magnificent world of elephants!</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="container">
+                        <img src="multimedia/zoo-images/animalfriends.jpg" alt="Rainforest Fights Back"
+                             class="image">
+                        <div class="overlay">
+                            <div class="show-text">Learn how domesticated animals play a part in our lives!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 </div>
 
