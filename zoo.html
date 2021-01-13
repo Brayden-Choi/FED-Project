@@ -45,19 +45,19 @@
             <img src="multimedia/zoo-images/lion.jpg" alt="slide3"/>
         </div>
         <div class="slide">
-            <img src="multimedia/zoo-images/asianotters.jpg" alt="slide3"/>
+            <img src="multimedia/zoo-images/asianotters.jpg" alt="slide4"/>
         </div>
         <div class="slide">
-            <img src="multimedia/zoo-images/elephants.jpg" alt="slide3"/>
+            <img src="multimedia/zoo-images/elephants.jpg" alt="slide5"/>
         </div>
         <div class="slide">
-            <img src="multimedia/zoo-images/penguins.jpg" alt="slide3"/>
+            <img src="multimedia/zoo-images/penguins.jpg" alt="slide6"/>
         </div>
         <div class="slide">
-            <img src="multimedia/zoo-images/fossa.jpg" alt="slide3"/>
+            <img src="multimedia/zoo-images/fossa.jpg" alt="slide7"/>
         </div>
         <div class="slide">
-            <img src="multimedia/zoo-images/cheetah.jpg" alt="slide3"/>
+            <img src="multimedia/zoo-images/cheetah.jpg" alt="slide8"/>
         </div>
     </div>
 </section>
@@ -195,16 +195,7 @@
                     </video>
                 </div>
 
-                <!--
-                <div class="video">
-                    <video class="thevideo" loop preload="none">
-                      <source src="https://giant.gfycat.com/VerifiableTerrificHind.mp4" type="video/mp4">
-                      <source src="https://giant.gfycat.com/VerifiableTerrificHind.webm" type="video/webm">
-                    Your browser does not support the video tag.
-                    </video>
-                  </div>
-                  Hover mouse over video. Desktop only [ Obviously! ;) ]
-                </div>-->
+                
                 <!--<div class="col-sm-8">
                     <div class="carousel slide slides" data-ride="carousel" id="carouselExampleIndicatorszone">
                         <ol class="carousel-indicators">
@@ -267,36 +258,32 @@
                     </div>
                 </div>-->
             </div>
-            
-            <!--/*Zone video js*/-->
-            <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/vissense/0.10.0/vissense.min.js"
-                    integrity="sha512-2ES1bMYVtDkWzlzuUr6EkA0WZ4Vhg/cYBCBBlr0QtKAd12X9EWO1/JwId+9AVQnX7xu684o+7BElKL9HLd/YfQ=="
-                    crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/vissense/0.10.0/vissense.js"
-                    integrity="sha512-MTzEsRTJBWpHhChLcoRVXwe7zl9v17ZeNC3IIHmNrrxQKZ1hlq41B9OOMlE2NYtaskh4o+sGt93MS4Q79/PtDA=="
-                    crossorigin="anonymous"></script>
-            <script>
-                var video = document.getElementsByClassName('video');
 
-                VisSense.VisMon.Builder(VisSense(video))
-                    .on('fullyvisible', function() {
-                        video.play();
-                    })
-                    .on('hidden', function() {
-                        video.pause();
-                    })
-                    .build()
-                    .start();
-               /* var figure = $(".video").hover(hoverVideo, hideVideo);
-
-                function hoverVideo(e) {
-                    $('video', this).get(0).play();
-                }
-
-                function hideVideo(e) {
-                    $('video', this).get(0).pause();
-                }*/
-            </script>-->
+            <!-- Modal -->
+            <div class="row col-sm-12 d-flex align-self-center justify-content-center">
+                <button type="button" class="btn btn-primary map-button" data-toggle="modal" data-target="#exampleModalCenter">
+                    View Map of Zoo
+                </button>
+    
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle" style="font-size: 2.5rem">Map of the Zoo</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <img class="zoo-map" src="multimedia/zoo-images/zoo_map.jpg" alt="Zoo Map"/>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
 
