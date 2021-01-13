@@ -189,7 +189,7 @@
                         habitats around the world.</p>
                 </div>
                 <div class="video col-sm-7 d-flex justify-content-center align-self-center">
-                    <video loop>
+                    <video muted autoplay loop>
                         <source src="multimedia/zoo-images/Singapore Zoo_ World's Best Rainforest Zoo.mp4"
                                 type="video/mp4">
                     </video>
@@ -269,8 +269,25 @@
             </div>
             
             <!--/*Zone video js*/-->
+            <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/vissense/0.10.0/vissense.min.js"
+                    integrity="sha512-2ES1bMYVtDkWzlzuUr6EkA0WZ4Vhg/cYBCBBlr0QtKAd12X9EWO1/JwId+9AVQnX7xu684o+7BElKL9HLd/YfQ=="
+                    crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vissense/0.10.0/vissense.js"
+                    integrity="sha512-MTzEsRTJBWpHhChLcoRVXwe7zl9v17ZeNC3IIHmNrrxQKZ1hlq41B9OOMlE2NYtaskh4o+sGt93MS4Q79/PtDA=="
+                    crossorigin="anonymous"></script>
             <script>
-                var figure = $(".video").hover(hoverVideo, hideVideo);
+                var video = document.getElementsByClassName('video');
+
+                VisSense.VisMon.Builder(VisSense(video))
+                    .on('fullyvisible', function() {
+                        video.play();
+                    })
+                    .on('hidden', function() {
+                        video.pause();
+                    })
+                    .build()
+                    .start();
+               /* var figure = $(".video").hover(hoverVideo, hideVideo);
 
                 function hoverVideo(e) {
                     $('video', this).get(0).play();
@@ -278,8 +295,8 @@
 
                 function hideVideo(e) {
                     $('video', this).get(0).pause();
-                }
-            </script>
+                }*/
+            </script>-->
         </section>
 
 
