@@ -8,10 +8,9 @@ html, body {
 }
 
 .overview-text {
-    color: white;
     position: relative;
     z-index: 2;
-    top: 28vh;
+    
 }
 
 .overview-overlay {
@@ -50,6 +49,11 @@ html, body {
 
 .indicator:hover {
     width: calc(11% + 26px) !important;
+}
+
+.title {
+    color: white;
+    top: 26vh;
 }
 
 .title-container {
@@ -99,6 +103,11 @@ html, body {
 }
 
 .description {
+}
+
+.card {
+    max-width: 350px;
+    top: 22vh;
 }
 
 @media all and (max-width: 640px) {
