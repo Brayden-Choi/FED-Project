@@ -123,9 +123,12 @@ body {
     }
 }
 
-.arrow-tag {
-    color: white;
-    font-size: large;
+.arrow-image {
+    transition: all 0.5s;
+}
+
+.arrow-image:hover {
+    transform: scale(1.2);
 }
 
 .content-indicators {
