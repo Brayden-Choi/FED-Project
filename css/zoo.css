@@ -231,6 +231,31 @@ video {
     margin-top: 3rem;
 }
 
+/*Modal*/
+
+.map-button {
+    font-family: 'Caveat Brush', cursive;
+    font-size: 1.8rem;
+    background-color: grey;
+    border: none;
+    margin-top: 5%;
+}
+
+.map-button:hover, .map-button:focus{
+    background-color:  #0D5510;
+}
+
+.modal-content {
+    width: 100%;
+}
+
+.zoo-map {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+
 /*Ticket Prices & Operating Hours*/
 #ticketandtime {
     padding-bottom: 5%;
