@@ -25,7 +25,6 @@ class NavManager {
         if (style === "white") {
             this.usingWhite = true;
             $('#nav').addClass('navbar-white');
-            $('#nav').addClass('navbar-dark');
         }
 
         let targetPage = $("#header").attr("content").toLowerCase();
@@ -46,7 +45,6 @@ class NavManager {
         if ($(window).scrollTop() >= 30) {
             if (this.usingWhite) {
                 $('#nav').removeClass('navbar-white');
-                $('#nav').removeClass('navbar-dark');
             }
             $('#nav').addClass('navbar-shadow');
             this.hasShadow = true;
@@ -54,7 +52,6 @@ class NavManager {
             if (canSee === "false") {
                 if (this.usingWhite) {
                     $('#nav').addClass('navbar-white');
-                    $('#nav').addClass('navbar-dark');
                 }
                 $('#nav').removeClass('navbar-shadow');
             }
@@ -68,7 +65,6 @@ class NavManager {
         if (canSee === "false") {
             if (this.usingWhite) {
                 $('#nav').removeClass('navbar-white');
-                $('#nav').removeClass('navbar-dark');
             }
             if (!this.hasShadow) {
                 $('#nav').addClass('navbar-shadow');
@@ -77,7 +73,6 @@ class NavManager {
         }
         if (this.usingWhite && !this.hasShadow) {
             $('#nav').addClass('navbar-white');
-            $('#nav').addClass('navbar-dark');
             $('#nav').removeClass('navbar-shadow');
         }
     }
