@@ -1,3 +1,5 @@
+/*Welcome Section*/
+
 .welcome{
     height: 800px;
     z-index: 1;
@@ -12,27 +14,6 @@
     font-family: 'PT Serif Caption', serif;
 }
 
-.about-text {
-    font-family: 'PT Serif Caption', serif;
-    font-size: 50px;
-    color: white;
-    position: center;
-    text-align: center;
-    padding-top: 300px;
-    padding-left: 100px;
-}
-
-.about-information-text {
-    font-size: 20px;
-    color: white;
-    text-align: center;
-    position: center;
-    padding-top: 200px;
-    padding-left: 100px;
-    padding-right: 100px;
-    
-}
-
 .welcome-img {
     background-image: url("../multimedia/jewel-images/waterfall.jpg");
     background-repeat: no-repeat;
@@ -41,6 +22,29 @@
     height: 100%;
     width: 100%;
     position: absolute;
+}
+
+/*About Section*/
+
+.about-text {
+    font-family: 'PT Serif Caption', serif;
+    font-size: 50px;
+    color: black;
+    position: center;
+    text-align: center;
+    padding-top: 300px;
+    padding-left: 0px;
+}
+
+.about-information-text {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    position: center;
+    padding-top: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+    
 }
 
 .about {
@@ -53,13 +57,39 @@
     background-repeat: no-repeat;
     background-position: center;
     background-color: rgba(0, 0, 0, .70);
-    height: 800px;
+    height: 850px;
     width: 50%;
     position: relative;
-    margin-top: 180px;
+    margin-top: 100px;
     padding-right: 400px;
 }
 
+/*Attraction Section*/
+.slider {
+    width: 400px;
+    background: black;
+}
+
+.slider .ui-slider-handle {
+    display: block;
+    width: 40px;
+    height: 20px;
+    margin-left: -20px;
+    background: red;
+    cursor: pointer;
+    position: relative;
+}
+
+.carousel {
+    width: 400px;
+    height: 200px;
+}
+
+.carousel .slick-slide {
+    height: auto;
+}
+
+/**/
 .carousel-slide {
     display: flex;
     -webkit-overflow-scrolling: touch;
