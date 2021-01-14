@@ -5,7 +5,7 @@
     }
 
     var rect = el.getBoundingClientRect();
-    
+
     return (
         $(el).is(":visible") &&
         rect.bottom >= 0 &&
@@ -117,11 +117,15 @@ $(document).ready(function () {
     $(window).scroll(function () {
         navManager.addNavShadow();
     });
-    
+
     // Stop video if out of view
     $(window).on('resize scroll', function () {
         for (let video of $('video')) {
             const $video = $(video);
+            if ($video.css("position") === "fixed") {
+                continue;
+            }
+
             if (isElementInViewport($video)) {
                 if (video.paused) {
                     console.log("video play.", video.id)
