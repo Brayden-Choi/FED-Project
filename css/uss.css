@@ -1,43 +1,49 @@
-.wrapper {
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Mulish:wght@500&display=swap');
+.header {
+    margin-top: 20px;
+    padding: 5px;
+    text-align: center;
+    color: white;
+    font-family: 'Caveat Brush', cursive;
+    font-size: 4rem;
+    z-index: 3;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.title {
+    text-align: center;
+    padding-top: 70px;
     background-image: url("../multimedia/uss-images/uss-scenery.jpg");
     background-position: center;
-    background-size: 1300px 761px;
-    height: 400px;
-    margin: 10px;
-    display: block;
-    position: relative;
-    opacity: 0.8;
+    background-size: 1520px 761px;
+    height: 600px;
+    opacity: 0.7;
 }
-
-.main {
-    margin-top: 70px;
-    font-family: 'Copperplate Gothic';
-    font-size: 52px;
+#us {
+    margin-top: 90px;
+    font-family: 'Fredoka One';
+    font-size: 100px;
     color: white;
-    text-align: center;
-    -webkit-text-stroke-color: #c7a761;
-    -webkit-text-stroke-width: 2px;
-    
-}
-.second {
-    color: #dbb247;
-    text-align: center;
-    font-family: 'Copperplate Gothic';
-    font-weight: bolder;
-    font-size: 45px;
+    -webkit-text-stroke-color: #ddb63f;
+    -webkit-text-stroke-width: 1px;
 }
 
-about {
-    margin-bottom: 30px;
-    padding-bottom: 30px;
-    
+#sg {
+    color: white;
+    font-family: 'Caveat Brush'. cursive;
+    font-weight: bolder;
+    font-size: 80px;
+    -webkit-text-stroke-color: #ddb63f;
+    -webkit-text-stroke-width: 1px;
 }
-.bg-text {
+
+.about {
     color: #c7a761;
     background-color: rgba(0,0,0,0.7);
     text-align: center;
     padding: 30px;
 }
+
 .bg-image {
-    
+
 }
