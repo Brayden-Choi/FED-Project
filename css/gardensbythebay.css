@@ -239,7 +239,7 @@ body {
     }
 }
 
-.attractions-background {
+.attractions-background-wrapper {
     height: 100%;
     width: 100%;
     background-color: black;
@@ -247,14 +247,14 @@ body {
     position: absolute;
 }
 
-.blurred-background {
+.attractions-background {
     background-image: url("../multimedia/gardensbythebay/attraction-cards/default.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
     width: 100%;
-    filter: blur(10px);
-    transition: all 0.3s ease-in-out;
+    -webkit-transition: background-image 0.3s ease-in-out;
+    transition: background-image 0.3s ease-in-out;
     opacity: 0.6;
 }
