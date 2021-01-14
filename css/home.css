@@ -43,17 +43,22 @@ html, body {
 .indicator {
     border-top-width: 16px !important;
     height: 5px !important;
-    width: calc(9% + 20px) !important;
+    width: calc(8% + 42px) !important;
     transition: all 0.4s ease-out !important;
 }
 
 .indicator:hover {
-    width: calc(11% + 26px) !important;
+    width: calc(9.5% + 52px) !important;
+    opacity: 0.7 !important;
+}
+
+.overview-indicators .active:hover {
+    width: calc(9.5% + 52px) !important;
+    opacity: 1 !important;
 }
 
 .title {
     color: white;
-    top: 26vh;
 }
 
 .title-container {
@@ -63,6 +68,7 @@ html, body {
     position: relative;
     overflow: hidden;
     vertical-align: bottom;
+    z-index: 3;
 }
 
 .title-text {
@@ -110,7 +116,7 @@ html, body {
     top: 22vh;
 }
 
-@media all and (max-width: 640px) {
+@media all and (max-width: 280px) {
     .overview-indicators {
         visibility: hidden;
     }

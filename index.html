@@ -26,47 +26,45 @@
 <div content="Home" id="header" type="white"></div>
 
 <div class="overview">
-    <div class="container-fluid overview-text">
-        <div class="row ml-5">
-            <div class="col-md-7 title">
-                <div class="title-container">
-                    <h1 class="title-text title-hidden-top" id="title-0">Example 0.</h1>
-                    <h1 class="title-text" id="title-1">Example 1.</h1>
-                    <h1 class="title-text title-hidden title-hidden-bottom" id="title-2">Example 2.</h1>
-                </div>
-                <div>
-                    <p class="description" id="overview-desc">description</p>
-                    <a class="btn btn-lg btn-info" href="#" id="overview-button" role="button">Explore</a>
-                </div>
-            </div>
-        </div>
-    </div>
     <ol class="carousel-indicators overview-indicators" id="overview-indicators">
-        <li class="indicator active" data-slide-to="0" data-target="#overviewSlides"></li>
+        <li class="indicator" data-slide-to="0" data-target="#overviewSlides"></li>
         <li class="indicator" data-slide-to="1" data-target="#overviewSlides"></li>
         <li class="indicator" data-slide-to="2" data-target="#overviewSlides"></li>
         <li class="indicator" data-slide-to="3" data-target="#overviewSlides"></li>
         <li class="indicator" data-slide-to="4" data-target="#overviewSlides"></li>
     </ol>
-
-    <div class="overview-overlay"></div>
-
+    
     <div class="carousel slide carousel-fade overview-slides" data-ride="carousel" id="overviewSlides">
         <div class="carousel-inner">
+            <div class="carousel-caption text-left h-75 w-auto">
+                <div class="title-container">
+                    <h1 class="title-text title-hidden-top" id="title-0">Example 0.</h1>
+                    <h1 class="title-text" id="title-1">Example 1.</h1>
+                    <h1 class="title-text title-hidden title-hidden-bottom" id="title-2">Example 2.</h1>
+                </div>
+                <p class="description" id="overview-desc">description</p>
+                <a class="btn btn-lg btn-info" href="#" id="overview-button" role="button">Explore</a>
+            </div>
+            
             <div class="carousel-item active" content="Gardens by the Bay">
+                <div class="overview-overlay"></div>
                 <img alt="..." class="d-block w-100 min-vh-100"
                      src="multimedia/home/overview-slides/gardensbythebay.jpg">
             </div>
             <div class="carousel-item" content="Singapore Zoo">
+                <div class="overview-overlay"></div>
                 <img alt="..." class="d-block w-100 min-vh-100" src="multimedia/home/overview-slides/zoo.jpg">
             </div>
             <div class="carousel-item" content="S.E.A. Aquarium">
+                <div class="overview-overlay"></div>
                 <img alt="..." class="d-block w-100 min-vh-100" src="multimedia/home/overview-slides/sea.jpg">
             </div>
             <div class="carousel-item" content="Sentosa">
+                <div class="overview-overlay"></div>
                 <img alt="..." class="d-block w-100 min-vh-100" src="multimedia/home/overview-slides/sentosa.jpg">
             </div>
             <div class="carousel-item" content="Universal Studios">
+                <div class="overview-overlay"></div>
                 <img alt="..." class="d-block w-100 min-vh-100" src="multimedia/home/overview-slides/uss.jpg">
             </div>
         </div>

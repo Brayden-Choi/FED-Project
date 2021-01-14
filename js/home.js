@@ -61,7 +61,7 @@ class SlideManager {
         this.$desc.text(this.contentData[targetData].desc);
         this.$button.attr("href", this.contentData[targetData].page);
 
-        let activeIndex = $targetItem.index();
+        let activeIndex = $targetItem.index() - 1;
         let index = 0;
         for (let indicator of this.$indicators.find("li")) {
             if (index++ === activeIndex) {
