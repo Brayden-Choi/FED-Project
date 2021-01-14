@@ -15,6 +15,15 @@ body {
     background: black;
 }
 
+.fancy-font {
+    font-family: 'Fontjek', cursive;
+}
+
+.header-text {
+    text-align: center;
+    font-size: calc(5vh + 5vw);
+}
+
 /* Video Overlay */
 .video-overlay {
     background-color: rgba(0, 0, 0, .30);
@@ -44,7 +53,7 @@ body {
 }
 
 /* Title */
-#title {
+.title {
     backface-visibility: hidden;
     left: 0;
     position: fixed;
@@ -53,8 +62,7 @@ body {
     animation: fadein 2.5s;
 }
 
-#title h1 {
-    font-family: 'Fontjek', cursive;
+.title h1 {
     color: white;
     text-align: center;
     font-size: calc(6vh + 6vw);
