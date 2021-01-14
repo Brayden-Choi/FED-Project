@@ -195,11 +195,11 @@ body {
     border-right: 5px solid rgba(0, 0, 0, 0.7);
 }
 
-.active:hover {
+.content-indicators .active:hover {
     border-right: 5px solid rgba(0, 0, 0, 1);
 }
 
-.active {
+.content-indicators .active {
     border-right: 5px solid rgba(0, 0, 0, 1);
 }
 
