@@ -116,7 +116,7 @@ class SectionManager {
         let currentY = $(window).scrollTop();
         let index = -1;
         for (let section of this.sections) {
-            if ($(section).offset().top - currentY > 10) {
+            if ($(section).offset().top - currentY > 70) {
                 this.currentSectionIndex = index;
                 return;
             }
@@ -160,7 +160,7 @@ class SectionManager {
 
         let index = $indicator.index();
         console.log("Clicked on:", index)
-        window.open(this.sections[index], "_self");
+        $(window).trigger('anchorscroll', [this.sections[index]]);
     }
 
     indicatorScrollUpdate() {
@@ -168,7 +168,6 @@ class SectionManager {
         this.setActive();
     }
 }
-
 
 class AttractionManager {
     constructor(cardsId, modalId) {

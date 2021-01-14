@@ -135,7 +135,7 @@ $(document).ready(function () {
 
 $(window).on('load', function (event) {
     // Add smooth scrolling to all links
-    doSmoothScroll(window.location.hash, 0);
+    $(window).trigger('anchorscroll', [window.location.hash, 200]);
     $('.smooth-scrolling').on('click', function (event) {
         const hash = this.hash;
 
@@ -151,38 +151,32 @@ $(window).on('load', function (event) {
         }
 
         event.preventDefault();
-        doSmoothScroll(hash, 800);
-        window.location.hash = hash;
+        $(window).trigger('anchorscroll', [hash]);
     });
 });
 
-function setAnchorOffset() {
-    const $hash = $(window.location.hash);
-    if ($hash == undefined) {
+$(window).on('anchorscroll', function (event, anchor, duration) {
+    if (anchor == undefined || anchor == "") {
         return;
     }
-    
-    $('html, body').offset({top: getAnchorOffset($hash)});
-
-}
-
-function doSmoothScroll(hash, duration) {
-    if (hash == undefined || hash == "") {
-        return;
+    if (duration == undefined || duration < 0) {
+        duration = 800;
     }
     
-    const $hash = $(hash);
-    if ($hash == undefined) {
+    const $anchor = $(anchor);
+    if ($anchor == undefined) {
         console.log("No such element with id:", hash);
         return;
     }
 
+    if (history.pushState) {
+        history.pushState(null, null, anchor);
+    } else {
+        location.hash = anchor;
+    }
+    
     console.log("Doing smooth scrolling...")
     $('html, body').animate({
-        scrollTop: getAnchorOffset($hash)
+        scrollTop: $anchor.offset().top - 66
     }, duration);
-}
-
-function getAnchorOffset($hash) {
-    return $hash.offset().top - 66
-}
+});
