@@ -33,7 +33,7 @@ $(document).ready(function () {
     });
 
     // Handle section change
-    const sm = new SectionManager("#content-indicators", ["#main", "#main-1"]);
+    const sm = new SectionManager("#content-indicators", ["#attractions", "#gallery"]);
     sm.indicatorScrollUpdate();
     $(window).scroll(function () {
         sm.indicatorScrollUpdate();

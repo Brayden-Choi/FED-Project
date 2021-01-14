@@ -1,6 +1,9 @@
 ﻿@import "bootstrap.min.css";
 @import "header-styles.css";
 
+html, body {
+}
+
 .smooth-scrolling {
     
 }

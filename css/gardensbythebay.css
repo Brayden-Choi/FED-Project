@@ -33,7 +33,7 @@ body {
     top: 0;
     transition: background-color 300ms ease;
     min-height: 100%;
-    animation: fadein-overlay 4s;
+    animation: fadein-overlay 3s;
     animation-timing-function: ease-out;
 }
 
@@ -58,7 +58,7 @@ body {
     position: fixed;
     width: 100%;
     margin-top: 37vh;
-    animation: fadein 2.5s;
+    animation: fadein 2.4s;
 }
 
 .title h1 {
@@ -112,7 +112,7 @@ body {
 }
 
 .section {
-    padding-top: 75px;
+    padding-top: 16px;
 }
 
 .arrow {

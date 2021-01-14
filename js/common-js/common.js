@@ -130,30 +130,59 @@ $(document).ready(function () {
                 }
             }
         });
-
-        // Add smooth scrolling to all links
-        $('.smooth-scrolling').on('click', function(event) {
-            // Make sure hash has a value before overriding default behavior
-            let hash = this.hash;
-            console.log(hash);
-
-            if (hash == undefined || hash == "") {
-                return;
-            }
-
-            console.log("Doing smooth scrolling...")
-
-            // Prevent default anchor click behavior
-            event.preventDefault();
-
-            // Using jQuery's animate() method to add smooth page scroll
-            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top
-            }, 500, function(){
-                // Add hash (#) to URL when done scrolling (default click behavior)
-                window.location.hash = hash;
-            });
-        });
     });
 });
+
+$(window).on('load', function (event) {
+    // Add smooth scrolling to all links
+    doSmoothScroll(window.location.hash, 0);
+    $('.smooth-scrolling').on('click', function (event) {
+        const hash = this.hash;
+
+        console.log(this.page);
+
+        if (hash == undefined || hash == "") {
+            return;
+        }
+
+        console.log(this.pathname, window.location.pathname);
+        if (this.pathname !== window.location.pathname) {
+            return;
+        }
+
+        event.preventDefault();
+        doSmoothScroll(hash, 800);
+        window.location.hash = hash;
+    });
+});
+
+function setAnchorOffset() {
+    const $hash = $(window.location.hash);
+    if ($hash == undefined) {
+        return;
+    }
+    
+    $('html, body').offset({top: getAnchorOffset($hash)});
+
+}
+
+function doSmoothScroll(hash, duration) {
+    if (hash == undefined || hash == "") {
+        return;
+    }
+    
+    const $hash = $(hash);
+    if ($hash == undefined) {
+        console.log("No such element with id:", hash);
+        return;
+    }
+
+    console.log("Doing smooth scrolling...")
+    $('html, body').animate({
+        scrollTop: getAnchorOffset($hash)
+    }, duration);
+}
+
+function getAnchorOffset($hash) {
+    return $hash.offset().top - 66
+}
