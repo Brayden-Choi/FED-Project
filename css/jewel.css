@@ -1,11 +1,6 @@
 .welcome{
-    background-color: black;
-    height: 840px;
+    height: 800px;
     z-index: 1;
-}
-
-.page-wrapper {
-    padding-top: 25px;
 }
 
 .welcome-text {
@@ -24,10 +19,6 @@
     padding-left: 400px;
 }
 
-h1 span {
-    background-color: black;
-}
-
 .about-information-text {
     font-size: 20px;
     color: white;
@@ -40,13 +31,15 @@ h1 span {
 }
 
 .welcome-img {
-    background-image: url("../multimedia/sea-images/welcome-image-2.jpg");
+    background-image: url("../multimedia/jewel-images/waterfall.jpg");
     background-repeat: no-repeat;
     background-position: center;
-    height: 800px;
-    margin: 10px;
-    display: block;
+    background-color: rgba(0, 0, 0, .30);
+    height: 100%;
+    width: 100%;
     position: relative;
+    left: 0;
+    top: 0;
 }
 
 .about {
@@ -55,14 +48,7 @@ h1 span {
 }
 
 .about-img {
-    background-image: url("../multimedia/sea-images/sea-logo.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 400px;
-    margin: 10px;
-    display: block;
-    position: relative;
-    padding-top: 100px;
+    
 }
 
 .carousel-slide {
