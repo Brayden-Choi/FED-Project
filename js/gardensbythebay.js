@@ -42,16 +42,19 @@ $(document).ready(function () {
         sm.indicatorClick(event.target);
     });
 
-    // Load attraction cards
-    const am = new AttractionManager("#attractionCards", "#attractionsModal");
+    // Setup attraction cards
+    const am = new AttractionManager("#attractionCards", "#attractionsModal", "#attractionsBackground");
     const filePath = "multimedia/gardensbythebay/attractions.json";
     $.getJSON(filePath).then(function (data) {
         am.loadData(data);
+        $(`${am.cardsId} .card`).hover(function () {
+            am.setBackground($(this));
+        });
+        am.$modalView.on('show.bs.modal', function (event) {
+            am.setModalData($(event.relatedTarget));
+        })
     }).fail(function () {
         console.log("Unable to load file: " + filePath);
-    })
-    $('#attractionsModal').on('show.bs.modal', function (event) {
-        am.setModalData($(event.relatedTarget).data('index'))
     })
 });
 
@@ -67,7 +70,7 @@ class VideoManager {
         $("#drone-vid-0").trigger('play');
         $("#drone-vid-0").fadeIn(2000);
     }
-    
+
     getCurrentVideo() {
         return $("#drone-vid-" + this.currentShow);
     }
@@ -88,7 +91,7 @@ class VideoManager {
 
         this.currentVideo %= 4;
     }
-    
+
     checkOutOfView() {
         const contentInView = $("#content")[0].getBoundingClientRect().top < -10;
         if (contentInView && !this.videoOutOfView) {
@@ -170,20 +173,31 @@ class SectionManager {
 }
 
 class AttractionManager {
-    constructor(cardsId, modalId) {
+    constructor(cardsId, modalId, backgroundId) {
+        this.cardsId = cardsId;
         this.$cardCollection = $(cardsId);
         this.modalId = modalId;
         this.$modalView = $(modalId);
+        this.$background = $(backgroundId);
         this.data = {};
     }
+    
+    setBackground($card) {
+        if (!$card.is(":hover")) {
+            return;
+        }
 
-    setModalData(targetIndex) {
-        const targetData = this.data[targetIndex];
-        
+        const targetData = this.getData($card);
+        this.$background.css("background-image", `url(${targetData.previewImage})`);
+    }
+    
+    setModalData($button) {
+        const targetData = this.getData($button)
+
         $(this.modalId + "-title").text(targetData.name);
         $(this.modalId + "-body").text(targetData.detailText);
-        
-        console.log("Set modal data for index:", targetIndex);
+
+        console.log("Set modal data for:", targetData.name);
     }
 
     loadData(data) {
@@ -196,10 +210,10 @@ class AttractionManager {
             index++;
         }
     }
-    
+
     buildPreviewCard(cardData, index) {
         return `
-        <div class="card">
+        <div class="card" data-index="${index}">
             <img alt="..." class="card-img-top" src="${cardData.previewImage}">
             <div class="card-body">
                 <h5 class="card-title">${cardData.name}</h5>
@@ -208,5 +222,9 @@ class AttractionManager {
             </div>
         </div>
         `;
+    }
+    
+    getData($idenifier) {
+        return this.data[$idenifier.data("index")];
     }
 }
