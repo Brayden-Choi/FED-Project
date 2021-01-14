@@ -13,14 +13,6 @@
     );
 }
 
-// Add header styles
-let head = document.getElementById("head");
-
-let headerCSS = document.createElement("link");
-headerCSS.setAttribute("rel", "stylesheet");
-headerCSS.setAttribute("href", "css/header-styles.css");
-head.appendChild(headerCSS);
-
 class NavManager {
     constructor() {
         this.hasShadow = false;
@@ -112,31 +104,56 @@ $(document).ready(function () {
     $("#header").load("header.html #nav", function () {
         navManager.setActivePage();
         navManager.addNavShadow();
-    });
 
-    $(window).scroll(function () {
-        navManager.addNavShadow();
-    });
+        $(window).scroll(function () {
+            navManager.addNavShadow();
+        });
 
-    // Stop video if out of view
-    $(window).on('resize scroll', function () {
-        for (let video of $('video')) {
-            const $video = $(video);
-            if ($video.css("position") === "fixed") {
-                continue;
+        // Stop video if out of view
+        $(window).on('resize scroll', function () {
+            for (let video of $('video')) {
+                const $video = $(video);
+                if ($video.css("position") === "fixed") {
+                    continue;
+                }
+
+                if (isElementInViewport($video)) {
+                    if (video.paused) {
+                        console.log("video play.", video.id)
+                        $video.trigger("play");
+                    }
+                } else {
+                    if (!video.paused) {
+                        console.log("video paused.", video.id)
+                        $video.trigger("pause");
+                    }
+                }
+            }
+        });
+
+        // Add smooth scrolling to all links
+        $('.smooth-scrolling').on('click', function(event) {
+            // Make sure hash has a value before overriding default behavior
+            let hash = this.hash;
+            console.log(hash);
+
+            if (hash == undefined || hash == "") {
+                return;
             }
 
-            if (isElementInViewport($video)) {
-                if (video.paused) {
-                    console.log("video play.", video.id)
-                    $video.trigger("play");
-                }
-            } else {
-                if (!video.paused) {
-                    console.log("video paused.", video.id)
-                    $video.trigger("pause");
-                }
-            }
-        }
+            console.log("Doing smooth scrolling...")
+
+            // Prevent default anchor click behavior
+            event.preventDefault();
+
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 500, function(){
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+            });
+        });
     });
 });
