@@ -1,11 +1,10 @@
-/* Global Styles */
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
-
+/* Global Variables */
 @font-face {
     font-family: 'Fontjek';
     src: url("../multimedia/gardensbythebay/Fontjek.ttf");
 }
 
+/* Global Styles */
 html, body {
     height: 100%;
 }
@@ -18,6 +17,13 @@ body {
     font-family: 'Fontjek', cursive;
 }
 
+/* General Content Styles */
+.content {
+    background-color: black;
+    position: absolute;
+    z-index: 3;
+}
+
 .header-text {
     color: white;
     margin-top: 20px;
@@ -25,7 +31,20 @@ body {
     font-size: calc(5vh + 5vw);
 }
 
-/* Video Overlay */
+/* Title Video Styles */
+.video-frame {
+    backface-visibility: hidden;
+    background-size: cover;
+    bottom: 0;
+    height: auto;
+    min-height: 100%;
+    min-width: 100%;
+    position: fixed;
+    right: 0;
+    width: auto;
+    z-index: -1;
+}
+
 .video-overlay {
     background-color: rgba(0, 0, 0, .30);
     height: 100%;
@@ -53,7 +72,7 @@ body {
     background-color: rgba(0, 0, 0, .85) !important;
 }
 
-/* Title */
+/* Title Text Styles */
 .title {
     backface-visibility: hidden;
     left: 0;
@@ -61,6 +80,17 @@ body {
     width: 100%;
     margin-top: 37vh;
     animation: fadein 2.4s;
+}
+
+@keyframes fadein {
+    from {
+        margin-top: 28vh;
+        opacity: 0;
+    }
+    to {
+        margin-top: 37vh;
+        opacity: 1;
+    }
 }
 
 .title h1 {
@@ -81,38 +111,7 @@ body {
     z-index: 4;
 }
 
-@keyframes fadein {
-    from {
-        margin-top: 28vh;
-        opacity: 0;
-    }
-    to {
-        margin-top: 37vh;
-        opacity: 1;
-    }
-}
-
-/* Drone Video */
-.video-frame {
-    backface-visibility: hidden;
-    background-size: cover;
-    bottom: 0;
-    height: auto;
-    min-height: 100%;
-    min-width: 100%;
-    position: fixed;
-    right: 0;
-    width: auto;
-    z-index: -1;
-}
-
-/* Content Styles */
-.content {
-    background-color: black;
-    position: absolute;
-    z-index: 3;
-}
-
+/* Title Arrow Styles */
 .arrow {
     backface-visibility: hidden;
     position: absolute;
@@ -142,6 +141,7 @@ body {
     transform: scale(1.2);
 }
 
+/* Section Indicators Styles */
 .content-indicators {
     position: fixed;
     justify-content: right;
@@ -162,6 +162,11 @@ body {
     border-right: 5px solid rgba(255, 255, 255, 0.4);
     transition: height 0.5s, border-right 0.5s;
     vertical-align: middle;
+}
+
+.indicator:hover {
+    height: 14vh;
+    border-right: 5px solid rgba(255, 255, 255, 0.7);
 }
 
 .indicator-hover {
@@ -188,19 +193,15 @@ body {
     box-shadow: 0 2px 6px 0 rgba(255, 255, 255, 0.3);
 }
 
-.indicator:hover {
-    height: 14vh;
-    border-right: 5px solid rgba(255, 255, 255, 0.7);
+.content-indicators .active {
+    border-right: 5px solid rgba(255, 255, 255, 1);
 }
 
 .content-indicators .active:hover {
     border-right: 5px solid rgba(255, 255, 255, 1);
 }
 
-.content-indicators .active {
-    border-right: 5px solid rgba(255, 255, 255, 1);
-}
-
+/* Attractions Cards Styles */
 .card {
     backface-visibility: hidden;
     margin-top: 8px;
@@ -234,11 +235,16 @@ body {
 }
 
 @media (max-width: 512px) {
+    .content-indicators {
+        visibility: hidden;
+    }
+    
     .card-columns {
         column-count: 1;
     }
 }
 
+/* Attractions Background Styles */
 .attractions-background-wrapper {
     height: 100%;
     width: 100%;
