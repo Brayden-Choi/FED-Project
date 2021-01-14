@@ -23,19 +23,20 @@
 </head>
 
 <body>
-<!-- Attractions Modal -->
-<div aria-hidden="true" aria-labelledby="attractionsModalLabel" class="modal fade" id="attractionsModal" role="dialog"
+<div aria-hidden="true" aria-labelledby="attractionsModal-title" class="modal fade" id="attractionsModal" role="dialog"
      tabindex="-1">
     <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="attractionsModal-title">Modal title</h5>
+                <h5 class="modal-title" id="attractionsModal-title">Title</h5>
                 <button aria-label="Close" class="close" data-dismiss="modal" type="button">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body" id="attractionsModal-body">...</div>
-            <div class="modal-footer">
+            <div class="modal-body" id="attractionsModal-body">
+                Detailed info.
+            </div>
+            <div class="modal-footer" id="attractionsModal-footer">
                 <button class="btn btn-secondary" data-dismiss="modal" type="button">Close</button>
             </div>
         </div>
@@ -70,12 +71,13 @@
 </div>
 
 <div class="video-overlay">
-
-    <div id="title" class="title">
-        <h1 id="title-text" class="fancy-font">Gardens by the Bay</h1>
+    <div class="title" id="title">
+        <h1 class="fancy-font" id="title-text">Gardens by the Bay</h1>
     </div>
     <div class="arrow bounce">
-        <a href="#main" class="smooth-scrolling"><img alt="Arrow down" class="arrow-image" src="multimedia/gardensbythebay/arrow-down.svg"></a>
+        <a class="smooth-scrolling" href="#main">
+            <img alt="Arrow down" class="arrow-image" src="multimedia/gardensbythebay/arrow-down.svg">
+        </a>
     </div>
     <video class="video-frame" id="drone-vid-1" muted playsinline preload>
         <source src="multimedia/gardensbythebay/drone-shots/drone_shot_1.mp4" type="video/mp4">
@@ -86,16 +88,18 @@
 </div>
 
 <div class="content container-fluid" id="content">
-    <div class="section" id="main">
+    <section class="section" id="attactions">
         <div class="row">
             <div class="col-12">
                 <h1 class="header-text fancy-font">Attractions</h1>
             </div>
         </div>
         <div class="card-columns mr-md-5 ml-md-5 mr-3 mr-3" id="attractionCards"></div>
-    </div>
+    </section>
 
-    <div id="main-1"></div>
+    <section class="section" id="gallery">
+        
+    </section>
 </div>
 </body>
 
