@@ -135,7 +135,7 @@ $(document).ready(function () {
 
 $(window).on('load', function (event) {
     // Add smooth scrolling to all links
-    $(window).trigger('anchorscroll', [window.location.hash, 200]);
+    $(window).trigger('anchorscroll', [window.location.hash, 100]);
     $('.smooth-scrolling').on('click', function (event) {
         const hash = this.hash;
 
@@ -177,6 +177,6 @@ $(window).on('anchorscroll', function (event, anchor, duration) {
     
     console.log("Doing smooth scrolling...")
     $('html, body').animate({
-        scrollTop: $anchor.offset().top - 66
+        scrollTop: $anchor.offset().top - $('#nav').outerHeight() + 5
     }, duration);
 });
