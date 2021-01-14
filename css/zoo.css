@@ -226,9 +226,10 @@ h5 {
 }
 
 video {
-    height: 40vh;
-    width: 40vw;
+    height: 80vh;
+    width: 50vw;
     margin-top: 3rem;
+    padding: 3rem;
 }
 
 /*Modal*/
@@ -418,7 +419,7 @@ dd{
 .show-text h3 {
     text-align: center;
     color: #0D5510;
-    font-size: 4rem;
+    font-size: 3.5rem;
     opacity: 1;
     font-family: 'Caveat Brush', cursive;
     -webkit-text-stroke-width: 0.1rem;
