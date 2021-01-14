@@ -29,17 +29,14 @@
     <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="attractionsModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="attractionsModal-title">Modal title</h5>
                 <button aria-label="Close" class="close" data-dismiss="modal" type="button">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                ...
-            </div>
+            <div class="modal-body" id="attractionsModal-body">...</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" data-dismiss="modal" type="button">Close</button>
-                <button class="btn btn-primary" type="button">Save changes</button>
             </div>
         </div>
     </div>
@@ -88,76 +85,12 @@
     </video>
 </div>
 
-<div class="content container-fluid">
+<div class="content container-fluid" id="content">
     <div class="section" id="main">
-        <div class="card-columns mr-3 ml-3">
-            <div class="card">
-                <img alt="..." class="card-img-top" src="multimedia/home/overview-slides/gardensbythebay.jpg">
-                <div class="card-body">
-                    <h5 class="card-title">FLOWER DOME</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-            <div class="card">
-                <img alt="..." class="card-img-top" src="multimedia/home/overview-slides/zoo.jpg">
-                <div class="card-body">
-                    <h5 class="card-title">CLOUD FOREST</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional
-                        content.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-            <div class="card">
-                <img alt="..." class="card-img-top" src="multimedia/home/overview-slides/gardensbythebay.jpg">
-                <div class="card-body">
-                    <h5 class="card-title">FLORAL FANTASY</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This card has even longer content than the first to show that equal
-                        height
-                        action.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-            <div class="card">
-                <img alt="..." class="card-img-top" src="multimedia/home/overview-slides/gardensbythebay.jpg">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-            <div class="card">
-                <img alt="..." class="card-img-top" src="multimedia/home/overview-slides/zoo.jpg">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional
-                        content.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-            <div class="card">
-                <img alt="..." class="card-img-top" src="multimedia/home/overview-slides/gardensbythebay.jpg">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This card has even longer content than the first to show that equal
-                        height
-                        action.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-        </div>
+        <div class="card-columns mr-md-5 ml-md-5 mr-3 mr-3" id="attractionCards"></div>
     </div>
 
-    <div id="main-1">
-    </div>
-    <!-- Button trigger modal -->
-    <button class="btn btn-primary" data-target="#attractionsModal" data-toggle="modal" type="button">
-        Launch demo modal
-    </button>
+    <div id="main-1"></div>
 </div>
 </body>
 
