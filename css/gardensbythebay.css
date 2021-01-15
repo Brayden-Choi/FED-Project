@@ -203,6 +203,7 @@ body {
 
 /* Attractions Cards Styles */
 .card {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     margin-top: 8px;
     border-right: 5px;
@@ -244,24 +245,18 @@ body {
     }
 }
 
-/* Attractions Background Styles */
-.attractions-background-wrapper {
-    height: 100%;
-    width: 100%;
-    background-color: black;
+.attractions-background {
     overflow: hidden;
     position: absolute;
-}
-
-.attractions-background {
     background-image: url("../multimedia/gardensbythebay/attraction-cards/default.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
     width: 100%;
-    filter: blur(10px);
+    filter: blur(10px) brightness(0.5);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     -webkit-transition: background-image 0.3s ease-in-out;
     transition: background-image 0.3s ease-in-out;
-    opacity: 0.6;
 }
