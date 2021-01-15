@@ -34,21 +34,25 @@
 
 // Manage Navbar behaviours
 class NavManager {
-    constructor() {
+    constructor(headerId, navId, navContentId, navTogglerId) {
+        this.$header = $(headerId);
+        this.$nav = $(navId);
+        this.$navContent = $(navContentId);
+        this.$navToggler = $(navTogglerId);
         this.hasShadow = false;
         this.usingWhite = false;
     }
 
     setActivePage() {
-        let style = $("#header").attr("type");
+        let style = this.$header.attr("type");
 
         if (style === "white") {
             this.usingWhite = true;
-            $('#nav').addClass('navbar-white');
+            this.$nav.addClass('navbar-white');
         }
 
-        let targetPage = $("#header").attr("content").toLowerCase();
-        let pages = $("#navbarSupportedContent ul li");
+        let targetPage = this.$header.attr("content").toLowerCase();
+        let pages = this.$navContent.find("ul li");
 
         for (let page of pages) {
             let pageName = $(page).find('a:first')[0].innerHTML.toLowerCase();
@@ -60,40 +64,40 @@ class NavManager {
     }
 
     addNavShadow() {
-        let canSee = $("#navbar-toggle-button").attr("aria-expanded");
+        let canSee = this.$navToggler.attr("aria-expanded");
 
         if ($(window).scrollTop() >= 30) {
             if (this.usingWhite) {
-                $('#nav').removeClass('navbar-white');
+                this.$nav.removeClass('navbar-white');
             }
-            $('#nav').addClass('navbar-shadow');
+            this.$nav.addClass('navbar-shadow');
             this.hasShadow = true;
         } else {
             if (canSee === "false") {
                 if (this.usingWhite) {
-                    $('#nav').addClass('navbar-white');
+                    this.$nav.addClass('navbar-white');
                 }
-                $('#nav').removeClass('navbar-shadow');
+                this.$nav.removeClass('navbar-shadow');
             }
             this.hasShadow = false;
         }
     }
 
     clickToggle() {
-        let canSee = $("#navbar-toggle-button").attr("aria-expanded");
+        let canSee = this.$navToggler.attr("aria-expanded");
 
         if (canSee === "false") {
             if (this.usingWhite) {
-                $('#nav').removeClass('navbar-white');
+                this.$nav.removeClass('navbar-white');
             }
             if (!this.hasShadow) {
-                $('#nav').addClass('navbar-shadow');
+                this.$nav.addClass('navbar-shadow');
             }
             return;
         }
         if (this.usingWhite && !this.hasShadow) {
-            $('#nav').addClass('navbar-white');
-            $('#nav').removeClass('navbar-shadow');
+            this.$nav.addClass('navbar-white');
+            this.$nav.removeClass('navbar-shadow');
         }
     }
 
@@ -101,7 +105,7 @@ class NavManager {
         const dropDownID = $dropDownToggle.data("target");
         const targetPage = $dropDownToggle.data("link");
         
-        let isCollapsed = $("#navbar-toggle-button").is(":visible");
+        let isCollapsed = this.$navToggler.is(":visible");
         if (!isCollapsed) {
             window.open(targetPage, "_self");
             return;
@@ -118,18 +122,19 @@ class NavManager {
 
 $(document).ready(function () {
     // Setup navbar
-    let navManager = new NavManager();
     $("#header").load("header.html #nav", function () {
-        navManager.setActivePage();
-        navManager.addNavShadow();
+        let nm = new NavManager("#header", "#nav", "#navbarContent", "#navbar-toggle-button");
+        
+        nm.setActivePage();
+        nm.addNavShadow();
 
         $(window).scroll(function () {
-            navManager.addNavShadow();
+            nm.addNavShadow();
         });
         
-        $("#nav .dropdown-toggle").click(function (event) {
+        nm.$nav.find(".dropdown-toggle").click(function (event) {
             event.preventDefault();
-            navManager.clickDropDown($(this));
+            nm.clickDropDown($(this));
         })
     });
 });
