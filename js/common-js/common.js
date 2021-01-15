@@ -3,9 +3,8 @@
     
     $.fn.isInViewport = function (options) {
 
-        // This is the easiest way to have default options.
+        // Options with default
         let settings = $.extend({
-            // These are the defaults.
             inFull: false,
         }, options);
         
@@ -28,6 +27,23 @@
             rect.bottom >= 0 &&
             rect.top <= (window.innerHeight || document.documentElement.clientHeight)
         );
+    };
+
+    $.fn.setLetterHoverEffect = function (options) {
+        
+        let settings = $.extend({
+            hoverClass: undefined,
+        }, options);
+        
+        this.each(function () {
+            let $text = $(this);
+            let nHTML = "";
+            for (var letter of $text.text()) {
+                nHTML += `<span class="${settings.hoverClass}">${letter}</span>`;
+            }
+            console.log(nHTML);
+            $text.html(nHTML);
+        });
     };
     
 }(jQuery));
