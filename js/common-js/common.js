@@ -2,8 +2,7 @@
 (function ($) {
     
     $.fn.isInViewport = function (options) {
-
-        // Options with default
+        
         let settings = $.extend({
             inFull: false,
         }, options);
