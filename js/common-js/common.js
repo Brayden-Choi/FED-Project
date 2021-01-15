@@ -1,18 +1,38 @@
-﻿function isElementInViewport(el) {
-    // Special bonus for those using jQuery
-    if (typeof jQuery === "function" && el instanceof jQuery) {
-        el = el[0];
-    }
+﻿// Custom jquery methods
+(function ($) {
+    
+    $.fn.isInViewport = function (options) {
 
-    var rect = el.getBoundingClientRect();
+        // This is the easiest way to have default options.
+        let settings = $.extend({
+            // These are the defaults.
+            inFull: false,
+        }, options);
+        
+        const el = this[0];
+        var rect = el.getBoundingClientRect();
 
-    return (
-        $(el).is(":visible") &&
-        rect.bottom >= 0 &&
-        rect.top <= (window.innerHeight || document.documentElement.clientHeight)
-    );
-}
+        if (!$(el).is(":visible")) {
+            return false;
+        }
+        
+        if (settings.inFull) {
+            return (
+                rect.top >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+            );
+        }
 
+        console.log(window.innerHeight, document.documentElement.clientHeight);
+        return (
+            rect.bottom >= 0 &&
+            rect.top <= (window.innerHeight || document.documentElement.clientHeight)
+        );
+    };
+    
+}(jQuery));
+
+// Manage Navbar behaviours
 class NavManager {
     constructor() {
         this.hasShadow = false;
@@ -93,42 +113,43 @@ class NavManager {
     }
 }
 
-let navManager = new NavManager();
-
 $(document).ready(function () {
+    // Setup navbar
     $("#header").load("header.html #nav", function () {
+        let navManager = new NavManager();
+        
         navManager.setActivePage();
         navManager.addNavShadow();
 
         $(window).scroll(function () {
             navManager.addNavShadow();
         });
-
-        // Stop video if out of view
-        $(window).on('resize scroll', function () {
-            for (let video of $('video')) {
-                const $video = $(video);
-                if ($video.css("position") === "fixed") {
-                    continue;
-                }
-
-                if (isElementInViewport($video)) {
-                    if (video.paused) {
-                        console.log("video play.", video.id)
-                        $video.trigger("play");
-                    }
-                } else {
-                    if (!video.paused) {
-                        console.log("video paused.", video.id)
-                        $video.trigger("pause");
-                    }
-                }
-            }
-        });
     });
 });
 
 $(window).on('load', function (event) {
+    // Stop video if out of view
+    $(window).on('resize scroll', function () {
+        for (let video of $('video')) {
+            const $video = $(video);
+            if ($video.css("position") === "fixed") {
+                continue;
+            }
+
+            if ($video.isInViewport()) {
+                if (video.paused) {
+                    console.log("video play.", video.id)
+                    $video.trigger("play");
+                }
+            } else {
+                if (!video.paused) {
+                    console.log("video paused.", video.id)
+                    $video.trigger("pause");
+                }
+            }
+        }
+    });
+    
     // Add smooth scrolling to all links
     $(window).trigger('anchorscroll', [window.location.hash, 100]);
     $('.smooth-scrolling').on('click', function (event) {
@@ -150,6 +171,7 @@ $(window).on('load', function (event) {
     });
 });
 
+// Event Handler for smooth scrolling to an anchor
 $(window).on('anchorscroll', function (event, anchor, duration) {
     if (anchor == undefined || anchor == "") {
         return;
