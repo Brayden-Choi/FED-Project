@@ -254,12 +254,13 @@ body {
 }
 
 .attractions-background {
-    background-image: url("../multimedia/gardensbythebay/attraction-cards/default.png");
+    background-image: url("../multimedia/gardensbythebay/attraction-cards/default.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
     width: 100%;
+    filter: blur(10px);
     -webkit-transition: background-image 0.3s ease-in-out;
     transition: background-image 0.3s ease-in-out;
     opacity: 0.6;
