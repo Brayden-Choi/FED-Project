@@ -35,6 +35,17 @@ body {
     font-size: calc(5vh + 5vw);
 }
 
+.header-alter-letter {
+    z-index: 3;
+    transition: all 0.5s;
+}
+
+.header-alter-letter:hover {
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+    color: saddlebrown;
+    z-index: 4;
+}
+
 /* Title Video Styles */
 .video-frame {
     backface-visibility: hidden;
@@ -103,13 +114,12 @@ body {
     font-size: calc(6vh + 6vw);
 }
 
-.alter {
-    position: relative;
-    transition: all 0.5s;
+.title-alter-letter {
     z-index: 3;
+    transition: all 0.5s;
 }
 
-.alter:hover {
+.title-alter-letter:hover {
     text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
     color: limegreen;
     z-index: 4;
