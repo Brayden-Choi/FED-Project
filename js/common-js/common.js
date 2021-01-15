@@ -65,6 +65,7 @@ class NavManager {
         if (style === "white") {
             this.usingWhite = true;
             this.$nav.addClass('navbar-white');
+            this.$nav.addClass('navbar-dark');
         }
 
         let targetPage = this.$header.attr("content").toLowerCase();
@@ -85,6 +86,7 @@ class NavManager {
         if ($(window).scrollTop() >= 30) {
             if (this.usingWhite) {
                 this.$nav.removeClass('navbar-white');
+                this.$nav.removeClass('navbar-dark');
             }
             this.$nav.addClass('navbar-shadow');
             this.hasShadow = true;
@@ -92,6 +94,7 @@ class NavManager {
             if (canSee === "false") {
                 if (this.usingWhite) {
                     this.$nav.addClass('navbar-white');
+                    this.$nav.addClass('navbar-dark');
                 }
                 this.$nav.removeClass('navbar-shadow');
             }
@@ -105,6 +108,7 @@ class NavManager {
         if (canSee === "false") {
             if (this.usingWhite) {
                 this.$nav.removeClass('navbar-white');
+                this.$nav.removeClass('navbar-dark');
             }
             if (!this.hasShadow) {
                 this.$nav.addClass('navbar-shadow');
@@ -113,6 +117,7 @@ class NavManager {
         }
         if (this.usingWhite && !this.hasShadow) {
             this.$nav.addClass('navbar-white');
+            this.$nav.addClass('navbar-dark');
             this.$nav.removeClass('navbar-shadow');
         }
     }
@@ -151,6 +156,10 @@ $(document).ready(function () {
         nm.$nav.find(".dropdown-toggle").click(function (event) {
             event.preventDefault();
             nm.clickDropDown($(this));
+        })
+        
+        nm.$navToggler.click(function (event) {
+            nm.clickToggle();
         })
     });
 });
