@@ -172,6 +172,7 @@ class SectionManager {
     }
 }
 
+
 class AttractionManager {
     constructor(cardsId, modalId, backgroundId) {
         this.cardsId = cardsId;
@@ -180,17 +181,18 @@ class AttractionManager {
         this.$modalView = $(modalId);
         this.$background = $(backgroundId);
         this.data = {};
+        this.cardImageDir = "multimedia/gardensbythebay/attraction-cards/";
     }
-    
+
     setBackground($card) {
         if (!$card.is(":hover")) {
             return;
         }
 
         const targetData = this.getData($card);
-        this.$background.css("background-image", `url(${targetData.previewImage})`);
+        this.$background.css("background-image", `url(${this.cardImageDir}${targetData.previewImage})`);
     }
-    
+
     setModalData($button) {
         const targetData = this.getData($button)
 
@@ -214,7 +216,7 @@ class AttractionManager {
     buildPreviewCard(cardData, index) {
         return `
         <div class="card" data-index="${index}">
-            <img alt="..." class="card-img-top" src="${cardData.previewImage}">
+            <img alt="..." class="card-img-top" src="${this.cardImageDir}${cardData.previewImage}">
             <div class="card-body">
                 <h5 class="card-title">${cardData.name}</h5>
                 <p class="card-text">${cardData.previewText}</p>
@@ -223,7 +225,7 @@ class AttractionManager {
         </div>
         `;
     }
-    
+
     getData($idenifier) {
         return this.data[$idenifier.data("index")];
     }
