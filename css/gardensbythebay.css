@@ -148,8 +148,10 @@ body {
     justify-content: right;
     color: white;
     display: block;
-    right: 0.7vw;
-    top: 25%;
+    margin: 0;
+    padding-right: 0;
+    right: 0;
+    top: 24%;
     z-index: 4;
 }
 
@@ -158,16 +160,16 @@ body {
 }
 
 .indicator {
-    margin: 10px;
-    height: 12vh;
-    border-right: 5px solid rgba(255, 255, 255, 0.4);
+    margin-bottom: 6px;
+    height: 14vh;
+    border-right: 9px solid rgba(255, 255, 255, 0.4);
     transition: height 0.5s, border-right 0.5s;
     vertical-align: middle;
 }
 
 .indicator:hover {
-    height: 14vh;
-    border-right: 5px solid rgba(255, 255, 255, 0.7);
+    height: 16vh;
+    border-right: 11px solid rgba(255, 255, 255, 0.7);
 }
 
 .indicator-hover {
@@ -195,11 +197,11 @@ body {
 }
 
 .content-indicators .active {
-    border-right: 5px solid rgba(255, 255, 255, 1);
+    border-right: 13px solid rgba(255, 255, 255, 1);
 }
 
 .content-indicators .active:hover {
-    border-right: 5px solid rgba(255, 255, 255, 1);
+    border-right: 13px solid rgba(255, 255, 255, 1);
 }
 
 /* Attractions Cards Styles */
@@ -249,8 +251,13 @@ body {
 }
 
 /* Media Queries */
-@media (max-width: 512px) {
+@media (max-width: 480px) {
     .content-indicators {
         visibility: hidden;
     }
+}
+
+
+#gallery {
+    padding-top: 3000px;
 }
