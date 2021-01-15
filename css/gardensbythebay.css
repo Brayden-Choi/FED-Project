@@ -250,6 +250,15 @@ body {
     -webkit-transition: background-image 0.3s ease-in-out;
 }
 
+/* Modal Styles */
+.modal {
+    padding-right: 0 !important;
+}
+.modal-dialog {
+    padding-right: 0 !important;
+    max-width: 96% !important;
+}
+
 /* Media Queries */
 @media (max-width: 480px) {
     .content-indicators {
