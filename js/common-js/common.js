@@ -97,7 +97,10 @@ class NavManager {
         }
     }
 
-    clickDropDown(dropDownID, targetPage) {
+    clickDropDown($dropDownToggle) {
+        const dropDownID = $dropDownToggle.data("target");
+        const targetPage = $dropDownToggle.data("link");
+        
         let isCollapsed = $("#navbar-toggle-button").is(":visible");
         if (!isCollapsed) {
             window.open(targetPage, "_self");
@@ -115,15 +118,19 @@ class NavManager {
 
 $(document).ready(function () {
     // Setup navbar
+    let navManager = new NavManager();
     $("#header").load("header.html #nav", function () {
-        let navManager = new NavManager();
-        
         navManager.setActivePage();
         navManager.addNavShadow();
 
         $(window).scroll(function () {
             navManager.addNavShadow();
         });
+        
+        $("#nav .dropdown-toggle").click(function (event) {
+            event.preventDefault();
+            navManager.clickDropDown($(this));
+        })
     });
 });
 
