@@ -20,11 +20,9 @@ html {
     margin-top: 35vh;
     text-align: center;
     color:  #0D5510 ;
-   /* color: white;*/
     font-family: 'Caveat Brush', cursive;
     font-weight: bold;
-    font-size: calc(7vh + 7vw);
-    /*text-decoration: underline overline;*/
+    font-size: calc(8vh + 8vw);
     -webkit-text-stroke-width: 0.3px;
     -webkit-text-stroke-color: white;
     -webkit-text-fill-color: inherit;
@@ -401,6 +399,9 @@ dd{
         margin-left: 0;
         z-index: 10;
     }
+    .title {
+        -webkit-text-stroke-width: 0.1px;
+    }
     .header {
         font-size: 3rem;
     }
@@ -441,5 +442,6 @@ dd{
     }
     .ticket-table .tablehead, .hours-table .tablehead  {
         font-size: 2.5rem;
+        padding: 0;
     }
 }
