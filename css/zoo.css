@@ -73,7 +73,6 @@ h5 {
     height: 100%;
     width: 100%;
     position: fixed;
-    overflow:hidden;
     opacity:0;
     -webkit-transition:3s ease all;
     transition:3s ease all;
@@ -84,6 +83,8 @@ h5 {
 .air-slider .slide img {
     height: 100%;
     width: 100%;
+    overflow: hidden;
+    object-fit: cover;
  }
 
 .air-slider .active-slide {
