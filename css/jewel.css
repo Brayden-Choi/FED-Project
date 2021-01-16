@@ -1,5 +1,4 @@
 /*Welcome Section*/
-
 .welcome{
     height: 800px;
     z-index: 1;
@@ -64,6 +63,44 @@
 }
 
 /*Attraction Section*/
+.attraction-title {
+    color: black;
+    text-align: center;
+    font-size: 50px;
+    position: center;
+    font-family: 'PT Serif Caption', serif;
+}
+
+.gradient-box {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+  width: 1800px;
+  height: 700px;
+  position: relative;
+  padding: ;
+  box-sizing: border-box;
+  color: #FFF;
+  background: white;
+  background-clip: padding-box;
+  border: solid 5px transparent;
+  border-radius: 1em;
+}
+
+.gradient-box:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -5px;
+  border-radius: inherit;
+  background: linear-gradient(to right, gold, green, gold);
+}
+
 .slider {
   width: 1600px;
   text-align: center;
