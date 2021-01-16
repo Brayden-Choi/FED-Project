@@ -65,16 +65,18 @@
 
 /*Attraction Section*/
 .slider {
-  width: 1000px;
+  width: 1600px;
   text-align: center;
   overflow: hidden;
+  margin-left: 60px;
+  margin-right: 60px;
 }
 
 .slides {
   display: flex;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  
+  width: 1600px;
   /*
   scroll-snap-points-x: repeat(300px);
   scroll-snap-type: mandatory;
@@ -93,8 +95,8 @@
 }
 .slides > div {
   flex-shrink: 0;
-  width: 300px;
-  height: 300px;
+  width: 500px;
+  height: 500px;
   margin-right: 50px;
   border-radius: 10px;
   background: #eee;
