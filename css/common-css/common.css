@@ -1,7 +1,14 @@
 ﻿@import "bootstrap.min.css";
 @import "header-styles.css";
+@import "footer-styles.css";
 
 html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    min-height: 100%;
 }
 
 .smooth-scrolling {

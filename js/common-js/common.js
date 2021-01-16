@@ -161,6 +161,9 @@ $(document).ready(function () {
             nm.clickToggle();
         })
     });
+
+    // Setup footer
+    $("#footer").load("footer.html #foot");
 });
 
 $(window).on('load', function (event) {
