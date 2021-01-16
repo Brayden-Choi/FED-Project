@@ -2,8 +2,7 @@
 (function ($) {
     
     $.fn.isInViewport = function (options) {
-
-        // Options with default
+        
         let settings = $.extend({
             inFull: false,
         }, options);
@@ -123,7 +122,7 @@ class NavManager {
     }
 
     clickDropDown($dropDownToggle) {
-        const dropDownID = $dropDownToggle.data("target");
+        const dropDownID = $dropDownToggle.data("page");
         const targetPage = $dropDownToggle.data("link");
         
         let isCollapsed = this.$navToggler.is(":visible");
@@ -132,11 +131,12 @@ class NavManager {
             return;
         }
         let dropDownMain = $($(dropDownID + " li")[0]).find('a:first')[0];
-        console.log(dropDownMain);
-        if ($(dropDownID).hasClass("show")) {
+        if ($(dropDownMain).hasClass("show")) {
+            console.log('closing dropdown...');
             $(dropDownMain).addClass("dropdown-item-hidden");
             return;
         }
+        console.log('opening dropdown...')
         $(dropDownMain).removeClass("dropdown-item-hidden");
     }
 }
@@ -154,7 +154,6 @@ $(document).ready(function () {
         });
         
         nm.$nav.find(".dropdown-toggle").click(function (event) {
-            event.preventDefault();
             nm.clickDropDown($(this));
         })
         
@@ -162,6 +161,9 @@ $(document).ready(function () {
             nm.clickToggle();
         })
     });
+
+    // Setup footer
+    $("#footer").load("footer.html #foot");
 });
 
 $(window).on('load', function (event) {

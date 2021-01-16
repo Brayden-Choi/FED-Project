@@ -131,7 +131,7 @@ class AttractionManager {
         for (const singleData of this.data) {
             this.$cardCollection.append(this.buildPreviewCard(singleData, index))
             console.log("Added card data:", singleData);
-            
+
             this.$cardCollection.append(this.getSeperator("sm", "md"));
             if (index % 2 === 1) {
                 this.$cardCollection.append(this.getSeperator("md", "xl"));
@@ -168,12 +168,12 @@ class AttractionManager {
             <div class="card-body">
                 <h5 class="card-title">${cardData.name}</h5>
                 <p class="card-text">${cardData.previewText}</p>
-                <button class="btn btn-primary" data-target="#attractionsModal" data-toggle="modal" type="button" data-index="${index}">learn more!</button>
+                <button class="btn btn-primary stretched-link" data-target="#attractionsModal" data-toggle="modal" type="button" data-index="${index}">learn more!</button>
             </div>
         </div>
         `;
     }
-    
+
     getSeperator(warpTarget, previousTarget) {
         if (previousTarget === undefined) {
             return `<div class="w-100 mt-3 d-none d-${warpTarget}-block"></div>`;
@@ -189,6 +189,7 @@ class AttractionManager {
 $(document).ready(function () {
     // Cool letter hover
     var letters = $("#title-text").setLetterHoverEffect({"hoverClass": "alter"});
+    var letters = $(".header-text").setLetterHoverEffect({"hoverClass": "header-alter-letter"});
 
     // Handle video change
     const vm = new VideoManager();

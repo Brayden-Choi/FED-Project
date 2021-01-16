@@ -22,10 +22,12 @@
     <script src="js/gardensbythebay.js"></script>
 </head>
 
+<div content="Gardens By The Bay" id="header" type="white"></div>
+
 <body>
 <div aria-hidden="true" aria-labelledby="attractionsModal-title" class="modal fade" id="attractionsModal" role="dialog"
      tabindex="-1">
-    <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-dialog mx-auto" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="attractionsModal-title">Title</h5>
@@ -42,8 +44,6 @@
         </div>
     </div>
 </div>
-
-<div content="Gardens By The Bay" id="header" type="white"></div>
 
 <div class="content-indicators">
     <ol id="content-indicators">
@@ -88,7 +88,7 @@
 </div>
 
 <div class="content container-fluid p-0 m-0" id="content">
-    <section id="attractions">
+    <section class="section" id="attractions">
         <div class="attractions-background" id="attractionsBackground"></div>
         <div class="row m-0">
             <div class="col-12">
@@ -98,9 +98,11 @@
         <div class="card-deck mr-md-5 ml-md-5 mr-4 ml-4" id="attractionCards"></div>
     </section>
 
-    <section id="gallery">
+    <section class="section" id="gallery">
         
     </section>
+
+    <div id="footer"></div>
 </div>
 </body>
 
