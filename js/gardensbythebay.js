@@ -1,63 +1,3 @@
-$(document).ready(function () {
-    // Cool letter hover
-    var letters = $("#title-text").text();
-    var nHTML = "";
-    for (var letter of letters) {
-        nHTML += "<span class='alter'>" + letter + "</span>";
-    }
-    $("#title-text").html(nHTML);
-
-    // Handle video change
-    const vm = new VideoManager();
-    $("#drone-vid-0").on('ended', function () {
-        vm.swap();
-    });
-    $("#drone-vid-1").on('ended', function () {
-        vm.swap();
-    });
-
-    // Parallax effect
-    $(window).on('load resize scroll', function () {
-        var scrolled = $(this).scrollTop();
-        $('#title').css({
-            'transform': 'translate3d(0, ' + -(scrolled * 0.2) + 'px, 0)', // parallax (20% scroll rate)
-            'opacity': 1 - scrolled / 600 // fade out at 400px from top
-        });
-        $('#drone-vid-0').css(
-            'transform', 'translate3d(0, ' + -(scrolled * 0.25) + 'px, 0)' // parallax (25% scroll rate)
-        );
-        $('#drone-vid-1').css(
-            'transform', 'translate3d(0, ' + -(scrolled * 0.25) + 'px, 0)' // parallax (25% scroll rate)
-        );
-        vm.checkOutOfView();
-    });
-
-    // Handle section change
-    const sm = new SectionManager("#content-indicators", ["#attractions", "#gallery"]);
-    sm.indicatorScrollUpdate();
-    $(window).scroll(function () {
-        sm.indicatorScrollUpdate();
-    });
-    $('#content-indicators li').click(function (event) {
-        sm.indicatorClick(event.target);
-    });
-
-    // Setup attraction cards
-    const am = new AttractionManager("#attractionCards", "#attractionsModal", "#attractionsBackground");
-    const filePath = "multimedia/gardensbythebay/attractions.json";
-    $.getJSON(filePath).then(function (data) {
-        am.loadData(data);
-        $(`${am.cardsId} .card`).hover(function () {
-            am.setBackground($(this));
-        });
-        am.$modalView.on('show.bs.modal', function (event) {
-            am.setModalData($(event.relatedTarget));
-        })
-    }).fail(function () {
-        console.log("Unable to load file: " + filePath);
-    })
-});
-
 class VideoManager {
     constructor() {
         this.currentVideo = 0
@@ -172,6 +112,7 @@ class SectionManager {
     }
 }
 
+
 class AttractionManager {
     constructor(cardsId, modalId, backgroundId) {
         this.cardsId = cardsId;
@@ -180,24 +121,7 @@ class AttractionManager {
         this.$modalView = $(modalId);
         this.$background = $(backgroundId);
         this.data = {};
-    }
-    
-    setBackground($card) {
-        if (!$card.is(":hover")) {
-            return;
-        }
-
-        const targetData = this.getData($card);
-        this.$background.css("background-image", `url(${targetData.previewImage})`);
-    }
-    
-    setModalData($button) {
-        const targetData = this.getData($button)
-
-        $(this.modalId + "-title").text(targetData.name);
-        $(this.modalId + "-body").text(targetData.detailText);
-
-        console.log("Set modal data for:", targetData.name);
+        this.cardImageDir = "multimedia/gardensbythebay/attraction-cards/";
     }
 
     loadData(data) {
@@ -207,24 +131,113 @@ class AttractionManager {
         for (const singleData of this.data) {
             this.$cardCollection.append(this.buildPreviewCard(singleData, index))
             console.log("Added card data:", singleData);
+
+            this.$cardCollection.append(this.getSeperator("sm", "md"));
+            if (index % 2 === 1) {
+                this.$cardCollection.append(this.getSeperator("md", "xl"));
+            }
+            if (index % 3 === 2) {
+                this.$cardCollection.append(this.getSeperator("xl"));
+            }
             index++;
         }
+    }
+
+    setBackground($card) {
+        if (!$card.is(":hover")) {
+            return;
+        }
+
+        const targetData = this.getData($card);
+        this.$background.css("background-image", `url(${this.cardImageDir}${targetData.previewImage})`);
+    }
+
+    setModalData($button) {
+        const targetData = this.getData($button)
+
+        $(this.modalId + "-title").text(targetData.name);
+        $(this.modalId + "-body").text(targetData.detailText);
+
+        console.log("Set modal data for:", targetData.name);
     }
 
     buildPreviewCard(cardData, index) {
         return `
         <div class="card" data-index="${index}">
-            <img alt="..." class="card-img-top" src="${cardData.previewImage}">
+            <img alt="..." class="card-img-top" src="${this.cardImageDir}${cardData.previewImage}">
             <div class="card-body">
                 <h5 class="card-title">${cardData.name}</h5>
                 <p class="card-text">${cardData.previewText}</p>
-                <button class="btn btn-primary" data-target="#attractionsModal" data-toggle="modal" type="button" data-index="${index}">learn more!</button>
+                <button class="btn btn-primary stretched-link" data-target="#attractionsModal" data-toggle="modal" type="button" data-index="${index}">learn more!</button>
             </div>
         </div>
         `;
     }
-    
+
+    getSeperator(warpTarget, previousTarget) {
+        if (previousTarget === undefined) {
+            return `<div class="w-100 mt-3 d-none d-${warpTarget}-block"></div>`;
+        }
+        return `<div class="w-100 mt-3 d-none d-${warpTarget}-block d-${previousTarget}-none"></div>`;
+    }
+
     getData($idenifier) {
         return this.data[$idenifier.data("index")];
     }
 }
+
+$(document).ready(function () {
+    // Cool letter hover
+    var letters = $("#title-text").setLetterHoverEffect({"hoverClass": "alter"});
+    var letters = $(".header-text").setLetterHoverEffect({"hoverClass": "header-alter-letter"});
+
+    // Handle video change
+    const vm = new VideoManager();
+    $("#drone-vid-0").on('ended', function () {
+        vm.swap();
+    });
+    $("#drone-vid-1").on('ended', function () {
+        vm.swap();
+    });
+
+    // Parallax effect
+    $(window).on('load resize scroll', function () {
+        var scrolled = $(this).scrollTop();
+        $('#title').css({
+            'transform': 'translate3d(0, ' + -(scrolled * 0.2) + 'px, 0)', // parallax (20% scroll rate)
+            'opacity': 1 - scrolled / 600 // fade out at 400px from top
+        });
+        $('#drone-vid-0').css(
+            'transform', 'translate3d(0, ' + -(scrolled * 0.25) + 'px, 0)' // parallax (25% scroll rate)
+        );
+        $('#drone-vid-1').css(
+            'transform', 'translate3d(0, ' + -(scrolled * 0.25) + 'px, 0)' // parallax (25% scroll rate)
+        );
+        vm.checkOutOfView();
+    });
+
+    // Handle section change
+    const sm = new SectionManager("#content-indicators", ["#attractions", "#gallery"]);
+    sm.indicatorScrollUpdate();
+    $(window).scroll(function () {
+        sm.indicatorScrollUpdate();
+    });
+    $('#content-indicators li').click(function (event) {
+        sm.indicatorClick(event.target);
+    });
+
+    // Setup attraction cards
+    const am = new AttractionManager("#attractionCards", "#attractionsModal", "#attractionsBackground");
+    const filePath = "multimedia/gardensbythebay/attractions.json";
+    $.getJSON(filePath).then(function (data) {
+        am.loadData(data);
+        $(`${am.cardsId} .card`).hover(function () {
+            am.setBackground($(this));
+        });
+        am.$modalView.on('show.bs.modal', function (event) {
+            am.setModalData($(event.relatedTarget));
+        })
+    }).fail(function () {
+        console.log("Unable to load file: " + filePath);
+    })
+});

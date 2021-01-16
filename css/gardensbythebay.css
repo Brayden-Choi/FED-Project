@@ -24,11 +24,26 @@ body {
     z-index: 3;
 }
 
+.section {
+    position: relative;
+}
+
 .header-text {
     color: white;
     margin-top: 20px;
     text-align: center;
     font-size: calc(5vh + 5vw);
+}
+
+.header-alter-letter {
+    z-index: 3;
+    transition: all 0.5s;
+}
+
+.header-alter-letter:hover {
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+    color: saddlebrown;
+    z-index: 4;
 }
 
 /* Title Video Styles */
@@ -99,13 +114,12 @@ body {
     font-size: calc(6vh + 6vw);
 }
 
-.alter {
-    position: relative;
-    transition: all 0.5s;
+.title-alter-letter {
     z-index: 3;
+    transition: all 0.5s;
 }
 
-.alter:hover {
+.title-alter-letter:hover {
     text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
     color: limegreen;
     z-index: 4;
@@ -114,6 +128,7 @@ body {
 /* Title Arrow Styles */
 .arrow {
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     position: absolute;
     width: 100%;
     bottom: 10px;
@@ -147,8 +162,10 @@ body {
     justify-content: right;
     color: white;
     display: block;
-    right: 0.7vw;
-    top: 25%;
+    margin: 0;
+    padding-right: 0;
+    right: 0;
+    top: 24%;
     z-index: 4;
 }
 
@@ -157,21 +174,22 @@ body {
 }
 
 .indicator {
-    margin: 10px;
-    height: 12vh;
-    border-right: 5px solid rgba(255, 255, 255, 0.4);
+    margin-bottom: 6px;
+    height: 14vh;
+    border-right: 9px solid rgba(255, 255, 255, 0.4);
     transition: height 0.5s, border-right 0.5s;
     vertical-align: middle;
 }
 
 .indicator:hover {
-    height: 14vh;
-    border-right: 5px solid rgba(255, 255, 255, 0.7);
+    height: 16vh;
+    border-right: 11px solid rgba(255, 255, 255, 0.7);
+    cursor: pointer;
 }
 
 .indicator-hover {
     position: relative;
-    padding-top: 4vh;
+    padding-top: 5vh;
     right: 5px;
     opacity: 0;
     visibility: hidden;
@@ -179,7 +197,7 @@ body {
 }
 
 .indicator:hover .indicator-hover {
-    padding-top: 5vh;
+    padding-top: 6vh;
     visibility: visible;
     opacity: 1;
 }
@@ -190,26 +208,30 @@ body {
     padding: 4px 8px;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 5px;
-    box-shadow: 0 2px 6px 0 rgba(255, 255, 255, 0.3);
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
 }
 
 .content-indicators .active {
-    border-right: 5px solid rgba(255, 255, 255, 1);
+    border-right: 13px solid rgba(255, 255, 255, 1);
 }
 
 .content-indicators .active:hover {
-    border-right: 5px solid rgba(255, 255, 255, 1);
+    border-right: 13px solid rgba(255, 255, 255, 1);
 }
 
 /* Attractions Cards Styles */
 .card {
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     margin-top: 8px;
+    border-radius: 5px;
     border-right: 5px;
     border: none;
     box-shadow: 0 2px 1.2em rgba(0, 0, 0, 0.24);
     transition: all 0.5s;
     animation: popout 0.6s ease-out;
+    -webkit-animation: popout 0.6s ease-out;
+    z-index: 4;
 }
 
 @keyframes popout {
@@ -225,42 +247,49 @@ body {
 
 .card:hover {
     box-shadow: 0 3px 1.2em rgba(0, 0, 0, 0.36);
-    transform: scale(1.02);
+    transform: scale(1.02) translate3d(0px, 0px, 0px);
+    -webkit-transform: scale(1.02) translate3d(0px, 0px, 0px);
 }
 
-@media (max-width: 922px) {
-    .card-columns {
-        column-count: 2;
-    }
-}
-
-@media (max-width: 512px) {
-    .content-indicators {
-        visibility: hidden;
-    }
-    
-    .card-columns {
-        column-count: 1;
-    }
+.card .card-img-top {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 5px;
 }
 
 /* Attractions Background Styles */
-.attractions-background-wrapper {
-    height: 100%;
-    width: 100%;
-    background-color: black;
+.attractions-background {
+    background-image: url("../multimedia/gardensbythebay/attraction-cards/default.jpg");
+    background-size: cover;
     overflow: hidden;
     position: absolute;
-}
-
-.attractions-background {
-    background-image: url("../multimedia/gardensbythebay/attraction-cards/default.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     height: 100%;
     width: 100%;
-    -webkit-transition: background-image 0.3s ease-in-out;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    filter: blur(10px) brightness(0.5);
+    -webkit-filter: blur(8px) brightness(0.5);
     transition: background-image 0.3s ease-in-out;
-    opacity: 0.6;
+    -webkit-transition: background-image 0.3s ease-in-out;
+}
+
+/* Modal Styles */
+.modal {
+    padding-right: 0 !important;
+}
+.modal-dialog {
+    padding-right: 0 !important;
+    max-width: 96% !important;
+}
+
+/* Media Queries */
+@media (max-width: 480px) {
+    .content-indicators {
+        visibility: hidden;
+    }
+}
+
+
+#gallery {
+    padding-top: 3000px;
 }

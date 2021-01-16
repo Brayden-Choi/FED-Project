@@ -1,34 +1,74 @@
-﻿function isElementInViewport(el) {
-    // Special bonus for those using jQuery
-    if (typeof jQuery === "function" && el instanceof jQuery) {
-        el = el[0];
-    }
+﻿// Custom jquery methods
+(function ($) {
+    
+    $.fn.isInViewport = function (options) {
+        
+        let settings = $.extend({
+            inFull: false,
+        }, options);
+        
+        const el = this[0];
+        var rect = el.getBoundingClientRect();
 
-    var rect = el.getBoundingClientRect();
+        if (!$(el).is(":visible")) {
+            return false;
+        }
+        
+        if (settings.inFull) {
+            return (
+                rect.top >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+            );
+        }
 
-    return (
-        $(el).is(":visible") &&
-        rect.bottom >= 0 &&
-        rect.top <= (window.innerHeight || document.documentElement.clientHeight)
-    );
-}
+        console.log(window.innerHeight, document.documentElement.clientHeight);
+        return (
+            rect.bottom >= 0 &&
+            rect.top <= (window.innerHeight || document.documentElement.clientHeight)
+        );
+    };
 
+    $.fn.setLetterHoverEffect = function (options) {
+        
+        let settings = $.extend({
+            hoverClass: undefined,
+        }, options);
+        
+        this.each(function () {
+            let $text = $(this);
+            let nHTML = "";
+            for (var letter of $text.text()) {
+                nHTML += `<span class="${settings.hoverClass}">${letter}</span>`;
+            }
+            console.log(nHTML);
+            $text.html(nHTML);
+        });
+    };
+    
+}(jQuery));
+
+// Manage Navbar behaviours
 class NavManager {
-    constructor() {
+    constructor(headerId, navId, navContentId, navTogglerId) {
+        this.$header = $(headerId);
+        this.$nav = $(navId);
+        this.$navContent = $(navContentId);
+        this.$navToggler = $(navTogglerId);
         this.hasShadow = false;
         this.usingWhite = false;
     }
 
     setActivePage() {
-        let style = $("#header").attr("type");
+        let style = this.$header.attr("type");
 
         if (style === "white") {
             this.usingWhite = true;
-            $('#nav').addClass('navbar-white');
+            this.$nav.addClass('navbar-white');
+            this.$nav.addClass('navbar-dark');
         }
 
-        let targetPage = $("#header").attr("content").toLowerCase();
-        let pages = $("#navbarSupportedContent ul li");
+        let targetPage = this.$header.attr("content").toLowerCase();
+        let pages = this.$navContent.find("ul li");
 
         for (let page of pages) {
             let pageName = $(page).find('a:first')[0].innerHTML.toLowerCase();
@@ -40,95 +80,115 @@ class NavManager {
     }
 
     addNavShadow() {
-        let canSee = $("#navbar-toggle-button").attr("aria-expanded");
+        let canSee = this.$navToggler.attr("aria-expanded");
 
         if ($(window).scrollTop() >= 30) {
             if (this.usingWhite) {
-                $('#nav').removeClass('navbar-white');
+                this.$nav.removeClass('navbar-white');
+                this.$nav.removeClass('navbar-dark');
             }
-            $('#nav').addClass('navbar-shadow');
+            this.$nav.addClass('navbar-shadow');
             this.hasShadow = true;
         } else {
             if (canSee === "false") {
                 if (this.usingWhite) {
-                    $('#nav').addClass('navbar-white');
+                    this.$nav.addClass('navbar-white');
+                    this.$nav.addClass('navbar-dark');
                 }
-                $('#nav').removeClass('navbar-shadow');
+                this.$nav.removeClass('navbar-shadow');
             }
             this.hasShadow = false;
         }
     }
 
     clickToggle() {
-        let canSee = $("#navbar-toggle-button").attr("aria-expanded");
+        let canSee = this.$navToggler.attr("aria-expanded");
 
         if (canSee === "false") {
             if (this.usingWhite) {
-                $('#nav').removeClass('navbar-white');
+                this.$nav.removeClass('navbar-white');
+                this.$nav.removeClass('navbar-dark');
             }
             if (!this.hasShadow) {
-                $('#nav').addClass('navbar-shadow');
+                this.$nav.addClass('navbar-shadow');
             }
             return;
         }
         if (this.usingWhite && !this.hasShadow) {
-            $('#nav').addClass('navbar-white');
-            $('#nav').removeClass('navbar-shadow');
+            this.$nav.addClass('navbar-white');
+            this.$nav.addClass('navbar-dark');
+            this.$nav.removeClass('navbar-shadow');
         }
     }
 
-    clickDropDown(dropDownID, targetPage) {
-        let isCollapsed = $("#navbar-toggle-button").is(":visible");
+    clickDropDown($dropDownToggle) {
+        const dropDownID = $dropDownToggle.data("page");
+        const targetPage = $dropDownToggle.data("link");
+        
+        let isCollapsed = this.$navToggler.is(":visible");
         if (!isCollapsed) {
             window.open(targetPage, "_self");
             return;
         }
         let dropDownMain = $($(dropDownID + " li")[0]).find('a:first')[0];
-        console.log(dropDownMain);
-        if ($(dropDownID).hasClass("show")) {
+        if ($(dropDownMain).hasClass("show")) {
+            console.log('closing dropdown...');
             $(dropDownMain).addClass("dropdown-item-hidden");
             return;
         }
+        console.log('opening dropdown...')
         $(dropDownMain).removeClass("dropdown-item-hidden");
     }
 }
 
-let navManager = new NavManager();
-
 $(document).ready(function () {
+    // Setup navbar
     $("#header").load("header.html #nav", function () {
-        navManager.setActivePage();
-        navManager.addNavShadow();
+        let nm = new NavManager("#header", "#nav", "#navbarContent", "#navbar-toggle-button");
+        
+        nm.setActivePage();
+        nm.addNavShadow();
 
         $(window).scroll(function () {
-            navManager.addNavShadow();
+            nm.addNavShadow();
         });
-
-        // Stop video if out of view
-        $(window).on('resize scroll', function () {
-            for (let video of $('video')) {
-                const $video = $(video);
-                if ($video.css("position") === "fixed") {
-                    continue;
-                }
-
-                if (isElementInViewport($video)) {
-                    if (video.paused) {
-                        console.log("video play.", video.id)
-                        $video.trigger("play");
-                    }
-                } else {
-                    if (!video.paused) {
-                        console.log("video paused.", video.id)
-                        $video.trigger("pause");
-                    }
-                }
-            }
-        });
+        
+        nm.$nav.find(".dropdown-toggle").click(function (event) {
+            nm.clickDropDown($(this));
+        })
+        
+        nm.$navToggler.click(function (event) {
+            nm.clickToggle();
+        })
     });
+
+    // Setup footer
+    $("#footer").load("footer.html #foot");
 });
 
 $(window).on('load', function (event) {
+    // Stop video if out of view
+    $(window).on('resize scroll', function () {
+        for (let video of $('video')) {
+            const $video = $(video);
+            if ($video.css("position") === "fixed") {
+                continue;
+            }
+
+            if ($video.isInViewport()) {
+                if (video.paused) {
+                    console.log("video play.", video.id)
+                    $video.trigger("play");
+                }
+            } else {
+                if (!video.paused) {
+                    console.log("video paused.", video.id)
+                    $video.trigger("pause");
+                }
+            }
+        }
+    });
+    
     // Add smooth scrolling to all links
     $(window).trigger('anchorscroll', [window.location.hash, 100]);
     $('.smooth-scrolling').on('click', function (event) {
@@ -150,6 +210,7 @@ $(window).on('load', function (event) {
     });
 });
 
+// Event Handler for smooth scrolling to an anchor
 $(window).on('anchorscroll', function (event, anchor, duration) {
     if (anchor == undefined || anchor == "") {
         return;
