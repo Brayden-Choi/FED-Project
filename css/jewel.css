@@ -65,29 +65,7 @@
 }
 
 /*Attraction Section*/
-.slider {
-    width: 400px;
-    background: black;
-}
 
-.slider .ui-slider-handle {
-    display: block;
-    width: 40px;
-    height: 20px;
-    margin-left: -20px;
-    background: red;
-    cursor: pointer;
-    position: relative;
-}
-
-.carousel {
-    width: 400px;
-    height: 200px;
-}
-
-.carousel .slick-slide {
-    height: auto;
-}
 
 /**/
 .carousel-slide {
