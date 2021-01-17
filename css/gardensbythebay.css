@@ -311,10 +311,6 @@ body {
     white-space: nowrap;
 }
 
-.cell-h-center {
-    text-align: center;
-}
-
 .cell-wrap {
     white-space: pre-wrap;
 }
