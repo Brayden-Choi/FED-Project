@@ -1,6 +1,6 @@
 /*Welcome Section*/
 .welcome{
-    height: 800px;
+    height: 975px;
     z-index: 1;
 }
 
@@ -10,7 +10,7 @@
     font-size: 70px;
     position: center;
     padding-top: 400px;
-    font-family: 'PT Serif Caption', serif;
+    font-family: 'Cinzel', serif;
 }
 
 .welcome-img {
@@ -24,7 +24,7 @@
 /*About Section*/
 
 .about-text {
-    font-family: 'PT Serif Caption', serif;
+    font-family: 'Cinzel', serif;
     font-size: 50px;
     color: black;
     position: center;
@@ -34,6 +34,7 @@
 }
 
 .about-information-text {
+    font-family: 'Josefin Sans', sans-serif;
     font-size: 20px;
     color: white;
     text-align: center;
@@ -41,7 +42,6 @@
     padding-top: 100px;
     padding-left: 100px;
     padding-right: 100px;
-    
 }
 
 .about {
@@ -62,30 +62,42 @@
 }
 
 /*Attraction Section*/
+.a-bg {
+    background-color: black;
+    height: 975px;
+}
+
+h3 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+}
+
 .attraction-title {
-    color: black;
+    color: white;
     text-align: center;
     font-size: 50px;
     position: center;
-    font-family: 'PT Serif Caption', serif;
+    font-family: 'Cinzel', serif;
     padding-top: 50px;
 }
 
 .gradient-box {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  margin: auto;
-  width: 1800px;
-  height: 700px;
-  position: relative;
-  padding: ;
-  box-sizing: border-box;
-  color: #FFF;
-  background: white;
-  background-clip: padding-box;
-  border: solid 5px transparent;
-  border-radius: 1em;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    width: 1800px;
+    height: 700px;
+    position: relative;
+    padding:;
+    box-sizing: border-box;
+    background: #baac79;
+    background-clip: padding-box;
+    border: solid 5px transparent;
+    border-radius: 1em;
 }
 
 .gradient-box:before {
@@ -136,7 +148,7 @@
   height: 500px;
   margin-right: 50px;
   border-radius: 10px;
-  background: #eee;
+  background: black;
   transform-origin: center center;
   transform: scale(1);
   transition: transform 0.5s;
@@ -153,8 +165,7 @@
 img {
     object-fit: cover;
     position: relative;
-    top: 0;
-    left: 0;
+    bottom: 40px;
     width: 100%;
     height: 70%;
 }
@@ -175,7 +186,7 @@ img {
   top: 1px;
 }
 .slider > a:focus {
-  background: #000;
+  background: white;
 }
 
 @supports (scroll-snap-type) {
@@ -190,8 +201,11 @@ img {
     text-align: center;
     font-size: 50px;
     position: center;
-    font-family: 'PT Serif Caption', serif;
+    font-family: 'Cinzel', serif;
     padding-top: 50px;
 }
 
-
+.s-bg {
+    background-color: #baac79;
+    height: 975px;
+}
