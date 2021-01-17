@@ -20,12 +20,10 @@ html {
     margin-top: 35vh;
     text-align: center;
     color:  #0D5510 ;
-   /* color: white;*/
     font-family: 'Caveat Brush', cursive;
     font-weight: bold;
-    font-size: calc(7vh + 7vw);
-    /*text-decoration: underline overline;*/
-    -webkit-text-stroke-width: 0.3px;
+    font-size: calc(8vh + 8vw);
+    -webkit-text-stroke-width: 0.15rem;
     -webkit-text-stroke-color: white;
     -webkit-text-fill-color: inherit;
 }
@@ -66,7 +64,6 @@ h5 {
     width: auto;
     z-index: -10;
     min-height: 100%;
-    background-size: cover;
 }
 
 .air-slider .slide {
@@ -90,44 +87,9 @@ h5 {
 .air-slider .active-slide {
     opacity: 0.7;
 }
-/*
-.air-slider .controls {
-    width:100%;
-    height:50px;
-    top:calc(50% - 25px);
-    left:0;
-    display:-webkit-box;
-    display:-webkit-flex;
-    display:-ms-flexbox;
-    display:flex;
-    -webkit-flex-flow:row nowrap;
-    flex-flow:row nowrap;
-    -webkit-box-pack:justify;
-    -webkit-justify-content:space-between;
-    -ms-flex-pack:justify;
-    justify-content:space-between;
-    position:absolute
-}
-*/
 
 .air-slider .controls button {
     display: none;
-}
-
-@media (max-width: 960px) {
-    .wrapper {
-        margin-top: 50vh;
-        margin-right: 0;
-        margin-left: 0;
-        z-index: 10;
-    }
-    .about-text {
-        font-size: 1rem;
-        padding: 0;
-    }
-    .zone-text {
-        font-size: 1rem;
-    }
 }
 
 /*About*/  
@@ -196,19 +158,9 @@ h5 {
     opacity: 1;
 }
 
-/*.bg-animal {
-    background-image: url("../multimedia/zoo-images/blackleopard.jpg");
-    background-repeat: repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: 2000px 800px;
-    width: 100%;
-    height: 800px;
-    margin: 10px;
-    position: relative;
-    opacity: 1;
-    z-index: 0;
-}*/
+.animal-arrow {
+    display: none;
+}
 
 /*Zone Gallery*/
 #zonegallery {
@@ -218,11 +170,11 @@ h5 {
     background-position: center;
     background-size: 15rem 8rem;
     width: 100%;
-    height: 800px;
-    margin: 10px;
+    height: 130vh;
     display: inline-block;
     position: relative;
     opacity: 1;
+    margin: 10px 10px 5%;
 }
 
 .zone-text {
@@ -231,7 +183,7 @@ h5 {
     font-family: 'Caveat Brush', cursive;
     font-size: 2.2rem;
     background-color: rgba(0,0,0,0.6);
-    padding: 3rem;
+    padding: 4rem;
     margin: 3rem 3rem 3rem;
     width: auto;
 }
@@ -240,6 +192,7 @@ video {
     height: 80vh;
     width: 50vw;
     margin-top: 3rem;
+    margin-right: 3rem;
     padding: 3rem;
 }
 
@@ -250,7 +203,8 @@ video {
     font-size: 1.8rem;
     background-color: grey;
     border: none;
-    margin-top: 5%;
+    position: relative;
+    margin-top: 10px;
 }
 
 .map-button:hover, .map-button:focus{
@@ -266,118 +220,6 @@ video {
     width: 100%;
     height: auto;
 }
-
-
-/*Ticket Prices & Operating Hours*/
-#ticketandtime {
-    padding-bottom: 5%;
-}
-
-.ticket-table {
-    font-family: 'Caveat Brush', cursive;
-    text-align: center;
-    border-collapse: collapse;
-    font-size: 2.1rem;
-    margin-top: 3rem;
-    color: white;
-    background-color: rgba(0,0,0,0.6);
-}
-
-.hours-table {
-    font-family: 'Caveat Brush', cursive;
-    text-align: center;
-    border-collapse: collapse;
-    font-size: 2.1rem;
-    margin-top: 3rem;
-    color: white;
-    background-color: rgba(0,0,0,0.6);
-}
-
-.ticket-table tr,.ticket-table th,.ticket-table td {
-    border: solid black;
-    padding: 5vh;
-}
-
-.hours-table tr,.hours-table th,.hours-table td {
-    border: solid black;
-    padding: 5.4vh;
-}
-
-.ticket-table .tablehead {
-    background-color: #0D5510;
-    color: white;
-    font-size: 3rem;
-    padding: 6vh;
-}
-
-.hours-table .tablehead {
-    background-color: #0D5510;
-    color: white;
-    font-size: 3rem;
-    /*padding: 6vh;*/
-    padding: 0;
-}
-
-.animated {
-    animation-duration: 1s;
-    animation-fill-mode: both;
-    animation-delay: 0.2s;
-}
-
-.zoom:hover {
-    transform: scale(1.04);
-}
-
-/*Getting There*/
-#location {
-    padding-bottom: 5%;
-}
-
-.address {
-    width: 100%;
-    position: relative;
-    background-color: rgba(0,0,0,0.6);
-    margin-top: 3rem;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-    margin-left: 3rem;
-}
-
-.map {
-    margin-top: 3rem;
-}
-
-dt{
-    text-align: center;
-    color: #0D5510;
-    font-size: 2.6rem;
-    font-family: 'Caveat Brush', cursive;
-    -webkit-text-stroke-width: 0.1px;
-    -webkit-text-stroke-color: white;
-    -webkit-text-fill-color: inherit;
- }
-
-dd{
-    text-align: center;
-    color: white;
-    font-size: 1.8rem;
-    font-family: 'Caveat Brush', cursive;
-}
-
-
-/*Videos*/
-
-#videos {
-    padding-bottom: 5%;
-}
-
-.videowrapper {
-    position: relative;
-    height: auto;
-    padding-top: 5%;
-    padding-bottom: 5%;
-}
-
 
 /*Shows*/
 #shows {
@@ -436,4 +278,171 @@ dd{
     -webkit-text-stroke-width: 0.1rem;
     -webkit-text-stroke-color: white;
     -webkit-text-fill-color: inherit;
+}
+
+/*Ticket Prices & Operating Hours*/
+#ticketandtime {
+    padding-bottom: 5%;
+}
+
+.ticket-table {
+    font-family: 'Caveat Brush', cursive;
+    text-align: center;
+    border-collapse: collapse;
+    font-size: 2.1rem;
+    margin-top: 3rem;
+    color: white;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.hours-table {
+    font-family: 'Caveat Brush', cursive;
+    text-align: center;
+    border-collapse: collapse;
+    font-size: 2.1rem;
+    margin-top: 3rem;
+    color: white;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.ticket-table tr,.ticket-table th,.ticket-table td {
+    border: solid black;
+    padding: 5vh;
+}
+
+.hours-table tr,.hours-table th,.hours-table td {
+    border: solid black;
+    padding: 5.4vh;
+}
+
+.ticket-table .tablehead {
+    background-color: #0D5510;
+    color: white;
+    font-size: 3rem;
+    padding: 6vh;
+}
+
+.hours-table .tablehead {
+    background-color: #0D5510;
+    color: white;
+    font-size: 3rem;
+    /*padding: 6vh;*/
+    padding: 0;
+}
+
+@media (min-width: 960px) {
+    .animated {
+        animation-duration: 1s;
+        animation-fill-mode: both;
+        animation-delay: 0.2s;
+    }
+
+    .zoom:hover {
+        transform: scale(1.04);
+    }
+}
+
+
+/*Getting There*/
+#location {
+    padding-bottom: 5%;
+}
+
+.address {
+    width: 100%;
+    position: relative;
+    background-color: rgba(0,0,0,0.6);
+    margin-top: 3rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    margin-left: 3rem;
+}
+
+.map {
+    margin-top: 3rem;
+}
+
+dt{
+    text-align: center;
+    color: #0D5510;
+    font-size: 2.8rem;
+    font-family: 'Caveat Brush', cursive;
+    -webkit-text-stroke-width: 0.005rem;
+    -webkit-text-stroke-color: white;
+    -webkit-text-fill-color: inherit;
+ }
+
+dd{
+    text-align: center;
+    color: white;
+    font-size: 1.8rem;
+    font-family: 'Caveat Brush', cursive;
+}
+
+
+/*Videos*/
+
+#videos {
+    padding-bottom: 5%;
+}
+
+.videowrapper {
+    position: relative;
+    height: auto;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+
+/*Media Queries for Mobile*/
+@media (max-width: 1200px) {
+    .wrapper {
+        margin-top: 50vh;
+        margin-right: 0;
+        margin-left: 0;
+        z-index: 10;
+    }
+    .header {
+        font-size: 3rem;
+    }
+    .about-text {
+        font-size: 1.5rem;
+        padding: 0;
+        margin: 0;
+    }
+    .bg-image {
+        background-size: cover;
+    }
+    .bg-text {
+        height: 60%;
+        padding: 20% 10% 10%;
+    }
+    .slides {
+        padding: 2rem;
+    }
+    .zone-text {
+        font-size: 1.8rem;
+        padding: 2rem;
+    }
+    #zonegallery {
+        height: 140vh;
+    }
+    video {
+        height: 40vh;
+        width: 70vw;
+        margin-top: 0 !important;
+        padding: 0 !important;
+    }
+    .show-text {
+        font-size: 1.6rem;
+    }
+    .show-text h3 {
+        font-size: 2.8rem;
+    }
+    .ticket-table, .hours-table {
+        font-size: 1.8rem;
+    }
+    .ticket-table .tablehead, .hours-table .tablehead  {
+        font-size: 2.5rem;
+    }
 }
