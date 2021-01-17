@@ -188,7 +188,7 @@ class AttractionManager {
 
 $(document).ready(function () {
     // Cool letter hover
-    var letters = $("#title-text").setLetterHoverEffect({"hoverClass": "alter"});
+    var letters = $("#title-text").setLetterHoverEffect({"hoverClass": "title-alter-letter"});
     var letters = $(".header-text").setLetterHoverEffect({"hoverClass": "header-alter-letter"});
 
     // Handle video change
