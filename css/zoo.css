@@ -227,6 +227,7 @@ video {
 }
 
 .show-container {
+    margin-top: 1em;
     position: relative;
     width: 100%;
     height: auto;
