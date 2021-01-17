@@ -220,6 +220,10 @@ body {
 }
 
 /* Attractions Cards Styles */
+.card-deck {
+    transition: all 0.5s;
+}
+
 .card {
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
