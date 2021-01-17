@@ -184,31 +184,14 @@ img {
   }
 }
 
-/*html, body {
-  height: 100%;
-  overflow: hidden;
-}*/
-/*body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(to bottom, #74ABE2, #5563DE);
-  font-family: 'Ropa Sans', sans-serif;
-}*/
-
-/*
-.carousel-slide {
-    display: flex;
-    -webkit-overflow-scrolling: touch;
+/*Shopping*/
+.shopping-title {
+    color: black;
+    text-align: center;
+    font-size: 50px;
+    position: center;
+    font-family: 'PT Serif Caption', serif;
+    padding-top: 50px;
 }
-
-.carousel-image {
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 400px;
-    width: 200px;
-    margin: 10px;
-}
-*/
 
 
