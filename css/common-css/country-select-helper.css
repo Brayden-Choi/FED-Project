@@ -48,7 +48,7 @@ https://github.com/silviomoreto/bootstrap-select/issues/1135
 }
 
 .bootstrap-select .check-mark::after {
-    font-family: "FontAwesome";
+    font-family: "FontAwesome", serif;
     content: "\f00c";
 }
 

@@ -91,7 +91,6 @@ h3 {
     margin: auto;
     height: 700px;
     position: relative;
-    padding:;
     box-sizing: border-box;
     background: #baac79;
     background-clip: padding-box;
@@ -148,6 +147,7 @@ h3 {
   width: 500px;
   height: 500px;
   margin-right: 50px;
+    margin-bottom: 10px;
   border-radius: 10px;
   background: black;
   transform-origin: center center;
@@ -191,7 +191,7 @@ img {
   background: white;
 }
 
-@supports (scroll-snap-type) {
+@supports (scroll-snap-type: none) {
   .slider > a { 
     display: none;
   }
