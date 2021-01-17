@@ -25,21 +25,21 @@
 
 .about-text {
     font-family: 'Cinzel', serif;
-    font-size: 50px;
+    font-size: 60px;
     color: black;
     position: center;
     text-align: center;
-    padding-top: 300px;
+    padding-top: 270px;
     padding-left: 0px;
 }
 
 .about-information-text {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 20px;
+    font-size: 25px;
     color: white;
     text-align: center;
     position: center;
-    padding-top: 100px;
+    padding-top: 70px;
     padding-left: 100px;
     padding-right: 100px;
 }
@@ -57,7 +57,7 @@
     height: 850px;
     width: 50%;
     position: relative;
-    margin-top: 100px;
+    margin-top: 60px;
     padding-right: 400px;
 }
 
@@ -136,9 +136,10 @@ h3 {
   height: 10px;
 }
 .slides::-webkit-scrollbar-thumb {
-  background-color: black;
+  background-color: white;
   border-radius: 10px;
 }
+
 .slides::-webkit-scrollbar-track {
   background: transparent;
 }
@@ -165,9 +166,9 @@ h3 {
 img {
     object-fit: cover;
     position: relative;
-    bottom: 40px;
+    bottom: 70px;
     width: 100%;
-    height: 70%;
+    height: 75%;
 }
 
 .slider > a {
