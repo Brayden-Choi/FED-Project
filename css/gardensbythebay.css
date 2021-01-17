@@ -273,18 +273,59 @@ body {
     -webkit-transition: background-image 0.3s ease-in-out;
 }
 
-/* Modal Styles */
+/* Attractions Modal Styles */
 .modal {
     padding-right: 0 !important;
 }
 .modal-dialog {
-    padding-right: 0 !important;
-    max-width: 96% !important;
+    padding: 10px !important;
+    max-width: 922px !important;
+}
+
+.modal-top {
+    background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.5)), url("../multimedia/gardensbythebay/attraction-cards/artsculptures.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height: 40vh;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.modal-title {
+    padding-left: 16px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: white;
+}
+
+.ticket-table {
+    overflow-x: auto;
+}
+
+.ticket-table table {
+    white-space: nowrap;
+}
+
+.cell-h-center {
+    text-align: center;
+}
+
+.cell-wrap {
+    white-space: pre-wrap;
 }
 
 /* Media Queries */
 @media (max-width: 480px) {
     .content-indicators {
         visibility: hidden;
+    }
+    
+    .modal-title {
+        padding-left: 0;
+        text-align: center;
+        font-size: xx-large;
     }
 }
