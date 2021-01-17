@@ -26,6 +26,7 @@ body {
 
 .section {
     position: relative;
+    background: white;
 }
 
 .header-text {
@@ -33,6 +34,10 @@ body {
     margin-top: 20px;
     text-align: center;
     font-size: calc(5vh + 5vw);
+}
+
+.header-black {
+    color: black;
 }
 
 .header-alter-letter {
