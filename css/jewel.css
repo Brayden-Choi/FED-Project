@@ -25,21 +25,21 @@
 
 .about-text {
     font-family: 'Cinzel', serif;
-    font-size: 50px;
+    font-size: 60px;
     color: black;
     position: center;
     text-align: center;
-    padding-top: 300px;
+    padding-top: 270px;
     padding-left: 0px;
 }
 
 .about-information-text {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 20px;
+    font-size: 25px;
     color: white;
     text-align: center;
     position: center;
-    padding-top: 100px;
+    padding-top: 70px;
     padding-left: 100px;
     padding-right: 100px;
 }
@@ -57,7 +57,7 @@
     height: 850px;
     width: 50%;
     position: relative;
-    margin-top: 100px;
+    margin-top: 60px;
     padding-right: 400px;
 }
 
@@ -89,7 +89,6 @@ h3 {
     align-items: center;
     width: 100%;
     margin: auto;
-    width: 1800px;
     height: 700px;
     position: relative;
     padding:;
@@ -110,11 +109,10 @@ h3 {
   z-index: -1;
   margin: -5px;
   border-radius: inherit;
-  background: linear-gradient(to right, gold, green, gold);
 }
 
 .slider {
-  width: 1600px;
+  width: 100%;
   text-align: center;
   overflow: hidden;
   margin-left: 60px;
@@ -125,7 +123,7 @@ h3 {
   display: flex;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  width: 1600px;
+  width: 100%;
   /*
   scroll-snap-points-x: repeat(300px);
   scroll-snap-type: mandatory;
@@ -136,9 +134,10 @@ h3 {
   height: 10px;
 }
 .slides::-webkit-scrollbar-thumb {
-  background-color: black;
+  background-color: white;
   border-radius: 10px;
 }
+
 .slides::-webkit-scrollbar-track {
   background: transparent;
 }
@@ -165,9 +164,9 @@ h3 {
 img {
     object-fit: cover;
     position: relative;
-    bottom: 40px;
+    bottom: 70px;
     width: 100%;
-    height: 70%;
+    height: 75%;
 }
 
 .slider > a {
@@ -193,6 +192,12 @@ img {
   .slider > a { 
     display: none;
   }
+}
+
+.carousel-caption {
+    padding-bottom: 0 !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
 }
 
 /*Shopping*/
