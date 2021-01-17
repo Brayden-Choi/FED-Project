@@ -3,36 +3,42 @@
     "name": "FLOWER DOME",
     "previewImage": "flowerdome.jpg",
     "previewText": "Enter a world of perpeptual spring, where unique plants bloom.",
-    "detailText": "Amazing"
+    "detailText": "Amazing",
+    "htmlId": "#flower-dome"
   },
   {
     "name": "CLOUD FOREST",
     "previewImage": "cloudforest.jpg",
     "previewText": "Step into a realm high in the mountains.",
-    "detailText": "Amazing"
+    "detailText": "Amazing",
+    "htmlId": "#cloud-forest"
   },
   {
     "name": "FLORAL FANTASY",
     "previewImage": "florafantasy.jpg",
     "previewText": "A brand new exhibit featuring garden landscapes of floral artistry and a 4D multimedia ride.",
-    "detailText": "Amazing"
+    "detailText": "Amazing",
+    "htmlId": "#floral-fantasy"
   },
   {
     "name": "WORLD OF PLANTS",
     "previewImage": "worldofplants.jpg",
     "previewText": "Explore a beautiful botanical world that’s intriguing and always full of surprises.",
-    "detailText": "Amazing"
+    "detailText": "Amazing",
+    "htmlId": "#world-of-plants"
   },
   {
     "name": "HERITAGE GARDENS",
     "previewImage": "heritagegardens.jpg",
     "previewText": "Bringing the history of Singapore to life through the fascinating story of plants.",
-    "detailText": "Amazing"
+    "detailText": "Amazing",
+    "htmlId": "#heritage-gardens"
   },
   {
     "name": "ART SCULPTURES",
     "previewImage": "artsculptures.jpg",
     "previewText": "Connecting people with the stories of plants and the world at large.",
-    "detailText": "Amazing"
+    "detailText": "Amazing",
+    "htmlId": "#art-sculptures"
   }
 ]

@@ -156,9 +156,9 @@ class AttractionManager {
         const targetData = this.getData($button)
 
         $(this.modalId + "-title").text(targetData.name);
-        $(this.modalId + "-body").text(targetData.detailText);
+        $(this.modalId + "-body").load(`gardensbythebay-attractions.html ${targetData.htmlId}`);
 
-        console.log("Set modal data for:", targetData.name);
+        console.log("Loaded modal data for:", targetData.name);
     }
 
     buildPreviewCard(cardData, index) {
