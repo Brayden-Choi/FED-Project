@@ -19,7 +19,7 @@ body {
 
 /* General Content Styles */
 .content {
-    background-color: black;
+    background-color: white;
     position: absolute;
     z-index: 3;
 }
