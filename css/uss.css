@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Mulish:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 .header {
     margin-top: 20px;
     padding: 5px;
@@ -30,7 +31,7 @@
 
 #sg {
     color: white;
-    font-family: 'Caveat Brush'. cursive;
+    font-family: 'Caveat Brush', cursive;
     font-weight: bolder;
     font-size: 80px;
     -webkit-text-stroke-color: #ddb63f;
@@ -38,12 +39,15 @@
 }
 
 .about {
-    color: #c7a761;
+    color: #e7cd79;
     background-color: rgba(0,0,0,0.7);
     text-align: center;
     padding: 30px;
+    font-family: 'Open Sans';
 }
 
-.bg-image {
-
+footer {
+    text-align: center;
+    background-color: #e7cd79;
+    height: 50px;
 }
