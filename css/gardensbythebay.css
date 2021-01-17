@@ -26,6 +26,7 @@ body {
 
 .section {
     position: relative;
+    background: white;
 }
 
 .header-text {
@@ -33,6 +34,10 @@ body {
     margin-top: 20px;
     text-align: center;
     font-size: calc(5vh + 5vw);
+}
+
+.header-black {
+    color: black;
 }
 
 .header-alter-letter {
@@ -220,6 +225,10 @@ body {
 }
 
 /* Attractions Cards Styles */
+.card-deck {
+    transition: all 0.5s;
+}
+
 .card {
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
@@ -273,13 +282,46 @@ body {
     -webkit-transition: background-image 0.3s ease-in-out;
 }
 
-/* Modal Styles */
+/* Attractions Modal Styles */
 .modal {
     padding-right: 0 !important;
 }
 .modal-dialog {
-    padding-right: 0 !important;
-    max-width: 96% !important;
+    padding: 10px !important;
+    max-width: 922px !important;
+}
+
+.modal-top {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height: calc(20vh + 10vw);
+    overflow: hidden;
+    border-radius: 5px;
+    transition: all .2s;
+}
+
+.modal-title {
+    font-size: calc(3.5vh + 3.5vw);
+    padding-left: 16px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: white;
+    transition: all .2s;
+}
+
+.ticket-table {
+    overflow-x: auto;
+}
+
+.ticket-table table {
+    white-space: nowrap;
+}
+
+.cell-wrap {
+    white-space: pre-wrap;
 }
 
 /* Media Queries */
@@ -289,7 +331,9 @@ body {
     }
 }
 
-
-#gallery {
-    padding-top: 3000px;
+@media (max-width: 768px) {
+    .modal-title {
+        padding-left: 0;
+        text-align: center;
+    }
 }

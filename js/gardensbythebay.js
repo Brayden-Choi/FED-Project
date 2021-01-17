@@ -155,6 +155,7 @@ class AttractionManager {
     setModalData($button) {
         const targetData = this.getData($button)
 
+        $(this.modalId + "-header").css("background-image", `linear-gradient(transparent, rgba(0, 0, 0, 0.6)), url(${this.cardImageDir}${targetData.previewImage})`);
         $(this.modalId + "-title").text(targetData.name);
         $(this.modalId + "-body").load(`gardensbythebay-attractions.html ${targetData.htmlId}`);
 

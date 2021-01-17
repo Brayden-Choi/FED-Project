@@ -89,7 +89,6 @@ h3 {
     align-items: center;
     width: 100%;
     margin: auto;
-    width: 1800px;
     height: 700px;
     position: relative;
     padding:;
@@ -110,11 +109,10 @@ h3 {
   z-index: -1;
   margin: -5px;
   border-radius: inherit;
-  background: linear-gradient(to right, gold, green, gold);
 }
 
 .slider {
-  width: 1600px;
+  width: 100%;
   text-align: center;
   overflow: hidden;
   margin-left: 60px;
@@ -125,7 +123,7 @@ h3 {
   display: flex;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  width: 1600px;
+  width: 100%;
   /*
   scroll-snap-points-x: repeat(300px);
   scroll-snap-type: mandatory;
@@ -194,6 +192,12 @@ img {
   .slider > a { 
     display: none;
   }
+}
+
+.carousel-caption {
+    padding-bottom: 0 !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
 }
 
 /*Shopping*/
