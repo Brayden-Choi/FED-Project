@@ -412,7 +412,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-6 justify-content-center align-self-center d-flex">
+                <div class="col-sm-12 justify-content-center align-self-center d-flex">
                     <form class="contact-form">
                         <div class="form-group">
                             <label for="exampleInputSalutation">Salutation</label>
@@ -472,10 +472,15 @@
                             </div>
                         </div>
                         <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="datapolicy" value="yes" required>
+                            <label class="custom-control-label" for="datapolicy">By submitting this form, you agree to our terms & conditions and privacy policy.</label>
+                        </div>
+                        <div class="custom-control custom-switch">
                             <input type="checkbox" class="custom-control-input" id="mail" value="yes">
                             <label class="custom-control-label" for="mail">Sign up for latest news and receive exlusive updates.</label>
                         </div><br>
-                        <button type="button" class="btn btn-primary submit-button" onclick="submit()">Submit</button>
+                        <button class="btn btn-primary form-submission" type="submit" onsubmit="submit()">Submit</button>
+                        <button class="btn btn-primary form-submission" type="reset" onclick="reset()">Reset</button>
                         <div>
                             <p id="ack"></p>
                         </div>

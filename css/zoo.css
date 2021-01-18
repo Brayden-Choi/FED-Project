@@ -413,7 +413,7 @@ dd{
 }
 
 .custom-control {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
 }
 
 .contact-radio {
@@ -433,18 +433,18 @@ dd{
     opacity: 0.8;
 }
 
-.submit-button {
+.form-submission {
     font-family: 'Caveat Brush', cursive;
     font-size: 1.5rem;
-    background-color: lightgrey;
-    color: black;
+    background-color: #0D5510;
+    color: white;
     border: none;
     position: relative;
     margin-top: 10px;
 }
 
-.submit-button:hover, .submit-button:focus{
-    background-color:  #0D5510;
+.form-submission:hover, .form-submission:focus{
+    background-color:  #31a339;
     color: white;
 }
 
