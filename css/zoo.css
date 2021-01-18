@@ -405,13 +405,48 @@ dd{
     position: relative;
     background-color: rgba(0,0,0,0.6);
     color: white;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-family: 'Caveat Brush', cursive;
     margin-top: 3rem;
     padding: 4rem;
     margin-left: 3rem;
 }
 
+.custom-control {
+    font-size: 1.5rem;
+}
+
+.contact-radio {
+    font-size: 1.5rem;
+}
+
+.form-underline {
+    width: 100%;
+    height: 6px;
+    transition: .3s;
+    transition-timing-function: ease;
+    transition-property: all;
+    transition-duration: 0.4s;
+}
+.form-group:hover .form-underline, .form-row:hover .form-underline{
+    background-color: #31a339;
+    opacity: 0.8;
+}
+
+.submit-button {
+    font-family: 'Caveat Brush', cursive;
+    font-size: 1.5rem;
+    background-color: lightgrey;
+    color: black;
+    border: none;
+    position: relative;
+    margin-top: 10px;
+}
+
+.submit-button:hover, .submit-button:focus{
+    background-color:  #0D5510;
+    color: white;
+}
 
 /*Media Queries for Mobile*/
 @media (max-width: 1200px) {
