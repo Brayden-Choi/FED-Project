@@ -197,6 +197,8 @@ class TicketManager {
         this.$ticketTotal = $(`${ticketId}-total`);
         this.itemList = [];
         this.dropdownDivider = `<div class="dropdown-divider"></div>`;
+        
+        this.calcuateOrderSummary();
     }
 
     setUpData(data) {
@@ -211,12 +213,7 @@ class TicketManager {
     }
     
     addTicketItem($ticketOption) {
-        const targetIndex = $ticketOption.data("index");
-        this.$ticketItems.append(this.buildTicketItem(targetIndex));
-
-        const $newTicket = $(this.$ticketItems.find("li").last());
-        
-        const item = new TicketItem(this, $newTicket);
+        const item = new TicketItem(this, $ticketOption);
         item.$minusButton.click(function () {
             item.quantityMinus();
         });
@@ -228,19 +225,40 @@ class TicketManager {
         });
 
         this.itemList.push(item);
-        
+        this.calcuateOrderSummary();
+
         console.log("Added ticket item.");
     }
 
     removeTicketItem(index) {
         this.itemList.splice(index, 1);
         this.calcuateOrderSummary();
+        
         console.log("Removed ticket item: ", index);
-        console.log(this.itemList);
     }
     
     calcuateOrderSummary() {
+        if (this.itemList.length === 0) {
+            this.$ticketCount.text(0);
+            this.$ticketSubTotal.text("SGD -.--");
+            this.$ticketTotal.text("SGD -.--");
+            return;
+        }
         
+        let totalTickets = 0;
+        let totalPrice = 0;
+        for (let item of this.itemList) {
+            console.log(item);
+            totalTickets += item.getCurrentQuantity();
+            totalPrice += item.calculatePrice();
+        }
+        this.$ticketCount.text(totalTickets);
+        this.$ticketSubTotal.text(this.parseMoney(totalPrice));
+        this.$ticketTotal.text(this.parseMoney(totalPrice));
+    }
+    
+    parseMoney(value) {
+        return `SGD ${value.toFixed(2)}`;
     }
 
     buildTicketOption(index) {
@@ -253,62 +271,29 @@ class TicketManager {
                     <p class="list-content-text">${ticketData.type} / ${ticketData.age}</p>
                 </div>
                 <div class="col-4 my-auto mr-0 pl-md-5 pr-1">
-                    <h6 class="float-md-right">SGD ${ticketData.price.toFixed(2)}</h6>
+                    <h6 class="float-md-right">${this.parseMoney(ticketData.price)}</h6>
                 </div>
             </div>
         </a>
         `;
     }
-
-    buildTicketItem(index) {
-        const ticketData = this.data[index];
-        return `
-        <li class="list-group-item">
-            <div class="row m-0">
-                <div class="col-11 p-0 pl-md-3 pl-sm-1">
-                    <div class="row m-0">
-                        <div class="col-md-9 my-auto p-0">
-                            <div class="row">
-                                <h5 class="list-content-text">${ticketData.name}</h5>
-                            </div>
-                            <div class="row">
-                                <p class="list-content-text">${ticketData.type} / ${ticketData.age}</p>
-                            </div>
-                            <div class="row">
-                                <h5 class="list-content-text pt-2">SGD ${ticketData.price.toFixed(2)}</h5>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3 my-auto p-0 quantity-selector">
-                            <button class="btn btn-sm btn-info btn-stepper-minus" type="button" data-index="${index}">
-                                <i class="fa fa-minus"></i>
-                            </button>
-                            <h5 class="d-inline align-middle item-quantity">1</h5>
-                            <button class="btn btn-sm btn-info btn-stepper-plus" type="button" data-index="${index}">
-                                <i class="fa fa-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-1 my-auto p-0 pr-sm-2 pr-md-0">
-                    <button class="btn btn-round ticket-remove float-md-right" type="button" data-index="${index}">
-                        <i class="fa fa-close"></i>
-                    </button>
-                </div>
-            </div>
-        </li>
-        `;
-    }
 }
 
 class TicketItem {
-    constructor(manager, $item) {
+    constructor(manager, $ticketOption) {
         this.manager = manager;
-        this.$item = $item;
+        
+        const index = $ticketOption.data("index");
+        this.itemData = this.manager.data[index];
+        
+        this.manager.$ticketItems.append(this.buildTicketItem(this.itemData));
+
+        this.$item = this.manager.$ticketItems.find("li").last();
         this.$quantityObj = this.$item.find(".item-quantity").first();
         this.$minusButton = this.$item.find(".btn-stepper-minus").first();
         this.$plusButton = this.$item.find(".btn-stepper-plus").first();
         this.$removeButton = this.$item.find(".ticket-remove").first();
+        
         this.quanityMin = 1;
         this.quanityMax = 8;
         
@@ -357,15 +342,58 @@ class TicketItem {
         this.manager.calcuateOrderSummary();
         return true;
     }
-    
+
     getCurrentQuantity() {
         return parseInt(this.$quantityObj.text());
+    }
+    
+    calculatePrice() {
+        return this.getCurrentQuantity() * this.itemData.price;
     }
     
     remove() {
         const index = this.$item.index();
         this.$item.remove()
         this.manager.removeTicketItem(index);
+    }
+
+    buildTicketItem(ticketData) {
+        return `
+        <li class="list-group-item">
+            <div class="row m-0">
+                <div class="col-11 p-0 pl-md-3 pl-sm-1">
+                    <div class="row m-0">
+                        <div class="col-md-9 my-auto p-0">
+                            <div class="row">
+                                <h5 class="list-content-text">${ticketData.name}</h5>
+                            </div>
+                            <div class="row">
+                                <p class="list-content-text">${ticketData.type} / ${ticketData.age}</p>
+                            </div>
+                            <div class="row">
+                                <h5 class="list-content-text pt-2">SGD ${ticketData.price.toFixed(2)}</h5>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 my-auto p-0 quantity-selector">
+                            <button class="btn btn-sm btn-info btn-stepper-minus" type="button"">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <h5 class="d-inline align-middle item-quantity">1</h5>
+                            <button class="btn btn-sm btn-info btn-stepper-plus" type="button"">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1 my-auto p-0 pr-sm-2 pr-md-0">
+                    <button class="btn btn-round ticket-remove float-md-right" type="button"">
+                        <i class="fa fa-close"></i>
+                    </button>
+                </div>
+            </div>
+        </li>
+        `;
     }
 }
 
@@ -423,9 +451,6 @@ $(document).ready(function () {
     }).fail(function () {
         console.log("Unable to load file: " + attractionPath);
     })
-
-    // Setup form
-    $('.countrypicker').countrypicker();
     
     // Setup ticket form
     const tm = new TicketManager("#tickets");
@@ -439,4 +464,7 @@ $(document).ready(function () {
     }).fail(function () {
         console.log("Unable to load file: " + ticketPath);
     })
+
+    // Setup form country picker
+    $('.countrypicker').countrypicker();
 });
