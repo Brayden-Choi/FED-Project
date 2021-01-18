@@ -358,7 +358,6 @@ body {
 
 .list-content-text {
     margin: 0 !important;
-    align-self: center;
 }
 
 .btn-round {
@@ -388,6 +387,8 @@ body {
 }
 
 .ticket-options {
+    border: none;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
 }
 
 .ticket-remove {
@@ -411,6 +412,9 @@ body {
 @media (max-width: 480px) {
     .content-indicators {
         visibility: hidden;
+    }
+    .ticket-options {
+        padding: 10px;
     }
 }
 
