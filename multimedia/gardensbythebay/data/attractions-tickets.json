@@ -22,5 +22,11 @@
     "type": "Standard",
     "age": "Adult",
     "price": 16.00
+  },
+  {
+    "name": "CLOUD FOREST",
+    "type": "Standard",
+    "age": "Adult",
+    "price": 20.00
   }
 ]
