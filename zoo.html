@@ -412,7 +412,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-6 justify-content-center align-self-center d-flex">
                     <form class="contact-form">
                         <div class="form-group">
                             <label for="exampleInputSalutation">Salutation</label>
@@ -424,30 +424,58 @@
                                 <option>Mrs</option>
                                 <option>Mdm</option>
                             </select>
+                            <div class="form-underline"></div>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputFirstName">First Name</label>
-                            <input type="text" id="exampleInputFirstName" class="form-control" placeholder="First name">
+                            <input type="text" id="exampleInputFirstName" class="form-control" placeholder="First name" required>
+                            <div class="form-underline"></div>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputLastName">Last Name</label>
-                            <input type="text" id="exampleInputLastName" class="form-control" placeholder="Last name">
+                            <input type="text" id="exampleInputLastName" class="form-control" placeholder="Last name" required>
+                            <div class="form-underline"></div>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                            <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter email" pattern="^([0-9a-zA-Z]{[-\.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$" required>
+                            <div class="form-underline"></div>
                         </div>
                         <div class="form-row">
                             <div class="col">
-                                <label for="exampleInputCountry">Country</label>
-                                <select class="form-control selectpicker countrypicker" id="exampleInputCountry" data-flag="true"></select>
+                                <label for="exampleInputCountry">Country</label><br>
+                                <select class="selectpicker countrypicker" id="exampleInputCountry" data-flag="true" required></select>
                             </div>
                             <div class="col">
-                                <label for="exampleInputContactNo">Contact No</label>
-                                <input type="text" id="exampleInputContactNo" class="form-control" placeholder="Contact No">
+                                <label for="exampleInputContactNo">Contact No</label><br>
+                                <input type="text" id="exampleInputContactNo" class="form-control" placeholder="Contact No" required>
+                                <div class="form-underline"></div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <div class="form-group">
+                            <label for="exampleFormControlComment">Comment</label>
+                            <textarea class="form-control" id="exampleFormControlComment" rows="4" placeholder="Your comment..." required></textarea>
+                            <div class="form-underline"></div>
+                        </div>
+                        <div class="form-group">
+                            <label>How can we contact you?</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" required>
+                                <label class="form-check-label contact-radio" for="inlineRadio1">Phone</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" required>
+                                <label class="form-check-label contact-radio" for="inlineRadio2">Email</label>
+                            </div>
+                        </div>
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="mail" value="yes">
+                            <label class="custom-control-label" for="mail">Sign up for latest news and receive exlusive updates.</label>
+                        </div><br>
+                        <button type="button" class="btn btn-primary submit-button" onclick="submit()">Submit</button>
+                        <div>
+                            <p id="ack"></p>
+                        </div>
                     </form>
                 </div>
             </div>
