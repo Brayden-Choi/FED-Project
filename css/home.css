@@ -108,6 +108,12 @@ html, body {
 .description {
 }
 
+/* Overview Button Styles */
+.overview-button {
+    font-weight: bold;
+    white-space: nowrap;
+}
+
 /* Content Styles */
 .content-main {
     margin-top: 100px;
