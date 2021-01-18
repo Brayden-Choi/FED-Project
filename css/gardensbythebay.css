@@ -27,6 +27,7 @@ body {
 .section {
     position: relative;
     background: white;
+    padding-bottom: 3vh;
 }
 
 .header-text {
@@ -324,6 +325,60 @@ body {
     white-space: pre-wrap;
 }
 
+/* Ticket Form Styles */
+.ticket-form {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    padding: 3rem;
+    max-width: 1192px;
+}
+
+.ticket-list {
+    margin: 10px 0;
+}
+
+.v-center {
+    display: flex;
+    align-items: center;
+}
+
+.list-group-item {
+    border: none;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    margin: 8px 0;
+}
+
+.list-content-text {
+    margin: 0 !important;
+    align-self: center;
+}
+
+.btn-round {
+    border-radius: 50%;
+}
+
+.quantity-selector {
+    
+}
+
+.btn-stepper-minus {
+    margin-right: 8px;
+}
+
+.btn-stepper-plus {
+    margin-left: 8px;
+}
+
+.ticket-options {
+}
+
+.ticket-remove {
+}
+
+.ticket-remove:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
 /* Media Queries */
 @media (max-width: 480px) {
     .content-indicators {
@@ -335,5 +390,12 @@ body {
     .modal-title {
         padding-left: 0;
         text-align: center;
+    }
+    .list-group-item .row {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .quantity-selector {
+        padding-top: 8px !important;
     }
 }

@@ -218,7 +218,7 @@ $(document).ready(function () {
     });
 
     // Handle section change
-    const sm = new SectionManager("#content-indicators", ["#attractions", "#gallery"]);
+    const sm = new SectionManager("#content-indicators", ["#attractions", "#gallery", "#tickets"]);
     sm.indicatorScrollUpdate();
     $(window).scroll(function () {
         sm.indicatorScrollUpdate();
@@ -241,4 +241,6 @@ $(document).ready(function () {
     }).fail(function () {
         console.log("Unable to load file: " + filePath);
     })
+
+    $('.countrypicker').countrypicker();
 });

@@ -20,6 +20,13 @@
     <!-- Other dependencies -->
     <link href="css/gardensbythebay.css" rel="stylesheet">
     <script src="js/gardensbythebay.js"></script>
+
+    <link href="//unpkg.com/bootstrap-select@1.12.4/dist/css/bootstrap-select.min.css" rel="stylesheet"/>
+    <link href="//unpkg.com/bootstrap-select-country@4.0.0/dist/css/bootstrap-select-country.min.css" rel="stylesheet"/>
+    <script src="//unpkg.com/bootstrap-select@1.12.4/dist/js/bootstrap-select.min.js"></script>
+    <script src="//unpkg.com/bootstrap-select-country@4.0.0/dist/js/bootstrap-select-country.min.js"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
 <div content="Gardens By The Bay" id="header" type="white"></div>
@@ -97,15 +104,107 @@
     </section>
 
     <section class="section" id="gallery">
-        
+
     </section>
-    
+
     <section class="section" id="tickets">
         <div class="row m-0">
             <div class="col-12">
                 <h1 class="header-text header-black fancy-font">Buy Tickets</h1>
             </div>
         </div>
+        <form class="ticket-form mx-lg-auto mt-4 ml-3 mr-3">
+            <div class="form-group">
+                <label for="inputName">Full Name</label>
+                <input class="form-control" id="inputName" placeholder="Name" type="text">
+            </div>
+
+            <div class="form-group">
+                <label for="inputEmail">Email</label>
+                <input aria-describedby="emailHelp" class="form-control" id="inputEmail" placeholder="Email"
+                       type="text">
+                <small class="form-text text-muted" id="emailHelp">! Please input a valid email or you may not receive
+                    your tickets.</small>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputCountry">Country</label>
+                    <select class="form-control selectpicker countrypicker" data-flag="true" id="inputCountry"></select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputContact">Contact Number</label>
+                    <input class="form-control" id="inputContact" placeholder="Contact" type="tel">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Tickets</label>
+                
+                <div>
+                    <button aria-expanded="false" aria-haspopup="true" class="form-control btn btn-primary"
+                            data-toggle="dropdown" id="dropdownTicketOptions" type="button">
+                        <i class="fa fa-plus-circle"></i> Add a ticket
+                    </button>
+    
+                    <div aria-labelledby="dropdownTicketOptions" class="dropdown-menu ticket-options mx-auto">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </div>
+
+                <ul class="list-group ticket-list">
+                    <li class="list-group-item">
+                        <div class="row m-0">
+                            <div class="col-11 p-0 pl-md-3 pl-sm-1">
+                                <div class="row m-0">
+                                    <div class="col-md-8 my-auto p-0">
+                                        <div class="row">
+                                            <h5 class="list-content-text">Flower Dome / Singapore Resident</h5>
+                                        </div>
+                                        <div class="row">
+                                            <p class="list-content-text">SGD10.00 / ADULT</p>
+                                        </div>
+                                    </div>
+        
+                                    <div class="col-md-3 my-auto p-0 quantity-selector">
+                                        <button class="btn btn-sm btn-info btn-stepper-minus"><i class="fa fa-minus"></i></button>
+                                        <h5 class="d-inline align-middle">1</h5>
+                                        <button class="btn btn-sm btn-info btn-stepper-plus"><i class="fa fa-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-1 my-auto p-0 pr-2">
+                                <button class="btn btn-round ticket-remove float-md-right"><i class="fa fa-close"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">Morbi leo risus</li>
+                    <li class="list-group-item">Porta ac consectetur ac</li>
+                    <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
+            </div>
+
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" id="checkPolicy" type="checkbox">
+                    <label class="form-check-label" for="checkPolicy">
+                        I accept the Terms of Use and Privacy Policy set by Gardens by the Bay.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" id="checkPromo" type="checkbox">
+                    <label class="form-check-label" for="checkPromo">
+                        I consent to receive marketing and promotional information from Gardens by the Bay.
+                    </label>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Submit</button>
+            <button class="btn btn-primary" type="reset">Reset</button>
+        </form>
     </section>
 
     <div id="footer"></div>
