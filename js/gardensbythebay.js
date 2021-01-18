@@ -229,7 +229,7 @@ $(document).ready(function () {
 
     // Setup attraction cards
     const am = new AttractionManager("#attractionCards", "#attractionsModal", "#attractionsBackground");
-    const filePath = "multimedia/gardensbythebay/attractions.json";
+    const filePath = "multimedia/gardensbythebay/data/attractions.json";
     $.getJSON(filePath).then(function (data) {
         am.loadData(data);
         $(`${am.cardsId} .card`).hover(function () {
