@@ -227,6 +227,8 @@ class TicketManager {
         this.itemList.unshift(item);
         this.calcuateOrderSummary();
 
+        $(this.$ticketOptions.find("a")[item.index]).addClass("disabled");
+        
         console.log("Added ticket item.");
     }
 
@@ -235,6 +237,8 @@ class TicketManager {
 
         this.itemList.splice(index, 1);
         this.calcuateOrderSummary();
+
+        $(this.$ticketOptions.find("a")[targetItem.index]).removeClass("disabled");
         
         targetItem.$item.on('transitionend webkitTransitionEnd oTransitionEnd', function () {
             $(this).delay(200).queue(function (next) {
@@ -279,7 +283,7 @@ class TicketManager {
                     <p class="list-content-text">${ticketData.type} / ${ticketData.age}</p>
                 </div>
                 <div class="col-4 my-auto mr-0 pl-md-5 pr-1">
-                    <h6 class="float-md-right">${this.parseMoney(ticketData.price)}</h6>
+                    <h6 class="mb-0 float-md-right">${this.parseMoney(ticketData.price)}</h6>
                 </div>
             </div>
         </a>
@@ -290,17 +294,17 @@ class TicketManager {
 class TicketItem {
     constructor(manager, $ticketOption) {
         this.manager = manager;
+
+        this.index = $ticketOption.data("index");
+        this.itemData = this.manager.data[this.index];
         
-        const index = $ticketOption.data("index");
-        this.itemData = this.manager.data[index];
-        
-        this.manager.$ticketItems.prepend(this.buildTicketItem(this.itemData, index));
+        this.manager.$ticketItems.prepend(this.buildTicketItem());
 
         this.$item = this.manager.$ticketItems.find("li").first();
-        this.$quantityObj = $(`#item-quantity-${index}`);
-        this.$minusButton = $(`#btn-minus-${index}`);
-        this.$plusButton = $(`#btn-plus-${index}`);
-        this.$removeButton = $(`#btn-remove-${index}`);
+        this.$quantityObj = $(`#item-quantity-${this.index}`);
+        this.$minusButton = $(`#btn-minus-${this.index}`);
+        this.$plusButton = $(`#btn-plus-${this.index}`);
+        this.$removeButton = $(`#btn-remove-${this.index}`);
         
         this.quanityMin = 1;
         this.quanityMax = 8;
@@ -364,7 +368,7 @@ class TicketItem {
         this.manager.removeTicketItem(this.$item.index());
     }
 
-    buildTicketItem(ticketData, index) {
+    buildTicketItem() {
         return `
         <li class="list-group-item ticket-item">
             <div class="row m-0">
@@ -372,29 +376,29 @@ class TicketItem {
                     <div class="row m-0">
                         <div class="col-md-9 my-auto p-0">
                             <div class="row">
-                                <h5 class="list-content-text">${ticketData.name}</h5>
+                                <h5 class="list-content-text">${this.itemData.name}</h5>
                             </div>
                             <div class="row">
-                                <p class="list-content-text">${ticketData.type} / ${ticketData.age}</p>
+                                <p class="list-content-text">${this.itemData.type} / ${this.itemData.age}</p>
                             </div>
                             <div class="row">
-                                <h5 class="list-content-text pt-2">SGD ${ticketData.price.toFixed(2)}</h5>
+                                <h5 class="list-content-text pt-2">SGD ${this.itemData.price.toFixed(2)}</h5>
                             </div>
                         </div>
 
                         <div class="col-md-3 my-auto p-0 quantity-selector">
-                            <button class="btn btn-sm btn-info btn-stepper-minus" id="btn-minus-${index}" type="button"">
+                            <button class="btn btn-sm btn-info btn-stepper-minus" id="btn-minus-${this.index}" type="button"">
                                 <i class="fa fa-minus"></i>
                             </button>
-                            <h5 class="item-quantity" id="item-quantity-${index}">1</h5>
-                            <button class="btn btn-sm btn-info btn-stepper-plus" id="btn-plus-${index}" type="button"">
+                            <h5 class="item-quantity" id="item-quantity-${this.index}">1</h5>
+                            <button class="btn btn-sm btn-info btn-stepper-plus" id="btn-plus-${this.index}" type="button"">
                                 <i class="fa fa-plus"></i>
                             </button>
                         </div>
                     </div>
                 </div>
                 <div class="col-1 my-auto p-0 pr-sm-2 pr-md-0">
-                    <button class="btn btn-round ticket-remove float-md-right" id="btn-remove-${index}" type="button"">
+                    <button class="btn btn-round ticket-remove float-md-right" id="btn-remove-${this.index}" type="button"">
                         <i class="fa fa-close"></i>
                     </button>
                 </div>

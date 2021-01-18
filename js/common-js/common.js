@@ -133,11 +133,11 @@ class NavManager {
         let dropDownMain = $($(dropDownID + " li")[0]).find('a:first')[0];
         if ($(dropDownMain).hasClass("show")) {
             console.log('closing dropdown...');
-            $(dropDownMain).addClass("dropdown-item-hidden");
+            $(dropDownMain).addClass("item-hidden");
             return;
         }
         console.log('opening dropdown...')
-        $(dropDownMain).removeClass("dropdown-item-hidden");
+        $(dropDownMain).removeClass("item-hidden");
     }
 }
 

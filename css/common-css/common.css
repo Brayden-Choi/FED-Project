@@ -11,6 +11,13 @@ body {
     min-height: 100%;
 }
 
+.item-hidden {
+    position: absolute !important;
+    visibility: hidden !important;
+    max-height: 0 !important;
+    max-width: 0 !important;
+}
+
 .smooth-scrolling {
     
 }
