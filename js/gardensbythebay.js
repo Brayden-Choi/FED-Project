@@ -223,18 +223,26 @@ class TicketManager {
         item.$removeButton.click(function() {
             item.remove();
         });
-
-        this.itemList.push(item);
+        
+        this.itemList.unshift(item);
         this.calcuateOrderSummary();
 
         console.log("Added ticket item.");
     }
 
     removeTicketItem(index) {
+        const targetItem = this.itemList[index];
+
         this.itemList.splice(index, 1);
         this.calcuateOrderSummary();
         
-        console.log("Removed ticket item: ", index);
+        targetItem.$item.on('transitionend webkitTransitionEnd oTransitionEnd', function () {
+            $(this).delay(200).queue(function (next) {
+                $(this).remove();
+                console.log("Removed ticket item: ", index);
+                next();
+            });
+        });
     }
     
     calcuateOrderSummary() {
@@ -286,13 +294,13 @@ class TicketItem {
         const index = $ticketOption.data("index");
         this.itemData = this.manager.data[index];
         
-        this.manager.$ticketItems.append(this.buildTicketItem(this.itemData));
+        this.manager.$ticketItems.prepend(this.buildTicketItem(this.itemData, index));
 
-        this.$item = this.manager.$ticketItems.find("li").last();
-        this.$quantityObj = this.$item.find(".item-quantity").first();
-        this.$minusButton = this.$item.find(".btn-stepper-minus").first();
-        this.$plusButton = this.$item.find(".btn-stepper-plus").first();
-        this.$removeButton = this.$item.find(".ticket-remove").first();
+        this.$item = this.manager.$ticketItems.find("li").first();
+        this.$quantityObj = $(`#item-quantity-${index}`);
+        this.$minusButton = $(`#btn-minus-${index}`);
+        this.$plusButton = $(`#btn-plus-${index}`);
+        this.$removeButton = $(`#btn-remove-${index}`);
         
         this.quanityMin = 1;
         this.quanityMax = 8;
@@ -352,14 +360,13 @@ class TicketItem {
     }
     
     remove() {
-        const index = this.$item.index();
-        this.$item.remove()
-        this.manager.removeTicketItem(index);
+        this.$item.addClass("ticket-item-disappear");
+        this.manager.removeTicketItem(this.$item.index());
     }
 
-    buildTicketItem(ticketData) {
+    buildTicketItem(ticketData, index) {
         return `
-        <li class="list-group-item">
+        <li class="list-group-item ticket-item">
             <div class="row m-0">
                 <div class="col-11 p-0 pl-md-3 pl-sm-1">
                     <div class="row m-0">
@@ -376,18 +383,18 @@ class TicketItem {
                         </div>
 
                         <div class="col-md-3 my-auto p-0 quantity-selector">
-                            <button class="btn btn-sm btn-info btn-stepper-minus" type="button"">
+                            <button class="btn btn-sm btn-info btn-stepper-minus" id="btn-minus-${index}" type="button"">
                                 <i class="fa fa-minus"></i>
                             </button>
-                            <h5 class="d-inline align-middle item-quantity">1</h5>
-                            <button class="btn btn-sm btn-info btn-stepper-plus" type="button"">
+                            <h5 class="d-inline align-middle item-quantity" id="item-quantity-${index}">1</h5>
+                            <button class="btn btn-sm btn-info btn-stepper-plus" id="btn-plus-${index}" type="button"">
                                 <i class="fa fa-plus"></i>
                             </button>
                         </div>
                     </div>
                 </div>
                 <div class="col-1 my-auto p-0 pr-sm-2 pr-md-0">
-                    <button class="btn btn-round ticket-remove float-md-right" type="button"">
+                    <button class="btn btn-round ticket-remove float-md-right" id="btn-remove-${index}" type="button"">
                         <i class="fa fa-close"></i>
                     </button>
                 </div>

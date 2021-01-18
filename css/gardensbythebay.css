@@ -344,18 +344,6 @@ body {
     align-items: center;
 }
 
-.list-group-item {
-    border: none;
-    border-radius: 0.25rem;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
-    margin: 8px 0;
-    transition: all 0.3s;
-}
-
-.list-group-item:hover {
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
-}
-
 .list-content-text {
     margin: 0 !important;
 }
@@ -391,7 +379,41 @@ body {
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
 }
 
-.ticket-remove {
+.ticket-item {
+    border: none;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+    margin: 8px 0;
+    max-height: 160px;
+    animation: slidein 0.3s;
+    transition: all 0.3s;
+}
+
+@keyframes slidein {
+    from {
+        margin: 0;
+        padding: 0;
+        max-height: 0;
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        max-height: 160px;
+        opacity: 1;
+        transform: scale(1)
+    }
+}
+
+.ticket-item:hover {
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+.ticket-item-disappear {
+    margin: 0;
+    padding: 0;
+    max-height: 0;
+    opacity: 0;
+    transform: scale(0.8);
 }
 
 .ticket-remove:hover {

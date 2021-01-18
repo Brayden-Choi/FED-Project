@@ -151,7 +151,8 @@
 
 .dropdown-item-hidden {
     position: absolute;
-    left: -1000px;
+    visibility: hidden;
+    max-height: 0;
 }
 
 /* Media Queries */
