@@ -188,10 +188,13 @@ class AttractionManager {
 }
 
 class TicketManager {
-    
-    constructor(dropdownId, itemsId) {
-        this.$ticketOptions = $(dropdownId);
-        this.$ticketItems = $(itemsId);
+    constructor(ticketId) {
+        this.$ticketForm = $(ticketId);
+        this.$ticketOptions = $(`${ticketId}-options`);
+        this.$ticketItems = $(`${ticketId}-items`);
+        this.$ticketCount = $(`${ticketId}-count`);
+        this.$ticketSubTotal = $(`${ticketId}-subtotal`);
+        this.$ticketTotal = $(`${ticketId}-total`);
         this.itemList = [];
         this.dropdownDivider = `<div class="dropdown-divider"></div>`;
     }
@@ -213,12 +216,15 @@ class TicketManager {
 
         const $newTicket = $(this.$ticketItems.find("li").last());
         
-        const item = new TicketItem($newTicket);
+        const item = new TicketItem(this, $newTicket);
         item.$minusButton.click(function () {
             item.quantityMinus();
         });
         item.$plusButton.click(function () {
             item.quantityPlus();
+        });
+        item.$removeButton.click(function() {
+            item.remove();
         });
 
         this.itemList.push(item);
@@ -226,7 +232,14 @@ class TicketManager {
         console.log("Added ticket item.");
     }
 
-    removeTicketItem() {
+    removeTicketItem(index) {
+        this.itemList.splice(index, 1);
+        this.calcuateOrderSummary();
+        console.log("Removed ticket item: ", index);
+        console.log(this.itemList);
+    }
+    
+    calcuateOrderSummary() {
         
     }
 
@@ -289,38 +302,44 @@ class TicketManager {
 }
 
 class TicketItem {
-    constructor($item) {
+    constructor(manager, $item) {
+        this.manager = manager;
         this.$item = $item;
         this.$quantityObj = this.$item.find(".item-quantity").first();
         this.$minusButton = this.$item.find(".btn-stepper-minus").first();
         this.$plusButton = this.$item.find(".btn-stepper-plus").first();
+        this.$removeButton = this.$item.find(".ticket-remove").first();
         this.quanityMin = 1;
         this.quanityMax = 8;
         
-        this.updateStepperState();
+        this.updateQuantityState();
     }
     
-    updateStepperState() {
+    updateQuantityState() {
         const currentQuantity = this.getCurrentQuantity();
+        
         if (currentQuantity <= this.quanityMin) {
             this.$minusButton.addClass("disabled");
         } else {
             this.$minusButton.removeClass("disabled");
         }
+        
         if (currentQuantity >= this.quanityMax) {
             this.$plusButton.addClass("disabled");
         } else {
             this.$plusButton.removeClass("disabled");
         }
+        
+        this.manager.calcuateOrderSummary();
     }
     
     quantityMinus() {
-        console.log("clicked on minus");
+        console.log("clicked on minus.");
         return this.updateCurrentQuantity(-1);
     }
     
     quantityPlus() {
-        console.log("clicked on plus");
+        console.log("clicked on plus.");
         return this.updateCurrentQuantity(1);
     }
     
@@ -334,12 +353,19 @@ class TicketItem {
             return false;
         }
         this.$quantityObj.text(this.getCurrentQuantity() + amount);
-        this.updateStepperState();
+        this.updateQuantityState();
+        this.manager.calcuateOrderSummary();
         return true;
     }
     
     getCurrentQuantity() {
         return parseInt(this.$quantityObj.text());
+    }
+    
+    remove() {
+        const index = this.$item.index();
+        this.$item.remove()
+        this.manager.removeTicketItem(index);
     }
 }
 
@@ -402,7 +428,7 @@ $(document).ready(function () {
     $('.countrypicker').countrypicker();
     
     // Setup ticket form
-    const tm = new TicketManager("#ticket-options", "#ticket-items");
+    const tm = new TicketManager("#tickets");
     const ticketPath = "multimedia/gardensbythebay/data/attractions-tickets.json";
     $.getJSON(ticketPath).then(function (data) {
         tm.setUpData(data);
