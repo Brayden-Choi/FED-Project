@@ -192,6 +192,7 @@ class TicketManager {
     constructor(dropdownId, itemsId) {
         this.$ticketOptions = $(dropdownId);
         this.$ticketItems = $(itemsId);
+        this.itemList = [];
         this.dropdownDivider = `<div class="dropdown-divider"></div>`;
     }
 
@@ -208,9 +209,21 @@ class TicketManager {
     
     addTicketItem($ticketOption) {
         const targetIndex = $ticketOption.data("index");
-        console.log($ticketOption, targetIndex);
         this.$ticketItems.append(this.buildTicketItem(targetIndex));
-        console.log("Added ticket item")
+
+        const $newTicket = $(this.$ticketItems.find("li").last());
+        
+        const item = new TicketItem($newTicket);
+        item.$minusButton.click(function () {
+            item.quantityMinus();
+        });
+        item.$plusButton.click(function () {
+            item.quantityPlus();
+        });
+
+        this.itemList.push(item);
+        
+        console.log("Added ticket item.");
     }
 
     removeTicketItem() {
@@ -254,24 +267,79 @@ class TicketManager {
                         </div>
 
                         <div class="col-md-3 my-auto p-0 quantity-selector">
-                            <button class="btn btn-sm btn-info btn-stepper-minus" type="button">
+                            <button class="btn btn-sm btn-info btn-stepper-minus" type="button" data-index="${index}">
                                 <i class="fa fa-minus"></i>
                             </button>
-                            <h5 class="d-inline align-middle">1</h5>
-                            <button class="btn btn-sm btn-info btn-stepper-plus" type="button">
+                            <h5 class="d-inline align-middle item-quantity">1</h5>
+                            <button class="btn btn-sm btn-info btn-stepper-plus" type="button" data-index="${index}">
                                 <i class="fa fa-plus"></i>
                             </button>
                         </div>
                     </div>
                 </div>
                 <div class="col-1 my-auto p-0 pr-sm-2 pr-md-0">
-                    <button class="btn btn-round ticket-remove float-md-right" type="button">
+                    <button class="btn btn-round ticket-remove float-md-right" type="button" data-index="${index}">
                         <i class="fa fa-close"></i>
                     </button>
                 </div>
             </div>
         </li>
         `;
+    }
+}
+
+class TicketItem {
+    constructor($item) {
+        this.$item = $item;
+        this.$quantityObj = this.$item.find(".item-quantity").first();
+        this.$minusButton = this.$item.find(".btn-stepper-minus").first();
+        this.$plusButton = this.$item.find(".btn-stepper-plus").first();
+        this.quanityMin = 1;
+        this.quanityMax = 8;
+        
+        this.updateStepperState();
+    }
+    
+    updateStepperState() {
+        const currentQuantity = this.getCurrentQuantity();
+        if (currentQuantity <= this.quanityMin) {
+            this.$minusButton.addClass("disabled");
+        } else {
+            this.$minusButton.removeClass("disabled");
+        }
+        if (currentQuantity >= this.quanityMax) {
+            this.$plusButton.addClass("disabled");
+        } else {
+            this.$plusButton.removeClass("disabled");
+        }
+    }
+    
+    quantityMinus() {
+        console.log("clicked on minus");
+        return this.updateCurrentQuantity(-1);
+    }
+    
+    quantityPlus() {
+        console.log("clicked on plus");
+        return this.updateCurrentQuantity(1);
+    }
+    
+    isWithinLimit(by) {
+        const newValue = this.getCurrentQuantity() + by;
+        return newValue >= this.quanityMin && newValue <= this.quanityMax;
+    }
+
+    updateCurrentQuantity(amount) {
+        if (!this.isWithinLimit(amount)) {
+            return false;
+        }
+        this.$quantityObj.text(this.getCurrentQuantity() + amount);
+        this.updateStepperState();
+        return true;
+    }
+    
+    getCurrentQuantity() {
+        return parseInt(this.$quantityObj.text());
     }
 }
 
