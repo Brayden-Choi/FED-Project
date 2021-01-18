@@ -428,7 +428,7 @@ dd{
     transition-property: all;
     transition-duration: 0.4s;
 }
-.form-group:hover .form-underline, .form-row:hover .form-underline{
+.form-group:hover .form-underline {
     background-color: #31a339;
     opacity: 0.8;
 }
