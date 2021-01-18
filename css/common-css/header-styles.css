@@ -1,0 +1,196 @@
+/* Color Variables */
+:root {
+    --nav-background: transparent;
+    --nav-border-color: black;
+    --nav-brand-color: black;
+    --nav-brand-hover-shadow-color: rgba(0, 0, 0, 0.4);
+    --nav-link-color: rgba(0, 0, 0, 0.7);
+    --nav-link-hover-color: black;
+    --nav-link-active-color: black;
+    --navbar-toggler-border-color: black;
+    --nav-item-underline-color: black;
+    --nav-item-underline-active-color: black;
+}
+
+.navbar-white {
+    --nav-background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+    --nav-border-color: white;
+    --nav-brand-color: white;
+    --nav-brand-hover-shadow-color: rgba(255, 255, 255, 0.6);
+    --nav-link-color: rgba(255, 255, 255, 0.7);
+    --nav-link-hover-color: white;
+    --nav-link-active-color: white;
+    --navbar-toggler-border-color: white;
+    --nav-item-underline-color: white;
+    --nav-item-underline-active-color: white;
+}
+
+/* Navbar Styles */
+.navbar-main {
+    background: var(--nav-background);
+    width: 100%;
+    position: fixed;
+    z-index: 4;
+    padding-top: 0.6em;
+    transition: all 0.25s;
+}
+
+.navbar-shadow {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 1.2em rgba(0, 0, 0, 0.28);
+}
+
+.navbar-main .navbar {
+    border-top: 2px solid var(--nav-border-color);
+    padding: 0.1em 1em 0.3em;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+/* Nav Brand Styles */
+.navbar-main .navbar-brand {
+    color: var(--nav-brand-color) !important;
+    margin-left: 1vw;
+    transition: text-shadow 0.5s;
+}
+
+.navbar-main .navbar-brand:hover {
+    text-shadow: 0 0 2px var(--nav-brand-hover-shadow-color);
+}
+
+.short-text {
+    display: none;
+}
+
+.full-text {
+}
+
+/* Nav Toggle Styles */
+.navbar-main .navbar-toggler {
+    border-color: var(--navbar-toggler-border-color);
+    padding: 0 2px !important;
+}
+
+/* Nav Item Styles */
+.navbar-main .nav-item {
+    padding: 0.5em;
+}
+
+.navbar-main .nav-item:after {
+    content: '';
+    display: block;
+    margin: initial;
+    height: 3px;
+    width: 0;
+    background: transparent;
+    transition: all .5s ease;
+}
+
+.navbar-main .active:after {
+    content: '';
+    display: block;
+    margin: auto;
+    height: 3px;
+    width: 100% !important;
+    background: var(--nav-item-underline-active-color) !important;
+}
+
+.navbar-main .nav-item:hover:after {
+    width: 100%;
+    background: var(--nav-item-underline-color);
+}
+
+/* Nav Link Styles */
+.navbar-main .nav-link {
+    color: var(--nav-link-color) !important;
+    transition: all .5s ease;
+}
+
+.navbar-main .active .nav-link {
+    color: var(--nav-link-active-color) !important;
+}
+
+.navbar-main .nav-item:hover .nav-link {
+    color: var(--nav-link-hover-color) !important;
+}
+
+.navbar-main .nav-link a {
+    list-style: none;
+    margin: 0;
+    display: block;
+    padding: 0.5rem 1rem;
+    color: white;
+    text-decoration: none;
+}
+
+/* Dropdown Styles */
+.dropdown-custom {
+    border: none;
+    padding: 0;
+    box-shadow: 0 0 1.2em rgba(0, 0, 0, 0.28);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Dropdown Item Styles */
+.dropdown-item-top {
+    padding-top: 5px
+}
+
+.dropdown-item-bottom {
+    padding-bottom: 5px
+}
+
+.dropdown-item-style {
+    margin: 0;
+    font-weight: 600;
+    color: gray;
+    font-size: 0.9em !important;
+}
+
+/* Media Queries */
+@media all and (min-width: 992px) {
+    .navbar-main .nav-item:after {
+        margin: auto;
+    }
+
+    .navbar-main .nav-item .dropdown-menu {
+        transition: all 0.3s;
+
+        max-height: 0;
+        display: block;
+        overflow: hidden;
+        opacity: 0;
+    }
+
+    .navbar-main .nav-item:hover .nav-link {
+        color: black;
+    }
+
+    .navbar-main .nav-item:hover .dropdown-menu {
+        max-height: 300px;
+        opacity: 1;
+    }
+
+    .navbar-main .nav-item .dropdown-menu {
+        margin-top: 0;
+    }
+
+    .dropdown-custom {
+        left: 50% !important;
+        right: auto !important;
+        text-align: center !important;
+        transform: translate(-50%, 0) !important;
+    }
+}
+
+@media (max-width: 1180px) {
+    .short-text {
+        display: inline-block;
+    }
+
+    .full-text {
+        display: none;
+    }
+}

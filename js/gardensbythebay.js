@@ -1,60 +1,3 @@
-$(document).ready(function () {
-    // Cool letter hover
-    var letters = $("#title-text").text();
-    var nHTML = "";
-    for (var letter of letters) {
-        nHTML += "<span class='alter'>" + letter + "</span>";
-    }
-    $("#title-text").html(nHTML);
-
-    // Handle video change
-    const vm = new VideoManager();
-    $("#drone-vid-0").on('ended', function () {
-        vm.swap();
-    });
-    $("#drone-vid-1").on('ended', function () {
-        vm.swap();
-    });
-
-    // Parallax effect
-    $(window).on('load resize scroll', function () {
-        var scrolled = $(this).scrollTop();
-        $('#title').css({
-            'transform': 'translate3d(0, ' + -(scrolled * 0.2) + 'px, 0)', // parallax (20% scroll rate)
-            'opacity': 1 - scrolled / 600 // fade out at 400px from top
-        });
-        $('#drone-vid-0').css(
-            'transform', 'translate3d(0, ' + -(scrolled * 0.25) + 'px, 0)' // parallax (25% scroll rate)
-        );
-        $('#drone-vid-1').css(
-            'transform', 'translate3d(0, ' + -(scrolled * 0.25) + 'px, 0)' // parallax (25% scroll rate)
-        );
-        vm.checkOutOfView();
-    });
-
-    // Handle section change
-    const sm = new SectionManager("#content-indicators", ["#main", "#main-1"]);
-    sm.indicatorScrollUpdate();
-    $(window).scroll(function () {
-        sm.indicatorScrollUpdate();
-    });
-    $('#content-indicators li').click(function (event) {
-        sm.indicatorClick(event.target);
-    });
-
-    // Load attraction cards
-    const am = new AttractionManager("#attractionCards", "#attractionsModal");
-    const filePath = "multimedia/gardensbythebay/attractions.json";
-    $.getJSON(filePath).then(function (data) {
-        am.loadData(data);
-    }).fail(function () {
-        console.log("Unable to load file: " + filePath);
-    })
-    $('#attractionsModal').on('show.bs.modal', function (event) {
-        am.setModalData($(event.relatedTarget).data('index'))
-    })
-});
-
 class VideoManager {
     constructor() {
         this.currentVideo = 0
@@ -67,7 +10,7 @@ class VideoManager {
         $("#drone-vid-0").trigger('play');
         $("#drone-vid-0").fadeIn(2000);
     }
-    
+
     getCurrentVideo() {
         return $("#drone-vid-" + this.currentShow);
     }
@@ -88,7 +31,7 @@ class VideoManager {
 
         this.currentVideo %= 4;
     }
-    
+
     checkOutOfView() {
         const contentInView = $("#content")[0].getBoundingClientRect().top < -10;
         if (contentInView && !this.videoOutOfView) {
@@ -116,7 +59,7 @@ class SectionManager {
         let currentY = $(window).scrollTop();
         let index = -1;
         for (let section of this.sections) {
-            if ($(section).offset().top - currentY > 10) {
+            if ($(section).offset().top - currentY > 70) {
                 this.currentSectionIndex = index;
                 return;
             }
@@ -160,7 +103,7 @@ class SectionManager {
 
         let index = $indicator.index();
         console.log("Clicked on:", index)
-        window.open(this.sections[index], "_self");
+        $(window).trigger('anchorscroll', [this.sections[index]]);
     }
 
     indicatorScrollUpdate() {
@@ -171,20 +114,14 @@ class SectionManager {
 
 
 class AttractionManager {
-    constructor(cardsId, modalId) {
+    constructor(cardsId, modalId, backgroundId) {
+        this.cardsId = cardsId;
         this.$cardCollection = $(cardsId);
         this.modalId = modalId;
         this.$modalView = $(modalId);
+        this.$background = $(backgroundId);
         this.data = {};
-    }
-
-    setModalData(targetIndex) {
-        const targetData = this.data[targetIndex];
-        
-        $(this.modalId + "-title").text(targetData.name);
-        $(this.modalId + "-body").text(targetData.detailText);
-        
-        console.log("Set modal data for index:", targetIndex);
+        this.cardImageDir = "multimedia/gardensbythebay/attraction-cards/";
     }
 
     loadData(data) {
@@ -194,20 +131,351 @@ class AttractionManager {
         for (const singleData of this.data) {
             this.$cardCollection.append(this.buildPreviewCard(singleData, index))
             console.log("Added card data:", singleData);
+
+            this.$cardCollection.append(this.getSeperator("sm", "md"));
+            if (index % 2 === 1) {
+                this.$cardCollection.append(this.getSeperator("md", "xl"));
+            }
+            if (index % 3 === 2) {
+                this.$cardCollection.append(this.getSeperator("xl"));
+            }
             index++;
         }
     }
-    
+
+    setBackground($card) {
+        if (!$card.is(":hover")) {
+            return;
+        }
+
+        const targetData = this.getData($card);
+        this.$background.css("background-image", `url(${this.cardImageDir}${targetData.previewImage})`);
+    }
+
+    setModalData($button) {
+        const targetData = this.getData($button)
+
+        $(this.modalId + "-header").css("background-image", `linear-gradient(transparent, rgba(0, 0, 0, 0.6)), url(${this.cardImageDir}${targetData.previewImage})`);
+        $(this.modalId + "-title").text(targetData.name);
+        $(this.modalId + "-body").load(`gardensbythebay-attractions.html ${targetData.htmlId}`);
+
+        console.log("Loaded modal data for:", targetData.name);
+    }
+
     buildPreviewCard(cardData, index) {
         return `
-        <div class="card">
-            <img alt="..." class="card-img-top" src="${cardData.previewImage}">
+        <div class="card" data-index="${index}">
+            <img alt="..." class="card-img-top" src="${this.cardImageDir}${cardData.previewImage}">
             <div class="card-body">
                 <h5 class="card-title">${cardData.name}</h5>
                 <p class="card-text">${cardData.previewText}</p>
-                <button class="btn btn-primary" data-target="#attractionsModal" data-toggle="modal" type="button" data-index="${index}">learn more!</button>
+                <button class="btn btn-primary stretched-link" data-target="#attractionsModal" data-toggle="modal" type="button" data-index="${index}">learn more!</button>
             </div>
         </div>
         `;
     }
+
+    getSeperator(warpTarget, previousTarget) {
+        if (previousTarget === undefined) {
+            return `<div class="w-100 mt-3 d-none d-${warpTarget}-block"></div>`;
+        }
+        return `<div class="w-100 mt-3 d-none d-${warpTarget}-block d-${previousTarget}-none"></div>`;
+    }
+
+    getData($idenifier) {
+        return this.data[$idenifier.data("index")];
+    }
 }
+
+class TicketManager {
+    constructor(ticketId) {
+        this.$ticketForm = $(ticketId);
+        this.$ticketOptions = $(`${ticketId}-options`);
+        this.$ticketItems = $(`${ticketId}-items`);
+        this.$ticketCount = $(`${ticketId}-count`);
+        this.$ticketSubTotal = $(`${ticketId}-subtotal`);
+        this.$ticketTotal = $(`${ticketId}-total`);
+        this.itemList = [];
+        this.dropdownDivider = `<div class="dropdown-divider"></div>`;
+        
+        this.calcuateOrderSummary();
+    }
+
+    setUpData(data) {
+        this.data = data;
+        
+        for (let index = 0; index < this.data.length; index++) {
+            this.$ticketOptions.append(this.buildTicketOption(index))
+            if (index != this.data.length - 1) {
+                this.$ticketOptions.append(this.dropdownDivider);
+            }
+        }
+    }
+    
+    addTicketItem($ticketOption) {
+        const item = new TicketItem(this, $ticketOption);
+        item.$minusButton.click(function () {
+            item.quantityMinus();
+        });
+        item.$plusButton.click(function () {
+            item.quantityPlus();
+        });
+        item.$removeButton.click(function() {
+            item.remove();
+        });
+        
+        this.itemList.unshift(item);
+        this.calcuateOrderSummary();
+
+        $(this.$ticketOptions.find("a")[item.index]).addClass("disabled");
+        
+        console.log("Added ticket item.");
+    }
+
+    removeTicketItem(index) {
+        const targetItem = this.itemList[index];
+
+        this.itemList.splice(index, 1);
+        this.calcuateOrderSummary();
+
+        $(this.$ticketOptions.find("a")[targetItem.index]).removeClass("disabled");
+        
+        targetItem.$item.on('transitionend webkitTransitionEnd oTransitionEnd', function () {
+            $(this).delay(200).queue(function (next) {
+                $(this).remove();
+                console.log("Removed ticket item: ", index);
+                next();
+            });
+        });
+    }
+    
+    calcuateOrderSummary() {
+        if (this.itemList.length === 0) {
+            this.$ticketCount.text(0);
+            this.$ticketSubTotal.text("SGD -.--");
+            this.$ticketTotal.text("SGD -.--");
+            return;
+        }
+        
+        let totalTickets = 0;
+        let totalPrice = 0;
+        for (let item of this.itemList) {
+            console.log(item);
+            totalTickets += item.getCurrentQuantity();
+            totalPrice += item.calculatePrice();
+        }
+        this.$ticketCount.text(totalTickets);
+        this.$ticketSubTotal.text(this.parseMoney(totalPrice));
+        this.$ticketTotal.text(this.parseMoney(totalPrice));
+    }
+    
+    parseMoney(value) {
+        return `SGD ${value.toFixed(2)}`;
+    }
+
+    buildTicketOption(index) {
+        const ticketData = this.data[index];
+        return `
+        <a class="dropdown-item" href="#" data-index="${index}">
+            <div class="row">
+                <div class="col-8 pl-1">
+                    <h6 class="list-content-text">${ticketData.name}</h6>
+                    <p class="list-content-text">${ticketData.type} / ${ticketData.age}</p>
+                </div>
+                <div class="col-4 my-auto mr-0 pl-md-5 pr-1">
+                    <h6 class="mb-0 float-md-right">${this.parseMoney(ticketData.price)}</h6>
+                </div>
+            </div>
+        </a>
+        `;
+    }
+}
+
+class TicketItem {
+    constructor(manager, $ticketOption) {
+        this.manager = manager;
+
+        this.index = $ticketOption.data("index");
+        this.itemData = this.manager.data[this.index];
+        
+        this.manager.$ticketItems.prepend(this.buildTicketItem());
+
+        this.$item = this.manager.$ticketItems.find("li").first();
+        this.$quantityObj = $(`#item-quantity-${this.index}`);
+        this.$minusButton = $(`#btn-minus-${this.index}`);
+        this.$plusButton = $(`#btn-plus-${this.index}`);
+        this.$removeButton = $(`#btn-remove-${this.index}`);
+        
+        this.quanityMin = 1;
+        this.quanityMax = 8;
+        
+        this.updateQuantityState();
+    }
+    
+    updateQuantityState() {
+        const currentQuantity = this.getCurrentQuantity();
+        
+        if (currentQuantity <= this.quanityMin) {
+            this.$minusButton.addClass("disabled");
+        } else {
+            this.$minusButton.removeClass("disabled");
+        }
+        
+        if (currentQuantity >= this.quanityMax) {
+            this.$plusButton.addClass("disabled");
+        } else {
+            this.$plusButton.removeClass("disabled");
+        }
+        
+        this.manager.calcuateOrderSummary();
+    }
+    
+    quantityMinus() {
+        console.log("clicked on minus.");
+        return this.updateCurrentQuantity(-1);
+    }
+    
+    quantityPlus() {
+        console.log("clicked on plus.");
+        return this.updateCurrentQuantity(1);
+    }
+    
+    isWithinLimit(by) {
+        const newValue = this.getCurrentQuantity() + by;
+        return newValue >= this.quanityMin && newValue <= this.quanityMax;
+    }
+
+    updateCurrentQuantity(amount) {
+        if (!this.isWithinLimit(amount)) {
+            return false;
+        }
+        this.$quantityObj.text(this.getCurrentQuantity() + amount);
+        this.updateQuantityState();
+        this.manager.calcuateOrderSummary();
+        return true;
+    }
+
+    getCurrentQuantity() {
+        return parseInt(this.$quantityObj.text());
+    }
+    
+    calculatePrice() {
+        return this.getCurrentQuantity() * this.itemData.price;
+    }
+    
+    remove() {
+        this.$item.addClass("ticket-item-disappear");
+        this.manager.removeTicketItem(this.$item.index());
+    }
+
+    buildTicketItem() {
+        return `
+        <li class="list-group-item ticket-item">
+            <div class="row m-0">
+                <div class="col-11 p-0 pl-md-3 pl-sm-1">
+                    <div class="row m-0">
+                        <div class="col-md-9 my-auto p-0">
+                            <div class="row">
+                                <h5 class="list-content-text">${this.itemData.name}</h5>
+                            </div>
+                            <div class="row">
+                                <p class="list-content-text">${this.itemData.type} / ${this.itemData.age}</p>
+                            </div>
+                            <div class="row">
+                                <h5 class="list-content-text pt-2">SGD ${this.itemData.price.toFixed(2)}</h5>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 my-auto p-0 quantity-selector">
+                            <button class="btn btn-sm btn-info btn-stepper-minus" id="btn-minus-${this.index}" type="button"">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <h5 class="item-quantity" id="item-quantity-${this.index}">1</h5>
+                            <button class="btn btn-sm btn-info btn-stepper-plus" id="btn-plus-${this.index}" type="button"">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1 my-auto p-0 pr-sm-2 pr-md-0">
+                    <button class="btn btn-round ticket-remove float-md-right" id="btn-remove-${this.index}" type="button"">
+                        <i class="fa fa-close"></i>
+                    </button>
+                </div>
+            </div>
+        </li>
+        `;
+    }
+}
+
+$(document).ready(function () {
+    // Cool letter hover
+    var letters = $("#title-text").setLetterHoverEffect({"hoverClass": "title-alter-letter"});
+    var letters = $(".header-text").setLetterHoverEffect({"hoverClass": "header-alter-letter"});
+
+    // Handle video change
+    const vm = new VideoManager();
+    $("#drone-vid-0").on('ended', function () {
+        vm.swap();
+    });
+    $("#drone-vid-1").on('ended', function () {
+        vm.swap();
+    });
+
+    // Parallax effect
+    $(window).on('load resize scroll', function () {
+        var scrolled = $(this).scrollTop();
+        $('#title').css({
+            'transform': 'translate3d(0, ' + -(scrolled * 0.2) + 'px, 0)', // parallax (20% scroll rate)
+            'opacity': 1 - scrolled / 600 // fade out at 400px from top
+        });
+        $('#drone-vid-0').css(
+            'transform', 'translate3d(0, ' + -(scrolled * 0.25) + 'px, 0)' // parallax (25% scroll rate)
+        );
+        $('#drone-vid-1').css(
+            'transform', 'translate3d(0, ' + -(scrolled * 0.25) + 'px, 0)' // parallax (25% scroll rate)
+        );
+        vm.checkOutOfView();
+    });
+
+    // Handle section change
+    const sm = new SectionManager("#content-indicators", ["#attractions", "#gallery", "#tickets"]);
+    sm.indicatorScrollUpdate();
+    $(window).scroll(function () {
+        sm.indicatorScrollUpdate();
+    });
+    $('#content-indicators li').click(function (event) {
+        sm.indicatorClick(event.target);
+    });
+
+    // Setup attraction cards
+    const am = new AttractionManager("#attractionCards", "#attractionsModal", "#attractionsBackground");
+    const attractionPath = "multimedia/gardensbythebay/data/attractions.json";
+    $.getJSON(attractionPath).then(function (data) {
+        am.loadData(data);
+        $(`${am.cardsId} .card`).hover(function () {
+            am.setBackground($(this));
+        });
+        am.$modalView.on('show.bs.modal', function (event) {
+            am.setModalData($(event.relatedTarget));
+        })
+    }).fail(function () {
+        console.log("Unable to load file: " + attractionPath);
+    })
+    
+    // Setup ticket form
+    const tm = new TicketManager("#tickets");
+    const ticketPath = "multimedia/gardensbythebay/data/attractions-tickets.json";
+    $.getJSON(ticketPath).then(function (data) {
+        tm.setUpData(data);
+        tm.$ticketOptions.find("a").click(function (event) {
+            event.preventDefault();
+            tm.addTicketItem($(this));
+        });
+    }).fail(function () {
+        console.log("Unable to load file: " + ticketPath);
+    })
+
+    // Setup form country picker
+    $('.countrypicker').countrypicker();
+});

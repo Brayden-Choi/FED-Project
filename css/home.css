@@ -1,18 +1,15 @@
+/* Global Styles */
 html, body {
     height: 100%;
 }
 
+/* Overview Styles */
 .overview {
     width: 100%;
     height: 100%;
 }
 
-.overview-text {
-    position: relative;
-    z-index: 2;
-    
-}
-
+/* Overview Slides Styles */
 .overview-overlay {
     background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
     position: absolute;
@@ -32,30 +29,48 @@ html, body {
     z-index: 0;
 }
 
+.overview-slides, .carousel-item, .active {
+    height: 100%;
+}
+
+.overview-slides .carousel-inner {
+    height: 100%;
+}
+
+.carousel-item img {
+    object-fit: cover;
+    align-content: center;
+    height: 300px;
+    width: 350px;
+}
+
+/* Overview Indicator Styles */
 .overview-indicators {
     bottom: 2.6vh;
+}
+
+.overview-indicators .indicator {
+    border-top-width: 16px !important;
+    height: 5px !important;
+    width: calc(8% + 42px) !important;
+    transition: all 0.4s ease-out !important;
+}
+
+.overview-indicators .indicator:hover {
+    width: calc(9.5% + 52px) !important;
+    opacity: 0.7 !important;
 }
 
 .overview-indicators .active {
     background-color: #fff !important;
 }
 
-.indicator {
-    border-top-width: 16px !important;
-    height: 5px !important;
-    width: calc(9% + 20px) !important;
-    transition: all 0.4s ease-out !important;
+.overview-indicators .active:hover {
+    width: calc(9.5% + 52px) !important;
+    opacity: 1 !important;
 }
 
-.indicator:hover {
-    width: calc(11% + 26px) !important;
-}
-
-.title {
-    color: white;
-    top: 26vh;
-}
-
+/* Overview Title Styles */
 .title-container {
     width: 100%;
     height: calc(15vh + 2.4vw);
@@ -63,6 +78,7 @@ html, body {
     position: relative;
     overflow: hidden;
     vertical-align: bottom;
+    z-index: 3;
 }
 
 .title-text {
@@ -88,29 +104,17 @@ html, body {
     visibility: hidden;
 }
 
-.carousel, .carousel-item, .active {
-    height: 100%;
-}
-
-.carousel-inner {
-    height: 100%;
-}
-
-.carousel-item img {
-    object-fit: cover;
-    height: 300px !important;
-    width: 350px;
-}
-
+/* Overview Text Styles */
 .description {
 }
 
-.card {
-    max-width: 350px;
-    top: 22vh;
+/* Content Styles */
+.content-main {
+    margin-top: 100px;
 }
 
-@media all and (max-width: 640px) {
+/* Media Queries */
+@media all and (max-width: 280px) {
     .overview-indicators {
         visibility: hidden;
     }

@@ -12,65 +12,62 @@
     <link rel="shortcut icon" type="image/png" href="multimedia/favicons/default.png"/>
 
     <!-- Common dependencies -->
-    <link href="css/common-css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/common-css/common.css" rel="stylesheet">
+    <script src="js/common-js/jquery-3.3.1.min.js"></script>
     <script src="js/common-js/bootstrap.bundle.min.js"></script>
+    <script src="js/common-js/common.js"></script>
 
     <!-- Other dependencies -->
-    <link href="css/header-styles.css" rel="stylesheet">
 </head>
 
 <!-- Main navbar -->
-<div class="navbar-main navbar-transparent" id="nav">
-    <nav class="navbar navbar-format navbar-expand-lg navbar-light">
+<div class="navbar-main" id="nav">
+    <nav class="navbar navbar-expand-lg navbar-light">
 
         <!-- Left home button -->
-        <a class="navbar-brand navbar-custom" href="index.html">
+        <a class="navbar-brand" href="index.html">
             <span class="full-text">SG Tourist Attractions</span>
             <span class="short-text">SG T. A.</span>
         </a>
 
         <!-- Right navbar page items -->
         <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-                class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse"
-                id="navbar-toggle-button" onclick="navManager.clickToggle()" type="button">
+                class="navbar-toggler" data-target="#navbarContent" data-toggle="collapse"
+                id="navbar-toggle-button" type="button">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="navbarContent">
             <ul class="navbar-nav ml-auto">
 
                 <!-- Singapore Zoo -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown"
-                       href="#" onclick="navManager.clickDropDown('#zoo-menu', 'zoo.html')">Singapore Zoo</a>
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" data-page="#zoo-menu" data-link="zoo.html">Singapore Zoo</a>
                     <ul class="dropdown-menu dropdown-custom" id="zoo-menu">
-                        <li><a class="dropdown-item dropdown-item-style dropdown-item-top dropdown-item-hidden"
-                               href="zoo.html">Home</a></li>
-                        <li><a class="dropdown-item dropdown-item-style" href="zoo.html#maingallery">Animals</a></li>
-                        <li><a class="dropdown-item dropdown-item-style" href="zoo.html#zonegallery">Zones</a></li>
-                        <li><a class="dropdown-item dropdown-item-style" href="zoo.html#ticketandtime">Tickets</a></li>
-                        <li><a class="dropdown-item dropdown-item-style" href="zoo.html#location">Locations</a></li>
-                        <li><a class="dropdown-item dropdown-item-style dropdown-item-bottom" href="zoo.html#videos">Videos</a>
+                        <li><a class="smooth-scrolling dropdown-item dropdown-item-style dropdown-item-top dropdown-item-hidden" href="zoo.html">Home</a></li>
+                        <li><a class="smooth-scrolling dropdown-item dropdown-item-style" href="zoo.html#maingallery">Animals</a></li>
+                        <li><a class="smooth-scrolling dropdown-item dropdown-item-style" href="zoo.html#zonegallery">Zones</a></li>
+                        <li><a class="smooth-scrolling dropdown-item dropdown-item-style" href="zoo.html#shows">Shows</a></li>
+                        <li><a class="smooth-scrolling dropdown-item dropdown-item-style" href="zoo.html#ticketandtime">Tickets</a></li>
+                        <li><a class="smooth-scrolling dropdown-item dropdown-item-style" href="zoo.html#location">Locations</a></li>
+                        <li><a class="smooth-scrolling dropdown-item dropdown-item-style dropdown-item-bottom" href="zoo.html#videos">Videos</a>
                         </li>
                     </ul>
                 </li>
 
                 <!-- Garden by the Bay -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown"
-                       href="#" onclick="navManager.clickDropDown('#garden-menu', 'gardensbythebay.html')">Garden by the
-                        Bay</a>
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" data-page="#garden-menu" data-link="gardensbythebay.html">Gardens by the Bay</a>
                     <ul class="dropdown-menu dropdown-custom" id="garden-menu">
-                        <li><a class="dropdown-item dropdown-item-style dropdown-item-top dropdown-item-hidden"
-                               href="gardensbythebay.html">Home</a></li>
-                        <li><a class="dropdown-item dropdown-item-style" href="#">Flower Dome</a></li>
-                        <li><a class="dropdown-item dropdown-item-style" href="#">Cloud Forest</a></li>
-                        <li><a class="dropdown-item dropdown-item-style dropdown-item-bottom" href="#">Tickets</a></li>
+                        <li><a class="smooth-scrolling dropdown-item dropdown-item-style dropdown-item-top dropdown-item-hidden" href="gardensbythebay.html">Home</a></li>
+                        <li><a class="smooth-scrolling dropdown-item dropdown-item-style" href="gardensbythebay.html#attractions">Attractions</a></li>
+                        <li><a class="smooth-scrolling dropdown-item dropdown-item-style" href="gardensbythebay.html#gallery">Gallery</a></li>
+                        <li><a class="smooth-scrolling dropdown-item dropdown-item-style dropdown-item-bottom" href="gardensbythebay.html#tickets">Tickets</a></li>
                     </ul>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="sea.html">S.E.A. Aquarium</a>
+                    <a class="nav-link" href="jewel.html">Changi Jewel</a>
                 </li>
 
                 <li class="nav-item">
@@ -82,7 +79,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link nav-touch" href="credits.html">Credits</a>
+                    <a class="nav-link" href="credits.html">Credits</a>
                 </li>
             </ul>
         </div>
