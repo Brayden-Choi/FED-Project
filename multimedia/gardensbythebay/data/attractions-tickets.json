@@ -10,5 +10,17 @@
     "type": "Singapore Resident",
     "age": "Adult",
     "price": 10.00
+  },
+  {
+    "name": "FLOWER DOME",
+    "type": "Standard",
+    "age": "Child",
+    "price": 8.00
+  },
+  {
+    "name": "FLOWER DOME",
+    "type": "Standard",
+    "age": "Adult",
+    "price": 16.00
   }
 ]

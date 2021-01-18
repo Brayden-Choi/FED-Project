@@ -187,6 +187,56 @@ class AttractionManager {
     }
 }
 
+class TicketManager {
+    
+    constructor(dropdownId, itemsId) {
+        this.$ticketOptions = $(dropdownId);
+        this.$ticketItems = $(itemsId);
+        this.dropdownDivider = `<div class="dropdown-divider"></div>`;
+    }
+
+    setUpData(data) {
+        this.data = data;
+        
+        for (let index = 0; index < this.data.length; index++) {
+            this.$ticketOptions.append(this.buildTicketOption(index))
+            if (index != this.data.length - 1) {
+                this.$ticketOptions.append(this.dropdownDivider);
+            }
+        }
+    }
+    
+    addTicketItem() {
+        
+    }
+
+    removeTicketItem() {
+        
+    }
+
+    buildTicketOption(index) {
+        const ticketData = this.data[index];
+        return `
+        <a class="dropdown-item" data-index="${index}">
+            <div class="row">
+                <div class="col-8 pl-1">
+                    <h6 class="list-content-text">${ticketData.name}</h6>
+                    <p class="list-content-text">${ticketData.type} / ${ticketData.age}</p>
+                </div>
+                <div class="col-4 my-auto mr-0 pl-md-5 pr-1">
+                    <h6 class="float-md-right">SGD ${ticketData.price.toFixed(2)}</h6>
+                </div>
+            </div>
+        </a>
+        `;
+    }
+
+    buildTicketItem(index) {
+        const ticketData = this.data[index];
+        
+    }
+}
+
 $(document).ready(function () {
     // Cool letter hover
     var letters = $("#title-text").setLetterHoverEffect({"hoverClass": "title-alter-letter"});
@@ -229,8 +279,8 @@ $(document).ready(function () {
 
     // Setup attraction cards
     const am = new AttractionManager("#attractionCards", "#attractionsModal", "#attractionsBackground");
-    const filePath = "multimedia/gardensbythebay/data/attractions.json";
-    $.getJSON(filePath).then(function (data) {
+    const attractionPath = "multimedia/gardensbythebay/data/attractions.json";
+    $.getJSON(attractionPath).then(function (data) {
         am.loadData(data);
         $(`${am.cardsId} .card`).hover(function () {
             am.setBackground($(this));
@@ -239,8 +289,18 @@ $(document).ready(function () {
             am.setModalData($(event.relatedTarget));
         })
     }).fail(function () {
-        console.log("Unable to load file: " + filePath);
+        console.log("Unable to load file: " + attractionPath);
     })
 
+    // Setup form
     $('.countrypicker').countrypicker();
+    
+    // Setup ticket form
+    const tm = new TicketManager("#ticket-options", "ticket-items");
+    const ticketPath = "multimedia/gardensbythebay/data/attractions-tickets.json";
+    $.getJSON(ticketPath).then(function (data) {
+        tm.setUpData(data);
+    }).fail(function () {
+        console.log("Unable to load file: " + ticketPath);
+    })
 });
