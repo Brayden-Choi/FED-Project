@@ -386,7 +386,7 @@ class TicketItem {
                             <button class="btn btn-sm btn-info btn-stepper-minus" id="btn-minus-${index}" type="button"">
                                 <i class="fa fa-minus"></i>
                             </button>
-                            <h5 class="d-inline align-middle item-quantity" id="item-quantity-${index}">1</h5>
+                            <h5 class="item-quantity" id="item-quantity-${index}">1</h5>
                             <button class="btn btn-sm btn-info btn-stepper-plus" id="btn-plus-${index}" type="button"">
                                 <i class="fa fa-plus"></i>
                             </button>
