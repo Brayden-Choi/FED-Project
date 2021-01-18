@@ -206,8 +206,11 @@ class TicketManager {
         }
     }
     
-    addTicketItem() {
-        
+    addTicketItem($ticketOption) {
+        const targetIndex = $ticketOption.data("index");
+        console.log($ticketOption, targetIndex);
+        this.$ticketItems.append(this.buildTicketItem(targetIndex));
+        console.log("Added ticket item")
     }
 
     removeTicketItem() {
@@ -217,7 +220,7 @@ class TicketManager {
     buildTicketOption(index) {
         const ticketData = this.data[index];
         return `
-        <a class="dropdown-item" data-index="${index}">
+        <a class="dropdown-item" href="#" data-index="${index}">
             <div class="row">
                 <div class="col-8 pl-1">
                     <h6 class="list-content-text">${ticketData.name}</h6>
@@ -233,7 +236,42 @@ class TicketManager {
 
     buildTicketItem(index) {
         const ticketData = this.data[index];
-        
+        return `
+        <li class="list-group-item">
+            <div class="row m-0">
+                <div class="col-11 p-0 pl-md-3 pl-sm-1">
+                    <div class="row m-0">
+                        <div class="col-md-9 my-auto p-0">
+                            <div class="row">
+                                <h5 class="list-content-text">${ticketData.name}</h5>
+                            </div>
+                            <div class="row">
+                                <p class="list-content-text">${ticketData.type} / ${ticketData.age}</p>
+                            </div>
+                            <div class="row">
+                                <h5 class="list-content-text pt-2">SGD ${ticketData.price.toFixed(2)}</h5>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 my-auto p-0 quantity-selector">
+                            <button class="btn btn-sm btn-info btn-stepper-minus" type="button">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <h5 class="d-inline align-middle">1</h5>
+                            <button class="btn btn-sm btn-info btn-stepper-plus" type="button">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1 my-auto p-0 pr-sm-2 pr-md-0">
+                    <button class="btn btn-round ticket-remove float-md-right" type="button">
+                        <i class="fa fa-close"></i>
+                    </button>
+                </div>
+            </div>
+        </li>
+        `;
     }
 }
 
@@ -296,10 +334,14 @@ $(document).ready(function () {
     $('.countrypicker').countrypicker();
     
     // Setup ticket form
-    const tm = new TicketManager("#ticket-options", "ticket-items");
+    const tm = new TicketManager("#ticket-options", "#ticket-items");
     const ticketPath = "multimedia/gardensbythebay/data/attractions-tickets.json";
     $.getJSON(ticketPath).then(function (data) {
         tm.setUpData(data);
+        tm.$ticketOptions.find("a").click(function (event) {
+            event.preventDefault();
+            tm.addTicketItem($(this));
+        });
     }).fail(function () {
         console.log("Unable to load file: " + ticketPath);
     })
