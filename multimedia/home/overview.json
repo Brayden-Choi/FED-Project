@@ -1,0 +1,22 @@
+﻿{
+  "Gardens by the Bay": {
+    "desc": "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta.",
+    "page": "gardensbythebay.html"
+  },
+  "Singapore Zoo": {
+    "desc": "gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit",
+    "page": "zoo.html"
+  }, 
+  "Changi Jewel": {
+    "desc": "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta.",
+    "page": "jewel.html"
+  },
+  "Sentosa": {
+    "desc": "gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit",
+    "page": "sentosa.html"
+  }, 
+  "Universal Studios": {
+    "desc": "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta.",
+    "page": "uss.html"
+  }
+}

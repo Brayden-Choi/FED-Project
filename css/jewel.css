@@ -1,0 +1,219 @@
+/*Welcome Section*/
+.welcome{
+    height: 975px;
+    z-index: 1;
+}
+
+.welcome-text {
+    color: white;
+    text-align: center;
+    font-size: 70px;
+    position: center;
+    padding-top: 400px;
+    font-family: 'Cinzel', serif;
+}
+
+.welcome-img {
+    background-image: url("../multimedia/jewel-images/waterfall.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(0, 0, 0, .30);
+    height: 100%;
+}
+
+/*About Section*/
+
+.about-text {
+    font-family: 'Cinzel', serif;
+    font-size: 60px;
+    color: black;
+    position: center;
+    text-align: center;
+    padding-top: 270px;
+    padding-left: 0px;
+}
+
+.about-information-text {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    position: center;
+    padding-top: 70px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.about {
+    background-color: #baac79;
+    height: 975px;
+}
+
+.about-img {
+    background-image: url("../multimedia/jewel-images/jewel logo.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(0, 0, 0, .70);
+    height: 850px;
+    width: 50%;
+    position: relative;
+    margin-top: 60px;
+    padding-right: 400px;
+}
+
+/*Attraction Section*/
+.a-bg {
+    background-color: black;
+    height: 975px;
+}
+
+h3 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.attraction-title {
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    position: center;
+    font-family: 'Cinzel', serif;
+    padding-top: 50px;
+}
+
+.gradient-box {
+    display: flex;
+    align-items: center;
+    width: 93%;
+    margin: auto;
+    height: 700px;
+    position: relative;
+    box-sizing: border-box;
+    background: #baac79;
+    background-clip: padding-box;
+    border: solid 5px transparent;
+    border-radius: 1em;
+}
+
+.gradient-box:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -5px;
+  border-radius: inherit;
+}
+
+.slider {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.slides {
+  display: flex;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+    
+  /*
+  scroll-snap-points-x: repeat(300px);
+  scroll-snap-type: mandatory;
+  */
+}
+.slides::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.slides::-webkit-scrollbar-thumb {
+    padding-top: 30px;
+    background-color: white;
+  border-radius: 20px;
+}
+
+.slides::-webkit-scrollbar-track {
+  background: transparent;
+}
+.slides > div {
+  flex-shrink: 0;
+  width: 500px;
+  height: 500px;
+  margin-right: 50px;
+    margin-bottom: 10px;
+  border-radius: 10px;
+  background: black;
+  transform-origin: center center;
+  transform: scale(1);
+  transition: transform 0.5s;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 100px;
+}
+.slides > div:target {
+/*   transform: scale(0.8); */
+}
+
+img {
+    object-fit: cover;
+    position: relative;
+    bottom: 30px;
+    width: 100%;
+    height: 75%;
+
+}
+
+.slider > a {
+  display: inline-flex;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: white;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 0 0.5rem 0;
+  position: relative;
+}
+.slider > a:active {
+  top: 1px;
+}
+.slider > a:focus {
+  background: white;
+}
+
+@supports (scroll-snap-type: none) {
+  .slider > a { 
+    display: none;
+  }
+}
+
+.carousel-caption {
+    padding-bottom: 10px !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+}
+
+/*Shopping*/
+.shopping-title {
+    color: black;
+    text-align: center;
+    font-size: 50px;
+    position: center;
+    font-family: 'Cinzel', serif;
+    padding-top: 50px;
+}
+
+.s-bg {
+    background-color: #baac79;
+    height: 975px;
+}

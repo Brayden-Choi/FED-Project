@@ -1,0 +1,32 @@
+﻿[
+  {
+    "name": "FLOWER DOME",
+    "type": "Singapore Resident",
+    "age": "Child",
+    "price": 5.00
+  },
+  {
+    "name": "FLOWER DOME",
+    "type": "Singapore Resident",
+    "age": "Adult",
+    "price": 10.00
+  },
+  {
+    "name": "FLOWER DOME",
+    "type": "Standard",
+    "age": "Child",
+    "price": 8.00
+  },
+  {
+    "name": "FLOWER DOME",
+    "type": "Standard",
+    "age": "Adult",
+    "price": 16.00
+  },
+  {
+    "name": "CLOUD FOREST",
+    "type": "Standard",
+    "age": "Adult",
+    "price": 20.00
+  }
+]
