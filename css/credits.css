@@ -64,6 +64,12 @@
     flex: 1 1 auto;
 }
 
+.special-message {
+    padding: 20px;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
 @media all and (max-width: 1200px) {
     .card-title {
         font-size: x-large;
