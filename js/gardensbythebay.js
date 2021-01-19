@@ -197,13 +197,13 @@ class TicketManager {
         this.$ticketTotal = $(`${ticketId}-total`);
         this.itemList = [];
         this.dropdownDivider = `<div class="dropdown-divider"></div>`;
-        
+
         this.calcuateOrderSummary();
     }
 
     setUpData(data) {
         this.data = data;
-        
+
         for (let index = 0; index < this.data.length; index++) {
             this.$ticketOptions.append(this.buildTicketOption(index))
             if (index != this.data.length - 1) {
@@ -211,7 +211,7 @@ class TicketManager {
             }
         }
     }
-    
+
     addTicketItem($ticketOption) {
         const item = new TicketItem(this, $ticketOption);
         item.$minusButton.click(function () {
@@ -220,15 +220,15 @@ class TicketManager {
         item.$plusButton.click(function () {
             item.quantityPlus();
         });
-        item.$removeButton.click(function() {
+        item.$removeButton.click(function () {
             item.remove();
         });
-        
+
         this.itemList.unshift(item);
         this.calcuateOrderSummary();
 
         $(this.$ticketOptions.find("a")[item.index]).addClass("disabled");
-        
+
         console.log("Added ticket item.");
     }
 
@@ -239,7 +239,7 @@ class TicketManager {
         this.calcuateOrderSummary();
 
         $(this.$ticketOptions.find("a")[targetItem.index]).removeClass("disabled");
-        
+
         targetItem.$item.on('transitionend webkitTransitionEnd oTransitionEnd', function () {
             $(this).delay(200).queue(function (next) {
                 $(this).remove();
@@ -248,7 +248,7 @@ class TicketManager {
             });
         });
     }
-    
+
     calcuateOrderSummary() {
         if (this.itemList.length === 0) {
             this.$ticketCount.text(0);
@@ -256,7 +256,7 @@ class TicketManager {
             this.$ticketTotal.text("SGD -.--");
             return;
         }
-        
+
         let totalTickets = 0;
         let totalPrice = 0;
         for (let item of this.itemList) {
@@ -268,7 +268,7 @@ class TicketManager {
         this.$ticketSubTotal.text(this.parseMoney(totalPrice));
         this.$ticketTotal.text(this.parseMoney(totalPrice));
     }
-    
+
     parseMoney(value) {
         return `SGD ${value.toFixed(2)}`;
     }
@@ -297,7 +297,7 @@ class TicketItem {
 
         this.index = $ticketOption.data("index");
         this.itemData = this.manager.data[this.index];
-        
+
         this.manager.$ticketItems.prepend(this.buildTicketItem());
 
         this.$item = this.manager.$ticketItems.find("li").first();
@@ -305,41 +305,41 @@ class TicketItem {
         this.$minusButton = $(`#btn-minus-${this.index}`);
         this.$plusButton = $(`#btn-plus-${this.index}`);
         this.$removeButton = $(`#btn-remove-${this.index}`);
-        
+
         this.quanityMin = 1;
         this.quanityMax = 8;
-        
+
         this.updateQuantityState();
     }
-    
+
     updateQuantityState() {
         const currentQuantity = this.getCurrentQuantity();
-        
+
         if (currentQuantity <= this.quanityMin) {
             this.$minusButton.addClass("disabled");
         } else {
             this.$minusButton.removeClass("disabled");
         }
-        
+
         if (currentQuantity >= this.quanityMax) {
             this.$plusButton.addClass("disabled");
         } else {
             this.$plusButton.removeClass("disabled");
         }
-        
+
         this.manager.calcuateOrderSummary();
     }
-    
+
     quantityMinus() {
         console.log("clicked on minus.");
         return this.updateCurrentQuantity(-1);
     }
-    
+
     quantityPlus() {
         console.log("clicked on plus.");
         return this.updateCurrentQuantity(1);
     }
-    
+
     isWithinLimit(by) {
         const newValue = this.getCurrentQuantity() + by;
         return newValue >= this.quanityMin && newValue <= this.quanityMax;
@@ -358,11 +358,11 @@ class TicketItem {
     getCurrentQuantity() {
         return parseInt(this.$quantityObj.text());
     }
-    
+
     calculatePrice() {
         return this.getCurrentQuantity() * this.itemData.price;
     }
-    
+
     remove() {
         this.$item.addClass("ticket-item-disappear");
         this.manager.removeTicketItem(this.$item.index());
@@ -462,7 +462,7 @@ $(document).ready(function () {
     }).fail(function () {
         console.log("Unable to load file: " + attractionPath);
     })
-    
+
     // Setup ticket form
     const tm = new TicketManager("#tickets");
     const ticketPath = "multimedia/gardensbythebay/data/attractions-tickets.json";
