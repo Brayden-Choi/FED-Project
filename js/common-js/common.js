@@ -59,7 +59,7 @@ class NavManager {
     }
 
     setActivePage() {
-        let style = this.$header.attr("type");
+        let style = this.$header.data("type");
 
         if (style === "white") {
             this.usingWhite = true;
@@ -80,9 +80,12 @@ class NavManager {
     }
 
     addNavShadow() {
-        let canSee = this.$navToggler.attr("aria-expanded");
-
-        if ($(window).scrollTop() >= 30) {
+        const canSee = this.$navToggler.attr("aria-expanded");
+        const offset = this.$header.data("offset") || 30;
+        
+        console.log($(window).scrollTop(), offset);
+        
+        if ($(window).scrollTop() >= offset) {
             if (this.usingWhite) {
                 this.$nav.removeClass('navbar-white');
                 this.$nav.removeClass('navbar-dark');
@@ -149,7 +152,7 @@ $(document).ready(function () {
         nm.setActivePage();
         nm.addNavShadow();
 
-        $(window).scroll(function () {
+        $(window).on('resize scroll', function () {
             nm.addNavShadow();
         });
 
@@ -189,7 +192,7 @@ $(window).on('load', function (event) {
         }
     });
 
-    // Add smooth scrolling to all links
+    // Add smooth scrolling to links
     $(window).trigger('anchorscroll', [window.location.hash, 100]);
     $('.smooth-scrolling').on('click', function (event) {
         const hash = this.hash;
