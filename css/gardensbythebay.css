@@ -19,7 +19,6 @@ body {
 
 /* General Content Styles */
 .content {
-    background-color: white;
     position: absolute;
     z-index: 3;
 }
@@ -28,6 +27,12 @@ body {
     position: relative;
     background: white;
     padding-bottom: 3vh;
+}
+
+.section-clear {
+    color: white;
+    padding: 300px;
+    background: transparent;
 }
 
 .header-text {
@@ -55,6 +60,7 @@ body {
 /* Title Video Styles */
 .video-frame {
     backface-visibility: hidden;
+    filter: brightness(0.6);
     background-size: cover;
     bottom: 0;
     height: auto;
@@ -67,30 +73,14 @@ body {
 }
 
 .video-overlay {
-    background-color: rgba(0, 0, 0, .30);
     height: 100%;
     width: 100%;
     position: relative;
     left: 0;
     top: 0;
-    transition: background-color 300ms ease;
     min-height: 100%;
     animation: fadein-overlay 3s;
     animation-timing-function: ease-out;
-}
-
-@keyframes fadein-overlay {
-    from {
-        background-color: rgba(0, 0, 0, 1.0);
-
-    }
-    to {
-        background-color: rgba(0, 0, 0, .30);
-    }
-}
-
-.fade {
-    background-color: rgba(0, 0, 0, .85) !important;
 }
 
 /* Title Text Styles */
@@ -136,7 +126,7 @@ body {
 .arrow {
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    position: absolute;
+    position: fixed;
     width: 100%;
     bottom: 10px;
     text-align: center;
