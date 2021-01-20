@@ -165,7 +165,7 @@
   font-size: 100px;
 }
 
-img {
+.carousel-image {
     object-fit: cover;
     position: relative;
     bottom: 30px;
