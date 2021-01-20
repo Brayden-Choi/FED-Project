@@ -14,7 +14,7 @@
 }
 
 .welcome-img {
-    background-image: url("../multimedia/jewel-images/waterfall.jpg");
+    background-image: url("../multimedia/jewel-images/jewel.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-color: rgba(0, 0, 0, .30);
@@ -69,7 +69,7 @@
 
 .slider-text {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 30px;
+    font-size: 2.5vh;
     color: white;
     text-align: center;
     margin-top: 50px;
@@ -86,10 +86,11 @@
 
 .a-text {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 20px;
+    font-size: 25px;
     color: white;
     text-align: center;
-    padding: 30px 0;
+    padding: 40px 0;
+    padding-top: 50px;
     position: center;
 }
 
@@ -127,15 +128,11 @@
 }
 
 .slides {
-  display: flex;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  width: 100%;
-    
-  /*
-  scroll-snap-points-x: repeat(300px);
-  scroll-snap-type: mandatory;
-  */
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    border-radius: 10px;
 }
 .slides::-webkit-scrollbar {
   width: 10px;
@@ -152,8 +149,8 @@
 }
 .slides > div {
   flex-shrink: 0;
-  width: 500px;
-  height: 500px;
+  width: 26vw;
+  height: 46vh;
   margin-right: 50px;
     margin-bottom: 10px;
   border-radius: 10px;
@@ -213,7 +210,7 @@ img {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: green;
+    background-color: #c9c8bb;
     overflow: hidden;
     width: 100%;
     height: 100%;
@@ -225,8 +222,9 @@ img {
 }
 
 .text {
+    font-family: 'Josefin Sans', sans-serif;
     color: white;
-    font-size: 10px;
+    font-size: 25px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -269,7 +267,16 @@ img {
     color: white;
     text-align: center;
     position: center;
-    padding-top: 70px;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-top: 40px;
+}
+
+.card {
+    height: 10vh;
+    width: 5vh;
+}
+
+.c-img {
+    height: 6vh;
+    width: 3vw;
+    position: relative;
 }
