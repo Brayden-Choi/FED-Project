@@ -270,13 +270,8 @@ img {
     padding-top: 40px;
 }
 
-.card {
-    height: 10vh;
-    width: 5vh;
-}
-
 .c-img {
-    height: 6vh;
-    width: 3vw;
+    height: 100%;
+    width: 100%;
     position: relative;
 }
