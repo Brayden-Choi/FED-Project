@@ -33,7 +33,7 @@ class VideoManager {
     }
 
     checkOutOfView() {
-        const contentInView = $("#content")[0].getBoundingClientRect().top < -10;
+        const contentInView = $("#attractions")[0].getBoundingClientRect().top < -10;
         if (contentInView && !this.videoOutOfView) {
             this.getCurrentVideo().trigger("pause");
             this.videoOutOfView = true;
@@ -429,12 +429,25 @@ $(document).ready(function () {
             'transform': 'translate3d(0, ' + -(scrolled * 0.2) + 'px, 0)', // parallax (20% scroll rate)
             'opacity': 1 - scrolled / 600 // fade out at 400px from top
         });
-        $('#drone-vid-0').css(
-            'transform', 'translate3d(0, ' + -(scrolled * 0.25) + 'px, 0)' // parallax (25% scroll rate)
-        );
-        $('#drone-vid-1').css(
-            'transform', 'translate3d(0, ' + -(scrolled * 0.25) + 'px, 0)' // parallax (25% scroll rate)
-        );
+        $('#arrow').css({
+            'transform': 'translate3d(0, ' + -(scrolled * 0.2) + 'px, 0)', // parallax (20% scroll rate)
+            'opacity': 1 - scrolled / 600 // fade out at 400px from top
+        });
+        if (scrolled >= 920) {
+            $('#drone-vid-0').css(
+                'transform', 'translate3d(0, ' + -((scrolled - 920) * 0.25) + 'px, 0)' // parallax (25% scroll rate)
+            );
+            $('#drone-vid-1').css(
+                'transform', 'translate3d(0, ' + -((scrolled - 920) * 0.25) + 'px, 0)' // parallax (25% scroll rate)
+            );
+        } else {
+            $('#drone-vid-0').css(
+                'transform', 'translate3d(0, 0, 0)'
+            );
+            $('#drone-vid-1').css(
+                'transform', 'translate3d(0, 0, 0)'
+            );
+        }
         vm.checkOutOfView();
     });
 

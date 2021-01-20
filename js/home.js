@@ -71,7 +71,7 @@ class SlideManager {
             $(indicator).removeClass("active");
         }
     }
-    
+
     getTitle(offset) {
         return $(this.titlePrefix + mod(this.currentTitle + offset, 3));
     }

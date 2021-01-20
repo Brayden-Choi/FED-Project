@@ -30,7 +30,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
-<div content="Gardens By The Bay" id="header" type="white"></div>
+<div content="Gardens By The Bay" id="header" data-type="white" data-offset="800"></div>
 
 <body>
 <div aria-hidden="true" aria-labelledby="attractionsModal-title" class="modal fade" id="attractionsModal" role="dialog"
@@ -80,8 +80,8 @@
     <div class="title" id="title">
         <h1 class="fancy-font" id="title-text">Gardens by the Bay</h1>
     </div>
-    <div class="arrow bounce">
-        <a class="smooth-scrolling" href="#attractions">
+    <div class="arrow bounce" id="arrow">
+        <a class="smooth-scrolling" href="#about">
             <img alt="Arrow down" class="arrow-image" src="multimedia/gardensbythebay/arrow-down.svg">
         </a>
     </div>
@@ -94,6 +94,15 @@
 </div>
 
 <div class="content container-fluid p-0 m-0" id="content">
+    <section class="section section-clear" id="about">
+        <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.
+        </h2>
+    </section>
+    
     <section class="section" id="attractions">
         <div class="attractions-background" id="attractionsBackground"></div>
         <div class="row m-0">
