@@ -67,7 +67,7 @@
     height: 975px;
 }
 
-h3 {
+.slider-text {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 30px;
     color: white;
@@ -84,12 +84,21 @@ h3 {
     padding-top: 50px;
 }
 
+.a-text {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    padding-top: 300px;
+    position: center;
+}
+
 .gradient-box {
     display: flex;
     align-items: center;
     width: 93%;
     margin: auto;
-    height: 700px;
+    height: 70%;
     position: relative;
     box-sizing: border-box;
     background: #baac79;
@@ -159,9 +168,6 @@ h3 {
   align-items: center;
   font-size: 100px;
 }
-.slides > div:target {
-/*   transform: scale(0.8); */
-}
 
 img {
     object-fit: cover;
@@ -203,8 +209,43 @@ img {
     white-space: nowrap !important;
 }
 
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.7);
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: 0.7s ease;
+}
+
+.text {
+    color: white;
+    font-size: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.container {
+    margin-top: 1em;
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.container:hover .overlay {
+    height: 100%;
+}
+
 /*Shopping*/
-.shopping-title {
+.sd-title {
     color: black;
     text-align: center;
     font-size: 50px;
@@ -213,7 +254,11 @@ img {
     padding-top: 50px;
 }
 
-.s-bg {
+.sd-bg {
     background-color: #baac79;
     height: 975px;
+}
+
+.sd-text {
+
 }
