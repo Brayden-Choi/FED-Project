@@ -213,11 +213,15 @@ img {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(0,0,0,0.7);
+    background-color: green;
     overflow: hidden;
     width: 100%;
-    height: 0;
-    transition: 0.7s ease;
+    height: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.7s ease;
+    z-index: 11;
+    border-radius: 10px;
 }
 
 .text {
@@ -232,15 +236,16 @@ img {
     text-align: center;
 }
 
-.container {
-    margin-top: 1em;
+.overlay-container {
+    cursor: pointer;
     position: relative;
     width: 100%;
     height: auto;
 }
 
-.container:hover .overlay {
-    height: 100%;
+.overlay-container:hover .overlay {
+    visibility: visible;
+    opacity: 1;
 }
 
 /*Shopping*/
