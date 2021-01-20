@@ -459,18 +459,38 @@ dd{
     padding-bottom: 5%;
 }
 
-/*.social-bar {
-    background-image: url("../multimedia/zoo-images/blackzebra.jpg");
-    background-repeat: repeat;
-    background-position: center;
-    background-size: 30rem 30rem;
-    width: 100%;
-    height: 100%;
-    margin: 10px;
+.fa-facebook {
+    color: black;
+    padding-right: 4rem;
+}
+.fa-twitter {
+    color: black;
+    padding-right: 4rem;
+}
+.fa-instagram {
+    color: black;
+    padding-right: 4rem;
+}
+.fa-youtube {
+    color: black;
+    padding-right: 4rem;
+}
+
+.social-bar {
+    height: 3rem;
+    margin: 2rem;
     display: inline-block;
+    padding: 8px;
     position: relative;
     opacity: 1;
-}*/
+    color: black;
+    font-size: 1.2rem;
+}
+
+.social-icon:hover {
+    color: darkgrey;
+    opacity: 0.7;
+}
 
 /*Media Queries for Mobile*/
 @media (max-width: 1200px) {
