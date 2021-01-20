@@ -459,24 +459,18 @@ dd{
     padding-bottom: 5%;
 }
 
-.fa-facebook {
-    color: black;
-    padding-right: 4rem;
-}
-.fa-twitter {
-    color: black;
-    padding-right: 4rem;
-}
-.fa-instagram {
-    color: black;
-    padding-right: 4rem;
-}
-.fa-youtube {
+.social-icon {
     color: black;
     padding-right: 4rem;
 }
 
+.social-icon:hover {
+    color: white;
+    opacity: 0.7;
+}
+
 .social-bar {
+    width: auto;
     height: 3rem;
     margin: 2rem;
     display: inline-block;
@@ -485,11 +479,6 @@ dd{
     opacity: 1;
     color: black;
     font-size: 1.2rem;
-}
-
-.social-icon:hover {
-    color: darkgrey;
-    opacity: 0.7;
 }
 
 /*Media Queries for Mobile*/
