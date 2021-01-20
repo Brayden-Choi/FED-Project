@@ -202,14 +202,14 @@ video {
 .map-button {
     font-family: 'Caveat Brush', cursive;
     font-size: 1.8rem;
-    background-color: grey;
+    background-color: #0D5510;
     border: none;
     position: relative;
     margin-top: 10px;
 }
 
 .map-button:hover, .map-button:focus{
-    background-color:  #0D5510;
+    background-color:  #31a339;
 }
 
 .modal-content {
@@ -330,6 +330,19 @@ video {
     font-size: 3rem;
     /*padding: 6vh;*/
     padding: 0;
+}
+
+.ticket-button {
+    font-family: 'Caveat Brush', cursive;
+    font-size: 1.8rem;
+    background-color: #0D5510;
+    border: none;
+    position: relative;
+    margin-top: 3rem;
+}
+
+.ticket-button:hover, .ticket-button:focus{
+    background-color:  #31a339;
 }
 
 @media (min-width: 960px) {
