@@ -1,19 +1,19 @@
 ﻿// Custom jquery methods
 (function ($) {
-    
+
     $.fn.isInViewport = function (options) {
-        
+
         let settings = $.extend({
             inFull: false,
         }, options);
-        
+
         const el = this[0];
         var rect = el.getBoundingClientRect();
 
         if (!$(el).is(":visible")) {
             return false;
         }
-        
+
         if (settings.inFull) {
             return (
                 rect.top >= 0 &&
@@ -29,11 +29,11 @@
     };
 
     $.fn.setLetterHoverEffect = function (options) {
-        
+
         let settings = $.extend({
             hoverClass: undefined,
         }, options);
-        
+
         this.each(function () {
             let $text = $(this);
             let nHTML = "";
@@ -44,7 +44,7 @@
             $text.html(nHTML);
         });
     };
-    
+
 }(jQuery));
 
 // Manage Navbar behaviours
@@ -124,7 +124,7 @@ class NavManager {
     clickDropDown($dropDownToggle) {
         const dropDownID = $dropDownToggle.data("page");
         const targetPage = $dropDownToggle.data("link");
-        
+
         let isCollapsed = this.$navToggler.is(":visible");
         if (!isCollapsed) {
             window.open(targetPage, "_self");
@@ -145,18 +145,18 @@ $(document).ready(function () {
     // Setup navbar
     $("#header").load("header.html #nav", function () {
         let nm = new NavManager("#header", "#nav", "#navbarContent", "#navbar-toggle-button");
-        
+
         nm.setActivePage();
         nm.addNavShadow();
 
         $(window).scroll(function () {
             nm.addNavShadow();
         });
-        
+
         nm.$nav.find(".dropdown-toggle").click(function (event) {
             nm.clickDropDown($(this));
         })
-        
+
         nm.$navToggler.click(function (event) {
             nm.clickToggle();
         })
@@ -188,7 +188,7 @@ $(window).on('load', function (event) {
             }
         }
     });
-    
+
     // Add smooth scrolling to all links
     $(window).trigger('anchorscroll', [window.location.hash, 100]);
     $('.smooth-scrolling').on('click', function (event) {
@@ -218,7 +218,7 @@ $(window).on('anchorscroll', function (event, anchor, duration) {
     if (duration == undefined || duration < 0) {
         duration = 800;
     }
-    
+
     const $anchor = $(anchor);
     if ($anchor == undefined) {
         console.log("No such element with id:", hash);
@@ -230,7 +230,7 @@ $(window).on('anchorscroll', function (event, anchor, duration) {
     } else {
         location.hash = anchor;
     }
-    
+
     console.log("Doing smooth scrolling...")
     $('html, body').animate({
         scrollTop: $anchor.offset().top - $('#nav').outerHeight() + 5
