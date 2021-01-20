@@ -260,5 +260,12 @@ img {
 }
 
 .sd-text {
-
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    position: center;
+    padding-top: 70px;
+    padding-left: 100px;
+    padding-right: 100px;
 }
