@@ -89,12 +89,11 @@
     font-size: 20px;
     color: white;
     text-align: center;
-    padding-top: 300px;
+    padding: 30px 0;
     position: center;
 }
 
 .gradient-box {
-    display: flex;
     align-items: center;
     width: 93%;
     margin: auto;
