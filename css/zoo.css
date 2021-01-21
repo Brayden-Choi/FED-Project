@@ -142,6 +142,38 @@ h5 {
     color: white;
 }
 
+/*Sidebar navigation*/
+
+.side-navigation {
+    position: fixed;
+    color: white;
+    display: block;
+    float: right;
+    margin: 0;
+    right: 1.5%;
+    top: 24%;
+    z-index: 4;
+}
+
+.side-navigation ol {
+    list-style-type: none;
+    padding: 0;
+    direction: rtl;
+}
+
+.sidenav-button {
+    cursor: pointer;
+    margin-bottom: 6px;
+    height: 8vh;
+    vertical-align: middle;
+}
+
+.sidenav-button:hover {
+    height: 10vh;
+    border-right: 5px solid rgba(0, 0, 0, 1);
+}
+
+
 
 /*Main Gallery*/
 
@@ -161,6 +193,11 @@ h5 {
 
 .animal-arrow {
     display: none;
+}
+
+.slide-button:hover {
+    width: 2.8vw;
+    opacity: 1;
 }
 
 /*Zone Gallery*/
