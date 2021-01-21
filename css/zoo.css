@@ -389,10 +389,6 @@ video {
         animation-fill-mode: both;
         animation-delay: 0.2s;
     }
-
-    .zoom:hover {
-        transform: scale(1.04);
-    }
 }
 
 
@@ -511,13 +507,15 @@ dd{
 }
 
 .social-icon {
-    color: black;
-    padding-right: 4rem;
+    margin-right: 4rem;
 }
 
-.social-icon:hover {
-    color: white;
+.fab {
+    color: black;
     opacity: 0.7;
+}
+.fab:hover {
+    opacity: 1;
 }
 
 .social-bar {
@@ -525,10 +523,8 @@ dd{
     height: 3rem;
     margin: 2rem;
     display: inline-block;
-    padding: 8px;
     position: relative;
     opacity: 1;
-    color: black;
     font-size: 1.2rem;
 }
 
