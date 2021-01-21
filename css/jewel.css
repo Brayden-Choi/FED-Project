@@ -435,15 +435,6 @@
     margin-bottom: 50px;
 }
 
-
-.tilesWrap {
-    padding: 0;
-    margin: 50px auto;
-    list-style: none;
-    text-align: center;
-}
-
-}
 .tilesWrap {
 	padding: 0;
 	margin: 50px auto;
@@ -455,7 +446,7 @@
         width: 20%;
         min-width: 200px;
         max-width: 230px;
-        padding: 80px 20px 40px;
+        padding: 30px 20px 40px;
         position: relative;
         vertical-align: top;
         margin: 10px;
@@ -466,10 +457,10 @@
         border: 1px solid #252727;
         text-align: left;
     }
-.tilesWrap li s-img {
-	margin: 0;
-	position: relative  ;
-    margin-bottom: 100px;
+.tilesWrap li .s-img {
+	padding-top: 0;
+	position: relative;
+    margin-bottom: 10px;
 	transition: all 0.3s ease-in-out;
 }
 .tilesWrap li h3 {
