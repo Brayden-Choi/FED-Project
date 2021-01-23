@@ -233,7 +233,7 @@ $(window).on('anchorscroll', function (event, anchorId, duration) {
 
     let offset = $anchor.data("offset");
     if (!offset && offset !== 0) {
-        offset = $('#nav').outerHeight() - 5;
+        offset = $('#nav').outerHeight();
     }
 
     console.log(`Doing smooth scrolling wiht offset ${offset}...`)

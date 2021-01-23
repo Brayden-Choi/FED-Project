@@ -22,7 +22,11 @@ body {
 .section {
     position: relative;
     background: white;
-    padding-bottom: 3vh;
+    padding-bottom: 6vh;
+}
+
+.section-black {
+    background: black;
 }
 
 .section-clear {
@@ -37,7 +41,7 @@ body {
 
 .header-text {
     color: white;
-    margin-top: 20px;
+    margin-top: 32px;
     text-align: center;
     font-size: calc(5vh + 5vw);
 }
@@ -200,10 +204,11 @@ body {
 }
 
 .indicator {
+    background-blend-mode: darken;
     margin-bottom: 6px;
     height: 14vh;
     width: 2rem;
-    border-right: 9px solid rgba(168, 168, 168, 0.6);
+    border-right: 9px solid rgba(255, 255, 255, 0.6);
     transition: all 0.5s, border-right 0.5s;
     vertical-align: middle;
     cursor: pointer;
@@ -211,7 +216,7 @@ body {
 
 .indicator:hover {
     height: 16vh;
-    border-right: 11px solid rgba(168, 168, 168, 0.8);
+    border-right: 11px solid rgba(255, 255, 255, 0.8);
     width: 7rem;
 }
 
@@ -240,11 +245,11 @@ body {
 }
 
 .content-indicators .active {
-    border-right: 13px solid rgba(168, 168, 168, 1) !important;
+    border-right: 13px solid rgba(255, 255, 255, 1) !important;
 }
 
 .content-indicators .active:hover {
-    border-right: 13px solid rgba(168, 168, 168, 1) !important;
+    border-right: 13px solid rgba(255, 255, 255, 1) !important;
 }
 
 /* Attractions Cards Styles */
@@ -295,7 +300,7 @@ body {
     background-size: cover;
     overflow: hidden;
     position: absolute;
-    height: 100%;
+    height: 130%;
     width: 100%;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
@@ -348,13 +353,27 @@ body {
 }
 
 /* Ticket Form Styles */
+.tickets-background {
+    background: url("../multimedia/gardensbythebay/form-background.jpg");
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+}
+
 .ticket-form {
+    backdrop-filter: blur(2px);
+    background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
     border-radius: 5px;
     padding: calc(2vh + 2vw);
     margin-left: 10px;
     margin-right: 10px;
     max-width: 1192px;
+}
+
+.ticket-form .form-control {
+    background-color: rgba(255, 255, 255, 0.7) !important;
 }
 
 .tickets-list {
@@ -432,6 +451,7 @@ body {
 }
 
 .tickets-summary {
+    background-color: rgba(255, 255, 255, 0.7) !important;
     border-collapse: separate;
     border-radius: 0.25rem !important;
     border: 1px solid #ced4da;
