@@ -46,6 +46,9 @@ var _createClass = function () {
 }();
 
 /*js for form*/
-function submit() {
-    document.getElementById("ack").innerHTML = "Thank you! We will get back to you in 3-4 working days.";
-}
+$(document).ready(function () {
+    $("#form-submit").click(function (event) {
+        event.preventDefault();
+        console.log("clicked");
+    });
+})
