@@ -1,16 +1,10 @@
 /* Global Variables */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap');
 @font-face {
     font-family: 'Fontjek';
     src: url("../fonts/fontjek/Fontjek.ttf");
 }
 
 /* Global Styles */
-html, body {
-    height: 100%;
-    font-family: "Roboto", serif;
-}
-
 body {
     background: black;
 }
@@ -161,7 +155,7 @@ body {
 
 /* About Styles */
 .about-info {
-    padding: calc(0.6vh + 0.6vw) calc(1.4vh + 1.4vw) calc(1.4vh + 1.4vw);
+    padding: calc(1.6vh + 1.4vw);
     background: rgba(8, 8, 8, 0.6);
     border-radius: 8px;
     backdrop-filter: blur(2px);
@@ -175,6 +169,14 @@ body {
 .about-logo {
     position: relative;
     width: 100%;
+}
+
+.about-logo-small {
+    position: relative;
+    width: calc(6.5vh + 5vw);
+    height: auto;
+    padding-right: 0.8rem;
+    object-fit: contain;
 }
 
 .about-text {
@@ -206,7 +208,7 @@ body {
     margin-bottom: 6px;
     height: 14vh;
     width: 2rem;
-    border-right: 9px solid rgba(255, 255, 255, 0.4);
+    border-right: 9px solid rgba(168, 168, 168, 0.6);
     transition: all 0.5s, border-right 0.5s;
     vertical-align: middle;
     cursor: pointer;
@@ -214,7 +216,7 @@ body {
 
 .indicator:hover {
     height: 16vh;
-    border-right: 11px solid rgba(255, 255, 255, 0.7);
+    border-right: 11px solid rgba(168, 168, 168, 0.8);
     width: 7rem;
 }
 
@@ -239,15 +241,15 @@ body {
     padding: 4px 8px;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 5px;
-    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 6px 0 rgba(64, 64, 64, 0.3);
 }
 
 .content-indicators .active {
-    border-right: 13px solid rgba(255, 255, 255, 1);
+    border-right: 13px solid rgba(168, 168, 168, 1) !important;
 }
 
 .content-indicators .active:hover {
-    border-right: 13px solid rgba(255, 255, 255, 1);
+    border-right: 13px solid rgba(168, 168, 168, 1) !important;
 }
 
 /* Attractions Cards Styles */
