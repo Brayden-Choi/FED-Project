@@ -732,6 +732,40 @@ img:nth-child(4) {
             margin-bottom: 0px;
         }
 
+reset_wrapper {
+    text-align: center;
+}
+    .reset_wrapper input {
+        text-align: center;
+        display: inline-block;
+        width: 20%;
+        height: 50px;
+        margin-top: 1em;
+        margin-bottom: 6px;
+        cursor: pointer;
+        background: #cfd7ff;
+        color: black;
+        font-family: Oswald,sans-serif;
+        font-size: 1em;
+        border: none;
+        -webkit-box-shadow: 1px 1px 0 0 white,2px 2px 0 0 white,3px 3px 0 0 white;
+        box-shadow: 1px 1px 0 0 white,2px 2px 0 0 white,3px 3px 0 0 white;
+        -webkit-appearance: none;
+        -webkit-transition: all 250ms ease;
+        -moz-transition: all 250ms ease;
+        -o-transition: all 250ms ease;
+        transition: all 250ms ease;
+        border-radius: 10px;
+    }
+
+    .reset_wrapper input:hover{
+        -webkit-box-shadow: 1px 1px 0 0 white,0px 0px 0 0 white,0px 0px 0 0 white;
+        box-shadow: 1px 1px 0 0 white,0px 0px 0 0 white,0px 0px 0 0 white;
+        margin-top: 22px;
+        margin-left: 2px;
+        margin-bottom: 0px;
+    }
+
 @media (max-width: 500px) {
     #contact {
         width: 100%;
@@ -742,9 +776,10 @@ img:nth-child(4) {
         font-size: 0.8em;
     }
 }
-.sm-links{
+
+    .sm-links{
     margin-left: 37.5%;
-    margin-top: 10%;
+    margin-top: 5%;
 }
 .sm-links a {
     width: 100px;
