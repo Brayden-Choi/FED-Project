@@ -31,8 +31,12 @@ body {
 
 .section-clear {
     color: white;
-    padding: 300px;
     background: transparent;
+}
+
+.section-fullwidth {
+    height: 100vh;
+    width: 100%;
 }
 
 .header-text {
@@ -151,6 +155,11 @@ body {
 
 .arrow-image:hover {
     transform: scale(1.2);
+}
+
+/* About Styles */
+.about-text {
+    text-align: left;
 }
 
 /* Section Indicators Styles */

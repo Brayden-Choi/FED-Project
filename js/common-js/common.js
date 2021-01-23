@@ -236,6 +236,6 @@ $(window).on('anchorscroll', function (event, anchor, duration) {
 
     console.log("Doing smooth scrolling...")
     $('html, body').animate({
-        scrollTop: $anchor.offset().top - $('#nav').outerHeight() + 5
+        scrollTop: $anchor.offset().top // - $('#nav').outerHeight() + 5
     }, duration);
 });
