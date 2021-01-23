@@ -193,24 +193,22 @@ body {
     display: block;
     float: right;
     margin: 0;
-    padding-right: 0;
     right: 0;
     top: 24%;
     z-index: 4;
-    list-style: none;
+    direction: rtl;
+    list-style-type: none;
+    padding: 0;
 }
 
 .content-indicators ol {
-    list-style-type: none;
-    padding: 0;
-    direction: rtl;
+
 }
 
 .indicator {
-    background-blend-mode: darken;
     margin-bottom: 6px;
     height: 14vh;
-    width: 2rem;
+    max-width: 2rem;
     border-right: 9px solid rgba(255, 255, 255, 0.6);
     transition: all 0.5s, border-right 0.5s;
     vertical-align: middle;
@@ -220,7 +218,7 @@ body {
 .indicator:hover {
     height: 16vh;
     border-right: 11px solid rgba(255, 255, 255, 0.8);
-    width: 7rem;
+    max-width: 7rem;
 }
 
 .indicator-hover {
