@@ -168,6 +168,15 @@ body {
     -webkit-backdrop-filter: blur(2px);
 }
 
+.about-logo-wrapper {
+    
+}
+
+.about-logo {
+    position: relative;
+    width: 100%;
+}
+
 .about-text {
     text-align: left;
 }
@@ -464,5 +473,12 @@ body {
     }
     .quantity-selector {
         padding-top: 10px !important;
+    }
+    
+    .about-logo-wrapper {
+        visibility: hidden;
+        max-height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 }
