@@ -1,4 +1,19 @@
-﻿// Custom jquery methods
+﻿// Ensure performance reliabilty
+const debounce = (func, wait) => {
+    let timeout;
+
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+};
+
+// Custom jquery methods
 (function ($) {
 
     $.fn.isInViewport = function (options) {
@@ -81,7 +96,7 @@ class NavManager {
     addNavShadow() {
         const canSee = this.$navToggler.attr("aria-expanded");
         const offset = this.$header.data("offset") || 30;
-        
+
         if ($(window).scrollTop() >= offset) {
             if (this.usingWhite) {
                 this.$nav.removeClass('navbar-white');
@@ -149,9 +164,9 @@ $(document).ready(function () {
         nm.setActivePage();
         nm.addNavShadow();
 
-        $(window).on('resize scroll', function () {
+        $(window).on('resize scroll', debounce(function () {
             nm.addNavShadow();
-        });
+        }, 16));
 
         nm.$nav.find(".dropdown-toggle").click(function (event) {
             nm.clickDropDown($(this));
@@ -164,11 +179,43 @@ $(document).ready(function () {
 
     // Setup footer
     $("#footer").load("footer.html #foot");
+
+    // Event Handler for smooth scrolling to an anchor
+    $(window).on('anchorscroll', function (event, anchorId, duration) {
+        if (anchorId == undefined || anchorId == "") {
+            return;
+        }
+        if (duration == undefined || duration < 0) {
+            duration = 800;
+        }
+
+        const $anchor = $(anchorId);
+        if ($anchor == undefined) {
+            console.log("No such element with id:", hash);
+            return;
+        }
+
+        if (history.pushState) {
+            history.pushState(null, null, anchorId);
+        } else {
+            location.hash = anchor;
+        }
+
+        let offset = $anchor.data("offset");
+        if (!offset && offset !== 0) {
+            offset = nm.$nav.outerHeight();
+        }
+
+        console.log(`Doing smooth scrolling wiht offset ${offset}...`)
+        $('html, body').animate({
+            scrollTop: $anchor.offset().top - offset
+        }, duration);
+    });
 });
 
 $(window).on('load', function (event) {
     // Stop video if out of view
-    $(window).on('resize scroll', function () {
+    $(window).on('resize scroll', debounce(function () {
         for (let video of $('video')) {
             const $video = $(video);
             if ($video.css("position") === "fixed") {
@@ -187,14 +234,12 @@ $(window).on('load', function (event) {
                 }
             }
         }
-    });
+    }, 250));
 
     // Add smooth scrolling to links
     $(window).trigger('anchorscroll', [window.location.hash, 100]);
     $('.smooth-scrolling').on('click', function (event) {
         const hash = this.hash;
-
-        console.log(this.page);
 
         if (hash == undefined || hash == "") {
             return;
@@ -208,31 +253,4 @@ $(window).on('load', function (event) {
         event.preventDefault();
         $(window).trigger('anchorscroll', [hash]);
     });
-});
-
-// Event Handler for smooth scrolling to an anchor
-$(window).on('anchorscroll', function (event, anchor, duration) {
-    if (anchor == undefined || anchor == "") {
-        return;
-    }
-    if (duration == undefined || duration < 0) {
-        duration = 800;
-    }
-
-    const $anchor = $(anchor);
-    if ($anchor == undefined) {
-        console.log("No such element with id:", hash);
-        return;
-    }
-
-    if (history.pushState) {
-        history.pushState(null, null, anchor);
-    } else {
-        location.hash = anchor;
-    }
-
-    console.log("Doing smooth scrolling...")
-    $('html, body').animate({
-        scrollTop: $anchor.offset().top // - $('#nav').outerHeight() + 5
-    }, duration);
 });
