@@ -21,10 +21,37 @@
 </head>
 
 <div id="foot">
-    <footer class="bg-light text-center">
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-            © 2021 Copyright:
-            <a class="text-dark" href="credits.html">FED Group 2</a>
+    <footer class="bg-light">
+
+        <div class="container-fluid">
+            <form action="">
+                <div class="form-group">
+                    <div class="newsletter-email mx-auto">
+                        <div class="row">
+                            <div class="col-lg-11">
+                                <label for="newsletter-email">Sign-up for newsletter</label>
+                                <input class="form-control" id="newsletter-email" type="text" placeholder="Enter email address" required>
+                                <small class="form-text text-muted" id="emailHelp">! By subscribing you agree to receive the newsletter & commercial information.</small>
+                            </div>
+                            <div class="col-lg-1 mt-lg-auto mb-lg-4 mb-0 mt-2">
+                                <button type="submit" class="btn btn-primary">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+        <div class="d-flex justify-content-center">
+            <button type="button" class="btn btn-primary btn-rounded social-button"><i class="fa fa-user"></i></button>
+            <button type="button" class="btn btn-dark btn-rounded social-button"><i class="fa fa-envelope-o"></i></button>
+            <button type="button" class="btn btn-danger btn-rounded social-button"><i class="fa fa-user"></i></button>
+            <button type="button" class="btn btn-info btn-rounded social-button"><i class="fa fa-star"></i></button>
+            <button type="button" class="btn btn-success btn-rounded social-button"><i class="fa fa-plane"></i></button>
+        </div>
+        <hr>
+        <div class="text-center pb-5">
+            © 2021 Copyright: <a class="text-dark" href="credits.html">FED Group 2</a>
         </div>
     </footer>
 </div>
