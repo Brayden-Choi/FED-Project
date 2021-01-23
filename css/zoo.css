@@ -165,13 +165,16 @@ h5 {
     cursor: pointer;
     margin-bottom: 6px;
     height: 8vh;
-    border-right: 5px solid rgba(0, 0, 0, 0.4);
+    border-right: 6px solid rgba(0, 0, 0, 0.4);
     vertical-align: middle;
+    transition-timing-function: ease-in;
+    transition-duration: 0.3s;
 }
 
 .sidenav-button:hover {
     height: 10vh;
-    border-right: 5px solid rgba(0, 0, 0, 1);
+    border-right: 6px solid rgba(0, 0, 0, 1);
+    
 }
 
 
@@ -197,8 +200,10 @@ h5 {
 }
 
 .slide-button:hover {
-    width: 2.8vw;
+    width: 1.8vw;
     opacity: 1;
+    transition-timing-function: ease-in;
+    transition-duration: 0.3s;
 }
 
 /*Zone Gallery*/
@@ -456,8 +461,9 @@ dd{
     font-size: 1.5rem;
     font-family: 'Caveat Brush', cursive;
     margin-top: 2rem;
-    padding: 3rem;
-    margin-left: 3rem;
+    padding-top: 3rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
 }
 
 .custom-control {
@@ -499,6 +505,11 @@ dd{
 .far, .fa-envelope, .fa-user {
     font-style: normal;
     font-variant: normal;
+}
+
+#ack {
+    font-size: 1.7rem;
+    padding: 1rem;
 }
 
 /*Socials*/

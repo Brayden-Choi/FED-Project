@@ -459,7 +459,7 @@
                         <div class="form-group">
                             <div class="fas fa-angle-double-right"></div>
                             <label for="exampleInputSalutation">Salutation</label>
-                            <select id="exampleInputSalutation" class="form-control">
+                            <select id="exampleInputSalutation" class="form-control" required>
                                 <option id="disabled">How do we address you?</option>
                                 <option>Mr</option>
                                 <option>Ms</option>
@@ -528,7 +528,7 @@
                             <label class="custom-control-label" for="mail">Sign up for latest news and receive exlusive updates.</label>
                         </div><br>
                         <button class="btn btn-primary form-submission" id="form-submit" type="submit" onsubmit="submit()">Submit</button>
-                        <button class="btn btn-primary form-submission" type="reset" onclick="reset()">Reset</button>
+                        <button class="btn btn-primary form-submission" id="form-reset" type="reset" onclick="reset()">Reset</button>
                         <div>
                             <p id="ack"></p>
                         </div>
