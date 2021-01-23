@@ -1,4 +1,19 @@
-﻿// Custom jquery methods
+﻿// Ensure performance reliabilty
+const debounce = (func, wait) => {
+    let timeout;
+
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+};
+
+// Custom jquery methods
 (function ($) {
 
     $.fn.isInViewport = function (options) {
@@ -149,9 +164,9 @@ $(document).ready(function () {
         nm.setActivePage();
         nm.addNavShadow();
 
-        $(window).on('resize scroll', function () {
+        $(window).on('resize scroll', debounce(function () {
             nm.addNavShadow();
-        });
+        }, 16));
 
         nm.$nav.find(".dropdown-toggle").click(function (event) {
             nm.clickDropDown($(this));
@@ -168,7 +183,7 @@ $(document).ready(function () {
 
 $(window).on('load', function (event) {
     // Stop video if out of view
-    $(window).on('resize scroll', function () {
+    $(window).on('resize scroll', debounce(function () {
         for (let video of $('video')) {
             const $video = $(video);
             if ($video.css("position") === "fixed") {
@@ -187,7 +202,7 @@ $(window).on('load', function (event) {
                 }
             }
         }
-    });
+    }, 250));
 
     // Add smooth scrolling to links
     $(window).trigger('anchorscroll', [window.location.hash, 100]);
@@ -237,6 +252,7 @@ $(window).on('anchorscroll', function (event, anchorId, duration) {
     }
 
     console.log(`Doing smooth scrolling wiht offset ${offset}...`)
+    requestAnimationFrame()
     $('html, body').animate({
         scrollTop: $anchor.offset().top - offset
     }, duration);

@@ -7,20 +7,24 @@ class VideoManager {
         this.currentVideo = 0
         this.currentShow = 0
         this.videoOutOfView = false;
+        this.$title = $('#title');
+        this.$arrow = $('#arrow');
+        this.$vid0 = $("#drone-vid-0");
+        this.$vid1 = $("#drone-vid-1");
 
-        $("#drone-vid-0").fadeOut(0)
-        $("#drone-vid-1").fadeOut(0)
+        this.$vid0.fadeOut(0)
+        this.$vid1.fadeOut(0)
 
-        $("#drone-vid-0").trigger('play');
-        $("#drone-vid-0").fadeIn(2000);
+        this.$vid0.trigger('play');
+        this.$vid0.fadeIn(2000);
     }
 
     getCurrentVideo() {
-        return $("#drone-vid-" + this.currentShow);
+        return this.currentShow === 0 ? this.$vid0 : this.$vid1;
     }
 
     swap() {
-        console.log("Video change");
+        console.log("Video changed.");
 
         let $endedVideo = this.getCurrentVideo();
         $endedVideo.trigger("pause");
@@ -28,7 +32,7 @@ class VideoManager {
 
         this.currentShow = (++this.currentShow) % 2;
         let $nextVideo = this.getCurrentVideo();
-        $nextVideo.attr("src", "multimedia/gardensbythebay/drone-shots/drone_shot_" + (++this.currentVideo) + ".mp4")
+        $nextVideo.attr("src", `multimedia/gardensbythebay/drone-shots/drone_shot_${++this.currentVideo}.mp4`)
         $nextVideo.fadeIn(2000);
 
         $nextVideo.trigger('play');
@@ -37,7 +41,7 @@ class VideoManager {
     }
 
     checkOutOfView() {
-        const contentInView = $("#attractions")[0].getBoundingClientRect().top < -10;
+        const contentInView = $("#attractions").offsetTop < -10;
         if (contentInView && !this.videoOutOfView) {
             this.getCurrentVideo().trigger("pause");
             this.videoOutOfView = true;
@@ -48,6 +52,7 @@ class VideoManager {
             this.videoOutOfView = false;
             console.log("Title video play.")
         }
+        return contentInView;
     }
 }
 
@@ -439,62 +444,65 @@ $(document).ready(function () {
     var letters = $("#title-text").setLetterHoverEffect({"hoverClass": "title-alter-letter"});
     var letters = $(".header-text").setLetterHoverEffect({"hoverClass": "header-alter-letter"});
 
+    // Handle section indicators
+    const sm = new SectionManager("#content-indicators", "#content");
+    sm.indicatorScrollUpdate();
+    $(window).scroll(debounce(function () {
+        sm.indicatorScrollUpdate();
+    }, 80));
+    sm.$indicators.click(function (event) {
+        sm.indicatorClick(event.target);
+    });
+
     // Handle video change
     const vm = new VideoManager();
-    $("#drone-vid-0").on('ended', function () {
+    vm.$vid0.on('ended', function () {
         vm.swap();
     });
-    $("#drone-vid-1").on('ended', function () {
+    vm.$vid1.on('ended', function () {
         vm.swap();
     });
 
     // Parallax effect
-    $(window).on('load resize scroll', function () {
+    $(window).on('load resize scroll', debounce(function () {
+        if (vm.checkOutOfView()) {
+            return;
+        }
+        
         var scrolled = $(this).scrollTop();
-        $('#title').css({
+        vm.$title.css({
             'transform': 'translate3d(0, ' + -(scrolled * 0.2) + 'px, 0)', // parallax (20% scroll rate)
             'opacity': 1 - scrolled / 600 // fade out at 400px from top
         });
-        $('#arrow').css({
+        vm.$arrow.css({
             'transform': 'translate3d(0, ' + -(scrolled * 0.2) + 'px, 0)', // parallax (20% scroll rate)
             'opacity': 1 - scrolled / 600 // fade out at 400px from top
         });
         if (scrolled >= 920) {
-            $('#drone-vid-0').css(
+            vm.$vid0.css(
                 'transform', 'translate3d(0, ' + -((scrolled - 920) * 0.25) + 'px, 0)' // parallax (25% scroll rate)
             );
-            $('#drone-vid-1').css(
+            vm.$vid1.css(
                 'transform', 'translate3d(0, ' + -((scrolled - 920) * 0.25) + 'px, 0)' // parallax (25% scroll rate)
             );
         } else {
-            $('#drone-vid-0').css(
+            vm.$vid0.css(
                 'transform', 'translate3d(0, 0, 0)'
             );
-            $('#drone-vid-1').css(
+            vm.$vid1.css(
                 'transform', 'translate3d(0, 0, 0)'
             );
         }
-        vm.checkOutOfView();
-    });
-
-    // Handle section indicators
-    const sm = new SectionManager("#content-indicators", "#content");
-    sm.indicatorScrollUpdate();
-    $(window).scroll(function () {
-        sm.indicatorScrollUpdate();
-    });
-    sm.$indicators.click(function (event) {
-        sm.indicatorClick(event.target);
-    });
+    }, 12));
 
     // Setup attraction cards
     const am = new AttractionManager("#attractionCards", "#attractionsModal", "#attractionsBackground");
     const attractionPath = "multimedia/gardensbythebay/data/attractions.json";
     $.getJSON(attractionPath).then(function (data) {
         am.loadData(data);
-        $(`${am.cardsId} .card`).hover(function () {
+        $(`${am.cardsId} .card`).hover(debounce(function () {
             am.setBackground($(this));
-        });
+        }, 200));
         am.$modalView.on('show.bs.modal', function (event) {
             am.setModalData($(event.relatedTarget));
         })
@@ -521,5 +529,5 @@ $(document).ready(function () {
 
     // Setup AOS animation
     // https://github.com/michalsnik/aos
-    AOS.init();
+    AOS.init({throttleDelay: 128});
 });

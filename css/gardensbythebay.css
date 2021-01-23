@@ -64,6 +64,7 @@ body {
 /* Title Video Styles */
 .video-frame {
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     filter: brightness(0.8);
     background-size: cover;
     bottom: 0;
@@ -90,6 +91,7 @@ body {
 /* Title Text Styles */
 .title {
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     left: 0;
     position: fixed;
     width: 100%;
@@ -195,6 +197,7 @@ body {
     right: 0;
     top: 24%;
     z-index: 4;
+    list-style: none;
 }
 
 .content-indicators ol {
@@ -266,7 +269,7 @@ body {
     border: none;
     box-shadow: 0 2px 1.2em rgba(0, 0, 0, 0.24);
     transition: all 0.5s;
-    animation: popout 0.6s ease-out;
+    animation: popout 0.4s ease-out;
     -webkit-animation: popout 0.6s ease-out;
     z-index: 4;
 }
@@ -274,7 +277,7 @@ body {
 @keyframes popout {
     from {
         opacity: 0;
-        transform: scale(0.8)
+        transform: scale(0.9)
     }
     to {
         opacity: 1;
