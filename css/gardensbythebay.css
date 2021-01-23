@@ -92,27 +92,27 @@ body {
 .title {
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    left: 0;
+    top: -12px;
     position: fixed;
-    width: 100%;
-    margin-top: 37vh;
+    width: 100vw;
+    height: 100vh;
     animation: fadein 2.4s;
 }
 
 @keyframes fadein {
     from {
-        margin-top: 28vh;
+        margin-top: -18vh;
         opacity: 0;
     }
     to {
-        margin-top: 37vh;
+        margin-top: 0;
         opacity: 1;
     }
 }
 
 .title h1 {
     color: white;
-    text-align: center;
+    text-align: center !important;
     font-size: calc(6vh + 6vw);
     padding: 0 10px;
 }

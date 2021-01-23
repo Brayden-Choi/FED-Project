@@ -272,7 +272,7 @@ class TicketManager {
         $(this.$ticketOptions.find("a")[targetItem.index]).removeClass("disabled");
 
         targetItem.$item.on('transitionend webkitTransitionEnd oTransitionEnd', function () {
-            $(this).delay(200).queue(function (next) {
+            $(this).delay(300).queue(function (next) {
                 $(this).remove();
                 console.log("Removed ticket item: ", index);
                 next();
