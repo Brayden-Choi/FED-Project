@@ -156,7 +156,7 @@ class AttractionManager {
         let index = 0;
         for (const singleData of this.data) {
             this.$cardCollection.append(this.buildPreviewCard(singleData, index))
-            console.log("Added card data:", singleData);
+            console.log("Added card data:", singleData.name);
 
             this.$cardCollection.append(this.getSeperator("sm", "md"));
             if (index % 2 === 1) {

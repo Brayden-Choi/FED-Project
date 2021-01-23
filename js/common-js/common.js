@@ -40,7 +40,6 @@
             for (var letter of $text.text()) {
                 nHTML += `<span class="${settings.hoverClass}">${letter}</span>`;
             }
-            console.log(nHTML);
             $text.html(nHTML);
         });
     };
@@ -82,8 +81,6 @@ class NavManager {
     addNavShadow() {
         const canSee = this.$navToggler.attr("aria-expanded");
         const offset = this.$header.data("offset") || 30;
-        
-        console.log($(window).scrollTop(), offset);
         
         if ($(window).scrollTop() >= offset) {
             if (this.usingWhite) {

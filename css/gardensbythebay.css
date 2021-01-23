@@ -162,17 +162,12 @@ body {
     -webkit-backdrop-filter: blur(2px);
 }
 
-.about-logo-wrapper {
-    
-}
-
 .about-logo {
     position: relative;
     width: 100%;
 }
 
 .about-logo-small {
-    position: relative;
     width: calc(6.5vh + 5vw);
     height: auto;
     padding-right: 0.8rem;
