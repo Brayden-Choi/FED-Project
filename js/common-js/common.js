@@ -81,7 +81,7 @@ class NavManager {
     addNavShadow() {
         const canSee = this.$navToggler.attr("aria-expanded");
         const offset = this.$header.data("offset") || 30;
-        
+
         if ($(window).scrollTop() >= offset) {
             if (this.usingWhite) {
                 this.$nav.removeClass('navbar-white');
@@ -211,28 +211,33 @@ $(window).on('load', function (event) {
 });
 
 // Event Handler for smooth scrolling to an anchor
-$(window).on('anchorscroll', function (event, anchor, duration) {
-    if (anchor == undefined || anchor == "") {
+$(window).on('anchorscroll', function (event, anchorId, duration) {
+    if (anchorId == undefined || anchorId == "") {
         return;
     }
     if (duration == undefined || duration < 0) {
         duration = 800;
     }
 
-    const $anchor = $(anchor);
+    const $anchor = $(anchorId);
     if ($anchor == undefined) {
         console.log("No such element with id:", hash);
         return;
     }
 
     if (history.pushState) {
-        history.pushState(null, null, anchor);
+        history.pushState(null, null, anchorId);
     } else {
         location.hash = anchor;
     }
 
-    console.log("Doing smooth scrolling...")
+    let offset = $anchor.data("offset");
+    if (!offset && offset !== 0) {
+        offset = $('#nav').outerHeight() - 5;
+    }
+
+    console.log(`Doing smooth scrolling wiht offset ${offset}...`)
     $('html, body').animate({
-        scrollTop: $anchor.offset().top // - $('#nav').outerHeight() + 5
+        scrollTop: $anchor.offset().top - offset
     }, duration);
 });
