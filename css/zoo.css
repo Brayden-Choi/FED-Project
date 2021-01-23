@@ -501,6 +501,18 @@ dd{
     font-variant: normal;
 }
 
+.custom-control-label::before {
+    margin-top: 5px;
+}
+
+.custom-control-label::after {
+    margin-top: 5px;
+}
+
+.contact-form .countrypicker {
+    margin-top: -3px;
+}
+
 /*Socials*/
 #socials {
     padding-bottom: 5%;

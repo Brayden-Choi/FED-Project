@@ -21,3 +21,13 @@ body {
 .smooth-scrolling {
     
 }
+
+.countrypicker .btn-light {
+    background-color: white;
+    border-radius: 0.25rem;
+    border: 1px solid #ced4da;
+}
+
+.countrypicker .inline-flag {
+    margin-top: 4px;
+}

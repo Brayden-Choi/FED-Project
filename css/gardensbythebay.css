@@ -375,16 +375,6 @@ body {
     border-radius: 50%;
 }
 
-.countrypicker .btn-light {
-    background-color: white;
-    border-radius: 0.25rem;
-    border: 1px solid #ced4da;
-}
-
-.countrypicker .inline-flag {
-    margin-top: 4px;
-}
-
 .quantity-selector {
 }
 
@@ -477,6 +467,7 @@ body {
     
     .about-logo-wrapper {
         visibility: hidden;
+        position: absolute !important;
         max-height: 0 !important;
         margin: 0 !important;
         padding: 0 !important;
