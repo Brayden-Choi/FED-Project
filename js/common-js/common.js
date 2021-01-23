@@ -179,6 +179,38 @@ $(document).ready(function () {
 
     // Setup footer
     $("#footer").load("footer.html #foot");
+
+    // Event Handler for smooth scrolling to an anchor
+    $(window).on('anchorscroll', function (event, anchorId, duration) {
+        if (anchorId == undefined || anchorId == "") {
+            return;
+        }
+        if (duration == undefined || duration < 0) {
+            duration = 800;
+        }
+
+        const $anchor = $(anchorId);
+        if ($anchor == undefined) {
+            console.log("No such element with id:", hash);
+            return;
+        }
+
+        if (history.pushState) {
+            history.pushState(null, null, anchorId);
+        } else {
+            location.hash = anchor;
+        }
+
+        let offset = $anchor.data("offset");
+        if (!offset && offset !== 0) {
+            offset = nm.$nav.outerHeight();
+        }
+
+        console.log(`Doing smooth scrolling wiht offset ${offset}...`)
+        $('html, body').animate({
+            scrollTop: $anchor.offset().top - offset
+        }, duration);
+    });
 });
 
 $(window).on('load', function (event) {
@@ -209,8 +241,6 @@ $(window).on('load', function (event) {
     $('.smooth-scrolling').on('click', function (event) {
         const hash = this.hash;
 
-        console.log(this.page);
-
         if (hash == undefined || hash == "") {
             return;
         }
@@ -223,37 +253,4 @@ $(window).on('load', function (event) {
         event.preventDefault();
         $(window).trigger('anchorscroll', [hash]);
     });
-});
-
-// Event Handler for smooth scrolling to an anchor
-$(window).on('anchorscroll', function (event, anchorId, duration) {
-    if (anchorId == undefined || anchorId == "") {
-        return;
-    }
-    if (duration == undefined || duration < 0) {
-        duration = 800;
-    }
-
-    const $anchor = $(anchorId);
-    if ($anchor == undefined) {
-        console.log("No such element with id:", hash);
-        return;
-    }
-
-    if (history.pushState) {
-        history.pushState(null, null, anchorId);
-    } else {
-        location.hash = anchor;
-    }
-
-    let offset = $anchor.data("offset");
-    if (!offset && offset !== 0) {
-        offset = $('#nav').outerHeight();
-    }
-
-    console.log(`Doing smooth scrolling wiht offset ${offset}...`)
-    requestAnimationFrame()
-    $('html, body').animate({
-        scrollTop: $anchor.offset().top - offset
-    }, duration);
 });

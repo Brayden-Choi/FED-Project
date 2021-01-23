@@ -500,9 +500,9 @@ $(document).ready(function () {
     const attractionPath = "multimedia/gardensbythebay/data/attractions.json";
     $.getJSON(attractionPath).then(function (data) {
         am.loadData(data);
-        $(`${am.cardsId} .card`).hover(debounce(function () {
+        $(`${am.cardsId} .card`).hover(function () {
             am.setBackground($(this));
-        }, 200));
+        });
         am.$modalView.on('show.bs.modal', function (event) {
             am.setModalData($(event.relatedTarget));
         })
