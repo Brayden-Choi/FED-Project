@@ -1,12 +1,14 @@
 /* Global Variables */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap');
 @font-face {
     font-family: 'Fontjek';
-    src: url("../multimedia/gardensbythebay/Fontjek.ttf");
+    src: url("../fonts/fontjek/Fontjek.ttf");
 }
 
 /* Global Styles */
 html, body {
     height: 100%;
+    font-family: "Roboto", serif;
 }
 
 body {
@@ -64,7 +66,7 @@ body {
 /* Title Video Styles */
 .video-frame {
     backface-visibility: hidden;
-    filter: brightness(0.6);
+    filter: brightness(0.8);
     background-size: cover;
     bottom: 0;
     height: auto;
@@ -158,6 +160,14 @@ body {
 }
 
 /* About Styles */
+.about-info {
+    padding: 20px 40px 40px;
+    background: rgba(8, 8, 8, 0.6);
+    border-radius: 8px;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
 .about-text {
     text-align: left;
 }

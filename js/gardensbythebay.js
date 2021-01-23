@@ -164,7 +164,7 @@ class AttractionManager {
 
     buildPreviewCard(cardData, index) {
         return `
-        <div class="card" data-index="${index}">
+        <div class="card" data-index="${index}" data-aos="fade-up" data-aos-duration="600">
             <img alt="..." class="card-img-top" src="${this.cardImageDir}${cardData.previewImage}">
             <div class="card-body">
                 <h5 class="card-title">${cardData.name}</h5>
@@ -491,4 +491,8 @@ $(document).ready(function () {
 
     // Setup form country picker
     $('.countrypicker').countrypicker();
+    
+    // Setup AOS animation
+    // https://github.com/michalsnik/aos
+    AOS.init();
 });
