@@ -161,7 +161,7 @@ body {
 
 /* About Styles */
 .about-info {
-    padding: 20px 40px 40px;
+    padding: calc(0.6vh + 0.6vw) calc(1.4vh + 1.4vw) calc(1.4vh + 1.4vw);
     background: rgba(8, 8, 8, 0.6);
     border-radius: 8px;
     backdrop-filter: blur(2px);
@@ -179,6 +179,8 @@ body {
 
 .about-text {
     text-align: left;
+    font-size: calc(2.2vh + 0.7vw);
+    transition: all 0.2s;
 }
 
 /* Section Indicators Styles */
