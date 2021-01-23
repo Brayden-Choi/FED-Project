@@ -1,8 +1,4 @@
-﻿@import "bootstrap.min.css";
-@import "header-styles.css";
-@import "footer-styles.css";
-
-html, body {
+﻿html, body {
     height: 100%;
     margin: 0;
 }
