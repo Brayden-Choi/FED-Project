@@ -1,3 +1,7 @@
+String.prototype.capitalize = function () {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+}
+
 class VideoManager {
     constructor() {
         this.currentVideo = 0
@@ -48,11 +52,23 @@ class VideoManager {
 }
 
 class SectionManager {
-    constructor(indicators, sections) {
-        this.$indicators = $(indicators);
-        this.sections = sections;
+    constructor(indicatorsId, contentId) {
+        this.$indicators = $(indicatorsId);
+        this.$content = $(contentId);
+        this.sections = [];
         this.currentSectionIndex = -1;
-        this.$indicators.hide()
+        this.$indicators.hide();
+        this.loadSections();
+    }
+
+    loadSections() {
+        for (let section of this.$content.find("section")) {
+            let sectionId = section.id;
+            this.$indicators.append(this.buildIndicator(sectionId));
+            this.sections.push(`#${sectionId}`);
+        }
+
+        console.log("loaded indicators.")
     }
 
     updateCurrentSection() {
@@ -109,6 +125,16 @@ class SectionManager {
     indicatorScrollUpdate() {
         this.updateCurrentSection();
         this.setActive();
+    }
+
+    buildIndicator(name) {
+        return `
+        <li class="indicator">
+            <div class="indicator-hover">
+                <p class="indicator-hover-text">${name.capitalize()}</p>
+            </div>
+        </li>
+        `;
     }
 }
 
@@ -451,13 +477,13 @@ $(document).ready(function () {
         vm.checkOutOfView();
     });
 
-    // Handle section change
-    const sm = new SectionManager("#content-indicators", ["#attractions", "#gallery", "#tickets"]);
+    // Handle section indicators
+    const sm = new SectionManager("#content-indicators", "#content");
     sm.indicatorScrollUpdate();
     $(window).scroll(function () {
         sm.indicatorScrollUpdate();
     });
-    $('#content-indicators li').click(function (event) {
+    sm.$indicators.click(function (event) {
         sm.indicatorClick(event.target);
     });
 
@@ -489,9 +515,10 @@ $(document).ready(function () {
         console.log("Unable to load file: " + ticketPath);
     })
 
-    // Setup form country picker
+    // Setup form 
+    // https://github.com/mojoaxel/bootstrap-select-country
     $('.countrypicker').countrypicker();
-    
+
     // Setup AOS animation
     // https://github.com/michalsnik/aos
     AOS.init();
