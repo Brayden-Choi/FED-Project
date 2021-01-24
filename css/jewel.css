@@ -258,7 +258,7 @@
 
 .sd-bg {
     background-color: #baac79;
-    height: 98vh;
+    height: 116vh;
 }
 
 .sd-text {
@@ -338,7 +338,7 @@
 }
 
 
-.btn {
+.btn-flashy {
     letter-spacing: 0.1em;
     cursor: pointer;
     font-size: 14px;
@@ -351,9 +351,9 @@
     width: 100%;
 }
 
-    .btn:hover {
-        text-decoration: none;
-    }
+.btn-flashy:hover {
+    text-decoration: none;
+}
 
 /*btn_background*/
 .effect01 {
@@ -540,7 +540,7 @@ img:nth-child(4) {
 /* Form */
 .f-bg {
     background-color: #baac79;
-    height: 98vh;
+    height: 120vh;
 }
 
 /*.f-title {
@@ -815,7 +815,7 @@ reset_wrapper {
     background: black;
 }
 
-.fa {
+.social-link .fa {
     padding: 20px;
     font-size: 30px;
     width: 100px;
@@ -826,24 +826,24 @@ reset_wrapper {
     left: 1px;
 }
 
-    /* Add a hover effect if you want */
-    .fa:hover {
-        opacity: 0.7;
-    }
+/* Add a hover effect if you want */
+.social-link .fa:hover {
+    opacity: 0.7;
+}
 
-.fa-facebook {
+.social-link .fa-facebook {
     color: black;
     border: 1px black;
 }
 
-.fa-instagram {
+.social-link .fa-instagram {
     color: black;
 }
 
-.fa-youtube {
+.social-link .fa-youtube {
     color: black;
 }
 
-.fa-tripadvisor {
+.social-link .fa-tripadvisor {
     color: black;
 }
