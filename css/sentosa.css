@@ -1,4 +1,224 @@
-body
-{
-    
+*
+Colour Palette
+https://coolors.co/e63946-f1faee-a8dadc-457b9d-1d3557
+e63946 imperial red
+f1faee honeydew
+a8dadc powder blue
+457b9d celadon blue
+1d3557 prussian blue
+#f4ac14 sentosa logo
+*/
+
+html {
+    box-sizing: border-box;
+    height: 100%
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* 
+    Global styles
+    ----------------
+*/
+body {
+    color: #1D3557;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.center {
+    display: block;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: #457B9D;
+}
+
+    a:hover {
+        text-decoration: none;
+    }
+
+h1 {
+    font-size: 80px;
+    line-height: 1;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h1, h2 {
+    font-family: 'Caveat Brush', cursive;
+    font-weight: 400;
+    margin: 0;
+}
+
+.content-wrap {
+    max-width: 800px;
+    width: 85%;
+    margin: 0 auto;
+    padding: 60px 0;
+}
+
+.divider > section {
+    border-bottom: 1px dashed #343434;
+    padding: 25px 0;
+}
+
+/* 
+    Header
+    ----------------
+*/
+
+header {
+    background-image: url("multimedia/sentosa-images/rwss.jpg");
+    background-color: #F1FAEE;
+    height: 100vh;
+}
+
+.headerbgcol {
+    background-color: aliceblue;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header {
+    font-family: 'Rancho';
+    color: #F4AC14;
+    font-size: 200px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.aka {
+    font-family: 'Caveat Brush', cursive;
+    color: #F4AC14;
+    text-align: center;
+    margin: 0;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.about {
+    text-align: center;
+    color: #F4AC14;
+    margin: 0;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#headerbg {
+    background-image: url("../multimedia/sentosa-images/rwss.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* 
+    Paid
+    ----------------
+
+*/
+.paid {
+    background-color: #F4AC14;
+}
+
+    .paid a {
+        color: #457B9D;
+    }
+
+    .paid .btn {
+        color: #F1FAEE;
+        background: #1D3557;
+        text-decoration: none;
+        padding: 8px;
+        border-radius: 4px;
+        display: inline-block;
+    }
+
+        .paid .btn:hover {
+            background: rgba(29,53,87,80%);
+        }
+
+.paid-attraction {
+    overflow: hidden;
+}
+
+
+    .paid-attraction h3 {
+        margin-top: 0;
+    }
+
+
+/* 
+    Free
+    ----------------
+*/
+
+.free {
+    background-color: #F1FAEE;
+}
+
+/* 
+    Hotels
+    ----------------
+*/
+
+.hotels {
+    background-color: #F4AC14;
+}
+
+    .hotels .btn {
+        color: #F1FAEE;
+        background: #1D3557;
+        text-decoration: none;
+        padding: 8px;
+        border-radius: 4px;
+        display: inline-block;
+    }
+
+/* 
+    Contact Form
+    ----------------
+*/
+
+.contact {
+    background-color: #F1FAEE;
+}
+
+.underform {
+    width: 100%;
+    height: 5px;
+}
+
+/* 
+    Social Media
+    ----------------
+*/
+footer {
+    background-color: #F4AC14;
 }
