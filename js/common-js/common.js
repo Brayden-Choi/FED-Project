@@ -63,13 +63,16 @@ const debounce = (func, wait) => {
 
 // Manage Navbar behaviours
 class NavManager {
-    constructor(headerId, navId, navContentId, navTogglerId) {
+    constructor(headerId) {
         this.$header = $(headerId);
+        this.hasShadow = false;
+        this.usingWhite = false;
+    }
+    
+    setUp(navId, navContentId, navTogglerId) {
         this.$nav = $(navId);
         this.$navContent = $(navContentId);
         this.$navToggler = $(navTogglerId);
-        this.hasShadow = false;
-        this.usingWhite = false;
     }
 
     setActivePage() {
@@ -158,9 +161,9 @@ class NavManager {
 
 $(document).ready(function () {
     // Setup navbar
-    $("#header").load("header.html #nav", function () {
-        let nm = new NavManager("#header", "#nav", "#navbarContent", "#navbar-toggle-button");
-
+    let nm = new NavManager("#header");
+    nm.$header.load("header.html #nav", function () {
+        nm.setUp("#nav", "#navbarContent", "#navbar-toggle-button");
         nm.setActivePage();
         nm.addNavShadow();
 
