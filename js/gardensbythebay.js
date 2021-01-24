@@ -449,7 +449,7 @@ $(document).ready(function () {
     sm.indicatorScrollUpdate();
     $(window).scroll(debounce(function () {
         sm.indicatorScrollUpdate();
-    }, 80));
+    }, 128));
     sm.$indicators.click(function (event) {
         sm.indicatorClick(event.target);
     });
@@ -529,5 +529,5 @@ $(document).ready(function () {
 
     // Setup AOS animation
     // https://github.com/michalsnik/aos
-    AOS.init({throttleDelay: 128});
+    AOS.init({debounceDelay: 76, throttleDelay: 128});
 });
