@@ -43,7 +43,7 @@ body {
     color: white;
     margin-top: 32px;
     text-align: center;
-    font-size: calc(5vh + 5vw);
+    font-size: calc(4.6vh + 4.2vw + 24px);
 }
 
 .header-black {
@@ -174,9 +174,9 @@ body {
 }
 
 .about-logo-small {
-    width: calc(6.5vh + 5vw);
+    width: calc(7vh + 7.5vw);
     height: auto;
-    padding-right: 0.8rem;
+    padding-right: calc(28px - 0.6vh - 0.6vw);
     object-fit: contain;
 }
 
