@@ -12,18 +12,53 @@
     <link rel="shortcut icon" type="image/png" href="multimedia/favicons/default.png"/>
 
     <!-- Common dependencies -->
-    <link href="css/common-css/common.css" rel="stylesheet">
     <script src="js/common-js/jquery-3.3.1.min.js"></script>
+    <link href="css/common-css/bootstrap.min.css" rel="stylesheet">
     <script src="js/common-js/bootstrap.bundle.min.js"></script>
+    <link href="css/common-css/header-styles.css" rel="stylesheet">
+    <link href="css/common-css/footer-styles.css" rel="stylesheet">
+    <link href="css/common-css/common.css" rel="stylesheet">
     <script src="js/common-js/common.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Other dependencies -->
 </head>
 
 <div id="foot">
-    <footer class="bg-light text-center">
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-            © 2021 Copyright:
+    <footer class="bg-light">
+
+        <div class="container-fluid">
+            <form action="">
+                <div class="form-group">
+                    <div class="newsletter-email mx-auto">
+                        <div class="row">
+                            <div class="col-lg-11">
+                                <label for="newsletter-email">Sign-up for newsletter</label>
+                                <input class="form-control" id="newsletter-email" type="text" placeholder="Enter email address" required>
+                                <small class="form-text text-muted" id="emailHelp">
+                                    <i class="fa fa-exclamation"></i> 
+                                    By subscribing you agree to receive the newsletter & commercial information.
+                                </small>
+                            </div>
+                            <div class="col-lg-1 mt-lg-auto mb-lg-4 mb-0 mt-2">
+                                <button type="submit" class="btn btn-primary">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+        <div class="d-flex justify-content-center">
+            <button type="button" class="btn btn-primary btn-rounded social-button"><i class="fa fa-user"></i></button>
+            <button type="button" class="btn btn-dark btn-rounded social-button"><i class="fa fa-envelope-o"></i></button>
+            <button type="button" class="btn btn-danger btn-rounded social-button"><i class="fa fa-comment"></i></button>
+            <button type="button" class="btn btn-info btn-rounded social-button"><i class="fa fa-star"></i></button>
+            <button type="button" class="btn btn-success btn-rounded social-button"><i class="fa fa-plane"></i></button>
+        </div>
+        <hr>
+        <div class="text-center pb-5">
+            © 2021 Copyright: 
             <a class="text-dark" href="credits.html">FED Group 2</a>
         </div>
     </footer>

@@ -1,7 +1,6 @@
 /*General*/
 
 html {
-    scroll-behavior: smooth;
     height: 100%;
 }
 
@@ -55,7 +54,8 @@ h5 {
 }
 
 .dividerline {
-    border-top: 5px solid #0D5510;
+    width: 100%;
+    border-top: 6px solid #0D5510;
     opacity: 1;
 }
 
@@ -141,6 +141,41 @@ h5 {
     color: white;
 }
 
+/*Sidebar navigation*/
+
+.side-navigation {
+    position: fixed;
+    color: white;
+    display: block;
+    float: right;
+    margin: 0;
+    right: 1.5%;
+    top: 24%;
+    z-index: 4;
+}
+
+.side-navigation ol {
+    list-style-type: none;
+    padding: 0;
+    direction: rtl;
+}
+
+.sidenav-button {
+    cursor: pointer;
+    margin-bottom: 6px;
+    height: 8vh;
+    border-right: 6px solid rgba(0, 0, 0, 0.4);
+    vertical-align: middle;
+    transition-timing-function: ease-in;
+    transition-duration: 0.3s;
+}
+
+.sidenav-button:hover {
+    height: 10vh;
+    border-right: 6px solid rgba(0, 0, 0, 1);
+}
+
+
 
 /*Main Gallery*/
 
@@ -160,6 +195,13 @@ h5 {
 
 .animal-arrow {
     display: none;
+}
+
+.slide-button:hover {
+    width: 1.8vw;
+    opacity: 1;
+    transition-timing-function: ease-in;
+    transition-duration: 0.3s;
 }
 
 /*Zone Gallery*/
@@ -201,14 +243,14 @@ video {
 .map-button {
     font-family: 'Caveat Brush', cursive;
     font-size: 1.8rem;
-    background-color: grey;
+    background-color: #0D5510;
     border: none;
     position: relative;
     margin-top: 10px;
 }
 
 .map-button:hover, .map-button:focus{
-    background-color:  #0D5510;
+    background-color:  #31a339;
 }
 
 .modal-content {
@@ -294,6 +336,8 @@ video {
     margin-top: 3rem;
     color: white;
     background-color: rgba(0,0,0,0.6);
+    transition-timing-function: ease-out;
+    transition-duration: 0.5s;
 }
 
 .hours-table {
@@ -304,6 +348,12 @@ video {
     margin-top: 3rem;
     color: white;
     background-color: rgba(0,0,0,0.6);
+    transition-timing-function: ease-out;
+    transition-duration: 0.5s;
+}
+
+.ticket-table:hover, .hours-table:hover {
+    transform: scale(1.08);
 }
 
 .ticket-table tr,.ticket-table th,.ticket-table td {
@@ -331,15 +381,24 @@ video {
     padding: 0;
 }
 
+.ticket-button {
+    font-family: 'Caveat Brush', cursive;
+    font-size: 1.8rem;
+    background-color: #0D5510;
+    border: none;
+    position: relative;
+    margin-top: 3rem;
+}
+
+.ticket-button:hover, .ticket-button:focus{
+    background-color:  #31a339;
+}
+
 @media (min-width: 960px) {
     .animated {
         animation-duration: 1s;
         animation-fill-mode: both;
         animation-delay: 0.2s;
-    }
-
-    .zoom:hover {
-        transform: scale(1.04);
     }
 }
 
@@ -401,15 +460,16 @@ dd{
 }
 
 .contact-form {
-    width: 100%;
+    width: 80%;
     position: relative;
     background-color: rgba(0,0,0,0.6);
     color: white;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-family: 'Caveat Brush', cursive;
-    margin-top: 3rem;
-    padding: 4rem;
-    margin-left: 3rem;
+    margin-top: 2rem;
+    padding-top: 3rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
 }
 
 .custom-control {
@@ -417,7 +477,7 @@ dd{
 }
 
 .contact-radio {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
 }
 
 .form-underline {
@@ -446,6 +506,55 @@ dd{
 .form-submission:hover, .form-submission:focus{
     background-color:  #31a339;
     color: white;
+}
+
+.far, .fa-envelope, .fa-user {
+    font-style: normal;
+    font-variant: normal;
+}
+
+.custom-control-label::before {
+    margin-top: 5px;
+}
+
+.custom-control-label::after {
+    margin-top: 5px;
+}
+
+.contact-form .countrypicker {
+    margin-top: -3px;
+}
+
+#ack {
+    font-size: 1.7rem;
+    padding: 1rem;
+}
+
+/*Socials*/
+#socials {
+    padding-bottom: 5%;
+}
+
+.social-icon {
+    margin-right: 4rem;
+}
+
+.fab {
+    color: black;
+    opacity: 0.7;
+}
+.fab:hover {
+    opacity: 1;
+}
+
+.social-bar {
+    width: auto;
+    height: 3rem;
+    margin: 2rem;
+    display: inline-block;
+    position: relative;
+    opacity: 1;
+    font-size: 1.2rem;
 }
 
 /*Media Queries for Mobile*/

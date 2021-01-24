@@ -1,22 +1,30 @@
+String.prototype.capitalize = function () {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+}
+
 class VideoManager {
     constructor() {
         this.currentVideo = 0
         this.currentShow = 0
         this.videoOutOfView = false;
+        this.$title = $('#title');
+        this.$arrow = $('#arrow');
+        this.$vid0 = $("#drone-vid-0");
+        this.$vid1 = $("#drone-vid-1");
 
-        $("#drone-vid-0").fadeOut(0)
-        $("#drone-vid-1").fadeOut(0)
+        this.$vid0.fadeOut(0)
+        this.$vid1.fadeOut(0)
 
-        $("#drone-vid-0").trigger('play');
-        $("#drone-vid-0").fadeIn(2000);
+        this.$vid0.trigger('play');
+        this.$vid0.fadeIn(2000);
     }
 
     getCurrentVideo() {
-        return $("#drone-vid-" + this.currentShow);
+        return this.currentShow === 0 ? this.$vid0 : this.$vid1;
     }
 
     swap() {
-        console.log("Video change");
+        console.log("Video changed.");
 
         let $endedVideo = this.getCurrentVideo();
         $endedVideo.trigger("pause");
@@ -24,7 +32,7 @@ class VideoManager {
 
         this.currentShow = (++this.currentShow) % 2;
         let $nextVideo = this.getCurrentVideo();
-        $nextVideo.attr("src", "multimedia/gardensbythebay/drone-shots/drone_shot_" + (++this.currentVideo) + ".mp4")
+        $nextVideo.attr("src", `multimedia/gardensbythebay/drone-shots/drone_shot_${++this.currentVideo}.mp4`)
         $nextVideo.fadeIn(2000);
 
         $nextVideo.trigger('play');
@@ -33,7 +41,7 @@ class VideoManager {
     }
 
     checkOutOfView() {
-        const contentInView = $("#content")[0].getBoundingClientRect().top < -10;
+        const contentInView = $("#attractions")[0].getBoundingClientRect().top < -10;
         if (contentInView && !this.videoOutOfView) {
             this.getCurrentVideo().trigger("pause");
             this.videoOutOfView = true;
@@ -44,15 +52,28 @@ class VideoManager {
             this.videoOutOfView = false;
             console.log("Title video play.")
         }
+        return contentInView;
     }
 }
 
 class SectionManager {
-    constructor(indicators, sections) {
-        this.$indicators = $(indicators);
-        this.sections = sections;
+    constructor(indicatorsId, contentId) {
+        this.$indicators = $(indicatorsId);
+        this.$content = $(contentId);
+        this.sections = [];
         this.currentSectionIndex = -1;
-        this.$indicators.hide()
+        this.$indicators.hide();
+        this.loadSections();
+    }
+
+    loadSections() {
+        for (let section of this.$content.find("section")) {
+            let sectionId = section.id;
+            this.$indicators.append(this.buildIndicator(sectionId));
+            this.sections.push(`#${sectionId}`);
+        }
+
+        console.log("loaded indicators.")
     }
 
     updateCurrentSection() {
@@ -110,6 +131,16 @@ class SectionManager {
         this.updateCurrentSection();
         this.setActive();
     }
+
+    buildIndicator(name) {
+        return `
+        <li class="indicator">
+            <div class="indicator-hover">
+                <p class="indicator-hover-text">${name.capitalize()}</p>
+            </div>
+        </li>
+        `;
+    }
 }
 
 
@@ -130,7 +161,7 @@ class AttractionManager {
         let index = 0;
         for (const singleData of this.data) {
             this.$cardCollection.append(this.buildPreviewCard(singleData, index))
-            console.log("Added card data:", singleData);
+            console.log("Added card data:", singleData.name);
 
             this.$cardCollection.append(this.getSeperator("sm", "md"));
             if (index % 2 === 1) {
@@ -164,7 +195,7 @@ class AttractionManager {
 
     buildPreviewCard(cardData, index) {
         return `
-        <div class="card" data-index="${index}">
+        <div class="card" data-index="${index}" data-aos="fade-up" data-aos-duration="600">
             <img alt="..." class="card-img-top" src="${this.cardImageDir}${cardData.previewImage}">
             <div class="card-body">
                 <h5 class="card-title">${cardData.name}</h5>
@@ -241,7 +272,7 @@ class TicketManager {
         $(this.$ticketOptions.find("a")[targetItem.index]).removeClass("disabled");
 
         targetItem.$item.on('transitionend webkitTransitionEnd oTransitionEnd', function () {
-            $(this).delay(200).queue(function (next) {
+            $(this).delay(300).queue(function (next) {
                 $(this).remove();
                 console.log("Removed ticket item: ", index);
                 next();
@@ -413,40 +444,55 @@ $(document).ready(function () {
     var letters = $("#title-text").setLetterHoverEffect({"hoverClass": "title-alter-letter"});
     var letters = $(".header-text").setLetterHoverEffect({"hoverClass": "header-alter-letter"});
 
+    // Handle section indicators
+    const sm = new SectionManager("#content-indicators", "#content");
+    sm.indicatorScrollUpdate();
+    $(window).scroll(debounce(function () {
+        sm.indicatorScrollUpdate();
+    }, 128));
+    sm.$indicators.click(function (event) {
+        sm.indicatorClick(event.target);
+    });
+
     // Handle video change
     const vm = new VideoManager();
-    $("#drone-vid-0").on('ended', function () {
+    vm.$vid0.on('ended', function () {
         vm.swap();
     });
-    $("#drone-vid-1").on('ended', function () {
+    vm.$vid1.on('ended', function () {
         vm.swap();
     });
 
     // Parallax effect
-    $(window).on('load resize scroll', function () {
-        var scrolled = $(this).scrollTop();
-        $('#title').css({
-            'transform': 'translate3d(0, ' + -(scrolled * 0.2) + 'px, 0)', // parallax (20% scroll rate)
-            'opacity': 1 - scrolled / 600 // fade out at 400px from top
-        });
-        $('#drone-vid-0').css(
-            'transform', 'translate3d(0, ' + -(scrolled * 0.25) + 'px, 0)' // parallax (25% scroll rate)
-        );
-        $('#drone-vid-1').css(
-            'transform', 'translate3d(0, ' + -(scrolled * 0.25) + 'px, 0)' // parallax (25% scroll rate)
-        );
-        vm.checkOutOfView();
-    });
+    $(window).on('load resize usablescroll', debounce(function (event, scrollPos) {
+        if (vm.checkOutOfView()) {
+            return;
+        }
 
-    // Handle section change
-    const sm = new SectionManager("#content-indicators", ["#attractions", "#gallery", "#tickets"]);
-    sm.indicatorScrollUpdate();
-    $(window).scroll(function () {
-        sm.indicatorScrollUpdate();
-    });
-    $('#content-indicators li').click(function (event) {
-        sm.indicatorClick(event.target);
-    });
+        vm.$title.css({
+            'transform': 'translate(0, ' + -(scrollPos * 0.2) + 'px)', // parallax (20% scroll rate)
+            'opacity': 1 - scrollPos / 600 // fade out at 400px from top
+        });
+        vm.$arrow.css({
+            'opacity': 1 - scrollPos / 600 // fade out at 400px from top
+        });
+        
+        if (scrollPos >= 920) {
+            vm.$vid0.css(
+                'transform', 'translate(0, ' + -((scrollPos - 920) * 0.25) + 'px)' // parallax (25% scroll rate)
+            );
+            vm.$vid1.css(
+                'transform', 'translate(0, ' + -((scrollPos - 920) * 0.25) + 'px)' // parallax (25% scroll rate)
+            );
+        } else {
+            vm.$vid0.css(
+                'transform', 'translate(0, 0)'
+            );
+            vm.$vid1.css(
+                'transform', 'translate(0, 0)'
+            );
+        }
+    }, 12));
 
     // Setup attraction cards
     const am = new AttractionManager("#attractionCards", "#attractionsModal", "#attractionsBackground");
@@ -476,6 +522,11 @@ $(document).ready(function () {
         console.log("Unable to load file: " + ticketPath);
     })
 
-    // Setup form country picker
+    // Setup form 
+    // https://github.com/mojoaxel/bootstrap-select-country
     $('.countrypicker').countrypicker();
+
+    // Setup AOS animation
+    // https://github.com/michalsnik/aos
+    AOS.init({debounceDelay: 76, throttleDelay: 128});
 });

@@ -9,13 +9,17 @@
     <meta content="Singapore Tourist Attractions" name="description"/>
     <meta content="Group 2" name="author"/>
     <title>Singapore Tourist Attractions</title>
-    <link rel="shortcut icon" type="image/png" href="multimedia/favicons/default.png"/>
+    <link href="multimedia/favicons/default.png" rel="shortcut icon" type="image/png"/>
 
     <!-- Common dependencies -->
-    <link href="css/common-css/common.css" rel="stylesheet">
     <script src="js/common-js/jquery-3.3.1.min.js"></script>
+    <link href="css/common-css/bootstrap.min.css" rel="stylesheet">
     <script src="js/common-js/bootstrap.bundle.min.js"></script>
+    <link href="css/common-css/header-styles.css" rel="stylesheet">
+    <link href="css/common-css/footer-styles.css" rel="stylesheet">
+    <link href="css/common-css/common.css" rel="stylesheet">
     <script src="js/common-js/common.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Other dependencies -->
     <link href="css/home.css" rel="stylesheet">
@@ -23,7 +27,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
-<div content="Home" id="header" type="white"></div>
+<div content="Home" data-type="white" id="header"></div>
 
 <body>
 <div class="overview">
@@ -34,41 +38,41 @@
         <li class="indicator" data-slide-to="3" data-target="#overviewSlides"></li>
         <li class="indicator" data-slide-to="4" data-target="#overviewSlides"></li>
     </ol>
-    
+
     <div class="carousel slide carousel-fade overview-slides" data-ride="carousel" id="overviewSlides">
         <div class="carousel-inner">
             <div class="carousel-caption text-left h-75 w-auto">
                 <div class="title-container">
-                    <h1 class="title-text title-hidden-top" id="title-0">Example 0.</h1>
-                    <h1 class="title-text" id="title-1">Example 1.</h1>
-                    <h1 class="title-text title-hidden title-hidden-bottom" id="title-2">Example 2.</h1>
+                    <h1 class="title-text title-hidden-top" id="title-0"></h1>
+                    <h1 class="title-text" id="title-1"></h1>
+                    <h1 class="title-text title-hidden title-hidden-bottom" id="title-2"></h1>
                 </div>
-                <p class="description" id="overview-desc">description</p>
+                <p class="description" id="overview-desc"></p>
                 <a class="btn btn-lg btn-info overview-button" href="#" id="overview-button" role="button">
                     <i class="fa fa-globe"></i><span> Explore</span>
                 </a>
             </div>
-            
+
             <div class="carousel-item active" content="Gardens by the Bay">
                 <div class="overview-overlay"></div>
-                <img alt="..." class="d-block w-100 min-vh-100"
+                <img alt="Gardens by the Bay" class="d-block w-100 min-vh-100"
                      src="multimedia/home/overview-slides/gardensbythebay.jpg">
             </div>
             <div class="carousel-item" content="Singapore Zoo">
                 <div class="overview-overlay"></div>
-                <img alt="..." class="d-block w-100 min-vh-100" src="multimedia/home/overview-slides/zoo.jpg">
+                <img alt="Singapore Zoo" class="d-block w-100 min-vh-100" src="multimedia/home/overview-slides/zoo.jpg">
             </div>
             <div class="carousel-item" content="Changi Jewel">
                 <div class="overview-overlay"></div>
-                <img alt="..." class="d-block w-100 min-vh-100" src="multimedia/home/overview-slides/jewel.jpg">
+                <img alt="Changi Jewel" class="d-block w-100 min-vh-100" src="multimedia/home/overview-slides/jewel.jpg">
             </div>
             <div class="carousel-item" content="Sentosa">
                 <div class="overview-overlay"></div>
-                <img alt="..." class="d-block w-100 min-vh-100" src="multimedia/home/overview-slides/sentosa.jpg">
+                <img alt="Sentosa" class="d-block w-100 min-vh-100" src="multimedia/home/overview-slides/sentosa.jpg">
             </div>
             <div class="carousel-item" content="Universal Studios">
                 <div class="overview-overlay"></div>
-                <img alt="..." class="d-block w-100 min-vh-100" src="multimedia/home/overview-slides/uss.jpg">
+                <img alt="Universal Studios" class="d-block w-100 min-vh-100" src="multimedia/home/overview-slides/uss.jpg">
             </div>
         </div>
     </div>

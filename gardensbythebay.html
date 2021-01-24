@@ -12,38 +12,43 @@
     <link href="multimedia/favicons/gardensbythebay.png" rel="shortcut icon" type="image/png"/>
 
     <!-- Common dependencies -->
-    <link href="css/common-css/common.css" rel="stylesheet">
     <script src="js/common-js/jquery-3.3.1.min.js"></script>
+    <link href="css/common-css/bootstrap.min.css" rel="stylesheet">
     <script src="js/common-js/bootstrap.bundle.min.js"></script>
+    <link href="css/common-css/header-styles.css" rel="stylesheet">
+    <link href="css/common-css/footer-styles.css" rel="stylesheet">
+    <link href="css/common-css/common.css" rel="stylesheet">
     <script src="js/common-js/common.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Other dependencies -->
-    <link href="css/gardensbythebay.css" rel="stylesheet">
-    <script src="js/gardensbythebay.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.18/dist/css/bootstrap-select.min.css" rel="stylesheet"/>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.18/dist/js/bootstrap-select.min.js"></script>
-    
+
     <link href="https://unpkg.com/bootstrap-select-country@4.2.0/dist/css/bootstrap-select-country.min.css" rel="stylesheet"/>
     <script src="https://unpkg.com/bootstrap-select-country@4.2.0/dist/js/bootstrap-select-country.min.js"></script>
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/gardensbythebay.css" rel="stylesheet">
+    <script src="js/gardensbythebay.js"></script>
 </head>
 
-<div content="Gardens By The Bay" id="header" type="white"></div>
+<div content="Gardens By The Bay" data-offset="820" data-type="white" id="header"></div>
 
 <body>
 <div aria-hidden="true" aria-labelledby="attractionsModal-title" class="modal fade" id="attractionsModal" role="dialog"
      tabindex="-1">
     <div class="modal-dialog m-0 ml-sm-3 mr-sm-3 mx-lg-auto" role="document">
-        <div class="modal-content">
+        <div class="modal-content mb-5">
             <div class="modal-top" id="attractionsModal-header">
-                <h1 class="modal-title fancy-font" id="attractionsModal-title">Title</h1>
+                <h1 class="modal-title fancy-font" id="attractionsModal-title"></h1>
                 <button aria-label="Close" class="close" data-dismiss="modal" type="button">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body" id="attractionsModal-body">Detailed HTML.</div>
+            <div class="modal-body" id="attractionsModal-body"></div>
             <div class="modal-footer" id="attractionsModal-footer">
                 <button class="btn btn-secondary" data-dismiss="modal" type="button">Close</button>
             </div>
@@ -51,37 +56,16 @@
     </div>
 </div>
 
-<div class="content-indicators">
-    <ol id="content-indicators">
-        <li class="indicator">
-            <div class="indicator-hover">
-                <p class="indicator-hover-text">Attractions</p>
-            </div>
-        </li>
-        <li class="indicator">
-            <div class="indicator-hover">
-                <p class="indicator-hover-text">Gallery</p>
-            </div>
-        </li>
-        <li class="indicator">
-            <div class="indicator-hover">
-                <p class="indicator-hover-text">Map</p>
-            </div>
-        </li>
-        <li class="indicator">
-            <div class="indicator-hover">
-                <p class="indicator-hover-text">Tickets</p>
-            </div>
-        </li>
-    </ol>
-</div>
+<ol class="content-indicators" id="content-indicators"></ol>
 
 <div class="video-overlay">
-    <div class="title" id="title">
-        <h1 class="fancy-font" id="title-text">Gardens by the Bay</h1>
+    <div class="row title" id="title">
+        <div class="col-12 my-auto ml-2 mr-2">
+            <h1 class="fancy-font" id="title-text">Gardens by the Bay</h1>
+        </div>
     </div>
-    <div class="arrow bounce">
-        <a class="smooth-scrolling" href="#attractions">
+    <div class="arrow bounce" id="arrow">
+        <a class="smooth-scrolling" href="#about">
             <img alt="Arrow down" class="arrow-image" src="multimedia/gardensbythebay/arrow-down.svg">
         </a>
     </div>
@@ -94,7 +78,37 @@
 </div>
 
 <div class="content container-fluid p-0 m-0" id="content">
-    <section class="section" id="attractions">
+    <section class="section section-clear" data-offset="18" id="about">
+        <div class="row section-fullwidth m-0">
+            <div class="col-md-4 pl-md-4 pr-md-2 my-auto about-logo-wrapper" data-aos="fade-up">
+                <img alt="Gardens by the Bay logo" class="about-logo" src="multimedia/gardensbythebay/logo.png">
+            </div>
+            <div class="col-md-8 my-auto" data-aos="fade-up" id="about-column">
+                <div class="about-info ml-md-4 mr-md-5 ml-1 mr-sm-2 mr-1">
+                    <div class="row">
+                        <div class="col-2 my-auto d-md-none">
+                            <img alt="Gardens by the Bay logo" class="about-logo-small mr-2"
+                                 src="multimedia/gardensbythebay/logo.png">
+                        </div>
+                        <div class="col-8 ml-1">
+                            <h1 class="header-text fancy-font text-left mt-2 mt-md-auto">About</h1>
+                        </div>
+                    </div>
+                    <h3 class="about-text">
+                        Gardens by the Bay is a huge, colourful, futuristic park in the bay area of Singapore. Among the
+                        standout features are the famous Supertree structures.
+                    </h3>
+                    <div class="p-2"></div>
+                    <h3 class="about-text">
+                        These offer an impressive skywalk over the gardens, with oversized seashell-shaped greenhouses
+                        that recreate chilly mountain climates.
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-black" data-aos="fade" id="attractions">
         <div class="attractions-background" id="attractionsBackground"></div>
         <div class="row m-0">
             <div class="col-12">
@@ -105,10 +119,10 @@
     </section>
 
     <section class="section" id="gallery">
-
+        
     </section>
-
-    <section class="section" id="tickets">
+    
+    <section class="section tickets-background" data-aos="fade" id="tickets">
         <div class="row m-0">
             <div class="col-12">
                 <h1 class="header-text header-black fancy-font">Buy Tickets</h1>
@@ -117,36 +131,40 @@
         <form class="ticket-form mx-xl-auto mt-4 ml-3 mr-3">
             <div class="form-group">
                 <label for="inputName">Full Name</label>
-                <input class="form-control" id="inputName" placeholder="Name" type="text" required>
+                <input class="form-control" id="inputName" placeholder="Name" required type="text">
             </div>
 
             <div class="form-group">
                 <label for="inputEmail">Email</label>
                 <input aria-describedby="emailHelp" class="form-control" id="inputEmail" placeholder="Email" type="email" required>
-                <small class="form-text text-muted" id="emailHelp">! Please input a valid email or you may not receive
-                    your tickets.</small>
+                <small class="form-text text-muted" id="emailHelp">
+                    <i class="fa fa-exclamation"></i> 
+                    Please input a valid email or you may not receive your tickets.
+                </small>
             </div>
 
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="selectCountry">Country</label>
-                    <select class="form-control selectpicker countrypicker" data-flag="true" id="selectCountry" required></select>
+                    <select class="form-control selectpicker countrypicker" data-flag="true" id="selectCountry"
+                            required></select>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputContact">Contact Number</label>
-                    <input class="form-control" id="inputContact" placeholder="Contact" type="tel" required>
+                    <input class="form-control" id="inputContact" placeholder="Contact" required type="tel">
                 </div>
             </div>
 
             <div class="form-group">
                 <label>Tickets</label>
-                
+
                 <div>
                     <button aria-expanded="false" aria-haspopup="true" class="btn btn-primary"
                             data-toggle="dropdown" id="dropdownTicketOptions" type="button">
                         <i class="fa fa-plus-circle"></i> Add a ticket
                     </button>
-                    <div aria-labelledby="dropdownTicketOptions" class="dropdown-menu ticket-options" id="tickets-options"></div>
+                    <div aria-labelledby="dropdownTicketOptions" class="dropdown-menu ticket-options"
+                         id="tickets-options"></div>
                 </div>
 
                 <ol class="list-group tickets-list" id="tickets-items"></ol>
@@ -156,7 +174,7 @@
                 <label>Order Summary</label>
                 <table class="table tickets-summary" id="tickets-summary">
                     <tr>
-                        <th scope="row" class="table-top">Ticket Count</th>
+                        <th class="table-top" scope="row">Ticket Count</th>
                         <td class="table-top" id="tickets-count">1</td>
                     </tr>
                     <tr>
@@ -173,21 +191,21 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputCard">Card</label>
-                    <input type="text" class="form-control" id="inputCard" placeholder="credit card number" required>
+                    <input class="form-control" id="inputCard" placeholder="credit card number" required type="text">
                 </div>
                 <div class="form-group col-md-3">
                     <label for="inputExpire">Expire Date</label>
-                    <input type="month" class="form-control" id="inputExpire" placeholder="card expiry date" required>
+                    <input class="form-control" id="inputExpire" placeholder="card expiry date" required type="month">
                 </div>
                 <div class="form-group col-md-3">
                     <label for="inputCheck">Security Code</label>
-                    <input type="text" class="form-control" id="inputCheck" placeholder="3-digit security code" required>
+                    <input class="form-control" id="inputCheck" placeholder="3-digit security code" required type="text">
                 </div>
             </div>
-            
+
             <div class="form-group">
                 <div class="form-check">
-                    <input class="form-check-input" id="checkPolicy" type="checkbox" required>
+                    <input class="form-check-input" id="checkPolicy" required type="checkbox">
                     <label class="form-check-label" for="checkPolicy">
                         I accept the Terms of Use and Privacy Policy set by Gardens by the Bay.
                     </label>

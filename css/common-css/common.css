@@ -1,13 +1,10 @@
-﻿@import "bootstrap.min.css";
-@import "header-styles.css";
-@import "footer-styles.css";
-
-html, body {
+﻿html, body {
     height: 100%;
     margin: 0;
 }
 
 body {
+    scroll-behavior: smooth;
     min-height: 100%;
 }
 
@@ -16,8 +13,20 @@ body {
     visibility: hidden !important;
     max-height: 0 !important;
     max-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 .smooth-scrolling {
     
+}
+
+.countrypicker .btn-light {
+    background-color: white;
+    border-radius: 0.25rem;
+    border: 1px solid #ced4da;
+}
+
+.countrypicker .inline-flag {
+    margin-top: 2px;
 }

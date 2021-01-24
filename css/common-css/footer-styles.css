@@ -1,3 +1,12 @@
-.footer {
-    z-index: 10;
+.footer-wrapper {
+    background: lightgray !important;
+}
+
+.social-button {
+    margin: 1rem 1.8vw 0.4rem;
+}
+
+.newsletter-email {
+    padding-top: 2rem;
+    max-width: 768px;
 }

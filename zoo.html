@@ -12,10 +12,14 @@
     <link rel="shortcut icon" type="image/png" href="multimedia/favicons/zoo.png"/>
 
     <!-- Common dependencies -->
-    <link href="css/common-css/common.css" rel="stylesheet">
     <script src="js/common-js/jquery-3.3.1.min.js"></script>
+    <link href="css/common-css/bootstrap.min.css" rel="stylesheet">
     <script src="js/common-js/bootstrap.bundle.min.js"></script>
+    <link href="css/common-css/header-styles.css" rel="stylesheet">
+    <link href="css/common-css/footer-styles.css" rel="stylesheet">
+    <link href="css/common-css/common.css" rel="stylesheet">
     <script src="js/common-js/common.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -24,9 +28,10 @@
 
     <!-- Other dependencies -->
     <script src="js/zoo-js/wow.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
     <link href="css/zoo.css" rel="stylesheet">
     <script src="js/zoo-js/zoo.js"></script>
+
+    <script src="https://kit.fontawesome.com/1dd9bf470e.js" crossorigin="anonymous"></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.18/dist/css/bootstrap-select.min.css" rel="stylesheet"/>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.18/dist/js/bootstrap-select.min.js"></script>
@@ -35,7 +40,7 @@
     <script src="https://unpkg.com/bootstrap-select-country@4.2.0/dist/js/bootstrap-select-country.min.js"></script>
 </head>
 
-<div content="Singapore Zoo" id="header" type="white"></div>
+<div content="Singapore Zoo" id="header" data-type="white"></div>
 
 <body>
 <section id="title">
@@ -76,6 +81,40 @@
     });
 </script>
 
+<div class="side-navigation">
+    <ol id="side-navigation">
+        <li class="sidenav-button">
+            <div class="sidenav-hover">
+                <a class="smooth-scrolling" href="#maingallery"></a>
+            </div>
+        </li>
+        <li class="sidenav-button">
+            <div class="sidenav-hover">
+            </div>
+        </li>
+        <li class="sidenav-button">
+            <div class="sidenav-hover">
+            </div>
+        </li>
+        <li class="sidenav-button">
+            <div class="sidenav-hover">
+            </div>
+        </li>
+        <li class="sidenav-button">
+            <div class="sidenav-hover">
+            </div>
+        </li>
+        <li class="sidenav-button">
+            <div class="sidenav-hover">
+            </div>
+        </li>
+        <li class="sidenav-button">
+            <div class="sidenav-hover">
+            </div>
+        </li>
+    </ol>
+</div>
+
 <div class="container-fluid">
     <div class="wrapper">
         <div class="dividerline"></div>
@@ -105,15 +144,15 @@
             <div class="bg-animal"></div>
             <div class="carousel slide slides" data-ride="carousel" id="carouselExampleIndicatorsmain">
                 <ol class="carousel-indicators">
-                    <li class="active" data-slide-to="0" data-target="#carouselExampleIndicatorsmain"></li>
-                    <li data-slide-to="1" data-target="#carouselExampleIndicatorsmain"></li>
-                    <li data-slide-to="2" data-target="#carouselExampleIndicatorsmain"></li>
-                    <li data-slide-to="3" data-target="#carouselExampleIndicatorsmain"></li>
-                    <li data-slide-to="4" data-target="#carouselExampleIndicatorsmain"></li>
-                    <li data-slide-to="5" data-target="#carouselExampleIndicatorsmain"></li>
-                    <li data-slide-to="6" data-target="#carouselExampleIndicatorsmain"></li>
-                    <li data-slide-to="7" data-target="#carouselExampleIndicatorsmain"></li>
-                    <li data-slide-to="8" data-target="#carouselExampleIndicatorsmain"></li>
+                    <li class="active slide-button" data-slide-to="0" data-target="#carouselExampleIndicatorsmain"></li>
+                    <li class="slide-button" data-slide-to="1" data-target="#carouselExampleIndicatorsmain"></li>
+                    <li class="slide-button" data-slide-to="2" data-target="#carouselExampleIndicatorsmain"></li>
+                    <li class="slide-button" data-slide-to="3" data-target="#carouselExampleIndicatorsmain"></li>
+                    <li class="slide-button" data-slide-to="4" data-target="#carouselExampleIndicatorsmain"></li>
+                    <li class="slide-button" data-slide-to="5" data-target="#carouselExampleIndicatorsmain"></li>
+                    <li class="slide-button" data-slide-to="6" data-target="#carouselExampleIndicatorsmain"></li>
+                    <li class="slide-button" data-slide-to="7" data-target="#carouselExampleIndicatorsmain"></li>
+                    <li class="slide-button" data-slide-to="8" data-target="#carouselExampleIndicatorsmain"></li>
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -305,7 +344,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="table col-lg-6 d-flex justify-content-center align-self-center wow animate__fadeInLeft zoom">
+                <div class="table col-lg-6 d-flex justify-content-center align-self-center wow animate__fadeInRight zoom">
                     <table class="ticket-table">
                         <tr>
                             <td class="tablehead">Age Group</td>
@@ -325,7 +364,7 @@
                         </tr>
                     </table>
                 </div>
-                <div class="table col-lg-6 d-flex justify-content-center align-self-center wow animate__fadeInRight zoom">
+                <div class="table col-lg-6 d-flex justify-content-center align-self-center wow animate__fadeInRight zoom" data-wow-delay="0.4s">
                     <table class="hours-table">
                         <tr>
                             <td class="tablehead">Location</td>
@@ -341,6 +380,11 @@
                         </tr>
                     </table>
                 </div>
+            </div>
+            <div class="row col-md-12 d-flex justify-content-center align-self-center">
+                <a class="btn btn-lg btn-primary ticket-button" href="https://www.wrs.com.sg/en/ticketing/admission-and-rides/parks-selection.html" role="button">
+                    <i class="fas fa-ticket-alt"></i><span> Buy Tickets</span>
+                </a>
             </div>
         </section>
 
@@ -415,8 +459,9 @@
                 <div class="col-sm-12 justify-content-center align-self-center d-flex">
                     <form class="contact-form">
                         <div class="form-group">
+                            <div class="fas fa-angle-double-right"></div>
                             <label for="exampleInputSalutation">Salutation</label>
-                            <select id="exampleInputSalutation" class="form-control">
+                            <select id="exampleInputSalutation" class="form-control" required>
                                 <option id="disabled">How do we address you?</option>
                                 <option>Mr</option>
                                 <option>Ms</option>
@@ -428,6 +473,7 @@
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
+                                <div class="far fa-user fa-sm"></div>
                                 <label for="exampleInputFirstName">First Name</label>
                                 <input type="text" id="exampleInputFirstName" class="form-control" placeholder="First name" required>
                                 <div class="form-underline"></div>
@@ -439,23 +485,27 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <div class="far fa-envelope fa-sm"></div>
                             <label for="exampleInputEmail">Email address</label>
                             <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter email" pattern="^([0-9a-zA-Z]{[-\.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$" required>
                             <div class="form-underline"></div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
+                                <div class="far fa-flag fa-sm"></div>
                                 <label for="exampleInputCountry">Country</label>
                                 <select class="selectpicker countrypicker form-control" id="exampleInputCountry" data-flag="true" required></select>
                                 <div class="form-underline"></div>
                             </div>
                             <div class="form-group col-md-6">
+                                <div class="fas fa-phone fa-sm"></div>
                                 <label for="exampleInputContactNo">Contact No</label><br>
                                 <input type="text" id="exampleInputContactNo" class="form-control" placeholder="Contact No" required>
                                 <div class="form-underline"></div>
                             </div>
                         </div>
                         <div class="form-group">
+                            <div class="far fa-comment-dots fa-sm"></div>
                             <label for="exampleFormControlComment">Comment</label>
                             <textarea class="form-control" id="exampleFormControlComment" rows="4" placeholder="Your comment..." required></textarea>
                             <div class="form-underline"></div>
@@ -479,8 +529,8 @@
                             <input type="checkbox" class="custom-control-input" id="mail" value="yes">
                             <label class="custom-control-label" for="mail">Sign up for latest news and receive exlusive updates.</label>
                         </div><br>
-                        <button class="btn btn-primary form-submission" type="submit" onsubmit="submit()">Submit</button>
-                        <button class="btn btn-primary form-submission" type="reset" onclick="reset()">Reset</button>
+                        <button class="btn btn-primary form-submission" id="form-submit" type="submit" onsubmit="submit()">Submit</button>
+                        <button class="btn btn-primary form-submission" id="form-reset" type="reset" onclick="reset()">Reset</button>
                         <div>
                             <p id="ack"></p>
                         </div>
@@ -493,6 +543,34 @@
         </section>
     </div>
 
+    <!-- Socials -->
+    <div id="socials"></div>
+    <section>
+        <div class="dividerline"></div>
+        <div class="row col-md-12 d-flex justify-content-center align-self-center social-bar">
+            <div class="social-icon">
+                <a href="https://www.facebook.com/wrs.sg">
+                    <div class="fab fa-facebook fa-2x"></div>
+                </a>
+            </div>
+            <div class="social-icon">
+                <a href="https://twitter.com/tweetwrs?lang=en">
+                    <div class="fab fa-twitter fa-2x"></div>
+                </a>
+            </div>
+            <div class="social-icon">
+                <a href="https://www.instagram.com/wrs.ig/?hl=en">
+                    <div class="fab fa-instagram fa-2x"></div>
+                </a>
+            </div>
+            <div class="social-icon">
+                <a href="https://www.youtube.com/user/WildlifeReservesSg?hl=en-GB&gl=SG">
+                    <div class="fab fa-youtube fa-2x"></div>
+                </a>
+            </div>
+        </div>
+    </section>
+    
     <div class="row">
         <div class="col-sm-12 p-0">
             <div id="footer"></div>

@@ -46,6 +46,17 @@ var _createClass = function () {
 }();
 
 /*js for form*/
-function submit() {
-    document.getElementById("ack").innerHTML = "Thank you! We will get back to you in 3-4 working days.";
-}
+$(document).ready(function () {
+    $("#form-submit").click(function (event) {
+        event.preventDefault();
+        var salutation = document.getElementById("exampleInputSalutation").value;
+        var lastname = document.getElementById("exampleInputLastName").value;
+        document.getElementById("ack").innerHTML = "Thank you, " + salutation + " " + lastname + ". We will get back to you in 3-4 working days!"
+    });
+
+    $("#form-reset").click(function () {
+        document.getElementById("ack").innerHTML = "";
+    });
+})
+
+
