@@ -1,6 +1,6 @@
 /* Color Variables */
 :root {
-    --nav-background: transparent;
+    --nav-background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
     --nav-border-color: black;
     --nav-brand-color: black;
     --nav-brand-hover-shadow-color: rgba(0, 0, 0, 0.4);

@@ -1,4 +1,4 @@
-*
+/*
 Colour Palette
 https://coolors.co/e63946-f1faee-a8dadc-457b9d-1d3557
 e63946 imperial red
@@ -83,7 +83,7 @@ h1, h2 {
 */
 
 header {
-    background-image: url("multimedia/sentosa-images/rwss.jpg");
+    background-image: url("../multimedia/sentosa-images/rwss.jpg");
     background-color: #F1FAEE;
     height: 100vh;
 }
@@ -96,7 +96,7 @@ header {
 }
 
 .header {
-    font-family: 'Rancho';
+    font-family: 'Rancho', serif;
     color: #F4AC14;
     font-size: 200px;
     margin: 0;
@@ -161,7 +161,7 @@ header {
     }
 
         .paid .btn:hover {
-            background: rgba(29,53,87,80%);
+            background: rgba(29,53,87,0.8);
         }
 
 .paid-attraction {
