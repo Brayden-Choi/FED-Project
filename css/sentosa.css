@@ -22,7 +22,7 @@ html {
     Global styles
     ----------------
 */
-body {
+main {
     color: #1D3557;
     margin: 0;
     padding: 0;
@@ -46,9 +46,9 @@ a {
     color: #457B9D;
 }
 
-    a:hover {
-        text-decoration: none;
-    }
+a:hover {
+    text-decoration: none;
+}
 
 h1 {
     font-size: 80px;

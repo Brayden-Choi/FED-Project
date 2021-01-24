@@ -27,6 +27,7 @@
 
 /* Navbar Styles */
 .navbar-main {
+    font-family: "Open Sans", serif !important;
     background: var(--nav-background);
     width: 100%;
     position: fixed;
