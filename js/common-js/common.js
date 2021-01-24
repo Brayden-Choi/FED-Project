@@ -160,6 +160,20 @@ class NavManager {
 }
 
 $(document).ready(function () {
+    const $window = $(window);
+
+    // Event Handler to throttle scrolling event
+    let previousScroll = undefined;
+    $window.on('scroll', function () {
+        const scrollPos = $(window).scrollTop();
+
+        if (previousScroll === undefined || Math.abs(scrollPos - previousScroll) > 1) {
+            $(window).trigger('usablescroll', scrollPos);
+        }
+
+        previousScroll = scrollPos;
+    });
+    
     // Setup navbar
     let nm = new NavManager("#header");
     nm.$header.load("header.html #nav", function () {
@@ -167,9 +181,9 @@ $(document).ready(function () {
         nm.setActivePage();
         nm.addNavShadow();
 
-        $(window).on('resize scroll', debounce(function () {
+        $(window).on('resize usablescroll', debounce(function () {
             nm.addNavShadow();
-        }, 16));
+        }, 20));
 
         nm.$nav.find(".dropdown-toggle").click(function (event) {
             nm.clickDropDown($(this));
@@ -184,7 +198,7 @@ $(document).ready(function () {
     $("#footer").load("footer.html #foot");
 
     // Event Handler for smooth scrolling to an anchor
-    $(window).on('anchorscroll', function (event, anchorId, duration) {
+    $window.on('anchorscroll', function (event, anchorId, duration) {
         if (anchorId == undefined || anchorId == "") {
             return;
         }
@@ -214,11 +228,9 @@ $(document).ready(function () {
             scrollTop: $anchor.offset().top - offset
         }, duration);
     });
-});
 
-$(window).on('load', function (event) {
     // Stop video if out of view
-    $(window).on('resize scroll', debounce(function () {
+    $window.on('load resize usablescroll', debounce(function () {
         for (let video of $('video')) {
             const $video = $(video);
             if ($video.css("position") === "fixed") {
@@ -238,17 +250,17 @@ $(window).on('load', function (event) {
             }
         }
     }, 250));
+});
 
+$(window).on('load', function (event) {
     // Add smooth scrolling to links
-    $(window).trigger('anchorscroll', [window.location.hash, 100]);
     $('.smooth-scrolling').on('click', function (event) {
         const hash = this.hash;
-
         if (hash == undefined || hash == "") {
             return;
         }
-
-        console.log(this.pathname, window.location.pathname);
+        
+        // Change page dont do smooth scroll
         if (this.pathname !== window.location.pathname) {
             return;
         }
@@ -256,4 +268,7 @@ $(window).on('load', function (event) {
         event.preventDefault();
         $(window).trigger('anchorscroll', [hash]);
     });
+    
+    // If loaded window is anchor, do offset
+    $(window).trigger('anchorscroll', [window.location.hash, 100]);
 });

@@ -41,7 +41,7 @@ class VideoManager {
     }
 
     checkOutOfView() {
-        const contentInView = $("#attractions").offsetTop < -10;
+        const contentInView = $("#attractions")[0].getBoundingClientRect().top < -10;
         if (contentInView && !this.videoOutOfView) {
             this.getCurrentVideo().trigger("pause");
             this.videoOutOfView = true;
@@ -464,33 +464,32 @@ $(document).ready(function () {
     });
 
     // Parallax effect
-    $(window).on('load resize scroll', debounce(function () {
+    $(window).on('load resize usablescroll', debounce(function (event, scrollPos) {
         if (vm.checkOutOfView()) {
             return;
         }
-        
-        var scrolled = $(this).scrollTop();
+
         vm.$title.css({
-            'transform': 'translate3d(0, ' + -(scrolled * 0.2) + 'px, 0)', // parallax (20% scroll rate)
-            'opacity': 1 - scrolled / 600 // fade out at 400px from top
+            'transform': 'translate(0, ' + -(scrollPos * 0.2) + 'px)', // parallax (20% scroll rate)
+            'opacity': 1 - scrollPos / 600 // fade out at 400px from top
         });
         vm.$arrow.css({
-            'transform': 'translate3d(0, ' + -(scrolled * 0.2) + 'px, 0)', // parallax (20% scroll rate)
-            'opacity': 1 - scrolled / 600 // fade out at 400px from top
+            'opacity': 1 - scrollPos / 600 // fade out at 400px from top
         });
-        if (scrolled >= 920) {
+        
+        if (scrollPos >= 920) {
             vm.$vid0.css(
-                'transform', 'translate3d(0, ' + -((scrolled - 920) * 0.25) + 'px, 0)' // parallax (25% scroll rate)
+                'transform', 'translate(0, ' + -((scrollPos - 920) * 0.25) + 'px)' // parallax (25% scroll rate)
             );
             vm.$vid1.css(
-                'transform', 'translate3d(0, ' + -((scrolled - 920) * 0.25) + 'px, 0)' // parallax (25% scroll rate)
+                'transform', 'translate(0, ' + -((scrollPos - 920) * 0.25) + 'px)' // parallax (25% scroll rate)
             );
         } else {
             vm.$vid0.css(
-                'transform', 'translate3d(0, 0, 0)'
+                'transform', 'translate(0, 0)'
             );
             vm.$vid1.css(
-                'transform', 'translate3d(0, 0, 0)'
+                'transform', 'translate(0, 0)'
             );
         }
     }, 12));
