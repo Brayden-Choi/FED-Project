@@ -184,7 +184,7 @@ h5 {
     background-repeat: repeat;
     background-attachment: fixed;
     background-position: center;
-    background-size: 30rem 30rem;
+    background-size: 29rem 30rem;
     width: 100%;
     height: 100%;
     margin: 10px;
@@ -198,10 +198,8 @@ h5 {
 }
 
 .slide-button:hover {
-    width: 1.8vw;
+    width: 2.1rem;
     opacity: 1;
-    transition-timing-function: ease-in;
-    transition-duration: 0.3s;
 }
 
 /*Zone Gallery*/
@@ -210,7 +208,7 @@ h5 {
     background-repeat: repeat;
     background-attachment: fixed;
     background-position: center;
-    background-size: 15rem 8rem;
+    background-size: 14rem 8rem;
     width: 100%;
     height: 120vh;
     display: inline-block;
@@ -218,6 +216,13 @@ h5 {
     opacity: 1;
     margin: 10px 10px 5%;
 }
+
+/*.zone-container {
+    margin-top: 1em;
+    position: relative;
+    width: 100%;
+    height: auto;
+}*/
 
 .zone-text {
     text-align: center;
@@ -328,6 +333,13 @@ video {
     padding-bottom: 5%;
 }
 
+.table-container {
+    margin: 3rem;
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
 .ticket-table {
     font-family: 'Caveat Brush', cursive;
     text-align: center;
@@ -377,8 +389,7 @@ video {
     background-color: #0D5510;
     color: white;
     font-size: 3rem;
-    /*padding: 6vh;*/
-    padding: 0;
+    padding: 3vh;
 }
 
 .ticket-button {
