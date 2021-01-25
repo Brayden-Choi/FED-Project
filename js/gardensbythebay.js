@@ -200,7 +200,10 @@ class AttractionManager {
             <div class="card-body">
                 <h5 class="card-title">${cardData.name}</h5>
                 <p class="card-text">${cardData.previewText}</p>
-                <button class="btn btn-danger stretched-link attractions-btn" data-target="#attractionsModal" data-toggle="modal" type="button" data-index="${index}">learn more!</button>
+                <button class="btn btn-danger stretched-link attractions-btn" data-target="#attractionsModal" data-toggle="modal" type="button" data-index="${index}">
+                    Learn More
+                    <i class="fa fa-chevron-circle-right"></i>
+                </button>
             </div>
         </div>
         `;
