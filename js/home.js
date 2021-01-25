@@ -1,20 +1,7 @@
-﻿$(document).ready(function () {
-    let sm = new SlideManager("#overviewSlides", "#title-", "#overview-desc", "#overview-button", "#overview-indicators");
-    const filePath = "multimedia/home/overview.json";
-    $.getJSON(filePath).then(function (data) {
-        sm.setData(data);
-        sm.setOverviewTexts();
-        sm.$slide.on('slide.bs.carousel', function (event) {
-            sm.slideChange(event);
-        });
-    }).fail(function () {
-        console.log("Unable to load file: " + filePath);
-    })
-});
-
-class SlideManager {
-    constructor(slideId, titlePrefix, desc, button, indicators) {
+﻿class SlideManager {
+    constructor(slideId, slideImagesId, titlePrefix, desc, button, indicators) {
         this.$slide = $(slideId);
+        this.$slideImages = $(slideImagesId);
         this.titlePrefix = titlePrefix;
         this.$desc = $(desc);
         this.$button = $(button);
@@ -23,9 +10,12 @@ class SlideManager {
         this.currentTitle = 1;
     }
 
-    setData(data) {
+    loadData(data) {
         this.contentData = data;
         console.log("Data set to: ", this.contentData);
+        this.setOverviewTexts();
+        
+        //TODO: Loop through kv pair of data and load slide image + indicator
     }
 
     slideChange(event) {
@@ -75,8 +65,30 @@ class SlideManager {
     getTitle(offset) {
         return $(this.titlePrefix + mod(this.currentTitle + offset, 3));
     }
+
+    buildSlideIndicator(index) {
+        return `<li class="indicator" data-slide-to="${index}" data-target="#overview-slides"></li>`;
+    }
+
+    buildSlideImage(data) {
+        return `
+        <div class="carousel-item active" content="Tourist Attractions">
+            <div class="overview-overlay"></div>
+            <img alt="${data.}" class="d-block w-100 min-vh-100" src="${}">
+        </div>
+        `;
+    }
 }
 
-function mod(n, m) {
-    return ((n % m) + m) % m;
-}
+$(document).ready(function () {
+    let sm = new SlideManager("#overview-slides", "overview-slides-data", "#title-", "#overview-desc", "#overview-button", "#overview-indicators");
+    const filePath = "multimedia/home/overview.json";
+    $.getJSON(filePath).then(function (data) {
+        sm.loadData(data);
+        sm.$slide.on('slide.bs.carousel', function (event) {
+            sm.slideChange(event);
+        });
+    }).fail(function () {
+        console.log("Unable to load file: " + filePath);
+    })
+});

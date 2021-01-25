@@ -1,26 +1,32 @@
 ﻿{
   "Tourist Attractions": {
     "desc": "text",
-    "page": ""
+    "page": "",
+    "imageFile": "sg-skyline.jpg"
   },
   "Gardens by the Bay": {
     "desc": "Gardens by the Bay is a showpiece of horticulture and garden artistry that presents the plant kingdom in a whole new way, entertaining while educating visitors with plants seldom seen in this part of the world, ranging from species in cool, temperate climates to tropical forests and habitats.",
-    "page": "gardensbythebay.html"
+    "page": "gardensbythebay.html",
+    "imageFile": "gardensbythebay.jpg"
   },
   "Singapore Zoo": {
     "desc": "Set in a rainforest environment, the Singapore Zoo offers the opportunity to experience and be inspired by the wonders of nature.",
-    "page": "zoo.html"
+    "page": "zoo.html",
+    "imageFile": "zoo.jpg"
   }, 
   "Changi Jewel": {
     "desc": "Jewel Changi Airport is a nature-themed entertainment and retail complex on the inside of Changi Airport, Singapore, linked to three of its passenger terminals.",
-    "page": "jewel.html"
+    "page": "jewel.html",
+    "imageFile": "jewel.jpg"
   },
   "Sentosa": {
     "desc": "Sentosa is a sunny island in Singapore, home to exciting events, themed attractions, award-winning spas, lush rainforests and golden sandy beaches.",
-    "page": "sentosa.html"
+    "page": "sentosa.html",
+    "imageFile": "sentosa.jpg"
   }, 
   "Art Science Museum": {
     "desc": "ArtScience Museum is an iconic cultural landmark in Singapore. Our mission is to explore where art, science, culture and technology come together. It is here at the intersection of art and science that innovation and new ideas are formed.",
-    "page": "artscience.html"
+    "page": "artscience.html",
+    "imageFile": "artscience.jpg"
   }
 }

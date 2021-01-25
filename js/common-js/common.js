@@ -1,4 +1,9 @@
-﻿// Ensure performance reliabilty
+﻿// Some helper functions
+function mod(n, m) {
+    return ((n % m) + m) % m;
+}
+
+// Ensure performance reliabilty
 const debounce = (func, wait) => {
     let timeout;
 
