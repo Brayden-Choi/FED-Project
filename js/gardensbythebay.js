@@ -525,7 +525,7 @@ $(document).ready(function () {
         console.log("Unable to load file: " + ticketPath);
     })
 
-    // Setup form 
+    // Setup picker 
     // https://github.com/mojoaxel/bootstrap-select-country
     $('.countrypicker').countrypicker();
 

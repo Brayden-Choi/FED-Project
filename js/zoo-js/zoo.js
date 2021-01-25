@@ -47,11 +47,13 @@ var _createClass = function () {
 
 /*js for form*/
 $(document).ready(function () {
-    // Setup AOS animation
-    // https://github.com/michalsnik/aos
+    // picker 
+    $('.countrypicker').countrypicker();
+    
+    // AOS animation
     AOS.init();
     
-    // Setup form
+    // Form submission
     $("#form-submit").click(function (event) {
         event.preventDefault();
         var salutation = document.getElementById("exampleInputSalutation").value;
