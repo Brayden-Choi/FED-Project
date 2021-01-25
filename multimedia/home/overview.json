@@ -1,22 +1,26 @@
 ﻿{
+  "Tourist Attractions": {
+    "desc": "text",
+    "page": ""
+  },
   "Gardens by the Bay": {
-    "desc": "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta.",
+    "desc": "Gardens by the Bay is a showpiece of horticulture and garden artistry that presents the plant kingdom in a whole new way, entertaining while educating visitors with plants seldom seen in this part of the world, ranging from species in cool, temperate climates to tropical forests and habitats.",
     "page": "gardensbythebay.html"
   },
   "Singapore Zoo": {
-    "desc": "gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit",
+    "desc": "Set in a rainforest environment, the Singapore Zoo offers the opportunity to experience and be inspired by the wonders of nature.",
     "page": "zoo.html"
   }, 
   "Changi Jewel": {
-    "desc": "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta.",
+    "desc": "Jewel Changi Airport is a nature-themed entertainment and retail complex on the inside of Changi Airport, Singapore, linked to three of its passenger terminals.",
     "page": "jewel.html"
   },
   "Sentosa": {
-    "desc": "gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit",
+    "desc": "Sentosa is a sunny island in Singapore, home to exciting events, themed attractions, award-winning spas, lush rainforests and golden sandy beaches.",
     "page": "sentosa.html"
   }, 
   "Art Science Museum": {
-    "desc": "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta.",
+    "desc": "ArtScience Museum is an iconic cultural landmark in Singapore. Our mission is to explore where art, science, culture and technology come together. It is here at the intersection of art and science that innovation and new ideas are formed.",
     "page": "artscience.html"
   }
 }
