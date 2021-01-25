@@ -74,7 +74,7 @@
         return `
         <div class="carousel-item active" content="Tourist Attractions">
             <div class="overview-overlay"></div>
-            <img alt="${data.}" class="d-block w-100 min-vh-100" src="${}">
+            <img alt="${data}" class="d-block w-100 min-vh-100" src="${data.imageDir}">
         </div>
         `;
     }
