@@ -220,7 +220,7 @@ $(document).ready(function () {
 
         let offset = $anchor.data("offset");
         if (!offset && offset !== 0) {
-            offset = nm.$nav.outerHeight();
+            offset = nm.$nav.outerHeight() - 2;
         }
 
         console.log(`Doing smooth scrolling wiht offset ${offset}...`)
