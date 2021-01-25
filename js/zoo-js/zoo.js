@@ -54,14 +54,14 @@ $(document).ready(function () {
     AOS.init();
     
     // Form submission
-    $("#form-submit").click(function (event) {
+    $("#contact-form").on('submit', function (event) {
         event.preventDefault();
         var salutation = document.getElementById("exampleInputSalutation").value;
         var lastname = document.getElementById("exampleInputLastName").value;
         document.getElementById("ack").innerHTML = "Thank you, " + salutation + " " + lastname + ". We will get back to you in 3-4 working days!"
     });
 
-    $("#form-reset").click(function () {
+    $("#contact-form").on('reset', function (event) {
         document.getElementById("ack").innerHTML = "";
     });
 })
