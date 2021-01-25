@@ -4,6 +4,10 @@
     src: url("../fonts/fontjek/Fontjek.ttf");
 }
 
+:root {
+    --logo-colour: rgb(223, 27, 83);
+}
+
 /* Global Styles */
 body {
     background: black;
@@ -44,6 +48,7 @@ body {
     margin-top: 32px;
     text-align: center;
     font-size: calc(4.6vh + 4.2vw + 24px);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
 }
 
 .header-black {
@@ -57,7 +62,7 @@ body {
 
 .header-alter-letter:hover {
     text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
-    color: saddlebrown;
+    color: var(--logo-colour);
     z-index: 4;
 }
 
@@ -123,7 +128,7 @@ body {
 
 .title-alter-letter:hover {
     text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
-    color: limegreen;
+    color: var(--logo-colour);
     z-index: 4;
 }
 
@@ -290,6 +295,10 @@ body {
     border-radius: 5px;
 }
 
+.attractions-btn {
+    background-color: var(--logo-colour);
+}
+
 /* Attractions Background Styles */
 .attractions-background {
     background-image: url("../multimedia/gardensbythebay/attraction-cards/default.jpg");
@@ -351,6 +360,8 @@ body {
 /* Ticket Form Styles */
 .tickets-background {
     background: url("../multimedia/gardensbythebay/form-background.jpg");
+    background-size: cover;
+    background-position: center;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     transition: all 0.3s ease-in-out;

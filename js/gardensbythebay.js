@@ -200,7 +200,10 @@ class AttractionManager {
             <div class="card-body">
                 <h5 class="card-title">${cardData.name}</h5>
                 <p class="card-text">${cardData.previewText}</p>
-                <button class="btn btn-primary stretched-link" data-target="#attractionsModal" data-toggle="modal" type="button" data-index="${index}">learn more!</button>
+                <button class="btn btn-danger stretched-link attractions-btn" data-target="#attractionsModal" data-toggle="modal" type="button" data-index="${index}">
+                    Learn More
+                    <i class="fa fa-chevron-circle-right"></i>
+                </button>
             </div>
         </div>
         `;
@@ -476,7 +479,7 @@ $(document).ready(function () {
         vm.$arrow.css({
             'opacity': 1 - scrollPos / 600 // fade out at 400px from top
         });
-        
+
         if (scrollPos >= 920) {
             vm.$vid0.css(
                 'transform', 'translate(0, ' + -((scrollPos - 920) * 0.25) + 'px)' // parallax (25% scroll rate)

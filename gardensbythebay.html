@@ -125,10 +125,10 @@
     <section class="section tickets-background" data-aos="fade" id="tickets">
         <div class="row m-0">
             <div class="col-12">
-                <h1 class="header-text header-black fancy-font">Buy Tickets</h1>
+                <h1 class="header-text fancy-font">Buy Tickets</h1>
             </div>
         </div>
-        <form class="ticket-form mx-xl-auto mt-4 ml-3 mr-3">
+        <form class="ticket-form mx-xl-auto mt-4 ml-3 mr-3" data-aos="fade-up">
             <div class="form-group">
                 <label for="inputName">Full Name</label>
                 <input class="form-control" id="inputName" placeholder="Name" required type="text">
@@ -138,7 +138,6 @@
                 <label for="inputEmail">Email</label>
                 <input aria-describedby="emailHelp" class="form-control" id="inputEmail" placeholder="Email" type="email" required>
                 <small class="form-text text-muted" id="emailHelp">
-                    <i class="fa fa-exclamation"></i> 
                     Please input a valid email or you may not receive your tickets.
                 </small>
             </div>
@@ -159,7 +158,7 @@
                 <label>Tickets</label>
 
                 <div>
-                    <button aria-expanded="false" aria-haspopup="true" class="btn btn-primary"
+                    <button aria-expanded="false" aria-haspopup="true" class="btn btn-danger attractions-btn"
                             data-toggle="dropdown" id="dropdownTicketOptions" type="button">
                         <i class="fa fa-plus-circle"></i> Add a ticket
                     </button>
@@ -218,8 +217,13 @@
                 </div>
             </div>
 
-            <button class="btn btn-primary" id="tickets-submit" type="submit">Submit</button>
-            <button class="btn btn-primary" id="tickets-reset" type="reset">Reset</button>
+            <button class="btn btn-danger attractions-btn" id="tickets-submit" type="submit">
+                Submit
+                <i class="fa fa-send"></i>
+            </button>
+            <button class="btn btn-danger attractions-btn" id="tickets-reset" type="reset">
+                Reset
+            </button>
         </form>
     </section>
 
