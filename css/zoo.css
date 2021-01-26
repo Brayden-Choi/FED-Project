@@ -572,16 +572,11 @@ dd{
     .show-text h3 {
         font-size: 2.8rem;
     }
-    .table {
-        margin: 2rem;
-    }
     .ticket-table, .hours-table {
         font-size: 1.8rem;
-        padding:0;
     }
     .ticket-table .tablehead, .hours-table .tablehead  {
         font-size: 2.5rem;
-        padding:0;
     }
     .contact-form {
         font-size: 1.2rem;
