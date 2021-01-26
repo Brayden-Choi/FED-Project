@@ -1,15 +1,5 @@
-.cover {
+.header {
     padding-top: 80px;
-}
-
-h1 {
-    font-size: 70px;
-}
-
-#museum {
-    margin-top: 2px;
-}
-
-h2 {
-    font-size: 50px;
+    max-width: 100%;
+    height: auto;
 }
