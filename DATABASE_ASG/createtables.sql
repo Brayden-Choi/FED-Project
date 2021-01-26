@@ -379,10 +379,11 @@ INSERT INTO Business VALUES ('B010', 'NeinNeinNein Pte Ltd')
 
 
 -- Zone
-INSERT INTO Zone VALUES ('Z001', 'North')  
-INSERT INTO Zone VALUES ('Z002', 'East')  
-INSERT INTO Zone VALUES ('Z003', 'West') 
-INSERT INTO Zone VALUES ('Z004', 'Central') 
+INSERT INTO Zone VALUES ('Z001', 'North')
+INSERT INTO Zone VALUES ('Z002', 'East')
+INSERT INTO Zone VALUES ('Z003', 'South') 
+INSERT INTO Zone VALUES ('Z004', 'West') 
+INSERT INTO Zone VALUES ('Z005', 'Central') 
 
 -- Outlet
 INSERT INTO Outlet VALUES ('O001', 'Ahmad Makan', '18 Tampines Drive, Singapore 374018', '08:00:00', '21:00:00', '09:00:00', '21:00:00', 'B001', 'Z002')  
@@ -472,30 +473,20 @@ INSERT INTO OutletPromotions VALUES ('O005', 'P006', 100)
 -- Menu
 INSERT INTO Menu VALUES ('O001', 1, 'Lunch')
 INSERT INTO Menu VALUES ('O001', 2, 'Dinner')
-
 INSERT INTO Menu VALUES ('O002', 1, 'Breakfast')
 INSERT INTO Menu VALUES ('O002', 2, 'Lunch')
-
 INSERT INTO Menu VALUES ('O003', 1, 'Lunch')
 INSERT INTO Menu VALUES ('O003', 2, 'Dinner')
-
 INSERT INTO Menu VALUES ('O004', 1, 'All-day Breakfast')
 INSERT INTO Menu VALUES ('O004', 2, 'Dessert')
 INSERT INTO Menu VALUES ('O004', 3, 'Student Deals')
-
 INSERT INTO Menu VALUES ('O005', 1, 'All-day Menu')
-
 INSERT INTO Menu VALUES ('O006', 1, 'Lunch')
 INSERT INTO Menu VALUES ('O006', 2, 'Dinner')
-
 INSERT INTO Menu VALUES ('O006', 3, 'Supper')
-
 INSERT INTO Menu VALUES ('O007', 1, 'All-day Menu')
-
 INSERT INTO Menu VALUES ('O008', 1, 'Lunch')
-
 INSERT INTO Menu VALUES ('O009', 1, 'All-day Menu')
-
 INSERT INTO Menu VALUES ('O010', 1, 'Appetizers')
 INSERT INTO Menu VALUES ('O010', 2, 'Lunch')
 
