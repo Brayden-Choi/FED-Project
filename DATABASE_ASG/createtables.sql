@@ -379,19 +379,10 @@ INSERT INTO Business VALUES ('B010', 'NeinNeinNein Pte Ltd')
 
 
 -- Zone
-<<<<<<< HEAD
 INSERT INTO Zone VALUES ('Z001', 'North')  
 INSERT INTO Zone VALUES ('Z002', 'East')  
 INSERT INTO Zone VALUES ('Z003', 'West') 
 INSERT INTO Zone VALUES ('Z004', 'Central') 
-=======
-INSERT INTO Zone VALUES ('Z001', 'North') 
-INSERT INTO Zone VALUES ('Z002', 'South') 
-INSERT INTO Zone VALUES ('Z003', 'East') 
-INSERT INTO Zone VALUES ('Z004', 'West')
-INSERT INTO Zone VALUES ('Z005', 'Central')
-
->>>>>>> 0acf8695a350855b7864adfb13a6b4a8c00225b6
 
 -- Outlet
 INSERT INTO Outlet VALUES ('O001', 'Ahmad Makan', '18 Tampines Drive, Singapore 374018', '08:00:00', '21:00:00', '09:00:00', '21:00:00', 'B001', 'Z002')  
