@@ -3,6 +3,16 @@ html {
     height: 100%;
 }
 
+.aos-init {
+    visibility: hidden;
+    max-width: 0;
+}
+
+.aos-animate {
+    visibility: visible;
+    max-width: revert;
+}
+
 .wrapper {
     margin-top: 50vh;
     margin-right: 5vw;
