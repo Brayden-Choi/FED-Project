@@ -6,11 +6,15 @@ html {
 .aos-init {
     visibility: hidden;
     max-width: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .aos-animate {
     visibility: visible;
     max-width: revert;
+    margin: revert;
+    padding: revert;
 }
 
 .wrapper {
@@ -307,7 +311,6 @@ video {
     background-color: rgba(0,0,0,0.6);
     transition-timing-function: ease-out;
     transition-duration: 0.5s;
-    margin-left: -10%;
 }
 
 .hours-table {
@@ -320,7 +323,6 @@ video {
     background-color: rgba(0,0,0,0.6);
     transition-timing-function: ease-out;
     transition-duration: 0.5s;
-    margin-left: -10%;
 }
 
 .ticket-table:hover, .hours-table:hover {
@@ -329,12 +331,12 @@ video {
 
 .ticket-table tr,.ticket-table th,.ticket-table td {
     border: solid black;
-    padding: 5vh;
+    padding: 3rem;
 }
 
 .hours-table tr,.hours-table th,.hours-table td {
     border: solid black;
-    padding: 5.4vh;
+    padding: 3rem;
 }
 
 .ticket-table .tablehead {
@@ -572,16 +574,21 @@ dd{
     .show-text h3 {
         font-size: 2.8rem;
     }
-    .table {
-        margin: 2rem;
-    }
     .ticket-table, .hours-table {
         font-size: 1.8rem;
-        padding:0;
+        width: 50vw;
     }
+
+    .hours-table tr, .hours-table th, .hours-table td {
+        padding: 1rem;
+    }
+
+    .ticket-table tr, .ticket-table th, .ticket-table td {
+        padding: 1rem;
+    }
+    
     .ticket-table .tablehead, .hours-table .tablehead  {
         font-size: 2.5rem;
-        padding:0;
     }
     .contact-form {
         font-size: 1.2rem;

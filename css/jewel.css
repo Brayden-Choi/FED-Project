@@ -559,54 +559,63 @@ img:nth-child(4) {
 .f-bg {
     background-color: #baac79;
     height: 120vh;
+    position: relative;
 }
 
+<<<<<<< HEAD
 @import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 #contact {
     width: 500px;
     margin: 0 auto;
+=======
+.form-wrapper {
+    position: absolute;
+    width: 100%;
+}
+
+#contact {
+    margin: 2em auto;
+>>>>>>> d607f68603cadf2a7ef87607dea40a1f00d50906
     background: black;
-    position: relative;
-    width: 90%;
+    width: 90vh;
     border-radius: 10px;
 }
 
-    #contact::after {
-        content: "";
-        display: block;
-        height: 30px;
-        width: 90%;
-        left: 5%;
-        bottom: 0;
-        position: absolute;
-        -webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.19);
-        box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.19);
-        border-radius: 100%;
-        z-index: -1;
-    }
+#contact h1 {
+    background: white;
+    text-align: center;
+    font-family: Oswald, sans-serif;
+    font-size: 1.75em;
+    padding: 0.6em 0 0.6em 0.4em;
+    color: black;
+    text-shadow: 0 0.06em 0 #424242;
+}
 
-    #contact article {
-        padding: 1em;
-    }
+#contact::after {
+    content: "";
+    display: block;
+    height: 30px;
+    width: 90%;
+    left: 5%;
+    bottom: 0;
+    -webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 100%;
+    z-index: -1;
+}
 
-    #contact h1 {
-        background: white;
-        text-align: center;
-        font-family: Oswald,sans-serif;
-        font-size: 1.75em;
-        padding: 0.6em 0 0.6em 0.4em;
-        color: black;
-        text-shadow: 0 0.06em 0 #424242;
-        position: relative;
-    }
 
-    #contact p {
-        font-family: Oswald,sans-serif;
-        color: white;
-        text-align: center;
-    }
+#contact article {
+    padding: 1em;
+}
+
+#contact p {
+    font-family: Oswald,sans-serif;
+    color: white;
+    text-align: center;
+}
 
 .input_wrapper {
     position: relative;
@@ -770,10 +779,11 @@ reset_wrapper {
     }
 }
 
-    .sm-links{
+.sm-links{
+    position: absolute;
     margin-left: 37.5%;
-    margin-top: 5%;
 }
+
 .sm-links a {
     width: 100px;
     height: 100px;
