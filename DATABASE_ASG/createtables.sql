@@ -21,14 +21,17 @@ bizName   varchar(256)   NOT NULL,
 CONSTRAINT PK_Business PRIMARY KEY (bizID)  
 )  
 
+
 CREATE TABLE Zone  
 (  
 zoneID     char(5)       NOT NULL,  
 zoneName   varchar(32)   NOT NULL,  
 
+
 CONSTRAINT PK_Zone PRIMARY KEY (zoneID)  
 )  
  
+
 CREATE TABLE Outlet  
 (  
 outletID           char(5)       NOT NULL,  
@@ -45,6 +48,7 @@ CONSTRAINT PK_Outlet PRIMARY KEY (outletID),
 CONSTRAINT FK_Business_bizID FOREIGN KEY (bizID) REFERENCES Business(bizID),  
 CONSTRAINT FK_Zone_zoneID FOREIGN KEY (zoneID) REFERENCES Zone(zoneID),  
 )  
+
  
 CREATE TABLE OutletContact  
 (  
@@ -55,6 +59,7 @@ CONSTRAINT PK_OutletContact PRIMARY KEY (outletID, contactNo),
 CONSTRAINT FK_OutletContact_outletID FOREIGN KEY (outletID) REFERENCES Outlet(outletID)  
 )  
  
+
 CREATE TABLE Cuisine  
 (  
 cuisineID     char(5)        NOT NULL,  
@@ -63,6 +68,7 @@ cuisineName   varchar(128)   NOT NULL,
 CONSTRAINT PK_Cuisine PRIMARY KEY (cuisineID)  
 )  
  
+
 CREATE TABLE OutletCuisines   
 (  
 outletID     char(5)     NOT NULL,  
@@ -73,6 +79,7 @@ CONSTRAINT FK_Outlet_outletID FOREIGN KEY (outletID) REFERENCES Outlet(outletID)
 CONSTRAINT FK_Cuisine_cuisineID FOREIGN KEY (cuisineID) REFERENCES Cuisine(cuisineID)  
 )
  
+
 CREATE TABLE Promotion  
 (  
 promoID char(5)         NOT NULL,  
@@ -85,6 +92,7 @@ CONSTRAINT PK_Promotion PRIMARY KEY (promoID),
 CONSTRAINT CHK_isFreeDelivery CHECK (isFreeDelivery IN ('Y','N'))
 )  
  
+
 CREATE TABLE OutletPromotions   
 (  
 outletID char(5) NOT NULL,  
@@ -96,6 +104,7 @@ CONSTRAINT FK_OutletPromotions_outletID FOREIGN KEY (outletID) REFERENCES Outlet
 CONSTRAINT FK_OutletPromotions_promoID FOREIGN KEY (promoID) REFERENCES Promotion(promoID)  
 )  
 
+
 CREATE TABLE Menu
 (  
 outletID   char(5)       NOT NULL,  
@@ -106,6 +115,7 @@ CONSTRAINT PK_Menu PRIMARY KEY NONCLUSTERED (outletID, menuNo),
 CONSTRAINT FK_Menu_outletID FOREIGN KEY (outletID) REFERENCES Outlet(outletID)  
 )  
  
+
 CREATE TABLE Item   
 (  
 itemID     char(5)        NOT NULL,  
@@ -115,6 +125,7 @@ itemPrice  float          NULL,
 
 CONSTRAINT PK_Item PRIMARY KEY (itemID)  
 )  
+
 
 CREATE TABLE MenuItem   
 (  
@@ -127,6 +138,7 @@ CONSTRAINT FK_MenuItem_outletID_menuNo FOREIGN KEY (outletID, menuNo) REFERENCES
 CONSTRAINT FK_MenuItem_itemID FOREIGN KEY (itemID) REFERENCES Item(itemID)  
 )  
 
+
 CREATE TABLE Award  
 (  
 awardID     char(5)       NOT NULL,  
@@ -135,6 +147,7 @@ awardType   varchar(100)  NULL,
 
 CONSTRAINT PK_Award PRIMARY KEY (awardID)
 )  
+
 
 CREATE TABLE AwardsWon
 (  
@@ -146,6 +159,7 @@ CONSTRAINT PK_AwardsWon PRIMARY KEY NONCLUSTERED (winDate, awardID, riderID),
 CONSTRAINT FK_AwardsWon_awardID FOREIGN KEY (awardID) REFERENCES Award(awardID)
 )  
  
+
 Create TABLE Team  
 (  
 teamID     char(5)       NOT NULL,  
@@ -157,6 +171,7 @@ CONSTRAINT PK_Team PRIMARY KEY (teamID),
 CONSTRAINT FK_Team_awardID FOREIGN KEY (awardID) REFERENCES Award(awardID)
 )  
  
+
 CREATE TABLE Rider   
 (  
 riderID        char(5)         NOT NULL,  
@@ -231,8 +246,9 @@ CREATE TABLE CustOrder
 (  
 orderID        char(5)     NOT NULL,  
 orderStatus    char(1)     NULL,  
+orderDateTime  dateTime    NULL,  
 custID         char(5)     NOT NULL,  
-voucherID      char(5)     NOT NULL,  
+voucherID      char(5)     NULL,  
 outletID       char(5)     NOT NULL,  
 
 CONSTRAINT PK_CustOrder PRIMARY KEY (OrderID),  
@@ -340,10 +356,30 @@ INSERT INTO Zone VALUES ('Z003', 'East')
 INSERT INTO Zone VALUES ('Z004', 'West')
 
 
--- Outlet NOT DONE
+-- Outlet
+INSERT INTO Outlet VALUES ('O001', 'Ahmad Makan', '18 Tampines Drive, Singapore 374018', '08:00:00', '21:00:00', '09:00:00', '21:00:00', 'B001', 'Z002') 
+INSERT INTO Outlet VALUES ('O002', 'Just Eat La', '377 Jurong Avenue, Singapore 536377', '12:00:00', '20:00:00', '12:00:00', '20:00:00', 'B002', 'Z003') 
+INSERT INTO Outlet VALUES ('O003', 'Mark''s Place', '24 Bishan Street, Singapore 549604', '08:00:00', '21:00:00', '09:00:00', '20:00:00', 'B003', 'Z004')
+INSERT INTO Outlet VALUES ('O004', 'Vietry Good', '188 Pasir Ris Road, Singapore 271188', '12:00:00', '22:00:00', '12:00:00', '21:00:00', 'B004', 'Z002') 
+INSERT INTO Outlet VALUES ('O005', 'La Chancla', '24 Ang Mo Kio Avenue, Singapore 549604', '07:00:00', '21:00:00', '07:00:00', '20:00:00', 'B005', 'Z004') 
+INSERT INTO Outlet VALUES ('O006', 'Muthu Foods', '768 Woodlands Plaza, Singapore 720768', '10:00:00', '21:00:00', '10:00:00', '19:30:00', 'B006', 'Z001') 
+INSERT INTO Outlet VALUES ('O007', 'Sooshi', '133 Choa Chu Kang Road, Singapore 059413', '11:00:00', '20:30:00', '12:00:00', '19:00:00', 'B007', 'Z003')
+INSERT INTO Outlet VALUES ('O008', 'Jerk Thai', '377 Chinese Garden, Singapore 536377', '12:00:00', '20:00:00', '12:00:00', '20:00:00', 'B008', 'Z003')
+INSERT INTO Outlet VALUES ('O009', 'Oppa Chicken', '930 Yishun Ave 2, Singapore 769098', '10:30:00', '23:00:00', '10:30:00', '21:00:00', 'B005', 'Z001')
+INSERT INTO Outlet VALUES ('O010', 'Din Tai Fong', '80 Marine Parade Rd, Singapore 449269', '10:00:00', '22:00:00', '11:00:00', '19:00:00', 'B002', 'Z004')
 
 
--- OutletContact NOT DONE
+-- OutletContact
+INSERT INTO OutletContact VALUES ('O001', '85366336') 
+INSERT INTO OutletContact VALUES ('O002', '94356431') 
+INSERT INTO OutletContact VALUES ('O003', '81431244') 
+INSERT INTO OutletContact VALUES ('O004', '94523223') 
+INSERT INTO OutletContact VALUES ('O005', '92542542') 
+INSERT INTO OutletContact VALUES ('O006', '91444634') 
+INSERT INTO OutletContact VALUES ('O007', '81475344') 
+INSERT INTO OutletContact VALUES ('O008', '87645342') 
+INSERT INTO OutletContact VALUES ('O009', '97876235') 
+INSERT INTO OutletContact VALUES ('O010', '82345647')
 
 
 -- Cuisine
@@ -354,12 +390,22 @@ INSERT INTO Cuisine VALUES ('CS004', 'Western')
 INSERT INTO Cuisine VALUES ('CS005', 'Korean') 
 INSERT INTO Cuisine VALUES ('CS006', 'Japanese') 
 INSERT INTO Cuisine VALUES ('CS007', 'Mexican') 
-INSERT INTO Cuisine VALUES ('CS08', 'Vietnamese') 
-INSERT INTO Cuisine VALUES ('CS09', 'Singaporean') 
-INSERT INTO Cuisine VALUES ('CS10', 'Indian')
+INSERT INTO Cuisine VALUES ('CS008', 'Vietnamese') 
+INSERT INTO Cuisine VALUES ('CS009', 'Singaporean') 
+INSERT INTO Cuisine VALUES ('CS010', 'Indian')
 
 
--- OutletCuisines NOT DONE
+-- OutletCuisines
+INSERT INTO OutletCuisines VALUES ('O001', 'CS003')
+INSERT INTO OutletCuisines VALUES ('O002', 'CS009')
+INSERT INTO OutletCuisines VALUES ('O003', 'CS004')
+INSERT INTO OutletCuisines VALUES ('O004', 'CS008')
+INSERT INTO OutletCuisines VALUES ('O005', 'CS007')
+INSERT INTO OutletCuisines VALUES ('O006', 'CS010')
+INSERT INTO OutletCuisines VALUES ('O007', 'CS006')
+INSERT INTO OutletCuisines VALUES ('O008', 'CS002')
+INSERT INTO OutletCuisines VALUES ('O009', 'CS005')
+INSERT INTO OutletCuisines VALUES ('O010', 'CS001')
 
 
 -- Promotion
@@ -375,10 +421,48 @@ INSERT INTO Promotion VALUES ('P009', '11/11 Sale', 'Celebrate all your discount
 INSERT INTO Promotion VALUES ('P010', 'Christmas Promotion ', 'Merry Christmas! Applicable with purchases totalling over $200', 'N', 25)
 
 
--- OutletPromotions NOT DONE
+-- OutletPromotions
+INSERT INTO OutletPromotions VALUES ('O003', 'P010', 200)
+INSERT INTO OutletPromotions VALUES ('O007', 'P002', 150)
+INSERT INTO OutletPromotions VALUES ('O009', 'P004', 80)
+INSERT INTO OutletPromotions VALUES ('O001', 'P007', 260)
+INSERT INTO OutletPromotions VALUES ('O006', 'P003', 300)
+INSERT INTO OutletPromotions VALUES ('O010', 'P005', 50)
+INSERT INTO OutletPromotions VALUES ('O008', 'P008', 120)
+INSERT INTO OutletPromotions VALUES ('O002', 'P001', 310)
+INSERT INTO OutletPromotions VALUES ('O004', 'P009', 240)
+INSERT INTO OutletPromotions VALUES ('O005', 'P006', 100)
 
 
--- Menu NOT DONE
+-- Menu
+INSERT INTO Menu VALUES ('O001', 1, 'Lunch')
+INSERT INTO Menu VALUES ('O001', 2, 'Dinner')
+
+INSERT INTO Menu VALUES ('O002', 1, 'Breakfast')
+INSERT INTO Menu VALUES ('O002', 2, 'Lunch')
+
+INSERT INTO Menu VALUES ('O003', 1, 'Lunch')
+INSERT INTO Menu VALUES ('O003', 2, 'Dinner')
+
+INSERT INTO Menu VALUES ('O004', 1, 'All-day Breakfast')
+INSERT INTO Menu VALUES ('O004', 2, 'Dessert')
+INSERT INTO Menu VALUES ('O004', 3, 'Student Deals')
+
+INSERT INTO Menu VALUES ('O005', 1, 'All-day Menu')
+
+INSERT INTO Menu VALUES ('O006', 1, 'Lunch')
+INSERT INTO Menu VALUES ('O006', 2, 'Dinner')
+
+INSERT INTO Menu VALUES ('O006', 3, 'Supper')
+
+INSERT INTO Menu VALUES ('O007', 1, 'All-day Menu')
+
+INSERT INTO Menu VALUES ('O008', 1, 'Lunch')
+
+INSERT INTO Menu VALUES ('O009', 1, 'All-day Menu')
+
+INSERT INTO Menu VALUES ('O010', 1, 'Appetizers')
+INSERT INTO Menu VALUES ('O010', 2, 'Lunch')
 
 
 -- Item
@@ -422,10 +506,45 @@ INSERT INTO Item VALUES ('I037', 'Thosai', 'Thin, crispy pancake made from a fer
 INSERT INTO Item VALUES ('I038', 'Paneer Curry', 'Creamy Indian cheese cubes cooked in spicy curry', '5.50')
 
 
--- MenuItem NOT DONE
-
-
--- Rider NOT DONE
+-- MenuItem
+INSERT INTO MenuItem VALUES ('O001', 1, 'I008')
+INSERT INTO MenuItem VALUES ('O001', 1, 'I009')
+INSERT INTO MenuItem VALUES ('O001', 2, 'I010')
+INSERT INTO MenuItem VALUES ('O001', 2, 'I011')
+INSERT INTO MenuItem VALUES ('O001', 2, 'I012')
+INSERT INTO MenuItem VALUES ('O002', 1, 'I031')
+INSERT INTO MenuItem VALUES ('O002', 1, 'I032')
+INSERT INTO MenuItem VALUES ('O002', 2, 'I033')
+INSERT INTO MenuItem VALUES ('O002', 2, 'I034')
+INSERT INTO MenuItem VALUES ('O003', 1, 'I015')
+INSERT INTO MenuItem VALUES ('O003', 1, 'I016')
+INSERT INTO MenuItem VALUES ('O003', 1, 'I017')
+INSERT INTO MenuItem VALUES ('O003', 1, 'I018')
+INSERT INTO MenuItem VALUES ('O003', 2, 'I019')
+INSERT INTO MenuItem VALUES ('O003', 2, 'I020')
+INSERT INTO MenuItem VALUES ('O003', 2, 'I013')
+INSERT INTO MenuItem VALUES ('O003', 2, 'I014')
+INSERT INTO MenuItem VALUES ('O004', 1, 'I026')
+INSERT INTO MenuItem VALUES ('O004', 1, 'I027')
+INSERT INTO MenuItem VALUES ('O004', 2, 'I028')
+INSERT INTO MenuItem VALUES ('O004', 2, 'I029')
+INSERT INTO MenuItem VALUES ('O004', 2, 'I030')
+INSERT INTO MenuItem VALUES ('O005', 1, 'I024')
+INSERT INTO MenuItem VALUES ('O005', 1, 'I025')
+INSERT INTO MenuItem VALUES ('O006', 2, 'I035')
+INSERT INTO MenuItem VALUES ('O006', 2, 'I036')
+INSERT INTO MenuItem VALUES ('O006', 3, 'I037')
+INSERT INTO MenuItem VALUES ('O006', 3, 'I038')
+INSERT INTO MenuItem VALUES ('O007', 1, 'I022')
+INSERT INTO MenuItem VALUES ('O007', 1, 'I023')
+INSERT INTO MenuItem VALUES ('O008', 1, 'I007')
+INSERT INTO MenuItem VALUES ('O009', 1, 'I021')
+INSERT INTO MenuItem VALUES ('O010', 1, 'I001')
+INSERT INTO MenuItem VALUES ('O010', 1, 'I002')
+INSERT INTO MenuItem VALUES ('O010', 2, 'I003')
+INSERT INTO MenuItem VALUES ('O010', 2, 'I004')
+INSERT INTO MenuItem VALUES ('O010', 2, 'I005')
+INSERT INTO MenuItem VALUES ('O010', 2, 'I006')
 
 
 -- Award
@@ -441,20 +560,44 @@ INSERT INTO Award VALUES ('A009', 'Rider of the year (Junior)', 'Individual')
 INSERT INTO Award VALUES ('A010', 'Rider of the year (Senior)', 'Individual')
 
 
--- AwardsWon NOT DONE
-
-
 -- Team
 INSERT INTO Team VALUES ('T001', 'SkateRider', NULL, NULL)
 INSERT INTO Team VALUES ('T002', 'Sleepers', NULL, NULL)
 INSERT INTO Team VALUES ('T003', 'Ridle', NULL, NULL)
 INSERT INTO Team VALUES ('T004', 'Cyclistic', NULL, NULL)
-INSERT INTO Team VALUES ('T005', ' Tortoise ', 'A006', NULL)
+INSERT INTO Team VALUES ('T005', ' Tortoise', NULL, NULL)
 INSERT INTO Team VALUES ('T006', 'Wavel', NULL, NULL)
 INSERT INTO Team VALUES ('T007', 'Speed', NULL, NULL)
 INSERT INTO Team VALUES ('T008', 'Roller', NULL, NULL)
-INSERT INTO Team VALUES ('T009', 'UltityBike', 'A008', NULL)
+INSERT INTO Team VALUES ('T009', 'UltityBike', NULL, NULL)
 INSERT INTO Team VALUES ('T010', 'CrewWay', NULL, NULL)
+
+
+-- Rider
+INSERT INTO Rider VALUES ('R001', 'S3123642J', 'Samuel Low', '86543143', 'Fernville Road #14-01 353448', '02/05/1976', 'Bicycle', 'T001')  
+INSERT INTO Rider VALUES ('R002', 'S7676723T', 'Darron Mann', '86755433', 'Nashville Road #17-30 765345', '07/23/1996', 'Motocycle', 'T001') 
+INSERT INTO Rider VALUES ('R003', 'S8745234U', 'Zachary Chan', '91039124', 'Ring Road #10-01 353448', '11/28/1998', 'Car', 'T001') 
+INSERT INTO Rider VALUES ('R004', 'S0734980A', 'Robert Teo', '90589341', ' Road #14-01 353448', '07/12/1976', 'E-Scooter', 'T002') 
+INSERT INTO Rider VALUES ('R005', 'S5421754Y', 'James Chia', '81463981', 'Tilda Street #20-12 353448', '02/15/1989', 'E-Scooter', 'T003') 
+INSERT INTO Rider VALUES ('R006', 'S0978763V', 'Rachel Liau', '99089046', 'Bukit Batok Street 21 #04-04 624543', '01/12/1967', 'E-Scooter', 'T004') 
+INSERT INTO Rider VALUES ('R007', 'S1047343D', 'Darren Tok', '85642134', 'West Coast Road Blk 930#15-32 786534', '09/19/1978', 'Car', 'T005')
+INSERT INTO Rider VALUES ('R008', 'S9074893H', 'Sam Guy', '94359687', 'HoolaRow Road #14-01 353448', '06/30/1997', 'Motocycle', 'T005') 
+INSERT INTO Rider VALUES ('R009', 'S7609353K', 'Thomas Trent', '90308232', 'YuoTze Road Blk 54 #17-06 876465', '03/21/1986', 'Bicycle',  'T005') 
+INSERT INTO Rider VALUES ('R010', 'S8743099C', 'Dan Toh', '89897323', 'Mollow Street 57', '06/08/1988', 'Foot', 'T005')
+
+
+-- AwardsWon
+INSERT INTO AwardsWon VALUES ('A001', 'R003', '12/29/2018')
+INSERT INTO AwardsWon VALUES ('A001', 'R008', '12/28/2019')
+INSERT INTO AwardsWon VALUES ('A001', 'R008', '12/29/2020')
+INSERT INTO AwardsWon VALUES ('A003', 'R004', '12/29/2018')
+INSERT INTO AwardsWon VALUES ('A003', 'R002', '12/28/2019')
+INSERT INTO AwardsWon VALUES ('A003', 'R010', '12/29/2020')
+INSERT INTO AwardsWon VALUES ('A005', 'R006', '12/29/2020')
+INSERT INTO AwardsWon VALUES ('A007', 'R007', '12/29/2020')
+INSERT INTO AwardsWon VALUES ('A009', 'R002', '12/28/2019')
+INSERT INTO AwardsWon VALUES ('A009', 'R009', '12/29/2020')
+INSERT INTO AwardsWon VALUES ('A010', 'R001', '12/28/2019')
 
 
 -- Equipment
@@ -508,6 +651,16 @@ INSERT INTO Equipment VALUES ('ST043', 'Teleporter', '10', 'SE004')
 
 
 -- EquipmentPurchase NOT DONE
+INSERT INTO EquipmentPurchase VALUES ('R001', 'E001', '04/21/2018', 2)
+INSERT INTO EquipmentPurchase VALUES ('R001', 'E017', '04/21/2018', 1)
+INSERT INTO EquipmentPurchase VALUES ('R009', 'E011', '06/04/2018', 1)
+INSERT INTO EquipmentPurchase VALUES ('R002', 'E001', '07/28/2018', 3)
+INSERT INTO EquipmentPurchase VALUES ('R004', 'E012', '08/11/2018', 1)
+INSERT INTO EquipmentPurchase VALUES ('R008', 'E005', '01/12/2018', 1)
+INSERT INTO EquipmentPurchase VALUES ('R010', 'E013', '02/23/2019', 1)
+INSERT INTO EquipmentPurchase VALUES ('R001', 'E017', '03/30/2019', 1)
+INSERT INTO EquipmentPurchase VALUES ('R003', 'E015', '08/25/2019', 1)
+INSERT INTO EquipmentPurchase VALUES ('R002', 'E001', '10/08/2019', 1)
 
 
 -- Customer
@@ -542,10 +695,30 @@ INSERT INTO Voucher VALUES ('V009', 'N', ' Free chicken rice worth $3.80', '2021
 INSERT INTO Voucher VALUES ('V010', 'R', 'Free lontong worth $4.50', '20210101 00:00:00 AM', '20210630 23:59:59 PM', NULL, '4.50', 'C002')
 INSERT INTO Voucher VALUES ('V011', 'R', '$5 off delivery fees', '20210101 00:00:00 AM', '20210630 23:59:59 PM', NULL, '5.00', 'C001')
 INSERT INTO Voucher VALUES ('V012', 'R', '$5 off delivery fees', '20210101 00:00:00 AM', '20210630 23:59:59 PM', NULL, '5.00', 'C006')
-INSERT INTO Voucher VALUES ('V013', 'R', '$5 off delivery fees', '20210101 00:00:00 AM', '20210630 23:59:59 PM', NULL, '5.00', 'C005')
+INSERT INTO Voucher VALUES ('V013', 'R', '$5 off delivery fees', '20210101 00:00:00 AM', '20210630 23:59:59', NULL, '5.00', 'C005')
 
 
 -- CustOrder NOT DONE
+INSERT INTO CustOrder VALUES ('DE001', 'D', '20201204 18:25:32 PM', 'C001', 'V001', 'O010')
+INSERT INTO CustOrder VALUES ('DE002', 'N', '20200823 13:12:45 PM', 'C007', 'V012', 'O002')
+INSERT INTO CustOrder VALUES ('PU003', 'D', '20201107 10:01:05 AM', 'C010', 'V008', 'O004')
+INSERT INTO CustOrder VALUES ('DE004', 'D', '20201217 18:29:23 PM', 'C001', 'V013', 'O003')
+INSERT INTO CustOrder VALUES ('PU005', 'N', '20200715 12:35:12 PM', 'C008', NULL, 'O007')
+INSERT INTO CustOrder VALUES ('DE006', 'D', '20201111 22:24:01 PM', 'C001', 'V003', 'O003')
+INSERT INTO CustOrder VALUES ('PU007', 'N', '20201224 13:12:45 PM', 'C009', NULL, 'O006')
+INSERT INTO CustOrder VALUES ('PU008', 'D', '20210201 11:55:23 AM', 'C008', NULL, 'O009')
+INSERT INTO CustOrder VALUES ('DE009', 'D', '20200513 16:53:54 PM', 'C002', 'V010', 'O001')
+INSERT INTO CustOrder VALUES ('PU010', 'D', '20201010 20:33:32 PM', 'C007', NULL,  'O003')
+INSERT INTO CustOrder VALUES ('DE011', 'D', '20201204 18:25:32 PM', 'C001', NULL, 'O010')
+INSERT INTO CustOrder VALUES ('PU012', 'N', '20201113 15:02:35 PM', 'C007', NULL, 'O002')
+INSERT INTO CustOrder VALUES ('PU013', 'D', '20200508 18:40:12 PM', 'C010', NULL, 'O004')
+INSERT INTO CustOrder VALUES ('PU014', 'D', '20200427 14:22:53 PM', 'C001', NULL, 'O003')
+INSERT INTO CustOrder VALUES ('DE015', 'N', '20201125 21:30:52 PM', 'C008', 'V011', 'O007')
+INSERT INTO CustOrder VALUES ('PU016', 'N', '20210108 12:26:32 AM', 'C003', 'V002' , 'O005')
+INSERT INTO CustOrder VALUES ('DE017', 'N', '20201224 15:40:41 PM', 'C009', 'V006', 'O006')
+INSERT INTO CustOrder VALUES ('DE018', 'D', '20210911 11:25:53 AM', 'C008', NULL, 'O009')
+INSERT INTO CustOrder VALUES ('PU019', 'D', '20200719 16:53:54 PM', 'C002', NULL, 'O001')
+INSERT INTO CustOrder VALUES ('DE020', 'D', '20201010 20:33:32 PM', 'C007', NULL,  'O003')
 
 
 -- Payment NOT DONE
