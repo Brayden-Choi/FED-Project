@@ -318,7 +318,8 @@ FOREIGN KEY (riderID) REFERENCES Rider (riderID)
 
 ALTER TABLE Team
 ADD CONSTRAINT FK_Team_leaderID FOREIGN KEY (leaderId) REFERENCES Rider(riderID)
-
+ALTER TABLE Rider 
+ADD CONSTRAINT FK_Rider_TeamID FOREIGN KEY (teamID) REFERENCES Team(teamID) 
 
 -- Business
 INSERT INTO Business VALUES ('B001', 'OogaBooga Cooperation')

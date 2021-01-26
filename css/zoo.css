@@ -5,8 +5,8 @@ html {
 
 .wrapper {
     margin-top: 50vh;
-    margin-right: 10vh;
-    margin-left: 10vh;
+    margin-right: 5vw;
+    margin-left: 5vw;
     z-index: 10;
 }
 
@@ -146,12 +146,12 @@ h5 {
     background-attachment: fixed;
     background-position: center;
     background-size: 29rem 30rem;
-    width: 100%;
+    width: auto;
     height: 100%;
     display: inline-block;
     position: relative;
     opacity: 1;
-    margin: 10px 10px 10px -0.06%;
+    margin: 10px;
 }
 
 .animal-arrow {
@@ -170,12 +170,12 @@ h5 {
     background-attachment: fixed;
     background-position: center;
     background-size: 14rem 8rem;
-    width: 100%;
+    width: auto;
     height: 120vh;
     display: inline-block;
     position: relative;
     opacity: 1;
-    margin: 10px 10px 5% -0.06%;
+    margin: 10px;
 }
 
 .zone-text {
@@ -347,7 +347,6 @@ video {
     border: none;
     position: relative;
     margin-top: 3rem;
-    margin-left: 5%;
 }
 
 .ticket-button:hover, .ticket-button:focus{
@@ -496,6 +495,7 @@ dd{
 
 .social-icon {
     margin-right: 4rem;
+    animation: appear-left;
 }
 
 .fab {
