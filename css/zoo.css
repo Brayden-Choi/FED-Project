@@ -331,12 +331,12 @@ video {
 
 .ticket-table tr,.ticket-table th,.ticket-table td {
     border: solid black;
-    padding: 5vh;
+    padding: 3rem;
 }
 
 .hours-table tr,.hours-table th,.hours-table td {
     border: solid black;
-    padding: 5.4vh;
+    padding: 3rem;
 }
 
 .ticket-table .tablehead {
@@ -580,11 +580,11 @@ dd{
     }
 
     .hours-table tr, .hours-table th, .hours-table td {
-        padding: 2.5vh;
+        padding: 1rem;
     }
 
     .ticket-table tr, .ticket-table th, .ticket-table td {
-        padding: 2.5vh;
+        padding: 1rem;
     }
     
     .ticket-table .tablehead, .hours-table .tablehead  {
