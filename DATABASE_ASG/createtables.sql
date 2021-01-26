@@ -295,24 +295,24 @@ CONSTRAINT FK_OrderPromotions_promoID FOREIGN KEY (promoID) REFERENCES Promotion
 
 CREATE TABLE Pickup  
 (  
-custID           char(5)       NOT NULL,  
+orderID           char(5)       NOT NULL,  
 pickupRefNo      varchar(50)   NOT NULL,  
 pickupDateTime   dateTime      NULL,  
 
-CONSTRAINT PK_Pickup PRIMARY KEY (custID),  
-CONSTRAINT FK_Pickup_custID FOREIGN KEY (custID) REFERENCES Customer(custID)  
+CONSTRAINT PK_Pickup PRIMARY KEY (orderID),  
+CONSTRAINT FK_Pickup_orderID FOREIGN KEY (orderID) REFERENCES CustOrder (orderID)  
 )  
 
  
 CREATE TABLE Delivery  
 (  
-custID            char(5)        NOT NULL,  
+orderID           char(5)        NOT NULL,  
 deliveryDateTime  dateTime       NULL,  
 deliveryAddress   varchar(256)   NOT NULL,  
 riderID           char(5)        NOT NULL,  
-CONSTRAINT PK_Delivery PRIMARY KEY (custID),  
-CONSTRAINT FK_Delivery_custID  
-FOREIGN KEY (custID) REFERENCES Customer (custID),  
+CONSTRAINT PK_Delivery PRIMARY KEY (orderID),  
+CONSTRAINT FK_Delivery_orderID  
+FOREIGN KEY (orderID) REFERENCES CustOrder (orderID),  
 CONSTRAINT FK_Delivery_riderID  
 FOREIGN KEY (riderID) REFERENCES Rider (riderID)  
 )
@@ -334,7 +334,8 @@ FOREIGN KEY (riderID) REFERENCES Rider (riderID)
 
 ALTER TABLE Team
 ADD CONSTRAINT FK_Team_leaderID FOREIGN KEY (leaderId) REFERENCES Rider(riderID)
-
+ALTER TABLE Rider 
+ADD CONSTRAINT FK_Rider_TeamID FOREIGN KEY (teamID) REFERENCES Team(teamID) 
 
 -- Business
 INSERT INTO Business VALUES ('B001', 'OogaBooga Cooperation')
