@@ -59,7 +59,7 @@ h5 {
 }
 
 /*Background*/
-.air-slider {
+.background-slider {
     width: auto;
     z-index: -10;
     min-height: 100%;
@@ -146,7 +146,7 @@ h5 {
     background-attachment: fixed;
     background-position: center;
     background-size: 29rem 30rem;
-    width: auto;
+    width: 100%;
     height: 100%;
     display: inline-block;
     position: relative;
@@ -552,6 +552,7 @@ dd{
     video {
         height: 40vh;
         width: 70vw;
+        margin: 1rem;
         margin-top: 0 !important;
         padding: 0 !important;
     }
@@ -561,10 +562,15 @@ dd{
     .show-text h3 {
         font-size: 2.8rem;
     }
+    .table {
+        margin: 2rem;
+    }
     .ticket-table, .hours-table {
         font-size: 1.8rem;
+        padding:0;
     }
     .ticket-table .tablehead, .hours-table .tablehead  {
         font-size: 2.5rem;
+        padding:0;
     }
 }

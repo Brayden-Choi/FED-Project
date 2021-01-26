@@ -120,7 +120,6 @@
                     <li class="slide-button" data-slide-to="5" data-target="#carouselExampleIndicatorsmain"></li>
                     <li class="slide-button" data-slide-to="6" data-target="#carouselExampleIndicatorsmain"></li>
                     <li class="slide-button" data-slide-to="7" data-target="#carouselExampleIndicatorsmain"></li>
-                    <li class="slide-button" data-slide-to="8" data-target="#carouselExampleIndicatorsmain"></li>
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -311,8 +310,8 @@
                 </div>
             </div>
             <div class="row">
-                <div class="table col-lg-6 d-flex justify-content-center align-self-center" data-aos="fade-left" data-aos-duration="500">
-                    <table class="ticket-table">
+                <div class="table col-lg-6 d-flex justify-content-center align-self-center">
+                    <table class="ticket-table" data-aos="fade-left" data-aos-duration="500">
                         <tr>
                             <td class="tablehead">Age Group</td>
                             <td class="tablehead">Price</td>
@@ -331,8 +330,8 @@
                         </tr>
                     </table>
                 </div>
-                <div class="table col-lg-6 d-flex justify-content-center align-self-center" data-aos="fade-left" data-aos-duration="500" data-aos-delay="120">
-                    <table class="hours-table">
+                <div class="table col-lg-6 d-flex justify-content-center align-self-center">
+                    <table class="hours-table" data-aos="fade-left" data-aos-duration="500" data-aos-delay="160">
                         <tr>
                             <td class="tablehead">Location</td>
                             <td class="tablehead">Operating Hours</td>
@@ -426,7 +425,7 @@
                             <div class="fas fa-angle-double-right"></div>
                             <label for="exampleInputSalutation">Salutation</label>
                             <select id="exampleInputSalutation" class="form-control" required>
-                                <option id="disabled">How do we address you?</option>
+                                <option value="" disabled selected>How do we address you?</option>
                                 <option>Mr</option>
                                 <option>Ms</option>
                                 <option>Miss</option>
