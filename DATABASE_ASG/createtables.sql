@@ -1,4 +1,4 @@
--- Create fresh database
+-- Create fresh database, delete old one if needed
 USE master
 
 IF EXISTS(SELECT * FROM sys.databases WHERE name='MokeFoodDelivery')
@@ -12,7 +12,7 @@ USE MokeFoodDelivery
 GO
 
 
--- Create tables
+--T Business
 CREATE TABLE Business  
 (  
 bizID     char(5)		 NOT NULL,  
@@ -22,16 +22,17 @@ CONSTRAINT PK_Business PRIMARY KEY (bizID)
 )  
 
 
+--T Zone
 CREATE TABLE Zone  
 (  
 zoneID     char(5)       NOT NULL,  
 zoneName   varchar(32)   NOT NULL,  
 
-
 CONSTRAINT PK_Zone PRIMARY KEY (zoneID)  
 )  
  
 
+--T Outlet
 CREATE TABLE Outlet  
 (  
 outletID           char(5)       NOT NULL,  
@@ -49,17 +50,19 @@ CONSTRAINT FK_Business_bizID FOREIGN KEY (bizID) REFERENCES Business(bizID),
 CONSTRAINT FK_Zone_zoneID FOREIGN KEY (zoneID) REFERENCES Zone(zoneID),  
 )  
 
- 
+
+--T OutletContact
 CREATE TABLE OutletContact  
 (  
 outletID     char(5)     NOT NULL,  
 contactNo    char(8)     NOT NULL,  
 
-CONSTRAINT PK_OutletContact PRIMARY KEY (outletID, contactNo),  
+CONSTRAINT PK_OutletContact PRIMARY KEY NONCLUSTERED (outletID, contactNo),  
 CONSTRAINT FK_OutletContact_outletID FOREIGN KEY (outletID) REFERENCES Outlet(outletID)  
 )  
  
 
+--T Cuisine
 CREATE TABLE Cuisine  
 (  
 cuisineID     char(5)        NOT NULL,  
@@ -69,30 +72,33 @@ CONSTRAINT PK_Cuisine PRIMARY KEY (cuisineID)
 )  
  
 
+--T OutletCuisines
 CREATE TABLE OutletCuisines   
 (  
-outletID     char(5)     NOT NULL,  
-cuisineID    char(5)     NOT NULL,  
+outletID    char(5)   NOT NULL,  
+cuisineID   char(5)   NOT NULL,  
 
-CONSTRAINT PK_OutletCuisines PRIMARY KEY (outletID, cuisineID),  
+CONSTRAINT PK_OutletCuisines PRIMARY KEY NONCLUSTERED (outletID, cuisineID),  
 CONSTRAINT FK_Outlet_outletID FOREIGN KEY (outletID) REFERENCES Outlet(outletID),  
 CONSTRAINT FK_Cuisine_cuisineID FOREIGN KEY (cuisineID) REFERENCES Cuisine(cuisineID)  
 )
  
 
+--T Promotion
 CREATE TABLE Promotion  
 (  
-promoID char(5)         NOT NULL,  
-promoName varchar(100)  NOT NULL,  
-promoDesc varchar(200)  NULL,  
-isFreeDelivery char(1)  NULL,  
-percentDiscount float NULL,  
+promoID           char(5)        NOT NULL,  
+promoName         varchar(100)   NOT NULL,  
+promoDesc         varchar(200)   NULL,  
+isFreeDelivery    char(1)        NULL,  
+percentDiscount   float          NULL,  
 
 CONSTRAINT PK_Promotion PRIMARY KEY (promoID),
 CONSTRAINT CHK_isFreeDelivery CHECK (isFreeDelivery IN ('Y','N'))
 )  
  
 
+--T OutletPromotions
 CREATE TABLE OutletPromotions   
 (  
 outletID char(5) NOT NULL,  
@@ -105,10 +111,11 @@ CONSTRAINT FK_OutletPromotions_promoID FOREIGN KEY (promoID) REFERENCES Promotio
 )  
 
 
+--T Menu
 CREATE TABLE Menu
 (  
 outletID   char(5)       NOT NULL,  
-menuNo     int NOT       NULL,  
+menuNo     int           NOT NULL,  
 menuName   varchar(50)   NOT NULL,
 
 CONSTRAINT PK_Menu PRIMARY KEY NONCLUSTERED (outletID, menuNo),  
@@ -116,6 +123,7 @@ CONSTRAINT FK_Menu_outletID FOREIGN KEY (outletID) REFERENCES Outlet(outletID)
 )  
  
 
+--T Item
 CREATE TABLE Item   
 (  
 itemID     char(5)        NOT NULL,  
@@ -127,6 +135,7 @@ CONSTRAINT PK_Item PRIMARY KEY (itemID)
 )  
 
 
+--T MenuItem
 CREATE TABLE MenuItem   
 (  
 outletID   char(5)  NOT NULL,  
@@ -139,6 +148,7 @@ CONSTRAINT FK_MenuItem_itemID FOREIGN KEY (itemID) REFERENCES Item(itemID)
 )  
 
 
+--T Award
 CREATE TABLE Award  
 (  
 awardID     char(5)       NOT NULL,  
@@ -149,6 +159,7 @@ CONSTRAINT PK_Award PRIMARY KEY (awardID)
 )  
 
 
+--T AwardsWon
 CREATE TABLE AwardsWon
 (  
 awardID   char(5)   NOT NULL,  
@@ -160,6 +171,7 @@ CONSTRAINT FK_AwardsWon_awardID FOREIGN KEY (awardID) REFERENCES Award(awardID)
 )  
  
 
+--T Team
 Create TABLE Team  
 (  
 teamID     char(5)       NOT NULL,  
@@ -172,6 +184,7 @@ CONSTRAINT FK_Team_awardID FOREIGN KEY (awardID) REFERENCES Award(awardID)
 )  
  
 
+--T Rider
 CREATE TABLE Rider   
 (  
 riderID        char(5)         NOT NULL,  
@@ -187,6 +200,7 @@ CONSTRAINT PK_Rider PRIMARY KEY (riderID)
 )    
 
 
+--T Equipment
 CREATE TABLE Equipment
 (  
 equipID       char(5)        NOT NULL,  
@@ -199,6 +213,7 @@ CONSTRAINT FK_Equipment_setID FOREIGN KEY (setID) REFERENCES Equipment(equipID),
 )
  
 
+--T EquipmentPurchase
 CREATE TABLE EquipmentPurchase  
 (  
 riderID            char(5)    NOT NULL,  
@@ -212,6 +227,7 @@ CONSTRAINT FK_EquipmentPurchase_equipID FOREIGN KEY (equipID) REFERENCES Equipme
 )  
 
 
+--T Customer
 CREATE TABLE Customer
 (   
 CustID        char(5)        NOT NULL,  
@@ -224,6 +240,7 @@ CONSTRAINT PK_Customer PRIMARY KEY (custID)
 ) 
  
 
+--T Voucher
 CREATE TABLE Voucher
 (  
 voucherID            char(5)       NOT NULL,  
@@ -242,6 +259,7 @@ CONSTRAINT CHK_voucherStatus CHECK (voucherStatus IN ('R','N'))
 ) 
 
 
+--T CustOrder
 CREATE TABLE CustOrder
 (  
 orderID        char(5)     NOT NULL,  
@@ -259,6 +277,7 @@ CONSTRAINT CHK_orderStatus CHECK (orderStatus IN ('D','N'))
 )
  
 
+--T Payment
 CREATE TABLE Payment
 (  
 pmtID      char(5)        NOT NULL,  
@@ -271,6 +290,7 @@ CONSTRAINT FK_Payment_orderID FOREIGN KEY (orderID) REFERENCES CustOrder(orderID
 ) 
  
 
+--T OrderItem
 CREATE TABLE OrderItem
 (  
 orderID      char(5)  NOT NULL,  
@@ -283,16 +303,19 @@ CONSTRAINT FK_OrderItem_itemID FOREIGN KEY (itemID) REFERENCES Item(itemID)
 )
  
 
+--T OrderPromotions
 CREATE TABLE OrderPromotions  
 (  
 orderID   Char(5)  NOT NULL,  
-promoID   Char(5)  NOT NULL,  
+promoID   Char(5)  NOT NULL,
+
 CONSTRAINT PK_OrderPromotions PRIMARY KEY NONCLUSTERED (orderID, promoID),  
 CONSTRAINT FK_OrderPromotions_orderID FOREIGN KEY (orderID) REFERENCES CustOrder(orderID),  
 CONSTRAINT FK_OrderPromotions_promoID FOREIGN KEY (promoID) REFERENCES Promotion(promoID)  
 )  
  
 
+--T Pickup
 CREATE TABLE Pickup  
 (  
 orderID          char(5)       NOT NULL,  
@@ -304,6 +327,7 @@ CONSTRAINT FK_Pickup_orderID FOREIGN KEY (orderID) REFERENCES CustOrder(orderID)
 )  
 
  
+--T Delivery
 CREATE TABLE Delivery  
 (  
 orderID           char(5)        NOT NULL,  
@@ -317,21 +341,26 @@ CONSTRAINT FK_Delivery_riderID FOREIGN KEY (riderID) REFERENCES Rider(riderID)
 )
 
 
+--T DeliveryAssignment
 CREATE TABLE DeliveryAssignment  
 (  
 orderID   Char(5)       NOT NULL,  
 riderID   Char(5)       NOT NULL,  
 Status    varchar(50)   NULL, 
 
-CONSTRAINT PK_DeliveryAssignment PRIMARY KEY  
-NONCLUSTERED (orderID, riderID),  
-CONSTRAINT FK_DeliveryAssignment_orderID  
-FOREIGN KEY (orderID) REFERENCES CustOrder(orderID),  
-CONSTRAINT FK_DeliveryAssignment_riderID  
-FOREIGN KEY (riderID) REFERENCES Rider (riderID)  
+CONSTRAINT PK_DeliveryAssignment PRIMARY KEY NONCLUSTERED (orderID, riderID),  
+CONSTRAINT FK_DeliveryAssignment_orderID FOREIGN KEY (orderID) REFERENCES CustOrder(orderID),  
+CONSTRAINT FK_DeliveryAssignment_riderID FOREIGN KEY (riderID) REFERENCES Rider (riderID)  
 )	
 
 
+--A Rider
+ALTER TABLE Rider
+ADD CONSTRAINT FK_Rider_TeamID FOREIGN KEY (teamID) REFERENCES
+Team(teamID)
+
+
+--A Team
 ALTER TABLE Team
 ADD CONSTRAINT FK_Team_leaderID FOREIGN KEY (leaderId) REFERENCES Rider(riderID)
 
@@ -350,10 +379,19 @@ INSERT INTO Business VALUES ('B010', 'NeinNeinNein Pte Ltd')
 
 
 -- Zone
+<<<<<<< HEAD
 INSERT INTO Zone VALUES ('Z001', 'North')  
 INSERT INTO Zone VALUES ('Z002', 'East')  
 INSERT INTO Zone VALUES ('Z003', 'West') 
 INSERT INTO Zone VALUES ('Z004', 'Central') 
+=======
+INSERT INTO Zone VALUES ('Z001', 'North') 
+INSERT INTO Zone VALUES ('Z002', 'South') 
+INSERT INTO Zone VALUES ('Z003', 'East') 
+INSERT INTO Zone VALUES ('Z004', 'West')
+INSERT INTO Zone VALUES ('Z005', 'Central')
+
+>>>>>>> 0acf8695a350855b7864adfb13a6b4a8c00225b6
 
 -- Outlet
 INSERT INTO Outlet VALUES ('O001', 'Ahmad Makan', '18 Tampines Drive, Singapore 374018', '08:00:00', '21:00:00', '09:00:00', '21:00:00', 'B001', 'Z002')  
@@ -369,6 +407,7 @@ INSERT INTO Outlet VALUES ('O010', 'Din Tai Fong', '80 Marine Parade Rd, Singapo
 
 -- OutletContact
 INSERT INTO OutletContact VALUES ('O001', '85366336') 
+INSERT INTO OutletContact VALUES ('O001', '88943276') 
 INSERT INTO OutletContact VALUES ('O002', '94356431') 
 INSERT INTO OutletContact VALUES ('O003', '81431244') 
 INSERT INTO OutletContact VALUES ('O004', '94523223') 
@@ -376,8 +415,11 @@ INSERT INTO OutletContact VALUES ('O005', '92542542')
 INSERT INTO OutletContact VALUES ('O006', '91444634') 
 INSERT INTO OutletContact VALUES ('O007', '81475344') 
 INSERT INTO OutletContact VALUES ('O008', '87645342') 
-INSERT INTO OutletContact VALUES ('O009', '97876235') 
+INSERT INTO OutletContact VALUES ('O009', '97876235')
+INSERT INTO OutletContact VALUES ('O009', '69214365')
+INSERT INTO OutletContact VALUES ('O009', '96127354')
 INSERT INTO OutletContact VALUES ('O010', '82345647')
+INSERT INTO OutletContact VALUES ('O010', '64952367')
 
 
 -- Cuisine
@@ -391,6 +433,10 @@ INSERT INTO Cuisine VALUES ('CS007', 'Mexican')
 INSERT INTO Cuisine VALUES ('CS008', 'Vietnamese') 
 INSERT INTO Cuisine VALUES ('CS009', 'Singaporean') 
 INSERT INTO Cuisine VALUES ('CS010', 'Indian')
+INSERT INTO Cuisine VALUES ('CS011', 'German')
+INSERT INTO Cuisine VALUES ('CS012', 'Vietnamese')
+INSERT INTO Cuisine VALUES ('CS013', 'French')
+INSERT INTO Cuisine VALUES ('CS014', 'Italian')
 
 
 -- OutletCuisines
