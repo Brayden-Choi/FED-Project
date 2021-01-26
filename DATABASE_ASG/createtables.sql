@@ -350,24 +350,22 @@ INSERT INTO Business VALUES ('B010', 'NeinNeinNein Pte Ltd')
 
 
 -- Zone
-INSERT INTO Zone VALUES ('Z001', 'North') 
-INSERT INTO Zone VALUES ('Z002', 'South') 
-INSERT INTO Zone VALUES ('Z003', 'East') 
-INSERT INTO Zone VALUES ('Z004', 'West')
-
+INSERT INTO Zone VALUES ('Z001', 'North')  
+INSERT INTO Zone VALUES ('Z002', 'East')  
+INSERT INTO Zone VALUES ('Z003', 'West') 
+INSERT INTO Zone VALUES ('Z004', 'Central') 
 
 -- Outlet
-INSERT INTO Outlet VALUES ('O001', 'Ahmad Makan', '18 Tampines Drive, Singapore 374018', '08:00:00', '21:00:00', '09:00:00', '21:00:00', 'B001', 'Z002') 
-INSERT INTO Outlet VALUES ('O002', 'Just Eat La', '377 Jurong Avenue, Singapore 536377', '12:00:00', '20:00:00', '12:00:00', '20:00:00', 'B002', 'Z003') 
-INSERT INTO Outlet VALUES ('O003', 'Mark''s Place', '24 Bishan Street, Singapore 549604', '08:00:00', '21:00:00', '09:00:00', '20:00:00', 'B003', 'Z004')
-INSERT INTO Outlet VALUES ('O004', 'Vietry Good', '188 Pasir Ris Road, Singapore 271188', '12:00:00', '22:00:00', '12:00:00', '21:00:00', 'B004', 'Z002') 
-INSERT INTO Outlet VALUES ('O005', 'La Chancla', '24 Ang Mo Kio Avenue, Singapore 549604', '07:00:00', '21:00:00', '07:00:00', '20:00:00', 'B005', 'Z004') 
-INSERT INTO Outlet VALUES ('O006', 'Muthu Foods', '768 Woodlands Plaza, Singapore 720768', '10:00:00', '21:00:00', '10:00:00', '19:30:00', 'B006', 'Z001') 
-INSERT INTO Outlet VALUES ('O007', 'Sooshi', '133 Choa Chu Kang Road, Singapore 059413', '11:00:00', '20:30:00', '12:00:00', '19:00:00', 'B007', 'Z003')
-INSERT INTO Outlet VALUES ('O008', 'Jerk Thai', '377 Chinese Garden, Singapore 536377', '12:00:00', '20:00:00', '12:00:00', '20:00:00', 'B008', 'Z003')
-INSERT INTO Outlet VALUES ('O009', 'Oppa Chicken', '930 Yishun Ave 2, Singapore 769098', '10:30:00', '23:00:00', '10:30:00', '21:00:00', 'B005', 'Z001')
-INSERT INTO Outlet VALUES ('O010', 'Din Tai Fong', '80 Marine Parade Rd, Singapore 449269', '10:00:00', '22:00:00', '11:00:00', '19:00:00', 'B002', 'Z004')
-
+INSERT INTO Outlet VALUES ('O001', 'Ahmad Makan', '18 Tampines Drive, Singapore 374018', '08:00:00', '21:00:00', '09:00:00', '21:00:00', 'B001', 'Z002')  
+INSERT INTO Outlet VALUES ('O002', 'Just Eat La', '377 Jurong Avenue, Singapore 536377', '12:00:00', '20:00:00', '12:00:00', '20:00:00', 'B002', 'Z003')  
+INSERT INTO Outlet VALUES ('O003', 'Mark’s Place', '24 Bishan Street, Singapore 549604', '08:00:00', '21:00:00', '09:00:00', '20:00:00', 'B003', 'Z004') 
+INSERT INTO Outlet VALUES ('O004', 'Vietry Good', '188 Pasir Ris Road, Singapore 271188', '12:00:00', '22:00:00', '12:00:00', '21:00:00', 'B004', 'Z002')  
+INSERT INTO Outlet VALUES ('O005', 'La Chancla', '24 Ang Mo Kio Avenue, Singapore 549604', '07:00:00', '21:00:00', '07:00:00', '20:00:00', 'B005', 'Z004')  
+INSERT INTO Outlet VALUES ('O006', 'Muthu Foods', '768 Woodlands Plaza, Singapore 720768', '10:00:00', '21:00:00', '10:00:00', '19:30:00', 'B006', 'Z001')  
+INSERT INTO Outlet VALUES ('O007', 'Sooshi', '133 Choa Chu Kang Road, Singapore 059413', '11:00:00', '20:30:00', '12:00:00', '19:00:00', 'B007', 'Z003') 
+INSERT INTO Outlet VALUES ('O008', 'Jerk Thai', '377 Chinese Garden, Singapore 536377', '12:00:00', '20:00:00', '12:00:00', '20:00:00', 'B008', 'Z003') 
+INSERT INTO Outlet VALUES ('O009', 'Oppa Chicken', '930 Yishun Ave 2, Singapore 769098', '10:30:00', '23:00:00', '10:30:00', '21:00:00', 'B005', 'Z001') 
+INSERT INTO Outlet VALUES ('O010', 'Din Tai Fong', '80 Marine Parade Rd, Singapore 449269', '10:00:00', '22:00:00', '11:00:00', '19:00:00', 'B002', 'Z004') 
 
 -- OutletContact
 INSERT INTO OutletContact VALUES ('O001', '85366336') 
