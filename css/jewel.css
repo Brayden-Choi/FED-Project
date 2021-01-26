@@ -438,6 +438,26 @@
 .y-img{
     height: 300px;
     width: 500px;
+    margin-left: 36.7%;
+    margin-bottom: 0%;
+}
+
+.carousel-caption {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    position: center;
+    background-color: black;
+    opacity: 0.5;
+}
+
+.carousel-control-next{
+    margin-right: 25%;
+}
+
+.carousel-control-prev {
+    margin-left: 25%;
 }
 
 .pic-ctn {
@@ -518,10 +538,8 @@ img:nth-child(4) {
         vertical-align: top;
         margin: 10px;
         font-family: 'Josefin Sans', sans-serif;
-        font-weight: bold;
         min-height: 25vh;
         background: #becccf;
-        border: 1px solid #252727;
         text-align: left;
     }
 
@@ -543,19 +561,12 @@ img:nth-child(4) {
     height: 120vh;
 }
 
-/*.f-title {
-    font-family: 'Cinzel', serif;
-    text-align: center;
-    position: center;
-    font-size: 70px;
-}*/
-
 @import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 #contact {
     width: 500px;
-    margin: 2em auto;
+    margin: 0 auto;
     background: black;
     position: relative;
     width: 90%;
@@ -613,9 +624,6 @@ img:nth-child(4) {
     box-sizing: border-box;
     padding: 1em;
     -webkit-transition: all 250ms ease;
-    -moz-transition: all 250ms ease;
-    -o-transition: all 250ms ease;
-    transition: all 250ms ease;
     color: #cfd7ff;
     border-radius: 10px;
 }
@@ -632,9 +640,6 @@ img:nth-child(4) {
     box-sizing: border-box;
     padding: 1em;
     -webkit-transition: all 250ms ease;
-    -moz-transition: all 250ms ease;
-    -o-transition: all 250ms ease;
-    transition: all 250ms ease;
     color: #5E5E5E;
     text-indent: 15%;
     border-radius: 10px;
@@ -662,9 +667,6 @@ img:nth-child(4) {
     line-height: 2.8em;
     padding-top: 7px;
     -webkit-transition: all 250ms ease;
-    -moz-transition: all 250ms ease;
-    -o-transition: all 250ms ease;
-    transition: all 250ms ease;
     border-radius: 10px;
 }
 
@@ -685,9 +687,6 @@ img:nth-child(4) {
     box-sizing: border-box;
     padding: 1em;
     -webkit-transition: all 250ms ease;
-    -moz-transition: all 250ms ease;
-    -o-transition: all 250ms ease;
-    transition: all 250ms ease;
     color: grey;
 }
 
@@ -718,9 +717,6 @@ img:nth-child(4) {
         box-shadow: 1px 1px 0 0 white,2px 2px 0 0 white,3px 3px 0 0 white;
         -webkit-appearance: none;
         -webkit-transition: all 250ms ease;
-        -moz-transition: all 250ms ease;
-        -o-transition: all 250ms ease;
-        transition: all 250ms ease;
         border-radius: 10px;
     }
 
@@ -752,9 +748,6 @@ reset_wrapper {
         box-shadow: 1px 1px 0 0 white,2px 2px 0 0 white,3px 3px 0 0 white;
         -webkit-appearance: none;
         -webkit-transition: all 250ms ease;
-        -moz-transition: all 250ms ease;
-        -o-transition: all 250ms ease;
-        transition: all 250ms ease;
         border-radius: 10px;
     }
 
@@ -791,8 +784,6 @@ reset_wrapper {
     display: inline-block;
     color: black;
     -webkit-transition: all 0.27s; 
-    -moz-transition: all 0.27s ;
-    transition: all 0.27s ;
 }
 
     .sm-links a:before {
@@ -803,8 +794,6 @@ reset_wrapper {
         border-radius: 2px;
         width: 100px;
         -webkit-transition: all 0.27s ;
-        -moz-transition: all 0.27s;
-        transition: all 0.27s ;
     }
 
 .sm-links a:hover{
@@ -817,8 +806,8 @@ reset_wrapper {
 
 .social-link .fa {
     padding: 20px;
-    font-size: 30px;
-    width: 100px;
+    font-size: 70px;
+    width: 40%;
     text-align: center;
     text-decoration: none;
     position: relative;
