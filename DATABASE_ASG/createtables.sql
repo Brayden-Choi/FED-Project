@@ -295,12 +295,12 @@ CONSTRAINT FK_OrderPromotions_promoID FOREIGN KEY (promoID) REFERENCES Promotion
 
 CREATE TABLE Pickup  
 (  
-orderID           char(5)       NOT NULL,  
+orderID          char(5)       NOT NULL,  
 pickupRefNo      varchar(50)   NOT NULL,  
 pickupDateTime   dateTime      NULL,  
 
 CONSTRAINT PK_Pickup PRIMARY KEY (orderID),  
-CONSTRAINT FK_Pickup_orderID FOREIGN KEY (orderID) REFERENCES CustOrder (orderID)  
+CONSTRAINT FK_Pickup_orderID FOREIGN KEY (orderID) REFERENCES CustOrder(orderID)  
 )  
 
  
@@ -310,11 +310,10 @@ orderID           char(5)        NOT NULL,
 deliveryDateTime  dateTime       NULL,  
 deliveryAddress   varchar(256)   NOT NULL,  
 riderID           char(5)        NOT NULL,  
+
 CONSTRAINT PK_Delivery PRIMARY KEY (orderID),  
-CONSTRAINT FK_Delivery_orderID  
-FOREIGN KEY (orderID) REFERENCES CustOrder (orderID),  
-CONSTRAINT FK_Delivery_riderID  
-FOREIGN KEY (riderID) REFERENCES Rider (riderID)  
+CONSTRAINT FK_Delivery_custID FOREIGN KEY (orderID) REFERENCES CustOrder(orderID),  
+CONSTRAINT FK_Delivery_riderID FOREIGN KEY (riderID) REFERENCES Rider(riderID)  
 )
 
 
@@ -322,7 +321,8 @@ CREATE TABLE DeliveryAssignment
 (  
 orderID   Char(5)       NOT NULL,  
 riderID   Char(5)       NOT NULL,  
-Status    varchar(50)   NULL,  
+Status    varchar(50)   NULL, 
+
 CONSTRAINT PK_DeliveryAssignment PRIMARY KEY  
 NONCLUSTERED (orderID, riderID),  
 CONSTRAINT FK_DeliveryAssignment_orderID  
@@ -334,8 +334,7 @@ FOREIGN KEY (riderID) REFERENCES Rider (riderID)
 
 ALTER TABLE Team
 ADD CONSTRAINT FK_Team_leaderID FOREIGN KEY (leaderId) REFERENCES Rider(riderID)
-ALTER TABLE Rider 
-ADD CONSTRAINT FK_Rider_TeamID FOREIGN KEY (teamID) REFERENCES Team(teamID) 
+
 
 -- Business
 INSERT INTO Business VALUES ('B001', 'OogaBooga Cooperation')
@@ -651,7 +650,7 @@ INSERT INTO Equipment VALUES ('ST042', 'Rocket', '10', 'SE004')
 INSERT INTO Equipment VALUES ('ST043', 'Teleporter', '10', 'SE004')
 
 
--- EquipmentPurchase NOT DONE
+-- EquipmentPurchase
 INSERT INTO EquipmentPurchase VALUES ('R001', 'E001', '04/21/2018', 2)
 INSERT INTO EquipmentPurchase VALUES ('R001', 'E017', '04/21/2018', 1)
 INSERT INTO EquipmentPurchase VALUES ('R009', 'E011', '06/04/2018', 1)
@@ -699,7 +698,7 @@ INSERT INTO Voucher VALUES ('V012', 'R', '$5 off delivery fees', '20210101 00:00
 INSERT INTO Voucher VALUES ('V013', 'R', '$5 off delivery fees', '20210101 00:00:00 AM', '20210630 23:59:59', NULL, '5.00', 'C005')
 
 
--- CustOrder NOT DONE
+-- CustOrder
 INSERT INTO CustOrder VALUES ('DE001', 'D', '20201204 18:25:32 PM', 'C001', 'V001', 'O010')
 INSERT INTO CustOrder VALUES ('DE002', 'N', '20200823 13:12:45 PM', 'C007', 'V012', 'O002')
 INSERT INTO CustOrder VALUES ('PU003', 'D', '20201107 10:01:05 AM', 'C010', 'V008', 'O004')
@@ -725,19 +724,69 @@ INSERT INTO CustOrder VALUES ('DE020', 'D', '20201010 20:33:32 PM', 'C007', NULL
 -- Payment NOT DONE
 
 
--- OrderItem NOT DONE
+-- OrderItem
+INSERT INTO OrderItem VALUES ('DE001', 'I001', 2, 5.50)
+INSERT INTO OrderItem VALUES ('DE002', 'I034', 1, 4.50)
+INSERT INTO OrderItem VALUES ('PU003', 'I018', 1, 8)
+INSERT INTO OrderItem VALUES ('DE004', 'I014', 2, 7)
+INSERT INTO OrderItem VALUES ('PU005', 'I022', 1, 4.80)
+INSERT INTO OrderItem VALUES ('DE006', 'I013', 1, 5.50)
+INSERT INTO OrderItem VALUES ('PU007', 'I036', 1, 5.20)
+INSERT INTO OrderItem VALUES ('PU008', 'I021', 3, 6.30)
+INSERT INTO OrderItem VALUES ('DE009', 'I012', 2, 7)
+INSERT INTO OrderItem VALUES ('PU010', 'I001', 2, 5.50)
+INSERT INTO OrderItem VALUES ('DE011', 'I001', 2, 5.50)
+INSERT INTO OrderItem VALUES ('PU012', 'I001', 2, 5.50)
+INSERT INTO OrderItem VALUES ('PU013', 'I001', 2, 5.50)
+INSERT INTO OrderItem VALUES ('PU014', 'I001', 2, 5.50)
+INSERT INTO OrderItem VALUES ('DE015', 'I001', 2, 5.50)
+INSERT INTO OrderItem VALUES ('PU016', 'I001', 2, 5.50)
+INSERT INTO OrderItem VALUES ('DE017', 'I001', 2, 5.50)
+INSERT INTO OrderItem VALUES ('DE018', 'I001', 2, 5.50)
+INSERT INTO OrderItem VALUES ('PU019', 'I001', 2, 5.50)
+INSERT INTO OrderItem VALUES ('DE020', 'I001', 2, 5.50)
 
 
 -- OrderPromotions NOT DONE
 
 
--- Pickup NOT DONE
+-- Pickup
+INSERT INTO PickUp VALUES ('PU003', 'RN001', '20200427 04:41:33 PM')
+INSERT INTO PickUp VALUES ('PU005', 'RN002', '20200719 07:02:14 PM')
+INSERT INTO PickUp VALUES ('PU007', 'RN003', '20210108 11:37:12 AM')
+INSERT INTO PickUp VALUES ('PU008', 'RN004', '20201010 10:43:42 PM')
+INSERT INTO PickUp VALUES ('PU010', 'RN005', '20200823 01:32:25 PM')
+INSERT INTO PickUp VALUES ('PU012', 'RN006', '20200715 12:43:52 PM')
+INSERT INTO PickUp VALUES ('PU013', 'RN007', '20210201 11:05:40 AM')
+INSERT INTO PickUp VALUES ('PU014', 'RN008', '20201224 13:22:35 PM')
+INSERT INTO PickUp VALUES ('PU016', 'RN009', '20200508 08:53:52 PM')
+INSERT INTO PickUp VALUES ('PU019', 'RN010', '20201107 10:41:05 AM')
 
 
--- Delivery NOT DONE
+-- Delivery
+INSERT INTO Delivery VALUES ('DE001', '20201202 12:22:45', 'Sui Bian Road #00-01 88888', 'R003') 
+INSERT INTO Delivery VALUES ('DE002', '20200429 14:51:32', '23 Goat Avenue #01-01 Singapore 232323', 'R001') 
+INSERT INTO Delivery VALUES ('DE004', '20200808 10:11:12', 'Sui Bian Road #00-01 88888', 'R009') 
+INSERT INTO Delivery VALUES ('DE006', '20201119 16:08:43', 'Sui Bian Road #00-01 88888', 'R007') 
+INSERT INTO Delivery VALUES ('DE009', '20210121 19:06:53', 'Drawer under the stairs Alley #13-06', 'R005') 
+INSERT INTO Delivery VALUES ('DE011', '20200509 15:43:55', 'Sui Bian Road #00-01 88888', 'R008') 
+INSERT INTO Delivery VALUES ('DE015', '20200224 11:48:00', '23 Mountain Goat Avenue #06-01 Singapore 653663', 'R004') 
+INSERT INTO Delivery VALUES ('DE017', '20200126 20:12:02', '645 Holland Road', 'R010') 
+INSERT INTO Delivery VALUES ('DE018', '20201130 13:48:16', '23 Mountain Goat Avenue #06-01 Singapore 653663', 'R006') 
+INSERT INTO Delivery VALUES ('DE020', '20201209 18:10:06', '23 Goat Avenue #01-01 Singapore 232323', 'R002')
 
 
--- DeliveryAssignment NOT DONE
+-- DeliveryAssignment
+INSERT INTO DeliveryAssignment VALUES ('DE001', 'R003', 'D')
+INSERT INTO DeliveryAssignment VALUES ('DE002', 'R001', 'D')
+INSERT INTO DeliveryAssignment VALUES ('DE004', 'R009', 'D')
+INSERT INTO DeliveryAssignment VALUES ('DE006', 'R007', 'D')
+INSERT INTO DeliveryAssignment VALUES ('DE009', 'R005', 'D')
+INSERT INTO DeliveryAssignment VALUES ('DE011', 'R008', 'D')
+INSERT INTO DeliveryAssignment VALUES ('DE015', 'R004', 'D')
+INSERT INTO DeliveryAssignment VALUES ('DE017', 'R010', 'D')
+INSERT INTO DeliveryAssignment VALUES ('DE018', 'R006', 'D')
+INSERT INTO DeliveryAssignment VALUES ('DE020', 'R002', 'D')
 
 
 -- Table data output
