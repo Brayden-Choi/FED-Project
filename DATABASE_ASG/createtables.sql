@@ -388,7 +388,7 @@ INSERT INTO Zone VALUES ('Z005', 'Central')
 -- Outlet
 INSERT INTO Outlet VALUES ('O001', 'Ahmad Makan', '18 Tampines Drive, Singapore 374018', '08:00:00', '21:00:00', '09:00:00', '21:00:00', 'B001', 'Z002')  
 INSERT INTO Outlet VALUES ('O002', 'Just Eat La', '377 Jurong Avenue, Singapore 536377', '12:00:00', '20:00:00', '12:00:00', '20:00:00', 'B002', 'Z003')  
-INSERT INTO Outlet VALUES ('O003', 'Mark’s Place', '24 Bishan Street, Singapore 549604', '08:00:00', '21:00:00', '09:00:00', '20:00:00', 'B003', 'Z004') 
+INSERT INTO Outlet VALUES ('O003', 'Mark''s Place', '24 Bishan Street, Singapore 549604', '08:00:00', '21:00:00', '09:00:00', '20:00:00', 'B003', 'Z004') 
 INSERT INTO Outlet VALUES ('O004', 'Vietry Good', '188 Pasir Ris Road, Singapore 271188', '12:00:00', '22:00:00', '12:00:00', '21:00:00', 'B004', 'Z002')  
 INSERT INTO Outlet VALUES ('O005', 'La Chancla', '24 Ang Mo Kio Avenue, Singapore 549604', '07:00:00', '21:00:00', '07:00:00', '20:00:00', 'B005', 'Z004')  
 INSERT INTO Outlet VALUES ('O006', 'Muthu Foods', '768 Woodlands Plaza, Singapore 720768', '10:00:00', '21:00:00', '10:00:00', '19:30:00', 'B006', 'Z001')  
@@ -445,16 +445,16 @@ INSERT INTO OutletCuisines VALUES ('O010', 'CS001')
 
 
 -- Promotion
-INSERT INTO Promotion VALUES ('P001', 'New Year Promotion', 'New Year, New Discounts! Available for first purchase of the year', 'N', 20.21)
-INSERT INTO Promotion VALUES ('P002', 'CNY Promotion', 'Happy Chinese New Year!', 'N', 8.88)
-INSERT INTO Promotion VALUES ('P003', 'Valentines Discount ', 'Have an enjoyable Valentines in the comfort of your own home', 'Y', 2.14)
-INSERT INTO Promotion VALUES ('P004', 'Easter Promotion ', 'Eggcellent discounts, while stocks last', 'N', 10)
-INSERT INTO Promotion VALUES ('P005', 'Labour Day Promotion ', 'Time to take a break with our Labour Day discounts', 'N', 10)
-INSERT INTO Promotion VALUES ('P006', 'Hari Raya Puasa Promotion', 'Selamat Hari Raya! ', 'Y', 10)
-INSERT INTO Promotion VALUES ('P007', 'Deepavali Promotion', 'Happy Diwali!', 'Y', 10)
-INSERT INTO Promotion VALUES ('P008', 'National Day Promotion', 'Happy 56th Birthday Singapore', 'Y', 5.6)
-INSERT INTO Promotion VALUES ('P009', '11/11 Sale', 'Celebrate all your discounted purchases with more discounts!', 'N', 11)
-INSERT INTO Promotion VALUES ('P010', 'Christmas Promotion ', 'Merry Christmas! Applicable with purchases totalling over $200', 'N', 25)
+INSERT INTO Promotion VALUES ('P001', ' 5% off ', '5% off all orders, terms and conditions', 'N', 5) 
+INSERT INTO Promotion VALUES ('P002', ' Huat Discount', '8.88% off all orders', 'N', 8.88)
+INSERT INTO Promotion VALUES ('P003', ' Couples discount ', 'Eligible for orders with two or more items', 'Y', 2.14)
+INSERT INTO Promotion VALUES ('P004', '10 % off ', '10% of all orders', 'N', 10.00)
+INSERT INTO Promotion VALUES ('P005', ' 10% off  ', '10% off all orders', 'N', 10.00)
+INSERT INTO Promotion VALUES ('P006', ' 10 % off', '10 % off all orders ', 'Y', 10.00)
+INSERT INTO Promotion VALUES ('P007', '15% off ', '15 % off all orders ', 'Y', 10.00)
+INSERT INTO Promotion VALUES ('P008', 'Singapore Promotion', 'Singapore''s 56th Birthday', 'Y', 5.60)
+INSERT INTO Promotion VALUES ('P009', '11% off 11', ' Applicable with purchases totalling over $11', 'N', 11.00)
+INSERT INTO Promotion VALUES ('P010', '25% off 30', ' Applicable with purchases totalling over $30', 'N', 25.0)
 
 
 -- OutletPromotions
@@ -601,30 +601,34 @@ INSERT INTO Team VALUES ('T010', 'CrewWay', NULL, NULL)
 
 
 -- Rider
-INSERT INTO Rider VALUES ('R001', 'S3123642J', 'Samuel Low', '86543143', 'Fernville Road #14-01 353448', '02/05/1976', 'Bicycle', 'T001')  
-INSERT INTO Rider VALUES ('R002', 'S7676723T', 'Darron Mann', '86755433', 'Nashville Road #17-30 765345', '07/23/1996', 'Motocycle', 'T001') 
-INSERT INTO Rider VALUES ('R003', 'S8745234U', 'Zachary Chan', '91039124', 'Ring Road #10-01 353448', '11/28/1998', 'Car', 'T001') 
-INSERT INTO Rider VALUES ('R004', 'S0734980A', 'Robert Teo', '90589341', ' Road #14-01 353448', '07/12/1976', 'E-Scooter', 'T002') 
-INSERT INTO Rider VALUES ('R005', 'S5421754Y', 'James Chia', '81463981', 'Tilda Street #20-12 353448', '02/15/1989', 'E-Scooter', 'T003') 
+INSERT INTO Rider VALUES ('R001', 'S3123642J', 'Samuel Low', '86543143', 'Fernville Road #14-01 353448', '02/05/1976', 'Bicycle', 'T001') --C 1 Value Set
+INSERT INTO Rider VALUES ('R002', 'S7676723T', 'Darron Mann', '86755433', 'Nashville Road #17-30 765345', '07/23/1996', 'Motocycle', 'T001') --C Ben Query1
+INSERT INTO Rider VALUES ('R003', 'S8745234U', 'Zachary Chan', '91039124', 'Ring Road #10-01 353448', '11/28/1998', 'Car', 'T001') --C Ben Query1
+INSERT INTO Rider VALUES ('R004', 'S0734980A', 'Robert Teo', '90589341', ' Road #14-01 353448', '07/12/1976', 'E-Scooter', 'T002') --C Ben Query1
+INSERT INTO Rider VALUES ('R005', 'S5421754Y', 'James Chia', '81463981', 'Tilda Street #20-12 353448', '02/15/1989', 'E-Scooter', 'T003') --C No Awards --C No Value Set
 INSERT INTO Rider VALUES ('R006', 'S0978763V', 'Rachel Liau', '99089046', 'Bukit Batok Street 21 #04-04 624543', '01/12/1967', 'E-Scooter', 'T004') 
 INSERT INTO Rider VALUES ('R007', 'S1047343D', 'Darren Tok', '85642134', 'West Coast Road Blk 930#15-32 786534', '09/19/1978', 'Car', 'T005')
 INSERT INTO Rider VALUES ('R008', 'S9074893H', 'Sam Guy', '94359687', 'HoolaRow Road #14-01 353448', '06/30/1997', 'Motocycle', 'T005') 
 INSERT INTO Rider VALUES ('R009', 'S7609353K', 'Thomas Trent', '90308232', 'YuoTze Road Blk 54 #17-06 876465', '03/21/1986', 'Bicycle',  'T005') 
 INSERT INTO Rider VALUES ('R010', 'S8743099C', 'Dan Toh', '89897323', 'Mollow Street 57', '06/08/1988', 'Foot', 'T005')
+INSERT INTO Rider VALUES ('R011', 'S9477284D', 'Derrik Foo', '93486587', 'Blower Road 111', '06/08/1987', 'Foot', 'T005') --C No Awards
+INSERT INTO Rider VALUES ('R012', 'S8234634A', 'Jerry Lim', '92834567', 'Clementi Road Blk 92 #10-16 293764', '11/18/1981', 'Motocycle', 'T006') --C No Awards
+INSERT INTO Rider VALUES ('R013', 'S9431727J', 'Funny Boy', '89127344', 'Laughing Avenue 101', '05/12/1990', 'Bicycle', 'T006') --C No Value Set
 
 
 -- AwardsWon
-INSERT INTO AwardsWon VALUES ('A001', 'R003', '12/29/2018')
+INSERT INTO AwardsWon VALUES ('A001', 'R003', '12/29/2018') --C Ben Query1
 INSERT INTO AwardsWon VALUES ('A001', 'R008', '12/28/2019')
 INSERT INTO AwardsWon VALUES ('A001', 'R008', '12/29/2020')
-INSERT INTO AwardsWon VALUES ('A003', 'R004', '12/29/2018')
-INSERT INTO AwardsWon VALUES ('A003', 'R002', '12/28/2019')
+INSERT INTO AwardsWon VALUES ('A003', 'R004', '12/29/2018') --C Ben Query1
+INSERT INTO AwardsWon VALUES ('A003', 'R002', '12/28/2019') --C Ben Query1
+INSERT INTO AwardsWon VALUES ('A009', 'R002', '12/28/2019')
 INSERT INTO AwardsWon VALUES ('A003', 'R010', '12/29/2020')
 INSERT INTO AwardsWon VALUES ('A005', 'R006', '12/29/2020')
 INSERT INTO AwardsWon VALUES ('A007', 'R007', '12/29/2020')
-INSERT INTO AwardsWon VALUES ('A009', 'R002', '12/28/2019')
 INSERT INTO AwardsWon VALUES ('A009', 'R009', '12/29/2020')
-INSERT INTO AwardsWon VALUES ('A010', 'R001', '12/28/2019')
+INSERT INTO AwardsWon VALUES ('A010', 'R001', '12/28/2019') --C Ben Query1
+INSERT INTO AwardsWon VALUES ('A005', 'R013', '01/07/2020')
 
 
 -- Equipment
@@ -688,25 +692,33 @@ INSERT INTO EquipmentPurchase VALUES ('R010', 'E013', '02/23/2019', 1)
 INSERT INTO EquipmentPurchase VALUES ('R001', 'E017', '03/30/2019', 1)
 INSERT INTO EquipmentPurchase VALUES ('R003', 'E015', '08/25/2019', 1)
 INSERT INTO EquipmentPurchase VALUES ('R002', 'E001', '10/08/2019', 1)
+INSERT INTO EquipmentPurchase VALUES ('R002', 'E002', '10/08/2019', 1)
+INSERT INTO EquipmentPurchase VALUES ('R002', 'SE002', '11/13/2019', 2) --C Ben Query1
+INSERT INTO EquipmentPurchase VALUES ('R001', 'SE002', '08/03/2019', 1)
+INSERT INTO EquipmentPurchase VALUES ('R004', 'SE002', '09/05/2019', 2) --C Ben Query1
+INSERT INTO EquipmentPurchase VALUES ('R003', 'SE002', '12/08/2019', 1) --C Ben Query1
+INSERT INTO EquipmentPurchase VALUES ('R003', 'SE002', '01/18/2020', 2)
+INSERT INTO EquipmentPurchase VALUES ('R011', 'SE002', '01/01/2020', 1)
+INSERT INTO EquipmentPurchase VALUES ('R012', 'SE002', '10/09/2020', 1)
 
 
 -- Customer
-INSERT INTO Customer VALUES ('C001', 'Anth La', 'Sui Bian Road #00-01 88888', '91111111', 'justputwhatever@gmail.com') 
-INSERT INTO Customer VALUES ('C002',' Harry Botter', 'Drawer under the stairs Alley #13-06', '23423424',  'iamalizard@gmail.com') 
+INSERT INTO Customer VALUES ('C001', 'Anth La', 'Sui Bian Road #00-01 88888', '91111111', 'justputwhatever@gmail.com') --C Ben Query4
+INSERT INTO Customer VALUES ('C002',' Harry Botter', 'Drawer under the stairs Alley #13-06', '23423424',  'iamalizard@gmail.com') --C Ben Query4
 INSERT INTO Customer VALUES ('C003', 'Justin Beaver', '11 Baby Street #18-21 Singapore 382011', '43243553', 'justinbaby123@gmail.com') 
 INSERT INTO Customer VALUES ('C005', 'Ronald Bacdonald', '24 McBishan McPark McSingapore 912090', '43243553', 'MAC@gmail.com') 
 INSERT INTO Customer VALUES ('C006', 'Selena Bomez', '38 Marina Bay #22-69 Singapore 483038', '82123232', 'justiniloveyou@gmail.com') 
-INSERT INTO Customer VALUES ('C007', 'LeBruh James', '23 Goat Avenue #01-01 Singapore 232323', '93712107', 'kingjames@gmail.com') 
-INSERT INTO Customer VALUES ('C008', 'Stepan Chilli', '23 Mountain Goat Avenue #06-01 Singapore 653663', '97863635', 'godstepan@gmail.com' ) 
-INSERT INTO Customer VALUES ('C009', 'Tom Clementi', '645 Holland Road', '99999999', 'froginmouth@gmail.com') 
-INSERT INTO Customer VALUES ('C010', 'Sillie Eyelash', '1 Billboard Charts #01-01 Singapore 272401', '94768343', 'imthebadguy@duhmail.com') 
+INSERT INTO Customer VALUES ('C007', 'LeBruh James', '23 Goat Avenue #01-01 Singapore 232323', '93712107', 'kingjames@gmail.com') --C Ben Query4
+INSERT INTO Customer VALUES ('C008', 'Stepan Chilli', '23 Mountain Goat Avenue #06-01 Singapore 653663', '97863635', 'godstepan@gmail.com' ) --C No. of Pickup equal Delivery
+INSERT INTO Customer VALUES ('C009', 'Tom Clementi', '645 Holland Road', '99999999', 'froginmouth@gmail.com') --C More Pickup
+INSERT INTO Customer VALUES ('C010', 'Sillie Eyelash', '1 Billboard Charts #01-01 Singapore 272401', '94768343', 'imthebadguy@duhmail.com') --C More Pickup
 INSERT INTO Customer VALUES ('C011', 'Ariana Medium,', '43 High Pitch #34-35 Singapore 343569', '93526371', 'arianagrande@hotmail.com')
 INSERT INTO Customer VALUES ('C012', 'Benjamin Who J.K', 'School of Science and Technology', '82990118', 'codecreatecoordinate@impressive.isntit') 
 INSERT INTO Customer VALUES ('C013', 'Jack Daniel', 'Crescent Street Blk 45 #10-34', '94356554', 'jackdaniel123@gmail.com') 
 INSERT INTO Customer VALUES ('C014', 'Anna Lim', 'Clementi Street 64 Blk 345 #12-34', '90523533', 'annalim@gmail.com') 
 INSERT INTO Customer VALUES ('C015', 'Daniel Chua', 'Hunter Street Blk 353 #35-02', '92939453', 'danielc@gmail.com') 
 INSERT INTO Customer VALUES ('C016', 'Steven Lee', 'Oxford Rd 123', '84654365', 'stevenlee@gmail.com') 
-INSERT INTO Customer VALUES ('C017', 'Giselle Oon', 'Rochester Street Blk 41 #17-32', '97685665', 'giselleoon@gmail.com') 
+INSERT INTO Customer VALUES ('C017', 'Giselle Oon', 'Rochester Street Blk 41 #17-32', '97685665', 'giselleoon@gmail.com') --C No Pickup
 
 
 -- Voucher
@@ -722,35 +734,66 @@ INSERT INTO Voucher VALUES ('V009', 'N', ' Free chicken rice worth $3.80', '2021
 INSERT INTO Voucher VALUES ('V010', 'R', 'Free lontong worth $4.50', '20210101 00:00:00 AM', '20210630 23:59:59 PM', NULL, '4.50', 'C002')
 INSERT INTO Voucher VALUES ('V011', 'R', '$5 off delivery fees', '20210101 00:00:00 AM', '20210630 23:59:59 PM', NULL, '5.00', 'C001')
 INSERT INTO Voucher VALUES ('V012', 'R', '$5 off delivery fees', '20210101 00:00:00 AM', '20210630 23:59:59 PM', NULL, '5.00', 'C006')
-INSERT INTO Voucher VALUES ('V013', 'R', '$5 off delivery fees', '20210101 00:00:00 AM', '20210630 23:59:59', NULL, '5.00', 'C005')
+INSERT INTO Voucher VALUES ('V013', 'R', '$5 off delivery fees', '20210101 00:00:00 AM', '20210630 23:59:59 PM', NULL, '5.00', 'C005')
+INSERT INTO Voucher VALUES ('V014', 'R', '$5 off delivery fees', '20210101 00:00:00 AM', '20210630 23:59:59 PM', NULL, '5.00', 'C009')
 
 
 -- CustOrder
-INSERT INTO CustOrder VALUES ('DE001', 'D', '20201204 18:25:32 PM', 'C001', 'V001', 'O010')
-INSERT INTO CustOrder VALUES ('DE002', 'N', '20200823 13:12:45 PM', 'C007', 'V012', 'O002')
-INSERT INTO CustOrder VALUES ('PU003', 'D', '20201107 10:01:05 AM', 'C010', 'V008', 'O004')
-INSERT INTO CustOrder VALUES ('DE004', 'D', '20201217 18:29:23 PM', 'C001', 'V013', 'O003')
-INSERT INTO CustOrder VALUES ('PU005', 'N', '20200715 12:35:12 PM', 'C008', NULL, 'O007')
-INSERT INTO CustOrder VALUES ('DE006', 'D', '20201111 22:24:01 PM', 'C001', 'V003', 'O003')
-INSERT INTO CustOrder VALUES ('PU007', 'N', '20201224 13:12:45 PM', 'C009', NULL, 'O006')
-INSERT INTO CustOrder VALUES ('PU008', 'D', '20210201 11:55:23 AM', 'C008', NULL, 'O009')
-INSERT INTO CustOrder VALUES ('DE009', 'D', '20200513 16:53:54 PM', 'C002', 'V010', 'O001')
-INSERT INTO CustOrder VALUES ('PU010', 'D', '20201010 20:33:32 PM', 'C007', NULL,  'O003')
-INSERT INTO CustOrder VALUES ('DE011', 'D', '20201204 18:25:32 PM', 'C001', NULL, 'O010')
-INSERT INTO CustOrder VALUES ('PU012', 'N', '20201113 15:02:35 PM', 'C007', NULL, 'O002')
-INSERT INTO CustOrder VALUES ('PU013', 'D', '20200508 18:40:12 PM', 'C010', NULL, 'O004')
-INSERT INTO CustOrder VALUES ('PU014', 'D', '20200427 14:22:53 PM', 'C001', NULL, 'O003')
-INSERT INTO CustOrder VALUES ('DE015', 'N', '20201125 21:30:52 PM', 'C008', 'V011', 'O007')
-INSERT INTO CustOrder VALUES ('PU016', 'N', '20210108 12:26:32 AM', 'C003', 'V002' , 'O005')
-INSERT INTO CustOrder VALUES ('DE017', 'N', '20201224 15:40:41 PM', 'C009', 'V006', 'O006')
-INSERT INTO CustOrder VALUES ('DE018', 'D', '20210911 11:25:53 AM', 'C008', NULL, 'O009')
-INSERT INTO CustOrder VALUES ('PU019', 'D', '20200719 16:53:54 PM', 'C002', NULL, 'O001')
-INSERT INTO CustOrder VALUES ('DE020', 'D', '20201010 20:33:32 PM', 'C007', NULL,  'O003')
+INSERT INTO CustOrder VALUES ('DE001', 'D', '2020-12-04 18:25:32 PM', 'C001', 'V001', 'O010')
+INSERT INTO CustOrder VALUES ('DE002', 'N', '2020-08-23 13:12:45 PM', 'C007', 'V012', 'O002')
+INSERT INTO CustOrder VALUES ('PU003', 'D', '2020-11-07 10:01:05 AM', 'C010', 'V008', 'O004')
+INSERT INTO CustOrder VALUES ('DE004', 'D', '2020-12-17 18:29:23 PM', 'C001', 'V013', 'O003')
+INSERT INTO CustOrder VALUES ('PU005', 'N', '2020-07-15 12:35:12 PM', 'C008', NULL, 'O007')
+INSERT INTO CustOrder VALUES ('DE006', 'D', '2020-11-11 22:24:01 PM', 'C001', 'V003', 'O003')
+INSERT INTO CustOrder VALUES ('PU007', 'N', '2020-12-24 13:12:45 PM', 'C009', NULL, 'O006')
+INSERT INTO CustOrder VALUES ('PU008', 'D', '2021-02-01 11:55:23 AM', 'C008', NULL, 'O009')
+INSERT INTO CustOrder VALUES ('DE009', 'D', '2020-05-13 16:53:54 PM', 'C002', 'V010', 'O001')
+INSERT INTO CustOrder VALUES ('PU010', 'D', '2020-10-10 20:33:32 PM', 'C007', NULL,  'O003')
+INSERT INTO CustOrder VALUES ('DE011', 'D', '2020-12-04 18:25:32 PM', 'C001', NULL, 'O010')
+INSERT INTO CustOrder VALUES ('PU012', 'N', '2020-11-13 15:02:35 PM', 'C007', NULL, 'O002')
+INSERT INTO CustOrder VALUES ('PU013', 'D', '2020-05-08 18:40:12 PM', 'C010', NULL, 'O004')
+INSERT INTO CustOrder VALUES ('PU014', 'D', '2020-04-27 14:22:53 PM', 'C001', NULL, 'O003')
+INSERT INTO CustOrder VALUES ('DE015', 'N', '2020-11-25 21:30:52 PM', 'C008', 'V011', 'O007')
+INSERT INTO CustOrder VALUES ('PU016', 'N', '2021-01-08 12:26:32 AM', 'C003', 'V002' , 'O005')
+INSERT INTO CustOrder VALUES ('DE017', 'N', '2020-12-24 15:40:41 PM', 'C009', 'V006', 'O006')
+INSERT INTO CustOrder VALUES ('DE018', 'D', '2021-09-11 11:25:53 AM', 'C008', NULL, 'O009')
+INSERT INTO CustOrder VALUES ('PU019', 'D', '2020-07-19 16:53:54 PM', 'C002', NULL, 'O001')
+INSERT INTO CustOrder VALUES ('DE020', 'D', '2020-10-10 20:33:32 PM', 'C007', NULL,  'O003')
+
+INSERT INTO CustOrder VALUES ('DE021', 'N', '2020-10-11 10:30:58 AM', 'C002', NULL,  'O003')
+INSERT INTO CustOrder VALUES ('DE022', 'D', '2020-10-11 21:00:12 PM', 'C007', NULL,  'O004')
+INSERT INTO CustOrder VALUES ('PU023', 'D', '2020-10-11 12:12:43 PM', 'C009', 'V014',  'O004')
+INSERT INTO CustOrder VALUES ('DE024', 'D', '2020-10-12 15:13:09 PM', 'C017', NULL,  'O006')
 
 
--- Payment NOT DONE
+-- Payment
+INSERT INTO Payment VALUES ('PO001', 'Credit Card', 'Order Payment', 5.40, 'DE001')
+INSERT INTO Payment VALUES ('PO002', 'Debit Card', 'Order Payment', 1.43, 'DE002')
+INSERT INTO Payment VALUES ('PO003', 'Credit Card', 'Refund', 14.24, 'PU003')
+INSERT INTO Payment VALUES ('PO004', 'Credit Card', 'Order Payment', 8.50, 'DE004')
+INSERT INTO Payment VALUES ('PO005', 'Credit Card', 'Order Payment', 4.37, 'PU005')
+INSERT INTO Payment VALUES ('PO006', 'Debit Card', 'Order Payment', 5.66, 'DE006')
+INSERT INTO Payment VALUES ('PO007', 'Credit Card', 'Order Payment', 10.18, 'PU007') 
+INSERT INTO Payment VALUES ('PO008', 'Debit Card', 'Order Payment', 17.01, 'PU008') 
+INSERT INTO Payment VALUES ('PO009', 'Debit Card', 'Order Payment', 11.90, 'DE009') 
+INSERT INTO Payment VALUES ('PO010', 'Credit Card', 'Order Payment', 13.22, 'PU010') 
+INSERT INTO Payment VALUES ('PO011', 'Credit Card', 'Order Payment', 11.70, 'DE011') 
+INSERT INTO Payment VALUES ('PO012', 'Debit Card', 'Order Payment', 6.84, 'PU012') 
+INSERT INTO Payment VALUES ('PO013', 'Credit Card', 'Refund', 12.46, 'PU013') 
+INSERT INTO Payment VALUES ('PO014', 'Credit Card', 'Order Payment', 15.10, 'PU014') 
+INSERT INTO Payment VALUES ('PO015', 'Credit Card', 'Order Payment', 1.64, 'DE015')  
+INSERT INTO Payment VALUES ('PO016', 'Debit Card', 'Order Payment', 30.60, 'PU016') 
+INSERT INTO Payment VALUES ('PO017', 'Credit Card', 'Order Payment', 17.61, 'DE017') 
+INSERT INTO Payment VALUES ('PO018', 'Debit Card', 'Order Payment', 5.67, 'DE018') 
+INSERT INTO Payment VALUES ('PO019', 'Debit Card', 'Order Payment', 4.50, 'PU019') 
+INSERT INTO Payment  VALUES ('PO020', 'Credit Card', 'Order Payment', 10.38, 'DE020') 
 
+INSERT INTO Payment  VALUES ('PO021', 'Pay Now', 'Order Payment', 10.38, 'DE021') 
+INSERT INTO Payment  VALUES ('PO022', 'Debit Card', 'Order Payment', 10.38, 'DE022') 
+INSERT INTO Payment  VALUES ('PO023', 'Pay Now', 'Order Payment', 10.38, 'PU023') 
+INSERT INTO Payment  VALUES ('PO023', 'Pay Now', 'Order Payment', 10.38, 'DE024') 
 
+ 
 -- OrderItem
 INSERT INTO OrderItem VALUES ('DE001', 'I001', 2, 5.50)
 INSERT INTO OrderItem VALUES ('DE002', 'I034', 1, 4.50)
@@ -761,46 +804,67 @@ INSERT INTO OrderItem VALUES ('DE006', 'I013', 1, 5.50)
 INSERT INTO OrderItem VALUES ('PU007', 'I036', 1, 5.20)
 INSERT INTO OrderItem VALUES ('PU008', 'I021', 3, 6.30)
 INSERT INTO OrderItem VALUES ('DE009', 'I012', 2, 7)
-INSERT INTO OrderItem VALUES ('PU010', 'I001', 2, 5.50)
-INSERT INTO OrderItem VALUES ('DE011', 'I001', 2, 5.50)
-INSERT INTO OrderItem VALUES ('PU012', 'I001', 2, 5.50)
-INSERT INTO OrderItem VALUES ('PU013', 'I001', 2, 5.50)
-INSERT INTO OrderItem VALUES ('PU014', 'I001', 2, 5.50)
-INSERT INTO OrderItem VALUES ('DE015', 'I001', 2, 5.50)
-INSERT INTO OrderItem VALUES ('PU016', 'I001', 2, 5.50)
-INSERT INTO OrderItem VALUES ('DE017', 'I001', 2, 5.50)
-INSERT INTO OrderItem VALUES ('DE018', 'I001', 2, 5.50)
-INSERT INTO OrderItem VALUES ('PU019', 'I001', 2, 5.50)
-INSERT INTO OrderItem VALUES ('DE020', 'I001', 2, 5.50)
+INSERT INTO OrderItem VALUES ('PU010', 'I014', 2, 7.00)
+INSERT INTO OrderItem VALUES ('DE011', 'I004', 2, 6.50)
+INSERT INTO OrderItem VALUES ('PU012', 'I033', 2, 3.80)
+INSERT INTO OrderItem VALUES ('PU013', 'I029', 2, 7.00)
+INSERT INTO OrderItem VALUES ('PU014', 'I018', 2, 8.00)
+INSERT INTO OrderItem VALUES ('DE015', 'I023', 1, 4.80)
+INSERT INTO OrderItem VALUES ('PU016', 'I024', 5, 7.80)
+INSERT INTO OrderItem VALUES ('DE017', 'I035', 3, 6.00)
+INSERT INTO OrderItem VALUES ('DE018', 'I021', 1, 6.30)
+INSERT INTO OrderItem VALUES ('PU019', 'I011', 1, 5.30)
+
+INSERT INTO OrderItem VALUES ('DE021', 'I001', 2, 5.50)
+INSERT INTO OrderItem VALUES ('DE022', 'I001', 2, 5.50)
+INSERT INTO OrderItem VALUES ('PU023', 'I001', 2, 5.50)
 
 
--- OrderPromotions NOT DONE
 
+
+
+-- OrderPromotions
+INSERT INTO OrderPromotions VALUES ('DE001', 'P005')
+INSERT INTO OrderPromotions VALUES ('DE002', 'P010')
+INSERT INTO OrderPromotions VALUES ('PU003', 'P003')
+INSERT INTO OrderPromotions VALUES ('DE004', 'P003')
+INSERT INTO OrderPromotions VALUES ('PU005', 'P009')
+INSERT INTO OrderPromotions VALUES ('DE006', 'P002')
+INSERT INTO OrderPromotions VALUES ('PU007', 'P005')
+INSERT INTO OrderPromotions VALUES ('PU008', 'P010')
+INSERT INTO OrderPromotions VALUES ('DE009', 'P004')
+INSERT INTO OrderPromotions VALUES ('PU010', 'P007')
 
 -- Pickup
-INSERT INTO PickUp VALUES ('PU003', 'RN001', '20200427 04:41:33 PM')
-INSERT INTO PickUp VALUES ('PU005', 'RN002', '20200719 07:02:14 PM')
-INSERT INTO PickUp VALUES ('PU007', 'RN003', '20210108 11:37:12 AM')
-INSERT INTO PickUp VALUES ('PU008', 'RN004', '20201010 10:43:42 PM')
-INSERT INTO PickUp VALUES ('PU010', 'RN005', '20200823 01:32:25 PM')
-INSERT INTO PickUp VALUES ('PU012', 'RN006', '20200715 12:43:52 PM')
-INSERT INTO PickUp VALUES ('PU013', 'RN007', '20210201 11:05:40 AM')
-INSERT INTO PickUp VALUES ('PU014', 'RN008', '20201224 13:22:35 PM')
-INSERT INTO PickUp VALUES ('PU016', 'RN009', '20200508 08:53:52 PM')
-INSERT INTO PickUp VALUES ('PU019', 'RN010', '20201107 10:41:05 AM')
+INSERT INTO PickUp VALUES ('PU003', 'RN001', '2020-04-27 04:41:33 PM')
+INSERT INTO PickUp VALUES ('PU005', 'RN002', '2020-07-19 07:02:14 PM')
+INSERT INTO PickUp VALUES ('PU007', 'RN003', '2021-01-08 11:37:12 AM')
+INSERT INTO PickUp VALUES ('PU008', 'RN004', '2020-10-10 10:43:42 PM')
+INSERT INTO PickUp VALUES ('PU010', 'RN005', '2020-08-23 01:32:25 PM')
+INSERT INTO PickUp VALUES ('PU012', 'RN006', '2020-07-15 12:43:52 PM')
+INSERT INTO PickUp VALUES ('PU013', 'RN007', '2021-02-01 11:05:40 AM')
+INSERT INTO PickUp VALUES ('PU014', 'RN008', '2020-12-24 13:22:35 PM')
+INSERT INTO PickUp VALUES ('PU016', 'RN009', '2020-05-08 08:53:52 PM')
+INSERT INTO PickUp VALUES ('PU019', 'RN010', '2020-11-07 10:41:05 AM')
+
+INSERT INTO PickUp VALUES ('PU023', 'RN011', '2020-11-07 10:41:05 AM')
 
 
 -- Delivery
-INSERT INTO Delivery VALUES ('DE001', '20201202 12:22:45', 'Sui Bian Road #00-01 88888', 'R003') 
-INSERT INTO Delivery VALUES ('DE002', '20200429 14:51:32', '23 Goat Avenue #01-01 Singapore 232323', 'R001') 
-INSERT INTO Delivery VALUES ('DE004', '20200808 10:11:12', 'Sui Bian Road #00-01 88888', 'R009') 
-INSERT INTO Delivery VALUES ('DE006', '20201119 16:08:43', 'Sui Bian Road #00-01 88888', 'R007') 
-INSERT INTO Delivery VALUES ('DE009', '20210121 19:06:53', 'Drawer under the stairs Alley #13-06', 'R005') 
-INSERT INTO Delivery VALUES ('DE011', '20200509 15:43:55', 'Sui Bian Road #00-01 88888', 'R008') 
-INSERT INTO Delivery VALUES ('DE015', '20200224 11:48:00', '23 Mountain Goat Avenue #06-01 Singapore 653663', 'R004') 
-INSERT INTO Delivery VALUES ('DE017', '20200126 20:12:02', '645 Holland Road', 'R010') 
-INSERT INTO Delivery VALUES ('DE018', '20201130 13:48:16', '23 Mountain Goat Avenue #06-01 Singapore 653663', 'R006') 
-INSERT INTO Delivery VALUES ('DE020', '20201209 18:10:06', '23 Goat Avenue #01-01 Singapore 232323', 'R002')
+INSERT INTO Delivery VALUES ('DE001', '2020-12-02 12:22:45', 'Sui Bian Road #00-01 88888', 'R003') 
+INSERT INTO Delivery VALUES ('DE002', '2020-04-29 14:51:32', '23 Goat Avenue #01-01 Singapore 232323', 'R001') 
+INSERT INTO Delivery VALUES ('DE004', '2020-08-08 10:11:12', 'Sui Bian Road #00-01 88888', 'R009') 
+INSERT INTO Delivery VALUES ('DE006', '2020-11-19 16:08:43', 'Sui Bian Road #00-01 88888', 'R007') 
+INSERT INTO Delivery VALUES ('DE009', '2021-01-21 19:06:53', 'Drawer under the stairs Alley #13-06', 'R005') 
+INSERT INTO Delivery VALUES ('DE011', '2020-05-09 15:43:55', 'Sui Bian Road #00-01 88888', 'R008') 
+INSERT INTO Delivery VALUES ('DE015', '2020-02-24 11:48:00', '23 Mountain Goat Avenue #06-01 Singapore 653663', 'R004') 
+INSERT INTO Delivery VALUES ('DE017', '2020-01-26 20:12:02', '645 Holland Road', 'R010') 
+INSERT INTO Delivery VALUES ('DE018', '2020-11-30 13:48:16', '23 Mountain Goat Avenue #06-01 Singapore 653663', 'R006') 
+INSERT INTO Delivery VALUES ('DE020', '2020-12-09 18:10:06', '23 Goat Avenue #01-01 Singapore 232323', 'R002')
+
+INSERT INTO Delivery VALUES ('DE021', '2020-02-09 18:10:06', '23 Goat Avenue #01-01 Singapore 232323', 'R002')
+INSERT INTO Delivery VALUES ('DE022', '2020-02-09 18:10:06', '23 Goat Avenue #01-01 Singapore 232323', 'R002')
+INSERT INTO Delivery VALUES ('DE024', '2020-02-09 18:10:06', '23 Goat Avenue #01-01 Singapore 232323', 'R003')
 
 
 -- DeliveryAssignment
