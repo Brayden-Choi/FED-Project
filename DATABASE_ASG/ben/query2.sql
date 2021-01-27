@@ -1,28 +1,30 @@
 /*
-Display the riderID and number of Value Set bought of riders who have bought least 2 Value Sets and won at least 1 award. 
-Sort the result in the decreasing number of Value set bought.
+Show the order details with customer name, description of voucher used (if any) and delivery time of the orders 
+which were delivered more than 1 hour after the order time and was by rider with Motocycle.
+Sort the result in increasing order of order time.
 */
 
-SELECT r.riderID, SUM(purchaseQty) AS 'Number of Value Sets'
+SELECT 
+    co.orderID, c.custName, 
+    COALESCE(v.voucherDescription, '-') 'voucherUsed', 
+    d.deliveryAddress, co.orderDateTime, d.deliveryDateTime
 
-FROM EquipmentPurchase as ep
-    JOIN Rider as r
-    ON ep.riderID = r.riderID
+FROM Delivery AS d
+    JOIN CustOrder AS co
+    ON co.orderID = d.orderID
 
-WHERE
-    equipID = (
-	    SELECT equipID 
-        FROM Equipment 
-        WHERE equipName = 'Value Set'
-    )
-    AND
-    r.riderID in (
-        SELECT riderID 
-        FROM AwardsWon 
-        GROUP BY riderID 
-        HAVING COUNT(awardID) >= 1
-    )
+    JOIN Rider AS r
+    ON r.riderID = d.riderID
 
-GROUP BY r.riderID
-HAVING SUM(purchaseQty) >= 2
-ORDER BY 'Number of Value Sets' DESC
+    LEFT JOIN Voucher AS v
+    ON co.voucherID = v.voucherID
+
+    LEFT JOIN Customer AS c
+    ON co.custID = c.custID
+
+WHERE 
+    r.deliveryMode = 'Motorcycle' 
+    AND 
+    DATEDIFF(SECOND, co.orderDateTime, d.deliveryDateTime) > 3600
+
+ORDER BY co.orderDateTime ASC
