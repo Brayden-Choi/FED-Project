@@ -791,6 +791,7 @@ INSERT INTO Payment  VALUES ('PO020', 'Credit Card', 'Order Payment', 10.38, 'DE
 INSERT INTO Payment  VALUES ('PO021', 'Pay Now', 'Order Payment', 10.38, 'DE021') 
 INSERT INTO Payment  VALUES ('PO022', 'Debit Card', 'Order Payment', 10.38, 'DE022') 
 INSERT INTO Payment  VALUES ('PO023', 'Pay Now', 'Order Payment', 10.38, 'PU023') 
+INSERT INTO Payment  VALUES ('PO023', 'Pay Now', 'Order Payment', 10.38, 'DE024') 
 
  
 -- OrderItem
