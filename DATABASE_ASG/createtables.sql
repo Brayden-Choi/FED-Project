@@ -607,9 +607,9 @@ INSERT INTO Team VALUES ('T010', 'CrewWay', NULL, NULL)
 -- Rider
 INSERT INTO Rider VALUES ('R001', 'S3123642J', 'Samuel Low', '86543143', 'Fernville Road #14-01 353448', '02/05/1976', 'Bicycle', 'T001') --C 1 Value Set
 INSERT INTO Rider VALUES ('R002', 'S7676723T', 'Darron Mann', '86755433', 'Nashville Road #17-30 765345', '07/23/1996', 'Motocycle', 'T001') --C Ben Query1
-INSERT INTO Rider VALUES ('R003', 'S8745234U', 'Zachary Chan', '91039124', 'Ring Road #10-01 353448', '11/28/1998', 'Car', 'T001') --C Ben Query1
+INSERT INTO Rider VALUES ('R003', 'S8745234U', 'Zachary Chan', '91039124', 'Ring Road #10-01 353448', '11/28/1998', 'Car', 'T001') --C Ben Query1 --C Elsa Query2
 INSERT INTO Rider VALUES ('R004', 'S0734980A', 'Robert Teo', '90589341', ' Road #14-01 353448', '07/12/1976', 'E-Scooter', 'T002') --C Ben Query1
-INSERT INTO Rider VALUES ('R005', 'S5421754Y', 'James Chia', '81463981', 'Tilda Street #20-12 353448', '02/15/1989', 'E-Scooter', 'T003') --C No Awards --C No Value Set
+INSERT INTO Rider VALUES ('R005', 'S5421754Y', 'James Chia', '81463981', 'Tilda Street #20-12 353448', '02/15/1989', 'E-Scooter', 'T003') --C No Awards --C No Value Set --C Elsa Query2
 INSERT INTO Rider VALUES ('R006', 'S0978763V', 'Rachel Liau', '99089046', 'Bukit Batok Street 21 #04-04 624543', '01/12/1967', 'E-Scooter', 'T004') 
 INSERT INTO Rider VALUES ('R007', 'S1047343D', 'Darren Tok', '85642134', 'West Coast Road Blk 930#15-32 786534', '09/19/1978', 'Car', 'T005')
 INSERT INTO Rider VALUES ('R008', 'S9074893H', 'Sam Guy', '94359687', 'HoolaRow Road #14-01 353448', '06/30/1997', 'Motocycle', 'T005') 
@@ -707,14 +707,14 @@ INSERT INTO EquipmentPurchase VALUES ('R012', 'SE002', '10/09/2020', 1)
 
 
 -- Customer
-INSERT INTO Customer VALUES ('C001', 'Anth La', 'Sui Bian Road #00-01 88888', '91111111', 'justputwhatever@gmail.com') --C Ben Query4, Elsa Query1
+INSERT INTO Customer VALUES ('C001', 'Anth La', 'Sui Bian Road #00-01 88888', '91111111', 'justputwhatever@gmail.com') --C Ben Query4 --C Elsa Query1
 INSERT INTO Customer VALUES ('C002',' Harry Botter', 'Drawer under the stairs Alley #13-06', '23423424',  'iamalizard@gmail.com') --C Ben Query4
 INSERT INTO Customer VALUES ('C003', 'Justin Beaver', '11 Baby Street #18-21 Singapore 382011', '43243553', 'justinbaby123@gmail.com') 
 INSERT INTO Customer VALUES ('C005', 'Ronald Bacdonald', '24 McBishan McPark McSingapore 912090', '43243553', 'MAC@gmail.com') 
 INSERT INTO Customer VALUES ('C006', 'Selena Bomez', '38 Marina Bay #22-69 Singapore 483038', '82123232', 'justiniloveyou@gmail.com') 
 INSERT INTO Customer VALUES ('C007', 'LeBruh James', '23 Goat Avenue #01-01 Singapore 232323', '93712107', 'kingjames@gmail.com') --C Ben Query4
 INSERT INTO Customer VALUES ('C008', 'Stepan Chilli', '23 Mountain Goat Avenue #06-01 Singapore 653663', '97863635', 'godstepan@gmail.com' ) --C No. of Pickup equal Delivery, Elsa Query1
-INSERT INTO Customer VALUES ('C009', 'Tom Clementi', '645 Holland Road', '99999999', 'froginmouth@gmail.com') --C More Pickup, Elsa Query1
+INSERT INTO Customer VALUES ('C009', 'Tom Clementi', '645 Holland Road', '99999999', 'froginmouth@gmail.com') --C More Pickup --C Elsa Query1
 INSERT INTO Customer VALUES ('C010', 'Sillie Eyelash', '1 Billboard Charts #01-01 Singapore 272401', '94768343', 'imthebadguy@duhmail.com') --C More Pickup
 INSERT INTO Customer VALUES ('C011', 'Ariana Medium,', '43 High Pitch #34-35 Singapore 343569', '93526371', 'arianagrande@hotmail.com')
 INSERT INTO Customer VALUES ('C012', 'Benjamin Who J.K', 'School of Science and Technology', '82990118', 'codecreatecoordinate@impressive.isntit') 
