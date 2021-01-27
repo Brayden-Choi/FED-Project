@@ -531,6 +531,8 @@ INSERT INTO Item VALUES ('I035', 'Mutton Biryani', 'Mutton curry served on fragr
 INSERT INTO Item VALUES ('I036', 'Maggi Goreng', 'Stir-fried maggi noodles', '5.20') 
 INSERT INTO Item VALUES ('I037', 'Thosai', 'Thin, crispy pancake made from a fermented batter', '4.80') 
 INSERT INTO Item VALUES ('I038', 'Paneer Curry', 'Creamy Indian cheese cubes cooked in spicy curry', '5.50')
+INSERT INTO Item VALUES ('I039', 'Chicken Rendang', 'Chicken simmered in spicy, savoury juice', '6') 
+INSERT INTO Item VALUES ('I040', 'Nasi Briyani', 'Delicious meat masala served with fagrant Briyani rice', '6.20') 
 
 
 -- MenuItem
@@ -539,6 +541,8 @@ INSERT INTO MenuItem VALUES ('O001', 1, 'I009')
 INSERT INTO MenuItem VALUES ('O001', 2, 'I010')
 INSERT INTO MenuItem VALUES ('O001', 2, 'I011')
 INSERT INTO MenuItem VALUES ('O001', 2, 'I012')
+INSERT INTO MenuItem VALUES ('O001', 2, 'I039')
+INSERT INTO MenuItem VALUES ('O001', 2, 'I040')
 INSERT INTO MenuItem VALUES ('O002', 1, 'I031')
 INSERT INTO MenuItem VALUES ('O002', 1, 'I032')
 INSERT INTO MenuItem VALUES ('O002', 2, 'I033')
@@ -627,7 +631,7 @@ INSERT INTO AwardsWon VALUES ('A003', 'R010', '12/29/2020')
 INSERT INTO AwardsWon VALUES ('A005', 'R006', '12/29/2020')
 INSERT INTO AwardsWon VALUES ('A007', 'R007', '12/29/2020')
 INSERT INTO AwardsWon VALUES ('A009', 'R009', '12/29/2020')
-INSERT INTO AwardsWon VALUES ('A010', 'R001', '12/28/2019') --C Ben Query1
+INSERT INTO AwardsWon VALUES ('A010', 'R001', '12/28/2019')
 INSERT INTO AwardsWon VALUES ('A005', 'R013', '01/07/2020')
 
 
@@ -760,9 +764,9 @@ INSERT INTO CustOrder VALUES ('DE018', 'D', '2021-09-11 11:25:53 AM', 'C008', NU
 INSERT INTO CustOrder VALUES ('PU019', 'D', '2020-07-19 16:53:54 PM', 'C002', NULL, 'O001')
 INSERT INTO CustOrder VALUES ('DE020', 'D', '2020-08-09 18:10:06 PM', 'C007', NULL,  'O003')
 
-INSERT INTO CustOrder VALUES ('DE021', 'N', '2020-10-11 10:30:58 AM', 'C002', NULL,  'O003')
+INSERT INTO CustOrder VALUES ('DE021', 'N', '2020-10-11 10:30:58 AM', 'C002', NULL,  'O001')
 INSERT INTO CustOrder VALUES ('DE022', 'D', '2020-10-11 21:00:12 PM', 'C007', NULL,  'O004')
-INSERT INTO CustOrder VALUES ('PU023', 'D', '2020-10-11 12:12:43 PM', 'C009', 'V014',  'O004')
+INSERT INTO CustOrder VALUES ('PU023', 'D', '2020-10-11 12:12:43 PM', 'C009', 'V014',  'O001')
 INSERT INTO CustOrder VALUES ('DE024', 'D', '2020-10-12 15:13:09 PM', 'C017', NULL,  'O006')
 
 
@@ -791,7 +795,7 @@ INSERT INTO Payment  VALUES ('PO020', 'Credit Card', 'Order Payment', 10.38, 'DE
 INSERT INTO Payment  VALUES ('PO021', 'Pay Now', 'Order Payment', 10.38, 'DE021') 
 INSERT INTO Payment  VALUES ('PO022', 'Debit Card', 'Order Payment', 10.38, 'DE022') 
 INSERT INTO Payment  VALUES ('PO023', 'Pay Now', 'Order Payment', 10.38, 'PU023') 
-INSERT INTO Payment  VALUES ('PO023', 'Pay Now', 'Order Payment', 10.38, 'DE024') 
+INSERT INTO Payment  VALUES ('PO024', 'Pay Now', 'Order Payment', 10.38, 'DE024') 
 
  
 -- OrderItem
