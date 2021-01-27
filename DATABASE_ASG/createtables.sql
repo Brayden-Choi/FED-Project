@@ -601,9 +601,9 @@ INSERT INTO Team VALUES ('T010', 'CrewWay', NULL, NULL)
 
 
 -- Rider
-INSERT INTO Rider VALUES ('R001', 'S3123642J', 'Samuel Low', '86543143', 'Fernville Road #14-01 353448', '02/05/1976', 'Bicycle', 'T001')  
-INSERT INTO Rider VALUES ('R002', 'S7676723T', 'Darron Mann', '86755433', 'Nashville Road #17-30 765345', '07/23/1996', 'Motocycle', 'T001') 
-INSERT INTO Rider VALUES ('R003', 'S8745234U', 'Zachary Chan', '91039124', 'Ring Road #10-01 353448', '11/28/1998', 'Car', 'T001') 
+INSERT INTO Rider VALUES ('R001', 'S3123642J', 'Samuel Low', '86543143', 'Fernville Road #14-01 353448', '02/05/1976', 'Bicycle', 'T001') --C Ben Query1
+INSERT INTO Rider VALUES ('R002', 'S7676723T', 'Darron Mann', '86755433', 'Nashville Road #17-30 765345', '07/23/1996', 'Motocycle', 'T001') --C Ben Query1
+INSERT INTO Rider VALUES ('R003', 'S8745234U', 'Zachary Chan', '91039124', 'Ring Road #10-01 353448', '11/28/1998', 'Car', 'T001') --C Ben Query1
 INSERT INTO Rider VALUES ('R004', 'S0734980A', 'Robert Teo', '90589341', ' Road #14-01 353448', '07/12/1976', 'E-Scooter', 'T002') 
 INSERT INTO Rider VALUES ('R005', 'S5421754Y', 'James Chia', '81463981', 'Tilda Street #20-12 353448', '02/15/1989', 'E-Scooter', 'T003') 
 INSERT INTO Rider VALUES ('R006', 'S0978763V', 'Rachel Liau', '99089046', 'Bukit Batok Street 21 #04-04 624543', '01/12/1967', 'E-Scooter', 'T004') 
@@ -611,20 +611,24 @@ INSERT INTO Rider VALUES ('R007', 'S1047343D', 'Darren Tok', '85642134', 'West C
 INSERT INTO Rider VALUES ('R008', 'S9074893H', 'Sam Guy', '94359687', 'HoolaRow Road #14-01 353448', '06/30/1997', 'Motocycle', 'T005') 
 INSERT INTO Rider VALUES ('R009', 'S7609353K', 'Thomas Trent', '90308232', 'YuoTze Road Blk 54 #17-06 876465', '03/21/1986', 'Bicycle',  'T005') 
 INSERT INTO Rider VALUES ('R010', 'S8743099C', 'Dan Toh', '89897323', 'Mollow Street 57', '06/08/1988', 'Foot', 'T005')
+INSERT INTO Rider VALUES ('R011', 'S9477284D', 'Derrik Foo', '93486587', 'Blower Road 111', '06/08/1987', 'Foot', 'T005') --C No Awards
+INSERT INTO Rider VALUES ('R012', 'S8234634A', 'Jerry Lim', '92834567', 'Clementi Road Blk 92 #10-16 293764', '11/18/1981', 'Motocycle', 'T006') --C No Awards
+INSERT INTO Rider VALUES ('R013', 'S9431727J', 'Funny Boy', '89127344', 'Laughing Avenue 101', '05/12/1990', 'Bicycle', 'T006') --C No Value Set
 
 
 -- AwardsWon
-INSERT INTO AwardsWon VALUES ('A001', 'R003', '12/29/2018')
+INSERT INTO AwardsWon VALUES ('A001', 'R003', '12/29/2018') --C Ben Query1
 INSERT INTO AwardsWon VALUES ('A001', 'R008', '12/28/2019')
 INSERT INTO AwardsWon VALUES ('A001', 'R008', '12/29/2020')
 INSERT INTO AwardsWon VALUES ('A003', 'R004', '12/29/2018')
-INSERT INTO AwardsWon VALUES ('A003', 'R002', '12/28/2019')
+INSERT INTO AwardsWon VALUES ('A003', 'R002', '12/28/2019') --C Ben Query1
 INSERT INTO AwardsWon VALUES ('A003', 'R010', '12/29/2020')
 INSERT INTO AwardsWon VALUES ('A005', 'R006', '12/29/2020')
 INSERT INTO AwardsWon VALUES ('A007', 'R007', '12/29/2020')
 INSERT INTO AwardsWon VALUES ('A009', 'R002', '12/28/2019')
 INSERT INTO AwardsWon VALUES ('A009', 'R009', '12/29/2020')
-INSERT INTO AwardsWon VALUES ('A010', 'R001', '12/28/2019')
+INSERT INTO AwardsWon VALUES ('A010', 'R001', '12/28/2019') --C Ben Query1
+INSERT INTO AwardsWon VALUES ('A005', 'R013', '01/07/2020')
 
 
 -- Equipment
@@ -688,6 +692,13 @@ INSERT INTO EquipmentPurchase VALUES ('R010', 'E013', '02/23/2019', 1)
 INSERT INTO EquipmentPurchase VALUES ('R001', 'E017', '03/30/2019', 1)
 INSERT INTO EquipmentPurchase VALUES ('R003', 'E015', '08/25/2019', 1)
 INSERT INTO EquipmentPurchase VALUES ('R002', 'E001', '10/08/2019', 1)
+INSERT INTO EquipmentPurchase VALUES ('R002', 'E002', '10/08/2019', 1)
+INSERT INTO EquipmentPurchase VALUES ('R002', 'SE002', '11/13/2019', 2) --C Ben Query1
+INSERT INTO EquipmentPurchase VALUES ('R001', 'SE002', '12/03/2019', 2) --C Ben Query1
+INSERT INTO EquipmentPurchase VALUES ('R003', 'SE002', '12/08/2019', 1) --C Ben Query1
+INSERT INTO EquipmentPurchase VALUES ('R003', 'SE002', '01/18/2020', 1)
+INSERT INTO EquipmentPurchase VALUES ('R011', 'SE002', '01/01/2020', 1)
+INSERT INTO EquipmentPurchase VALUES ('R012', 'SE002', '10/09/2020', 1)
 
 
 -- Customer
