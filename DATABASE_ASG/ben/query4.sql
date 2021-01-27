@@ -1,5 +1,5 @@
 /*
-Show customers details and number of Pickup and Delivery orders for customers that made more Pickup than Delivery orders. 
+Show customers details and number of Pickup and Delivery orders for customers that made more Delivery than Pickup orders. 
 Sort the result in increasing number of Delivery orders.
 */
 
