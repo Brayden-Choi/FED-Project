@@ -445,16 +445,16 @@ INSERT INTO OutletCuisines VALUES ('O010', 'CS001')
 
 
 -- Promotion
-INSERT INTO Promotion VALUES ('P001', 'New Year Promotion', 'New Year, New Discounts! Available for first purchase of the year', 'N', 20.21)
-INSERT INTO Promotion VALUES ('P002', 'CNY Promotion', 'Happy Chinese New Year!', 'N', 8.88)
-INSERT INTO Promotion VALUES ('P003', 'Valentines Discount ', 'Have an enjoyable Valentines in the comfort of your own home', 'Y', 2.14)
-INSERT INTO Promotion VALUES ('P004', 'Easter Promotion ', 'Eggcellent discounts, while stocks last', 'N', 10)
-INSERT INTO Promotion VALUES ('P005', 'Labour Day Promotion ', 'Time to take a break with our Labour Day discounts', 'N', 10)
-INSERT INTO Promotion VALUES ('P006', 'Hari Raya Puasa Promotion', 'Selamat Hari Raya! ', 'Y', 10)
-INSERT INTO Promotion VALUES ('P007', 'Deepavali Promotion', 'Happy Diwali!', 'Y', 10)
-INSERT INTO Promotion VALUES ('P008', 'National Day Promotion', 'Happy 56th Birthday Singapore', 'Y', 5.6)
-INSERT INTO Promotion VALUES ('P009', '11/11 Sale', 'Celebrate all your discounted purchases with more discounts!', 'N', 11)
-INSERT INTO Promotion VALUES ('P010', 'Christmas Promotion ', 'Merry Christmas! Applicable with purchases totalling over $200', 'N', 25)
+INSERT INTO Promotion VALUES ('P001', ' 5% off ', '5% off all orders, terms and conditions', 'N', 5) 
+INSERT INTO Promotion VALUES ('P002', ' Huat Discount', '8.88% off all orders', 'N', 8.88)
+INSERT INTO Promotion VALUES ('P003', ' Couples discount ', 'Eligible for orders with two or more items', 'Y', 2.14)
+INSERT INTO Promotion VALUES ('P004', '10 % off ', '10% of all orders', 'N', 10.00)
+INSERT INTO Promotion VALUES ('P005', ' 10% off  ', '10% off all orders', 'N', 10.00)
+INSERT INTO Promotion VALUES ('P006', ' 10 % off', '10 % off all orders ', 'Y', 10.00)
+INSERT INTO Promotion VALUES ('P007', '15% off ', '15 % off all orders ', 'Y', 10.00)
+INSERT INTO Promotion VALUES ('P008', 'Singapore Promotion', 'Singapore''s 56th Birthday', 'Y', 5.60)
+INSERT INTO Promotion VALUES ('P009', '11% off 11', ' Applicable with purchases totalling over $11', 'N', 11.00)
+INSERT INTO Promotion VALUES ('P010', '25% off 30', ' Applicable with purchases totalling over $30', 'N', 25.0)
 
 
 -- OutletPromotions
