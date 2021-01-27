@@ -605,8 +605,8 @@ INSERT INTO Team VALUES ('T010', 'CrewWay', NULL, NULL)
 
 
 -- Rider
-INSERT INTO Rider VALUES ('R001', 'S3123642J', 'Samuel Low', '86543143', 'Fernville Road #14-01 353448', '02/05/1976', 'Bicycle', 'T001') --C 1 Value Set
-INSERT INTO Rider VALUES ('R002', 'S7676723T', 'Darron Mann', '86755433', 'Nashville Road #17-30 765345', '07/23/1996', 'Motocycle', 'T001') --C Ben Query1
+INSERT INTO Rider VALUES ('R001', 'S3123642J', 'Samuel Low', '86543143', 'Fernville Road #14-01 353448', '02/05/1976', 'Motocycle', 'T001') --C 1 Value Set --C Motocycle
+INSERT INTO Rider VALUES ('R002', 'S7676723T', 'Darron Mann', '86755433', 'Nashville Road #17-30 765345', '07/23/1996', 'Motocycle', 'T001') --C Ben Query1 --C Motocycle
 INSERT INTO Rider VALUES ('R003', 'S8745234U', 'Zachary Chan', '91039124', 'Ring Road #10-01 353448', '11/28/1998', 'Car', 'T001') --C Ben Query1
 INSERT INTO Rider VALUES ('R004', 'S0734980A', 'Robert Teo', '90589341', ' Road #14-01 353448', '07/12/1976', 'E-Scooter', 'T002') --C Ben Query1
 INSERT INTO Rider VALUES ('R005', 'S5421754Y', 'James Chia', '81463981', 'Tilda Street #20-12 353448', '02/15/1989', 'E-Scooter', 'T003') --C No Awards --C No Value Set
@@ -616,8 +616,8 @@ INSERT INTO Rider VALUES ('R008', 'S9074893H', 'Sam Guy', '94359687', 'HoolaRow 
 INSERT INTO Rider VALUES ('R009', 'S7609353K', 'Thomas Trent', '90308232', 'YuoTze Road Blk 54 #17-06 876465', '03/21/1986', 'Bicycle',  'T005') 
 INSERT INTO Rider VALUES ('R010', 'S8743099C', 'Dan Toh', '89897323', 'Mollow Street 57', '06/08/1988', 'Foot', 'T005')
 INSERT INTO Rider VALUES ('R011', 'S9477284D', 'Derrik Foo', '93486587', 'Blower Road 111', '06/08/1987', 'Foot', 'T005') --C No Awards
-INSERT INTO Rider VALUES ('R012', 'S8234634A', 'Jerry Lim', '92834567', 'Clementi Road Blk 92 #10-16 293764', '11/18/1981', 'Motocycle', 'T006') --C No Awards
-INSERT INTO Rider VALUES ('R013', 'S9431727J', 'Funny Boy', '89127344', 'Laughing Avenue 101', '05/12/1990', 'Bicycle', 'T006') --C No Value Set
+INSERT INTO Rider VALUES ('R012', 'S8234634A', 'Jerry Lim', '92834567', 'Clementi Road Blk 92 #10-16 293764', '11/18/1981', 'Motocycle', 'T006') --C No Awards --C Motocycle
+INSERT INTO Rider VALUES ('R013', 'S9431727J', 'Funny Boy', '89127344', 'Laughing Avenue 101', '05/12/1990', 'Motocycle', 'T006') --C No Value Set --C Motocycle
 
 
 -- AwardsWon
@@ -862,20 +862,20 @@ INSERT INTO PickUp VALUES ('PU023', 'RN011', '2020-11-07 10:41:05 AM')
 
 
 -- Delivery
-INSERT INTO Delivery VALUES ('DE001', '2020-12-02 12:22:45', 'Sui Bian Road #00-01 88888', 'R003') 
-INSERT INTO Delivery VALUES ('DE002', '2020-04-29 14:51:32', '23 Goat Avenue #01-01 Singapore 232323', 'R001') 
-INSERT INTO Delivery VALUES ('DE004', '2020-08-08 10:11:12', 'Sui Bian Road #00-01 88888', 'R009') 
-INSERT INTO Delivery VALUES ('DE006', '2020-11-19 16:08:43', 'Sui Bian Road #00-01 88888', 'R007') 
-INSERT INTO Delivery VALUES ('DE009', '2021-01-21 19:06:53', 'Drawer under the stairs Alley #13-06', 'R005') 
-INSERT INTO Delivery VALUES ('DE011', '2020-05-09 15:43:55', 'Sui Bian Road #00-01 88888', 'R008') 
-INSERT INTO Delivery VALUES ('DE015', '2020-02-24 11:48:00', '23 Mountain Goat Avenue #06-01 Singapore 653663', 'R004') 
-INSERT INTO Delivery VALUES ('DE017', '2020-01-26 20:12:02', '645 Holland Road', 'R010') 
-INSERT INTO Delivery VALUES ('DE018', '2020-11-30 13:48:16', '23 Mountain Goat Avenue #06-01 Singapore 653663', 'R006') 
-INSERT INTO Delivery VALUES ('DE020', '2020-08-09 18:23:06', '23 Goat Avenue #01-01 Singapore 232323', 'R002')
+INSERT INTO Delivery VALUES ('DE001', '2020-12-04 19:22:45', 'Sui Bian Road #00-01 88888', 'R003') 
+INSERT INTO Delivery VALUES ('DE002', '2020-08-23 14:51:32', '23 Goat Avenue #01-01 Singapore 232323', 'R001') --C >1h after order
+INSERT INTO Delivery VALUES ('DE004', '2020-12-17 20:11:12', 'Sui Bian Road #00-01 88888', 'R009') 
+INSERT INTO Delivery VALUES ('DE006', '2020-11-19 16:08:43', 'Sui Bian Road #00-01 88888', 'R007') --C >1D after order
+INSERT INTO Delivery VALUES ('DE009', '2021-05-13 19:06:53', 'Drawer under the stairs Alley #13-06', 'R005') 
+INSERT INTO Delivery VALUES ('DE011', '2020-12-04 19:43:55', 'Sui Bian Road #00-01 88888', 'R008') 
+INSERT INTO Delivery VALUES ('DE015', '2020-11-26 18:48:00', '23 Mountain Goat Avenue #06-01 Singapore 653663', 'R004') --C >1D after order
+INSERT INTO Delivery VALUES ('DE017', '2020-12-28 20:12:02', '645 Holland Road', 'R010') --C >1D after order
+INSERT INTO Delivery VALUES ('DE018', '2020-09-11 13:48:16', '23 Mountain Goat Avenue #06-01 Singapore 653663', 'R006') --C >1h after order
+INSERT INTO Delivery VALUES ('DE020', '2020-10-10 21:12:19', '23 Goat Avenue #01-01 Singapore 232323', 'R002') --C <1h after order
 
-INSERT INTO Delivery VALUES ('DE021', '2020-02-09 18:10:06', '23 Goat Avenue #01-01 Singapore 232323', 'R002')
-INSERT INTO Delivery VALUES ('DE022', '2020-02-09 18:10:06', '23 Goat Avenue #01-01 Singapore 232323', 'R002')
-INSERT INTO Delivery VALUES ('DE024', '2020-02-09 18:10:06', '23 Goat Avenue #01-01 Singapore 232323', 'R003')
+INSERT INTO Delivery VALUES ('DE021', '2020-10-11 11:50:42', '23 Goat Avenue #01-01 Singapore 232323', 'R002') --C >1h after order
+INSERT INTO Delivery VALUES ('DE022', '2020-10-11 22:10:06', '23 Goat Avenue #01-01 Singapore 232323', 'R002') --C >1h after order
+INSERT INTO Delivery VALUES ('DE024', '2020-10-12 16:13:09', '23 Goat Avenue #01-01 Singapore 232323', 'R012') --C =1h after order
 
 
 -- DeliveryAssignment
