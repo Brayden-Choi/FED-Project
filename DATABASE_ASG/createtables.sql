@@ -392,7 +392,7 @@ INSERT INTO Outlet VALUES ('O003', 'Mark''s Place', '24 Bishan Street, Singapore
 INSERT INTO Outlet VALUES ('O004', 'Vietry Good', '188 Pasir Ris Road, Singapore 271188', '12:00:00', '22:00:00', '12:00:00', '21:00:00', 'B004', 'Z002')  
 INSERT INTO Outlet VALUES ('O005', 'La Chancla', '24 Ang Mo Kio Avenue, Singapore 549604', '07:00:00', '21:00:00', '07:00:00', '20:00:00', 'B005', 'Z004')  
 INSERT INTO Outlet VALUES ('O006', 'Muthu Foods', '768 Woodlands Plaza, Singapore 720768', '10:00:00', '21:00:00', '10:00:00', '19:30:00', 'B006', 'Z001')  
-INSERT INTO Outlet VALUES ('O007', 'Sooshi', '133 Choa Chu Kang Road, Singapore 059413', '11:00:00', '20:30:00', '12:00:00', '19:00:00', 'B007', 'Z003') 
+INSERT INTO Outlet VALUES ('O007', 'Sooshi', '133 Choa Chu Kang Road, Singapore 059413', '11:00:00', '20:30:00', '12:00:00', '19:00:00', 'B007', 'Z002') 
 INSERT INTO Outlet VALUES ('O008', 'Jerk Thai', '377 Chinese Garden, Singapore 536377', '12:00:00', '20:00:00', '12:00:00', '20:00:00', 'B008', 'Z003') 
 INSERT INTO Outlet VALUES ('O009', 'Oppa Chicken', '930 Yishun Ave 2, Singapore 769098', '10:30:00', '23:00:00', '10:30:00', '21:00:00', 'B005', 'Z001') 
 INSERT INTO Outlet VALUES ('O010', 'Din Tai Fong', '80 Marine Parade Rd, Singapore 449269', '10:00:00', '22:00:00', '11:00:00', '19:00:00', 'B002', 'Z004') 
@@ -445,16 +445,16 @@ INSERT INTO OutletCuisines VALUES ('O010', 'CS001')
 
 
 -- Promotion
-INSERT INTO Promotion VALUES ('P001', 'New Year Promotion', 'New Year, New Discounts! Available for first purchase of the year', 'N', 20.21)
-INSERT INTO Promotion VALUES ('P002', 'CNY Promotion', 'Happy Chinese New Year!', 'N', 8.88)
-INSERT INTO Promotion VALUES ('P003', 'Valentines Discount ', 'Have an enjoyable Valentines in the comfort of your own home', 'Y', 2.14)
-INSERT INTO Promotion VALUES ('P004', 'Easter Promotion ', 'Eggcellent discounts, while stocks last', 'N', 10)
-INSERT INTO Promotion VALUES ('P005', 'Labour Day Promotion ', 'Time to take a break with our Labour Day discounts', 'N', 10)
-INSERT INTO Promotion VALUES ('P006', 'Hari Raya Puasa Promotion', 'Selamat Hari Raya! ', 'Y', 10)
-INSERT INTO Promotion VALUES ('P007', 'Deepavali Promotion', 'Happy Diwali!', 'Y', 10)
-INSERT INTO Promotion VALUES ('P008', 'National Day Promotion', 'Happy 56th Birthday Singapore', 'Y', 5.6)
-INSERT INTO Promotion VALUES ('P009', '11/11 Sale', 'Celebrate all your discounted purchases with more discounts!', 'N', 11)
-INSERT INTO Promotion VALUES ('P010', 'Christmas Promotion ', 'Merry Christmas! Applicable with purchases totalling over $200', 'N', 25)
+INSERT INTO Promotion VALUES ('P001', ' 5% off ', '5% off all orders, terms and conditions', 'N', 5) 
+INSERT INTO Promotion VALUES ('P002', ' Huat Discount', '8.88% off all orders', 'N', 8.88)
+INSERT INTO Promotion VALUES ('P003', ' Couples discount ', 'Eligible for orders with two or more items', 'Y', 2.14)
+INSERT INTO Promotion VALUES ('P004', '10 % off ', '10% of all orders', 'N', 10.00)
+INSERT INTO Promotion VALUES ('P005', ' 10% off  ', '10% off all orders', 'N', 10.00)
+INSERT INTO Promotion VALUES ('P006', ' 10 % off', '10 % off all orders ', 'Y', 10.00)
+INSERT INTO Promotion VALUES ('P007', '15% off ', '15 % off all orders ', 'Y', 10.00)
+INSERT INTO Promotion VALUES ('P008', 'Singapore Promotion', 'Singapore''s 56th Birthday', 'Y', 5.60)
+INSERT INTO Promotion VALUES ('P009', '11% off 11', ' Applicable with purchases totalling over $11', 'N', 11.00)
+INSERT INTO Promotion VALUES ('P010', '25% off 30', ' Applicable with purchases totalling over $30', 'N', 25.0)
 
 
 -- OutletPromotions
@@ -808,21 +808,23 @@ INSERT INTO OrderItem VALUES ('DE006', 'I013', 1, 5.50)
 INSERT INTO OrderItem VALUES ('PU007', 'I036', 1, 5.20)
 INSERT INTO OrderItem VALUES ('PU008', 'I021', 3, 6.30)
 INSERT INTO OrderItem VALUES ('DE009', 'I012', 2, 7)
-INSERT INTO OrderItem VALUES ('PU010', 'I001', 2, 5.50)
-INSERT INTO OrderItem VALUES ('DE011', 'I001', 2, 5.50)
-INSERT INTO OrderItem VALUES ('PU012', 'I001', 2, 5.50)
-INSERT INTO OrderItem VALUES ('PU013', 'I001', 2, 5.50)
-INSERT INTO OrderItem VALUES ('PU014', 'I001', 2, 5.50)
-INSERT INTO OrderItem VALUES ('DE015', 'I001', 2, 5.50)
-INSERT INTO OrderItem VALUES ('PU016', 'I001', 2, 5.50)
-INSERT INTO OrderItem VALUES ('DE017', 'I001', 2, 5.50)
-INSERT INTO OrderItem VALUES ('DE018', 'I001', 2, 5.50)
-INSERT INTO OrderItem VALUES ('PU019', 'I001', 2, 5.50)
-INSERT INTO OrderItem VALUES ('DE020', 'I001', 2, 5.50)
+INSERT INTO OrderItem VALUES ('PU010', 'I014', 2, 7.00)
+INSERT INTO OrderItem VALUES ('DE011', 'I004', 2, 6.50)
+INSERT INTO OrderItem VALUES ('PU012', 'I033', 2, 3.80)
+INSERT INTO OrderItem VALUES ('PU013', 'I029', 2, 7.00)
+INSERT INTO OrderItem VALUES ('PU014', 'I018', 2, 8.00)
+INSERT INTO OrderItem VALUES ('DE015', 'I023', 1, 4.80)
+INSERT INTO OrderItem VALUES ('PU016', 'I024', 5, 7.80)
+INSERT INTO OrderItem VALUES ('DE017', 'I035', 3, 6.00)
+INSERT INTO OrderItem VALUES ('DE018', 'I021', 1, 6.30)
+INSERT INTO OrderItem VALUES ('PU019', 'I011', 1, 5.30)
 
 INSERT INTO OrderItem VALUES ('DE021', 'I001', 2, 5.50)
 INSERT INTO OrderItem VALUES ('DE022', 'I001', 2, 5.50)
 INSERT INTO OrderItem VALUES ('PU023', 'I001', 2, 5.50)
+
+
+
 
 
 -- OrderPromotions
