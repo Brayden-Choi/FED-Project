@@ -388,7 +388,7 @@ INSERT INTO Zone VALUES ('Z005', 'Central')
 -- Outlet
 INSERT INTO Outlet VALUES ('O001', 'Ahmad Makan', '18 Tampines Drive, Singapore 374018', '08:00:00', '21:00:00', '09:00:00', '21:00:00', 'B001', 'Z002')  
 INSERT INTO Outlet VALUES ('O002', 'Just Eat La', '377 Jurong Avenue, Singapore 536377', '12:00:00', '20:00:00', '12:00:00', '20:00:00', 'B002', 'Z003')  
-INSERT INTO Outlet VALUES ('O003', 'Mark’s Place', '24 Bishan Street, Singapore 549604', '08:00:00', '21:00:00', '09:00:00', '20:00:00', 'B003', 'Z004') 
+INSERT INTO Outlet VALUES ('O003', "Mark's Place", '24 Bishan Street, Singapore 549604', '08:00:00', '21:00:00', '09:00:00', '20:00:00', 'B003', 'Z004') 
 INSERT INTO Outlet VALUES ('O004', 'Vietry Good', '188 Pasir Ris Road, Singapore 271188', '12:00:00', '22:00:00', '12:00:00', '21:00:00', 'B004', 'Z002')  
 INSERT INTO Outlet VALUES ('O005', 'La Chancla', '24 Ang Mo Kio Avenue, Singapore 549604', '07:00:00', '21:00:00', '07:00:00', '20:00:00', 'B005', 'Z004')  
 INSERT INTO Outlet VALUES ('O006', 'Muthu Foods', '768 Woodlands Plaza, Singapore 720768', '10:00:00', '21:00:00', '10:00:00', '19:30:00', 'B006', 'Z001')  
@@ -749,7 +749,28 @@ INSERT INTO CustOrder VALUES ('DE020', 'D', '20201010 20:33:32 PM', 'C007', NULL
 
 
 -- Payment NOT DONE
+INSERT INTO Payment VALUES ('PO001', 'Credit Card', 'Order Payment', 5.40, 'DE001')
+INSERT INTO Payment VALUES ('PO002', 'Debit Card', 'Order Payment', 1.43, 'DE002')
+INSERT INTO Payment VALUES ('PO003', 'Credit Card', 'Refund', 14.24, 'PU003')
+INSERT INTO Payment VALUES ('PO004', 'Credit Card', 'Order Payment', 8.50, 'DE004')
+INSERT INTO Payment VALUES ('PO005', 'Credit Card', 'Order Payment', 4.37, 'PU005')
+INSERT INTO Payment VALUES ('PO006', 'Debit Card', 'Order Payment', 5.66, 'DE006')
+INSERT INTO Payment VALUES ('PO007', 'Credit Card', 'Order Payment', 10.18, 'PU007') 
+INSERT INTO Payment VALUES ('PO008', 'Debit Card', 'Order Payment', 17.01, 'PU008') 
+INSERT INTO Payment VALUES ('PO009', 'Debit Card', 'Order Payment', 11.90, 'DE009') 
+INSERT INTO Payment VALUES ('PO010', 'Credit Card', 'Order Payment', 13.22, 'PU010') 
+INSERT INTO Payment VALUES ('PO011', 'Credit Card', 'Order Payment', 11.70, 'DE011') 
+INSERT INTO Payment VALUES ('PO012', 'Debit Card', 'Order Payment', 6.84, 'PU012') 
+INSERT INTO Payment VALUES ('PO013', 'Credit Card', 'Refund', 12.46, 'PU013') 
+INSERT INTO Payment VALUES ('PO014', 'Credit Card', 'Order Payment', 15.10, 'PU014') 
+INSERT INTO Payment VALUES ('PO015', 'Credit Card', 'Order Payment', 1.64, 'DE015')  
+INSERT INTO Payment VALUES ('PO016', 'Debit Card', 'Order Payment', 30.60, 'PU016') 
+INSERT INTO Payment VALUES ('PO017', 'Credit Card', 'Order Payment', 17.61, 'DE017') 
+INSERT INTO Payment VALUES ('PO018', 'Debit Card', 'Order Payment', 5.67, 'DE018') 
+INSERT INTO Payment VALUES ('PO019', 'Debit Card', 'Order Payment', 4.50, 'PU019') 
+INSERT INTO Payment  VALUES ('PO020', 'Credit Card', 'Order Payment', 10.38, 'DE020') 
 
+ 
 
 -- OrderItem
 INSERT INTO OrderItem VALUES ('DE001', 'I001', 2, 5.50)
@@ -775,7 +796,16 @@ INSERT INTO OrderItem VALUES ('DE020', 'I001', 2, 5.50)
 
 
 -- OrderPromotions NOT DONE
-
+INSERT INTO OrderPromotions VALUES ('DE001', 'P005')
+INSERT INTO OrderPromotions VALUES ('DE002', 'P010')
+INSERT INTO OrderPromotions VALUES ('PU003', 'P003')
+INSERT INTO OrderPromotions VALUES ('DE004', 'P003')
+INSERT INTO OrderPromotions VALUES ('PU005', 'P009')
+INSERT INTO OrderPromotions VALUES ('DE006', 'P002')
+INSERT INTO OrderPromotions VALUES ('PU007', 'P005')
+INSERT INTO OrderPromotions VALUES ('PU008', 'P010')
+INSERT INTO OrderPromotions VALUES ('DE009', 'P004')
+INSERT INTO OrderPromotions VALUES ('PU010', 'P007')
 
 -- Pickup
 INSERT INTO PickUp VALUES ('PU003', 'RN001', '20200427 04:41:33 PM')
