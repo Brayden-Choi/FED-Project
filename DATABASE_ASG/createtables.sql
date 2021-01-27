@@ -591,11 +591,11 @@ INSERT INTO Award VALUES ('A010', 'Rider of the year (Senior)', 'Individual')
 
 
 -- Team
-INSERT INTO Team VALUES ('T001', 'SkateRider', 'A004', 'R002')
-INSERT INTO Team VALUES ('T002', 'Sleepers', NULL, 'R004')
-INSERT INTO Team VALUES ('T003', 'Ridle', 'A008', 'R005')
-INSERT INTO Team VALUES ('T004', 'Cyclistic', 'A002', 'R006')
-INSERT INTO Team VALUES ('T005', ' Tortoise', 'A006', 'R008')
+INSERT INTO Team VALUES ('T001', 'SkateRider', 'A004', NULL)
+INSERT INTO Team VALUES ('T002', 'Sleepers', NULL, NULL)
+INSERT INTO Team VALUES ('T003', 'Ridle', 'A008', NULL)
+INSERT INTO Team VALUES ('T004', 'Cyclistic', 'A002', NULL)
+INSERT INTO Team VALUES ('T005', ' Tortoise', 'A006', NULL)
 INSERT INTO Team VALUES ('T006', 'Wavel', NULL, NULL)
 INSERT INTO Team VALUES ('T007', 'Speed', NULL, NULL)
 INSERT INTO Team VALUES ('T008', 'Roller', NULL, NULL)
@@ -617,6 +617,14 @@ INSERT INTO Rider VALUES ('R010', 'S8743099C', 'Dan Toh', '89897323', 'Mollow St
 INSERT INTO Rider VALUES ('R011', 'S9477284D', 'Derrik Foo', '93486587', 'Blower Road 111', '06/08/1987', 'Foot', 'T005') --C No Awards
 INSERT INTO Rider VALUES ('R012', 'S8234634A', 'Jerry Lim', '92834567', 'Clementi Road Blk 92 #10-16 293764', '11/18/1981', 'Motorcycle', 'T006') --C No Awards --C Motorcycle
 INSERT INTO Rider VALUES ('R013', 'S9431727J', 'Funny Boy', '89127344', 'Laughing Avenue 101', '05/12/1990', 'Motorcycle', 'T006') --C No Value Set --C Motorcycle
+
+
+-- Team Leader
+UPDATE Team SET leaderID = 'R002' WHERE teamID = 'T001'
+UPDATE Team SET leaderID = 'R004' WHERE teamID = 'T002'
+UPDATE Team SET leaderID = 'R005' WHERE teamID = 'T003'
+UPDATE Team SET leaderID = 'R006' WHERE teamID = 'T004'
+UPDATE Team SET leaderID = 'R008' WHERE teamID = 'T005'
 
 
 -- AwardsWon
