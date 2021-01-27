@@ -230,7 +230,7 @@ CONSTRAINT FK_EquipmentPurchase_equipID FOREIGN KEY (equipID) REFERENCES Equipme
 --T Customer
 CREATE TABLE Customer
 (   
-CustID        char(5)        NOT NULL,  
+custID        char(5)        NOT NULL,  
 custName      varchar(100)   NOT NULL,  
 custAddress   varchar (200)  NULL,  
 custContact   char(8)        NULL,  
@@ -614,7 +614,7 @@ INSERT INTO Rider VALUES ('R006', 'S0978763V', 'Rachel Liau', '99089046', 'Bukit
 INSERT INTO Rider VALUES ('R007', 'S1047343D', 'Darren Tok', '85642134', 'West Coast Road Blk 930#15-32 786534', '09/19/1978', 'Car', 'T005')
 INSERT INTO Rider VALUES ('R008', 'S9074893H', 'Sam Guy', '94359687', 'HoolaRow Road #14-01 353448', '06/30/1997', 'Motocycle', 'T005') 
 INSERT INTO Rider VALUES ('R009', 'S7609353K', 'Thomas Trent', '90308232', 'YuoTze Road Blk 54 #17-06 876465', '03/21/1986', 'Bicycle',  'T005') 
-INSERT INTO Rider VALUES ('R010', 'S8743099C', 'Dan Toh', '89897323', 'Mollow Street 57', '06/08/1988', 'Foot', 'T005')
+INSERT INTO Rider VALUES ('R010', 'S8743099C', 'Dan Toh', '89897323', 'Mollow Street 57', '06/08/1988', 'Motorcycle', 'T005')
 INSERT INTO Rider VALUES ('R011', 'S9477284D', 'Derrik Foo', '93486587', 'Blower Road 111', '06/08/1987', 'Foot', 'T005') --C No Awards
 INSERT INTO Rider VALUES ('R012', 'S8234634A', 'Jerry Lim', '92834567', 'Clementi Road Blk 92 #10-16 293764', '11/18/1981', 'Motocycle', 'T006') --C No Awards
 INSERT INTO Rider VALUES ('R013', 'S9431727J', 'Funny Boy', '89127344', 'Laughing Avenue 101', '05/12/1990', 'Bicycle', 'T006') --C No Value Set
@@ -707,14 +707,14 @@ INSERT INTO EquipmentPurchase VALUES ('R012', 'SE002', '10/09/2020', 1)
 
 
 -- Customer
-INSERT INTO Customer VALUES ('C001', 'Anth La', 'Sui Bian Road #00-01 88888', '91111111', 'justputwhatever@gmail.com') --C Ben Query4
+INSERT INTO Customer VALUES ('C001', 'Anth La', 'Sui Bian Road #00-01 88888', '91111111', 'justputwhatever@gmail.com') --C Ben Query4, Elsa Query1
 INSERT INTO Customer VALUES ('C002',' Harry Botter', 'Drawer under the stairs Alley #13-06', '23423424',  'iamalizard@gmail.com') --C Ben Query4
 INSERT INTO Customer VALUES ('C003', 'Justin Beaver', '11 Baby Street #18-21 Singapore 382011', '43243553', 'justinbaby123@gmail.com') 
 INSERT INTO Customer VALUES ('C005', 'Ronald Bacdonald', '24 McBishan McPark McSingapore 912090', '43243553', 'MAC@gmail.com') 
 INSERT INTO Customer VALUES ('C006', 'Selena Bomez', '38 Marina Bay #22-69 Singapore 483038', '82123232', 'justiniloveyou@gmail.com') 
 INSERT INTO Customer VALUES ('C007', 'LeBruh James', '23 Goat Avenue #01-01 Singapore 232323', '93712107', 'kingjames@gmail.com') --C Ben Query4
-INSERT INTO Customer VALUES ('C008', 'Stepan Chilli', '23 Mountain Goat Avenue #06-01 Singapore 653663', '97863635', 'godstepan@gmail.com' ) --C No. of Pickup equal Delivery
-INSERT INTO Customer VALUES ('C009', 'Tom Clementi', '645 Holland Road', '99999999', 'froginmouth@gmail.com') --C More Pickup
+INSERT INTO Customer VALUES ('C008', 'Stepan Chilli', '23 Mountain Goat Avenue #06-01 Singapore 653663', '97863635', 'godstepan@gmail.com' ) --C No. of Pickup equal Delivery, Elsa Query1
+INSERT INTO Customer VALUES ('C009', 'Tom Clementi', '645 Holland Road', '99999999', 'froginmouth@gmail.com') --C More Pickup, Elsa Query1
 INSERT INTO Customer VALUES ('C010', 'Sillie Eyelash', '1 Billboard Charts #01-01 Singapore 272401', '94768343', 'imthebadguy@duhmail.com') --C More Pickup
 INSERT INTO Customer VALUES ('C011', 'Ariana Medium,', '43 High Pitch #34-35 Singapore 343569', '93526371', 'arianagrande@hotmail.com')
 INSERT INTO Customer VALUES ('C012', 'Benjamin Who J.K', 'School of Science and Technology', '82990118', 'codecreatecoordinate@impressive.isntit') 
@@ -743,13 +743,13 @@ INSERT INTO Voucher VALUES ('V014', 'R', '$5 off delivery fees', '20210101 00:00
 
 
 -- CustOrder
-INSERT INTO CustOrder VALUES ('DE001', 'D', '2020-12-04 18:25:32 PM', 'C001', 'V001', 'O010')
+INSERT INTO CustOrder VALUES ('DE001', 'D', '2020-12-04 18:25:32 PM', 'C001', 'V001', 'O010') --C Elsa Query1
 INSERT INTO CustOrder VALUES ('DE002', 'N', '2020-08-23 13:12:45 PM', 'C007', 'V012', 'O002')
 INSERT INTO CustOrder VALUES ('PU003', 'D', '2020-11-07 10:01:05 AM', 'C010', 'V008', 'O004')
-INSERT INTO CustOrder VALUES ('DE004', 'D', '2020-12-17 18:29:23 PM', 'C001', 'V013', 'O003')
+INSERT INTO CustOrder VALUES ('DE004', 'D', '2020-12-17 18:29:23 PM', 'C001', 'V013', 'O003') --C Elsa Query1
 INSERT INTO CustOrder VALUES ('PU005', 'N', '2020-07-15 12:35:12 PM', 'C008', NULL, 'O007')
 INSERT INTO CustOrder VALUES ('DE006', 'D', '2020-11-11 22:24:01 PM', 'C001', 'V003', 'O003')
-INSERT INTO CustOrder VALUES ('PU007', 'N', '2020-12-24 13:12:45 PM', 'C009', NULL, 'O006')
+INSERT INTO CustOrder VALUES ('PU007', 'N', '2020-12-24 13:12:45 PM', 'C009', NULL, 'O006') --C Elsa Query1
 INSERT INTO CustOrder VALUES ('PU008', 'D', '2021-02-01 11:55:23 AM', 'C008', NULL, 'O009')
 INSERT INTO CustOrder VALUES ('DE009', 'D', '2020-05-13 16:53:54 PM', 'C002', 'V010', 'O001')
 INSERT INTO CustOrder VALUES ('PU010', 'D', '2020-10-10 20:33:32 PM', 'C007', NULL,  'O003')
@@ -757,7 +757,7 @@ INSERT INTO CustOrder VALUES ('DE011', 'D', '2020-12-04 18:25:32 PM', 'C001', NU
 INSERT INTO CustOrder VALUES ('PU012', 'N', '2020-11-13 15:02:35 PM', 'C007', NULL, 'O002')
 INSERT INTO CustOrder VALUES ('PU013', 'D', '2020-05-08 18:40:12 PM', 'C010', NULL, 'O004')
 INSERT INTO CustOrder VALUES ('PU014', 'D', '2020-04-27 14:22:53 PM', 'C001', NULL, 'O003')
-INSERT INTO CustOrder VALUES ('DE015', 'N', '2020-11-25 21:30:52 PM', 'C008', 'V011', 'O007')
+INSERT INTO CustOrder VALUES ('DE015', 'N', '2020-11-25 21:30:52 PM', 'C008', 'V011', 'O007') --C Elsa Query1
 INSERT INTO CustOrder VALUES ('PU016', 'N', '2021-01-08 12:26:32 AM', 'C003', 'V002' , 'O005')
 INSERT INTO CustOrder VALUES ('DE017', 'N', '2020-12-24 15:40:41 PM', 'C009', 'V006', 'O006')
 INSERT INTO CustOrder VALUES ('DE018', 'D', '2021-09-11 11:25:53 AM', 'C008', NULL, 'O009')
@@ -771,10 +771,10 @@ INSERT INTO CustOrder VALUES ('DE024', 'D', '2020-10-12 15:13:09 PM', 'C017', NU
 
 
 -- Payment
-INSERT INTO Payment VALUES ('PO001', 'Credit Card', 'Order Payment', 5.40, 'DE001')
+INSERT INTO Payment VALUES ('PO001', 'Credit Card', 'Order Payment', 5.40, 'DE001') --C Elsa Query1
 INSERT INTO Payment VALUES ('PO002', 'Debit Card', 'Order Payment', 1.43, 'DE002')
 INSERT INTO Payment VALUES ('PO003', 'Credit Card', 'Refund', 14.24, 'PU003')
-INSERT INTO Payment VALUES ('PO004', 'Credit Card', 'Order Payment', 8.50, 'DE004')
+INSERT INTO Payment VALUES ('PO004', 'Credit Card', 'Order Payment', 8.50, 'DE004') --C Elsa Query1
 INSERT INTO Payment VALUES ('PO005', 'Credit Card', 'Order Payment', 4.37, 'PU005')
 INSERT INTO Payment VALUES ('PO006', 'Debit Card', 'Order Payment', 5.66, 'DE006')
 INSERT INTO Payment VALUES ('PO007', 'Credit Card', 'Order Payment', 10.18, 'PU007') 
@@ -785,9 +785,9 @@ INSERT INTO Payment VALUES ('PO011', 'Credit Card', 'Order Payment', 11.70, 'DE0
 INSERT INTO Payment VALUES ('PO012', 'Debit Card', 'Order Payment', 6.84, 'PU012') 
 INSERT INTO Payment VALUES ('PO013', 'Credit Card', 'Refund', 12.46, 'PU013') 
 INSERT INTO Payment VALUES ('PO014', 'Credit Card', 'Order Payment', 15.10, 'PU014') 
-INSERT INTO Payment VALUES ('PO015', 'Credit Card', 'Order Payment', 1.64, 'DE015')  
+INSERT INTO Payment VALUES ('PO015', 'Credit Card', 'Order Payment', 1.64, 'DE015')   --C Elsa Query1
 INSERT INTO Payment VALUES ('PO016', 'Debit Card', 'Order Payment', 30.60, 'PU016') 
-INSERT INTO Payment VALUES ('PO017', 'Credit Card', 'Order Payment', 17.61, 'DE017') 
+INSERT INTO Payment VALUES ('PO017', 'Credit Card', 'Order Payment', 17.61, 'DE017')  --C Elsa Query1
 INSERT INTO Payment VALUES ('PO018', 'Debit Card', 'Order Payment', 5.67, 'DE018') 
 INSERT INTO Payment VALUES ('PO019', 'Debit Card', 'Order Payment', 4.50, 'PU019') 
 INSERT INTO Payment  VALUES ('PO020', 'Credit Card', 'Order Payment', 10.38, 'DE020') 
