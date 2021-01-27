@@ -356,8 +356,7 @@ CONSTRAINT FK_DeliveryAssignment_riderID FOREIGN KEY (riderID) REFERENCES Rider 
 
 --A Rider
 ALTER TABLE Rider
-ADD CONSTRAINT FK_Rider_TeamID FOREIGN KEY (teamID) REFERENCES
-Team(teamID)
+ADD CONSTRAINT FK_Rider_TeamID FOREIGN KEY (teamID) REFERENCES Team(teamID)
 
 
 --A Team

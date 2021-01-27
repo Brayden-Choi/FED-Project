@@ -25,6 +25,6 @@ FROM Delivery AS d
 WHERE 
     r.deliveryMode = 'Motorcycle' 
     AND 
-    DATEDIFF(SECOND, co.orderDateTime, d.deliveryDateTime) > 3600
+    DATEDIFF(SECOND, orderDateTime, deliveryDateTime) > 3600
 
 ORDER BY co.orderDateTime ASC
