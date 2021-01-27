@@ -297,7 +297,7 @@ orderID      char(5)  NOT NULL,
 itemID       char(5)  NOT NULL,  
 orderQty     int      NOT NULL,  
 unitPrice    float    NOT NULL,  
-CONSTRAINT PK_OrderItem PRIMARY KEY (orderID, itemID),  
+CONSTRAINT PK_OrderItem PRIMARY KEY NONCLUSTERED (orderID, itemID),  
 CONSTRAINT FK_OrderItem_orderID FOREIGN KEY (orderID) REFERENCES CustOrder(orderID),  
 CONSTRAINT FK_OrderItem_itemID FOREIGN KEY (itemID) REFERENCES Item(itemID) 
 )
@@ -503,8 +503,8 @@ INSERT INTO Item VALUES ('I007', 'Pad Thai', 'Stir-fried rice noodle with chicke
 INSERT INTO Item VALUES ('I008', 'Lontong', 'Rice cakes in coconut-based soup', '4.50') 
 INSERT INTO Item VALUES ('I009', 'Nasi Lemak', 'Fragrant coconut rice served with fried chicken, sambal and egg', '5.20') 
 INSERT INTO Item VALUES ('I010', 'Ikan Penyet', 'Fried, smashed fish with rice', '5.80') 
-INSERT INTO Item VALUES ('I011', 'Ayam Penyet', 'Fried, smashed chicken with rice', '5.30') 
-INSERT INTO Item VALUES ('I012', 'Beef Rendang', 'Beef simmered in spicy, savoury sauce', '7.00') 
+INSERT INTO Item VALUES ('I011', 'Ayam Penyet', 'Fried, smashed chicken with rice', '5.30') --C Ben Query3
+INSERT INTO Item VALUES ('I012', 'Beef Rendang', 'Beef simmered in spicy, savoury sauce', '7.00') --C No Orders
 INSERT INTO Item VALUES ('I013', 'Spaghetti Bolognese', 'Slow-cooked meat sauce served with spaghetti', '5.50') 
 INSERT INTO Item VALUES ('I014', 'Spaghetti Carbonara', 'Spaghetti served in creamy sauce made with bacon, cheese, egg and black pepper', '7.00') 
 INSERT INTO Item VALUES ('I015', 'English Breakfast', 'Eat like a true Brit- crispy bacon, sunny-side eggs, juicy sausages, mushrooms, seared tomatoes, buttery toast and hearty baked beans all on one plate', '12.00') 
@@ -531,8 +531,8 @@ INSERT INTO Item VALUES ('I035', 'Mutton Biryani', 'Mutton curry served on fragr
 INSERT INTO Item VALUES ('I036', 'Maggi Goreng', 'Stir-fried maggi noodles', '5.20') 
 INSERT INTO Item VALUES ('I037', 'Thosai', 'Thin, crispy pancake made from a fermented batter', '4.80') 
 INSERT INTO Item VALUES ('I038', 'Paneer Curry', 'Creamy Indian cheese cubes cooked in spicy curry', '5.50')
-INSERT INTO Item VALUES ('I039', 'Chicken Rendang', 'Chicken simmered in spicy, savoury juice', '6') 
-INSERT INTO Item VALUES ('I040', 'Nasi Briyani', 'Delicious meat masala served with fagrant Briyani rice', '6.20') 
+INSERT INTO Item VALUES ('I039', 'Chicken Rendang', 'Chicken simmered in spicy, savoury juice', '6') --C Ben Query3
+INSERT INTO Item VALUES ('I040', 'Nasi Briyani', 'Delicious meat masala served with fagrant Briyani rice', '6.20') --C Ben Query3
 
 
 -- MenuItem
@@ -764,10 +764,10 @@ INSERT INTO CustOrder VALUES ('DE018', 'D', '2021-09-11 11:25:53 AM', 'C008', NU
 INSERT INTO CustOrder VALUES ('PU019', 'D', '2020-07-19 16:53:54 PM', 'C002', NULL, 'O001')
 INSERT INTO CustOrder VALUES ('DE020', 'D', '2020-10-10 20:33:32 PM', 'C007', NULL,  'O003')
 
-INSERT INTO CustOrder VALUES ('DE021', 'N', '2020-10-11 10:30:58 AM', 'C002', NULL,  'O001')
-INSERT INTO CustOrder VALUES ('DE022', 'D', '2020-10-11 21:00:12 PM', 'C007', NULL,  'O004')
+INSERT INTO CustOrder VALUES ('DE021', 'N', '2020-10-11 10:30:58 AM', 'C002', NULL,  'O004')
+INSERT INTO CustOrder VALUES ('DE022', 'D', '2020-10-11 21:00:12 PM', 'C007', NULL,  'O001')
 INSERT INTO CustOrder VALUES ('PU023', 'D', '2020-10-11 12:12:43 PM', 'C009', 'V014',  'O001')
-INSERT INTO CustOrder VALUES ('DE024', 'D', '2020-10-12 15:13:09 PM', 'C017', NULL,  'O006')
+INSERT INTO CustOrder VALUES ('DE024', 'D', '2020-10-12 15:13:09 PM', 'C017', NULL,  'O001')
 
 
 -- Payment
@@ -792,10 +792,10 @@ INSERT INTO Payment VALUES ('PO018', 'Debit Card', 'Order Payment', 5.67, 'DE018
 INSERT INTO Payment VALUES ('PO019', 'Debit Card', 'Order Payment', 4.50, 'PU019') 
 INSERT INTO Payment  VALUES ('PO020', 'Credit Card', 'Order Payment', 10.38, 'DE020') 
 
-INSERT INTO Payment  VALUES ('PO021', 'Pay Now', 'Order Payment', 10.38, 'DE021') 
-INSERT INTO Payment  VALUES ('PO022', 'Debit Card', 'Order Payment', 10.38, 'DE022') 
-INSERT INTO Payment  VALUES ('PO023', 'Pay Now', 'Order Payment', 10.38, 'PU023') 
-INSERT INTO Payment  VALUES ('PO024', 'Pay Now', 'Order Payment', 10.38, 'DE024') 
+INSERT INTO Payment  VALUES ('PO021', 'Pay Now', 'Order Payment', -1, 'DE021') --TODO price
+INSERT INTO Payment  VALUES ('PO022', 'Debit Card', 'Order Payment', -1, 'DE022') --TODO price
+INSERT INTO Payment  VALUES ('PO023', 'Pay Now', 'Order Payment', -1, 'PU023') --TODO price
+INSERT INTO Payment  VALUES ('PO024', 'Pay Now', 'Order Payment', -1, 'DE024') --TODO price
 
  
 -- OrderItem
@@ -819,12 +819,19 @@ INSERT INTO OrderItem VALUES ('DE017', 'I035', 3, 6.00)
 INSERT INTO OrderItem VALUES ('DE018', 'I021', 1, 6.30)
 INSERT INTO OrderItem VALUES ('PU019', 'I011', 1, 5.30)
 
-INSERT INTO OrderItem VALUES ('DE021', 'I001', 2, 5.50)
-INSERT INTO OrderItem VALUES ('DE022', 'I001', 2, 5.50)
-INSERT INTO OrderItem VALUES ('PU023', 'I001', 2, 5.50)
+INSERT INTO OrderItem VALUES ('DE021', 'I026', 1, 5)
+INSERT INTO OrderItem VALUES ('DE021', 'I027', 2, 8.60)
+INSERT INTO OrderItem VALUES ('DE021', 'I028', 1, 8)
 
+INSERT INTO OrderItem VALUES ('DE022', 'I011', 2, 10.60)
+INSERT INTO OrderItem VALUES ('DE022', 'I039', 3, 18)
+INSERT INTO OrderItem VALUES ('DE022', 'I040', 2, 12.40)
 
+INSERT INTO OrderItem VALUES ('PU023', 'I008', 3, 13.50)
+INSERT INTO OrderItem VALUES ('PU023', 'I009', 1, 5.20)
 
+INSERT INTO OrderItem VALUES ('DE024', 'I011', 1, 5.30)
+INSERT INTO OrderItem VALUES ('DE024', 'I040', 1, 6.20)
 
 
 -- OrderPromotions
