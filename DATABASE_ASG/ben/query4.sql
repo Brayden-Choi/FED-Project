@@ -6,8 +6,8 @@ Sort the result in increasing number of Delivery orders.
 
 SELECT 
     c.custID, custName, custAddress, custContact, custEmail, 
-    COALESCE(pickupCount, 0) AS pickupCount, 
-    COALESCE(deliveryCount, 0) AS deliveryCount
+    COALESCE(pickupCount, 0) 'No. of Pickup Orders', 
+    COALESCE(deliveryCount, 0) 'No. of Delivery Orders'
 
 FROM Customer AS c
     LEFT JOIN (
@@ -26,5 +26,5 @@ FROM Customer AS c
     ) AS de
     ON de.custID = c.custID
 
-WHERE deliveryCount > pickupCount
+WHERE COALESCE(deliveryCount, 0) > COALESCE(pickupCount, 0)
 ORDER BY deliveryCount ASC

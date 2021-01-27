@@ -718,7 +718,7 @@ INSERT INTO Customer VALUES ('C013', 'Jack Daniel', 'Crescent Street Blk 45 #10-
 INSERT INTO Customer VALUES ('C014', 'Anna Lim', 'Clementi Street 64 Blk 345 #12-34', '90523533', 'annalim@gmail.com') 
 INSERT INTO Customer VALUES ('C015', 'Daniel Chua', 'Hunter Street Blk 353 #35-02', '92939453', 'danielc@gmail.com') 
 INSERT INTO Customer VALUES ('C016', 'Steven Lee', 'Oxford Rd 123', '84654365', 'stevenlee@gmail.com') 
-INSERT INTO Customer VALUES ('C017', 'Giselle Oon', 'Rochester Street Blk 41 #17-32', '97685665', 'giselleoon@gmail.com')
+INSERT INTO Customer VALUES ('C017', 'Giselle Oon', 'Rochester Street Blk 41 #17-32', '97685665', 'giselleoon@gmail.com') --C No Pickup
 
 
 -- Voucher
@@ -760,12 +760,13 @@ INSERT INTO CustOrder VALUES ('DE018', 'D', '2021-09-11 11:25:53 AM', 'C008', NU
 INSERT INTO CustOrder VALUES ('PU019', 'D', '2020-07-19 16:53:54 PM', 'C002', NULL, 'O001')
 INSERT INTO CustOrder VALUES ('DE020', 'D', '2020-10-10 20:33:32 PM', 'C007', NULL,  'O003')
 
-INSERT INTO CustOrder VALUES ('DE021', 'N', '2020-10-11 10:30:58 PM', 'C002', NULL,  'O003')
-INSERT INTO CustOrder VALUES ('DE022', 'D', '2020-10-11 13:02:12 PM', 'C007', NULL,  'O004')
-INSERT INTO CustOrder VALUES ('PU023', 'D', '2020-10-11 13:02:12 PM', 'C009', 'V014',  'O004')
+INSERT INTO CustOrder VALUES ('DE021', 'N', '2020-10-11 10:30:58 AM', 'C002', NULL,  'O003')
+INSERT INTO CustOrder VALUES ('DE022', 'D', '2020-10-11 21:00:12 PM', 'C007', NULL,  'O004')
+INSERT INTO CustOrder VALUES ('PU023', 'D', '2020-10-11 12:12:43 PM', 'C009', 'V014',  'O004')
+INSERT INTO CustOrder VALUES ('DE024', 'D', '2020-10-12 15:13:09 PM', 'C017', NULL,  'O006')
 
 
--- Payment NOT DONE
+-- Payment
 INSERT INTO Payment VALUES ('PO001', 'Credit Card', 'Order Payment', 5.40, 'DE001')
 INSERT INTO Payment VALUES ('PO002', 'Debit Card', 'Order Payment', 1.43, 'DE002')
 INSERT INTO Payment VALUES ('PO003', 'Credit Card', 'Refund', 14.24, 'PU003')
@@ -819,7 +820,7 @@ INSERT INTO OrderItem VALUES ('DE022', 'I001', 2, 5.50)
 INSERT INTO OrderItem VALUES ('PU023', 'I001', 2, 5.50)
 
 
--- OrderPromotions NOT DONE
+-- OrderPromotions
 INSERT INTO OrderPromotions VALUES ('DE001', 'P005')
 INSERT INTO OrderPromotions VALUES ('DE002', 'P010')
 INSERT INTO OrderPromotions VALUES ('PU003', 'P003')
@@ -860,6 +861,7 @@ INSERT INTO Delivery VALUES ('DE020', '2020-12-09 18:10:06', '23 Goat Avenue #01
 
 INSERT INTO Delivery VALUES ('DE021', '2020-02-09 18:10:06', '23 Goat Avenue #01-01 Singapore 232323', 'R002')
 INSERT INTO Delivery VALUES ('DE022', '2020-02-09 18:10:06', '23 Goat Avenue #01-01 Singapore 232323', 'R002')
+INSERT INTO Delivery VALUES ('DE024', '2020-02-09 18:10:06', '23 Goat Avenue #01-01 Singapore 232323', 'R003')
 
 
 -- DeliveryAssignment
