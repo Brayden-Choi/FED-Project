@@ -395,7 +395,7 @@ INSERT INTO Outlet VALUES ('O007', 'Sooshi', '133 Choa Chu Kang Road, Singapore 
 INSERT INTO Outlet VALUES ('O008', 'Jerk Thai', '377 Chinese Garden, Singapore 536377', '12:00:00', '20:00:00', '12:00:00', '20:00:00', 'B008', 'Z003') 
 INSERT INTO Outlet VALUES ('O009', 'Oppa Chicken', '930 Yishun Ave 2, Singapore 769098', '10:30:00', '23:00:00', '10:30:00', '21:00:00', 'B005', 'Z001') 
 INSERT INTO Outlet VALUES ('O010', 'Din Tai Fong', '80 Marine Parade Rd, Singapore 449269', '10:00:00', '22:00:00', '11:00:00', '19:00:00', 'B002', 'Z004') 
-
+INSERT INTO Outlet VALUES ('O011', 'Tokyo Food Store', '20 RedHill Rd, Singapore 435634', '12:00:00', '21:00:00', '1:00:00', '20:00:00', 'B005', 'Z002') 
 -- OutletContact
 INSERT INTO OutletContact VALUES ('O001', '85366336') 
 INSERT INTO OutletContact VALUES ('O001', '88943276') 
@@ -411,7 +411,7 @@ INSERT INTO OutletContact VALUES ('O009', '69214365')
 INSERT INTO OutletContact VALUES ('O009', '96127354')
 INSERT INTO OutletContact VALUES ('O010', '82345647')
 INSERT INTO OutletContact VALUES ('O010', '64952367')
-
+INSERT INTO OutletContact VALUES ('O011', '89343245') 
 
 -- Cuisine
 INSERT INTO Cuisine VALUES ('CS001', 'Chinese') 
@@ -441,7 +441,7 @@ INSERT INTO OutletCuisines VALUES ('O007', 'CS006')
 INSERT INTO OutletCuisines VALUES ('O008', 'CS002')
 INSERT INTO OutletCuisines VALUES ('O009', 'CS005')
 INSERT INTO OutletCuisines VALUES ('O010', 'CS001')
-
+INSERT INTO OutletCuisines VALUES ('O011', 'CS006') 
 
 -- Promotion
 INSERT INTO Promotion VALUES ('P001', ' 5% off ', '5% off all orders, terms and conditions', 'N', 5) 
@@ -467,7 +467,7 @@ INSERT INTO OutletPromotions VALUES ('O008', 'P008', 120)
 INSERT INTO OutletPromotions VALUES ('O002', 'P001', 310)
 INSERT INTO OutletPromotions VALUES ('O004', 'P009', 240)
 INSERT INTO OutletPromotions VALUES ('O005', 'P006', 100)
-
+INSERT INTO OutletPromotions VALUES ('O011', 'P008', 70) 
 
 -- Menu
 INSERT INTO Menu VALUES ('O001', 1, 'Lunch')
@@ -489,7 +489,8 @@ INSERT INTO Menu VALUES ('O008', 1, 'Lunch')
 INSERT INTO Menu VALUES ('O009', 1, 'All-day Menu')
 INSERT INTO Menu VALUES ('O010', 1, 'Appetizers')
 INSERT INTO Menu VALUES ('O010', 2, 'Lunch')
-
+INSERT INTO Menu VALUES ('O011', 1, 'Lunch') 
+INSERT INTO Menu VALUES ('O011', 2, 'Dinner') 
 
 -- Item
 INSERT INTO Item VALUES ('I001', 'Xiao Long Bao', 'Juicy pork wrapped in steamed dumplings', '5.50') 
@@ -532,7 +533,10 @@ INSERT INTO Item VALUES ('I037', 'Thosai', 'Thin, crispy pancake made from a fer
 INSERT INTO Item VALUES ('I038', 'Paneer Curry', 'Creamy Indian cheese cubes cooked in spicy curry', '5.50')
 INSERT INTO Item VALUES ('I039', 'Chicken Rendang', 'Chicken simmered in spicy, savoury juice', '6') --C Ben Query3
 INSERT INTO Item VALUES ('I040', 'Nasi Briyani', 'Delicious meat masala served with fagrant Briyani rice', '6.20') --C Ben Query3
-
+INSERT INTO Item VALUES ('I041', 'Gyudon', 'Japanese beef rice with egg', '5.50') 
+INSERT INTO Item VALUES ('I042', 'Beef udon', 'Tasty udon noodles with sukiyaki beef slices', '4.50') 
+INSERT INTO Item VALUES ('I033', 'Miso Ramen', 'Ramen served in delicious miso soup with pork', '7.50') 
+INSERT INTO Item VALUES ('I044', 'Curry chicken cutlet rice', 'Curry rice served with fried chicken cutlets', '6.50')
 
 -- MenuItem
 INSERT INTO MenuItem VALUES ('O001', 1, 'I008')
@@ -575,6 +579,10 @@ INSERT INTO MenuItem VALUES ('O010', 2, 'I003')
 INSERT INTO MenuItem VALUES ('O010', 2, 'I004')
 INSERT INTO MenuItem VALUES ('O010', 2, 'I005')
 INSERT INTO MenuItem VALUES ('O010', 2, 'I006')
+INSERT INTO MenuItem VALUES ('O011', 1, 'I041') 
+INSERT INTO MenuItem VALUES ('O011', 1, 'I042') 
+INSERT INTO MenuItem VALUES ('O011', 2, 'I043') 
+INSERT INTO MenuItem VALUES ('O011', 2, 'I044') 
 
 
 -- Award
