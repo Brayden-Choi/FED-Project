@@ -25,3 +25,5 @@ having COUNT(orderID) > 0
 )
 AS aw
 on r.riderID = aw.riderID
+
+order by r.riderID desc
