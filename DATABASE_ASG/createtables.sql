@@ -886,8 +886,7 @@ INSERT INTO Delivery VALUES ('DE011', '2020-12-04 19:43:55', 'Sui Bian Road #00-
 INSERT INTO Delivery VALUES ('DE015', '2020-11-26 18:48:00', '23 Mountain Goat Avenue #06-01 Singapore 653663', 'R004') --C >1D after order
 INSERT INTO Delivery VALUES ('DE017', '2020-12-28 20:12:02', '645 Holland Road', 'R010') --C >1D after order
 INSERT INTO Delivery VALUES ('DE018', '2020-09-11 13:48:16', '23 Mountain Goat Avenue #06-01 Singapore 653663', 'R006') --C >1h after order
-INSERT INTO Delivery VALUES ('DE020', '2020-10-10 21:12:19', '23 Goat Avenue #01-01 Singapore 232323', 'R002') --C <1h after order
-
+INSERT INTO Delivery VALUES ('DE020', '20200809 18:23:06', '23 Goat Avenue #01-01 Singapore 232323', 'R002') 
 INSERT INTO Delivery VALUES ('DE021', '2020-10-11 11:50:42', '23 Goat Avenue #01-01 Singapore 232323', 'R002') --C >1h after order
 INSERT INTO Delivery VALUES ('DE022', '2020-10-11 22:10:06', '23 Goat Avenue #01-01 Singapore 232323', 'R002') --C >1h after order
 INSERT INTO Delivery VALUES ('DE024', '2020-10-12 16:13:09', '23 Goat Avenue #01-01 Singapore 232323', 'R012') --C =1h after order
