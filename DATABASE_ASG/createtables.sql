@@ -396,6 +396,7 @@ INSERT INTO Outlet VALUES ('O008', 'Jerk Thai', '377 Chinese Garden, Singapore 5
 INSERT INTO Outlet VALUES ('O009', 'Oppa Chicken', '930 Yishun Ave 2, Singapore 769098', '10:30:00', '23:00:00', '10:30:00', '21:00:00', 'B005', 'Z001') 
 INSERT INTO Outlet VALUES ('O010', 'Din Tai Fong', '80 Marine Parade Rd, Singapore 449269', '10:00:00', '22:00:00', '11:00:00', '19:00:00', 'B002', 'Z004') 
 INSERT INTO Outlet VALUES ('O011', 'Tokyo Food Store', '20 RedHill Rd, Singapore 435634', '12:00:00', '21:00:00', '1:00:00', '20:00:00', 'B005', 'Z002') 
+
 -- OutletContact
 INSERT INTO OutletContact VALUES ('O001', '85366336') 
 INSERT INTO OutletContact VALUES ('O001', '88943276') 
@@ -648,6 +649,7 @@ INSERT INTO AwardsWon VALUES ('A007', 'R007', '12/29/2020')
 INSERT INTO AwardsWon VALUES ('A009', 'R009', '12/29/2020')
 INSERT INTO AwardsWon VALUES ('A010', 'R001', '12/28/2019')
 INSERT INTO AwardsWon VALUES ('A005', 'R013', '01/07/2020')
+INSERT INTO AwardsWon VALUES ('A010', 'R009', '12/28/2020') 
 
 
 -- Equipment
