@@ -539,7 +539,7 @@ INSERT INTO Item VALUES ('I036', 'Maggi Goreng', 'Stir-fried maggi noodles', '5.
 INSERT INTO Item VALUES ('I037', 'Thosai', 'Thin, crispy pancake made from a fermented batter', '4.80') 
 INSERT INTO Item VALUES ('I038', 'Paneer Curry', 'Creamy Indian cheese cubes cooked in spicy curry', '5.50')
 INSERT INTO Item VALUES ('I039', 'Chicken Rendang', 'Chicken simmered in spicy, savoury juice', '6') --C Ben Query3
-INSERT INTO Item VALUES ('I040', 'Nasi Briyani', 'Delicious meat masala served with fagrant Briyani rice', '6.20') --C Ben Query3
+INSERT INTO Item VALUES ('I040', 'Nasi Briyani', 'Delicious meat masala served with fragrant Briyani rice', '6.20') --C Ben Query3
 INSERT INTO Item VALUES ('I041', 'Gyudon', 'Japanese beef rice with egg', '5.50') 
 INSERT INTO Item VALUES ('I042', 'Beef udon', 'Tasty udon noodles with sukiyaki beef slices', '4.50') 
 INSERT INTO Item VALUES ('I043', 'Miso Ramen', 'Ramen served in delicious miso soup with pork', '7.50') 
