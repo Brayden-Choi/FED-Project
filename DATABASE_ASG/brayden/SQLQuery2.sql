@@ -4,12 +4,12 @@ select o.*
 from Outlet o 
 INNER JOIN OutletCuisines oc
 on o.outletID = oc.outletID
-INNER JOIN Zone z 
-on z.zoneID = o.zoneID
 INNER JOIN Cuisine c
 on c.cuisineID = oc.cuisineID
+INNER JOIN Zone z 
+on z.zoneID = o.zoneID
 INNER JOIN OutletPromotions op
 on op.outletID = o.outletID
 INNER JOIN Promotion p
 on p.promoID = op.promoID
-where c.cuisineID = 'Japanese' AND z.zoneName = 'East' AND p.isFreeDelivery = 'Y'
+where c.cuisineName = 'Japanese' AND z.zoneName = 'East' AND p.isFreeDelivery = 'Y'

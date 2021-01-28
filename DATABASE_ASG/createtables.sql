@@ -446,7 +446,7 @@ INSERT INTO OutletCuisines VALUES ('O011', 'CS006')
 
 -- Promotion
 INSERT INTO Promotion VALUES ('P001', ' 5% off ', '5% off all orders, terms and conditions', 'N', 5) 
-INSERT INTO Promotion VALUES ('P002', ' Huat Discount', '8.88% off all orders', 'N', 8.88)
+INSERT INTO Promotion VALUES ('P002', ' Huat Discount', '8.88% off all orders', 'Y', 8.88)
 INSERT INTO Promotion VALUES ('P003', ' Couples discount ', 'Eligible for orders with two or more items', 'Y', 2.14)
 INSERT INTO Promotion VALUES ('P004', '10 % off ', '10% of all orders', 'N', 10.00)
 INSERT INTO Promotion VALUES ('P005', ' 10% off  ', '10% off all orders', 'N', 10.00)
