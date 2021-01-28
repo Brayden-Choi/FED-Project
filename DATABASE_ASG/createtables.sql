@@ -879,7 +879,7 @@ INSERT INTO PickUp VALUES ('PU023', 'RN011', '2020-11-07 10:41:05 AM')
 -- Delivery
 INSERT INTO Delivery VALUES ('DE001', '2020-12-04 19:22:45', 'Sui Bian Road #00-01 88888', 'R003') 
 INSERT INTO Delivery VALUES ('DE002', '2020-08-23 14:51:32', '23 Goat Avenue #01-01 Singapore 232323', 'R001') --C >1h after order
-INSERT INTO Delivery VALUES ('DE004', '2020-12-17 20:11:12', 'Sui Bian Road #00-01 88888', 'R009') 
+INSERT INTO Delivery VALUES ('DE004', '2020-08-17 20:11:12', 'Sui Bian Road #00-01 88888', 'R009') 
 INSERT INTO Delivery VALUES ('DE006', '2020-11-19 16:08:43', 'Sui Bian Road #00-01 88888', 'R007') --C >1D after order
 INSERT INTO Delivery VALUES ('DE009', '2021-05-13 19:06:53', 'Drawer under the stairs Alley #13-06', 'R005') 
 INSERT INTO Delivery VALUES ('DE011', '2020-12-04 19:43:55', 'Sui Bian Road #00-01 88888', 'R008') 
