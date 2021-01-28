@@ -761,7 +761,7 @@ INSERT INTO Customer VALUES ('C017', 'Giselle Oon', 'Rochester Street Blk 41 #17
 -- Voucher
 INSERT INTO Voucher VALUES ('V001', 'R', '$5 off all Chinese food', '2020-06-01 00:00:00 AM', '2020-12-31 23:59:59 PM', NULL, '5.00', 'C001')
 INSERT INTO Voucher VALUES ('V002', 'R', '$5 off all Mexican food', '20200801 12:00:00 PM', '20210228 12:00:00 PM', NULL, '5.00', 'C010')
-INSERT INTO Voucher VALUES ('V003', 'R', '$5 off delivery fees', '20200101 00:00:00 AM', '20210101 23:59:59 PM', NULL, '5.00', 'C008')
+INSERT INTO Voucher VALUES ('V003', 'R', '$3 off delivery fees', '20200101 00:00:00 AM', '20210101 23:59:59 PM', NULL, '3.00', 'C008')
 INSERT INTO Voucher VALUES ('V004', 'N', '$3 off delivery fees', '20200401 00:00:00 AM', '20200430 23:59:59 PM', NULL, '3.00', 'C008')
 INSERT INTO Voucher VALUES ('V005', 'N', '$8 off Western food with $30 minimum spend', '20200801 00:00:00 AM', '20200831 23:59:59 PM', '30.00', '8.00', 'C009')
 INSERT INTO Voucher VALUES ('V006', 'R', 'Free thosai worth $4.80 with minimum order of $15', '20200901 00:00:00 AM', '20210228 23:59:59 PM', '15.00', '4.80', 'C009')
@@ -770,7 +770,7 @@ INSERT INTO Voucher VALUES ('V008', 'R', '1 for 1 pastry worth $4.20', '20210101
 INSERT INTO Voucher VALUES ('V009', 'N', ' Free chicken rice worth $3.80', '20210101 00:00:00 AM', '20210131 23:59:59 PM', NULL, '3.80', 'C002')
 INSERT INTO Voucher VALUES ('V010', 'R', 'Free lontong worth $4.50', '20210101 00:00:00 AM', '20210630 23:59:59 PM', NULL, '4.50', 'C002')
 INSERT INTO Voucher VALUES ('V011', 'R', '$5 off delivery fees', '20210101 00:00:00 AM', '20210630 23:59:59 PM', NULL, '5.00', 'C001')
-INSERT INTO Voucher VALUES ('V012', 'R', '$5 off delivery fees', '20210101 00:00:00 AM', '20210630 23:59:59 PM', NULL, '5.00', 'C006')
+INSERT INTO Voucher VALUES ('V012', 'R', '$3 off delivery fees', '20210101 00:00:00 AM', '20210630 23:59:59 PM', NULL, '3.00', 'C006')
 INSERT INTO Voucher VALUES ('V013', 'R', '$5 off delivery fees', '20210101 00:00:00 AM', '20210630 23:59:59 PM', NULL, '5.00', 'C005')
 INSERT INTO Voucher VALUES ('V014', 'R', '$5 off delivery fees', '20210101 00:00:00 AM', '20210630 23:59:59 PM', NULL, '5.00', 'C009')
 
@@ -804,33 +804,35 @@ INSERT INTO CustOrder VALUES ('DE024', 'D', '2020-10-12 15:13:09 PM', 'C017', NU
 
 
 -- Payment
-INSERT INTO Payment VALUES ('PO001', 'Credit Card', 'Order Payment', 5.40, 'DE001') --C Elsa Query1
-INSERT INTO Payment VALUES ('PO002', 'Debit Card', 'Order Payment', 1.43, 'DE002')
-INSERT INTO Payment VALUES ('PO003', 'Credit Card', 'Refund', 14.24, 'PU003')
-INSERT INTO Payment VALUES ('PO004', 'Credit Card', 'Order Payment', 8.50, 'DE004') --C Elsa Query1
-INSERT INTO Payment VALUES ('PO005', 'Credit Card', 'Order Payment', 4.37, 'PU005')
-INSERT INTO Payment VALUES ('PO006', 'Debit Card', 'Order Payment', 5.66, 'DE006')
-INSERT INTO Payment VALUES ('PO007', 'Credit Card', 'Order Payment', 10.18, 'PU007') 
-INSERT INTO Payment VALUES ('PO008', 'Debit Card', 'Order Payment', 17.01, 'PU008') 
-INSERT INTO Payment VALUES ('PO009', 'Debit Card', 'Order Payment', 11.90, 'DE009') 
-INSERT INTO Payment VALUES ('PO010', 'Credit Card', 'Order Payment', 13.22, 'PU010') 
-INSERT INTO Payment VALUES ('PO011', 'Credit Card', 'Order Payment', 11.70, 'DE011') 
-INSERT INTO Payment VALUES ('PO012', 'Debit Card', 'Order Payment', 6.84, 'PU012') 
-INSERT INTO Payment VALUES ('PO013', 'Credit Card', 'Refund', 12.46, 'PU013') 
-INSERT INTO Payment VALUES ('PO014', 'Credit Card', 'Order Payment', 15.10, 'PU014') 
-INSERT INTO Payment VALUES ('PO015', 'Credit Card', 'Order Payment', 1.64, 'DE015')   --C Elsa Query1
-INSERT INTO Payment VALUES ('PO016', 'Debit Card', 'Order Payment', 30.60, 'PU016') 
-INSERT INTO Payment VALUES ('PO017', 'Credit Card', 'Order Payment', 17.61, 'DE017')  --C Elsa Query1
-INSERT INTO Payment VALUES ('PO018', 'Debit Card', 'Order Payment', 5.67, 'DE018') 
-INSERT INTO Payment VALUES ('PO019', 'Debit Card', 'Order Payment', 4.50, 'PU019') 
-INSERT INTO Payment  VALUES ('PO020', 'Credit Card', 'Order Payment', 10.38, 'DE020') 
+INSERT INTO Payment VALUES ('PO001', 'Credit Card', 'Order Payment', 4.90, 'DE001') --C Elsa Query1
+INSERT INTO Payment VALUES ('PO002', 'Debit Card', 'Order Payment', 1.28, 'DE002')
+INSERT INTO Payment VALUES ('PO003', 'Credit Card', 'Refund',7.12, 'PU003')
+INSERT INTO Payment VALUES ('PO004', 'Credit Card', 'Order Payment',5.50, 'DE004') --C Elsa Query1
+INSERT INTO Payment VALUES ('PO005', 'Credit Card', 'Order Payment',4.53, 'PU005')
+INSERT INTO Payment VALUES ('PO006', 'Debit Card', 'Order Payment',1.13, 'DE006')
+INSERT INTO Payment VALUES ('PO007', 'Credit Card', 'Order Payment',5.09, 'PU007')
+INSERT INTO Payment VALUES ('PO008', 'Debit Card', 'Order Payment',17.61, 'PU008')
+INSERT INTO Payment VALUES ('PO009', 'Debit Card', 'Order Payment',12.60, 'DE009')
+INSERT INTO Payment VALUES ('PO010', 'Credit Card', 'Order Payment',10.50, 'PU010')
+INSERT INTO Payment VALUES ('PO011', 'Credit Card', 'Order Payment',11.70, 'DE011')
+INSERT INTO Payment VALUES ('PO012', 'Debit Card', 'Order Payment',7.22, 'PU012')
+INSERT INTO Payment VALUES ('PO013', 'Credit Card', 'Refund',12.46, 'PU013')
+INSERT INTO Payment VALUES ('PO014', 'Credit Card', 'Order Payment',12.00, 'PU014')
+INSERT INTO Payment VALUES ('PO015', 'Credit Card', 'Order Payment',4.06, 'DE015')   --C Elsa Query1
+INSERT INTO Payment VALUES ('PO016', 'Debit Card', 'Order Payment',30.10, 'PU016')
+INSERT INTO Payment VALUES ('PO017', 'Credit Card', 'Order Payment',17.37, 'DE017')  --C Elsa Query1
+INSERT INTO Payment VALUES ('PO018', 'Debit Card', 'Order Payment',5.67, 'DE018')
+INSERT INTO Payment VALUES ('PO019', 'Debit Card', 'Order Payment',4.77, 'PU019')
+INSERT INTO Payment  VALUES ('PO020', 'Credit Card', 'Order Payment',8.25, 'DE020')
 
-INSERT INTO Payment  VALUES ('PO021', 'Pay Now', 'Order Payment', -1, 'DE021') --TODO price
-INSERT INTO Payment  VALUES ('PO022', 'Debit Card', 'Order Payment', -1, 'DE022') --TODO price
-INSERT INTO Payment  VALUES ('PO023', 'Pay Now', 'Order Payment', -1, 'PU023') --TODO price
-INSERT INTO Payment  VALUES ('PO024', 'Pay Now', 'Order Payment', -1, 'DE024') --TODO price
+INSERT INTO Payment  VALUES ('PO021', 'Pay Now', 'Order Payment',19.23, 'DE021') --TODO price
+INSERT INTO Payment  VALUES ('PO022', 'Debit Card', 'Order Payment',36.90, 'DE022') --TODO price
+INSERT INTO Payment  VALUES ('PO023', 'Pay Now', 'Order Payment',16.83, 'PU023') --TODO price
+INSERT INTO Payment  VALUES ('PO024', 'Pay Now', 'Order Payment',5.35, 'DE024') --TODO price
 
- 
+
+
+
 -- OrderItem
 INSERT INTO OrderItem VALUES ('DE001', 'I001', 2, 5.50)
 INSERT INTO OrderItem VALUES ('DE002', 'I034', 1, 4.50)
@@ -850,6 +852,22 @@ INSERT INTO OrderItem VALUES ('DE015', 'I023', 1, 4.80)
 INSERT INTO OrderItem VALUES ('PU016', 'I024', 5, 7.80)
 INSERT INTO OrderItem VALUES ('DE017', 'I035', 3, 6.00)
 INSERT INTO OrderItem VALUES ('DE018', 'I021', 1, 6.30)
+INSERT INTO OrderItem VALUES ('DE020', 'I013', 2, 5.50)
+
+
+--C For Ben Query3, dont change
+INSERT INTO OrderItem VALUES ('PU019', 'I011', 1, 5.30)
+INSERT INTO OrderItem VALUES ('DE021', 'I026', 1, 5)
+INSERT INTO OrderItem VALUES ('DE021', 'I027', 2, 4.30)
+INSERT INTO OrderItem VALUES ('DE021', 'I028', 1, 8)
+INSERT INTO OrderItem VALUES ('DE022', 'I011', 2, 5.30)
+INSERT INTO OrderItem VALUES ('DE022', 'I039', 3, 6)
+INSERT INTO OrderItem VALUES ('DE022', 'I040', 2, 6.20)
+INSERT INTO OrderItem VALUES ('PU023', 'I008', 3, 6.50)
+INSERT INTO OrderItem VALUES ('PU023', 'I009', 1, 5.20)
+INSERT INTO OrderItem VALUES ('DE024', 'I011', 1, 5.30)
+INSERT INTO OrderItem VALUES ('DE024', 'I040', 1, 6.20)
+
 
 --C For Ben Query3, dont change
 INSERT INTO OrderItem VALUES ('PU019', 'I011', 1, 5.30)
@@ -867,15 +885,32 @@ INSERT INTO OrderItem VALUES ('DE024', 'I040', 1, 6.20)
 
 -- OrderPromotions
 INSERT INTO OrderPromotions VALUES ('DE001', 'P005')
-INSERT INTO OrderPromotions VALUES ('DE002', 'P010')
-INSERT INTO OrderPromotions VALUES ('PU003', 'P003')
-INSERT INTO OrderPromotions VALUES ('DE004', 'P003')
-INSERT INTO OrderPromotions VALUES ('PU005', 'P009')
-INSERT INTO OrderPromotions VALUES ('DE006', 'P002')
-INSERT INTO OrderPromotions VALUES ('PU007', 'P005')
-INSERT INTO OrderPromotions VALUES ('PU008', 'P010')
-INSERT INTO OrderPromotions VALUES ('DE009', 'P004')
-INSERT INTO OrderPromotions VALUES ('PU010', 'P007')
+INSERT INTO OrderPromotions VALUES ('DE002', 'P001')
+INSERT INTO OrderPromotions VALUES ('PU003', 'P009')
+INSERT INTO OrderPromotions VALUES ('DE004', 'P010')
+INSERT INTO OrderPromotions VALUES ('PU005', 'P008')
+INSERT INTO OrderPromotions VALUES ('DE006', 'P010')
+INSERT INTO OrderPromotions VALUES ('PU007', 'P003')
+INSERT INTO OrderPromotions VALUES ('PU008', 'P004')
+INSERT INTO OrderPromotions VALUES ('DE009', 'P007')
+INSERT INTO OrderPromotions VALUES ('PU010', 'P010')
+
+INSERT INTO OrderPromotions VALUES ('DE011', 'P005')
+INSERT INTO OrderPromotions VALUES ('PU012', 'P001')
+INSERT INTO OrderPromotions VALUES ('PU013', 'P009')
+INSERT INTO OrderPromotions VALUES ('PU014', 'P010')
+INSERT INTO OrderPromotions VALUES ('DE015', 'P008')
+INSERT INTO OrderPromotions VALUES ('PU016', 'P006')
+INSERT INTO OrderPromotions VALUES ('DE017', 'P003')
+INSERT INTO OrderPromotions VALUES ('DE018', 'P004')
+INSERT INTO OrderPromotions VALUES ('PU019', 'P007')
+INSERT INTO OrderPromotions VALUES ('DE020', 'P010')
+
+INSERT INTO OrderPromotions VALUES ('DE021', 'P009')
+INSERT INTO OrderPromotions VALUES ('DE022', 'P007')
+INSERT INTO OrderPromotions VALUES ('PU023', 'P007')
+INSERT INTO OrderPromotions VALUES ('DE024', 'P007')
+
 
 -- Pickup
 INSERT INTO PickUp VALUES ('PU003', 'RN001', '2020-04-27 04:41:33 PM')
