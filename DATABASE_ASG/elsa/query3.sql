@@ -1,5 +1,5 @@
 ﻿-- List all teamIDs and teamNames of teams that received an award and was led by a rider that has delivered at least 1 order from outlets that sell “Western” Food in December 2020.  
-SELECT t.teamID, t.teamName FROM Team t
+SELECT t.* FROM Team t
 
 INNER JOIN Rider r
 ON t.leaderID = r.riderID
