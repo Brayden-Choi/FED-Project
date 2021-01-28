@@ -1,7 +1,5 @@
 ﻿-- List all the riders that use a Car or an E-Scooter and delivered orders that were more than $5 and had a 10% promotions.
-SELECT r.riderID, r.riderNRIC, r.riderName, 
-r.riderContact, r.riderDOB,
-r.deliveryMode FROM Rider r
+SELECT r.* FROM Rider r
 INNER JOIN Delivery d
 ON r.riderID = d.riderID
 INNER JOIN OrderPromotions op
