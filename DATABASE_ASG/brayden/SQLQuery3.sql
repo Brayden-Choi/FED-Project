@@ -9,3 +9,6 @@ on r.riderID = aw.riderID
 INNER JOIN Delivery d
 on r.riderID = d.riderID
 where DATEPART(MONTH,d.deliveryDateTime) = 8
+group by COUNT(awardID)
+having sum(awardID) > 1
+
