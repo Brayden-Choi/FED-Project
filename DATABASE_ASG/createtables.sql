@@ -763,7 +763,7 @@ INSERT INTO Voucher VALUES ('V004', 'N', '$3 off delivery fees', '20200401 00:00
 INSERT INTO Voucher VALUES ('V005', 'N', '$8 off Western food with $30 minimum spend', '20200801 00:00:00 AM', '20200831 23:59:59 PM', '30.00', '8.00', 'C009')
 INSERT INTO Voucher VALUES ('V006', 'R', 'Free thosai worth $4.80 with minimum order of $15', '20200901 00:00:00 AM', '20210228 23:59:59 PM', '15.00', '4.80', 'C009')
 INSERT INTO Voucher VALUES ('V007', 'N', 'Free key lime pie worth $5.80 with minimum order of $25', '20201001 00:00:00 AM', '20210228 23:59:59 PM', '25.00', '5.80', 'C009')
-INSERT INTO Voucher VALUES ('V008', 'R', '1 for 1 pho bo worth $8', '20210101 00:00:00 AM', '20210531 23:59:59 PM', '8.00', '8.00', 'C001')
+INSERT INTO Voucher VALUES ('V008', 'R', '1 for 1 pastry worth $4.20', '20210101 00:00:00 AM', '20210531 23:59:59 PM', '8.00', '8.00', 'C001')
 INSERT INTO Voucher VALUES ('V009', 'N', ' Free chicken rice worth $3.80', '20210101 00:00:00 AM', '20210131 23:59:59 PM', NULL, '3.80', 'C002')
 INSERT INTO Voucher VALUES ('V010', 'R', 'Free lontong worth $4.50', '20210101 00:00:00 AM', '20210630 23:59:59 PM', NULL, '4.50', 'C002')
 INSERT INTO Voucher VALUES ('V011', 'R', '$5 off delivery fees', '20210101 00:00:00 AM', '20210630 23:59:59 PM', NULL, '5.00', 'C001')
