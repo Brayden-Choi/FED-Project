@@ -1,4 +1,4 @@
---1.	Which outlet(s) in the East has a promotion of free delivery and belongs to the Japanese Cuisine. 
+--1.	Which outlet(s) in the East has a promotion of free delivery and belongs to the Japanese or Malay Cuisine. 
 
 select o.*
 from Outlet o 
@@ -12,4 +12,4 @@ INNER JOIN OutletPromotions op
 on op.outletID = o.outletID
 INNER JOIN Promotion p
 on p.promoID = op.promoID
-where c.cuisineName = 'Japanese' AND z.zoneName = 'East' AND p.isFreeDelivery = 'Y'
+where c.cuisineName = 'Japanese' OR c.cuisineName = 'Malay' AND z.zoneName = 'East' AND p.isFreeDelivery = 'Y'

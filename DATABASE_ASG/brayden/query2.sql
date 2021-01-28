@@ -1,4 +1,4 @@
---2.	List all the rider(s) who has won at least 2 awards and has delivered at least 1 order in August 2020. Sort the result in descending order of orders delivered. \
+--2.	List all the rider(s) who has won at least 2 awards and has delivered at least 1 order in 2020. Sort the result in descending order of orders delivered. \
 
 select rw.*, riderNRIC, riderName, riderContact, riderAddress, riderDOB, deliveryMode, teamID
 
@@ -19,11 +19,11 @@ INNER JOIN
 select aw.riderID from AwardsWon aw
 INNER JOIN Delivery d
 on d.riderID = aw.riderID
-where DATEPART(MONTH,d.deliveryDateTime) = 8
+where DATEPART(YEAR,d.deliveryDateTime) = 2020
 group by aw.riderID
 having COUNT(orderID) > 0
 )
 AS aw
 on r.riderID = aw.riderID
 
-order by r.riderID desc
+order by r.riderID asc

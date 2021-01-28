@@ -442,7 +442,7 @@
     margin-bottom: 0%;
 }
 
-.carousel-caption {
+.carousel-caption1 {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 25px;
     color: white;
@@ -562,22 +562,13 @@ img:nth-child(4) {
     position: relative;
 }
 
-<<<<<<< HEAD
 @import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
-#contact {
-    width: 500px;
-    margin: 0 auto;
-=======
-.form-wrapper {
-    position: absolute;
-    width: 100%;
-}
+
 
 #contact {
     margin: 2em auto;
->>>>>>> d607f68603cadf2a7ef87607dea40a1f00d50906
     background: black;
     width: 90vh;
     border-radius: 10px;
@@ -767,17 +758,6 @@ reset_wrapper {
         margin-left: 2px;
         margin-bottom: 0px;
     }
-
-@media (max-width: 500px) {
-    #contact {
-        width: 100%;
-    }
-
-    .input_wrapper label {
-        line-height: 3.5em;
-        font-size: 0.8em;
-    }
-}
 
 .sm-links{
     position: absolute;
