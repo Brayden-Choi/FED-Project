@@ -3,3 +3,28 @@
     max-width: 100%;
     height: auto;
 }
+
+.slideshow {
+    width: 900px;
+    height: 600px;
+    padding: 50px;
+    text-align: center;
+    margin: auto;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    position: absolute;
+}
+
+hr {
+    padding: 10px;
+}
+
+table, td, th {
+    empty-cells: show;
+    text-align: center;
+    border: 2px solid black;
+    border-collapse: collapse;
+    padding: 4px;
+}
+
