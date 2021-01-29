@@ -179,6 +179,13 @@ header {
     ----------------
 */
 
+.video {
+    position: relative;
+    height: auto;
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+
 .free {
     background-color: #F1FAEE;
 }
