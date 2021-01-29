@@ -15,4 +15,4 @@ having sum(p.pmtAmt) > 20
 AS cop
 on c.custID = cop.custID
 
-order by custID desc
+order by custID asc
