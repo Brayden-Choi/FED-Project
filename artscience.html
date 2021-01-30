@@ -25,7 +25,8 @@
     <link href="css/artscience.css" rel="stylesheet">
     <script src="js/artscience.js"></script>
     <!-- Add your own stuff here -->
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
 </head>
 
 <div content="Art Science Museum" id="header" type="white"></div>
@@ -33,9 +34,29 @@
 <body>
     <div class="container-fluid">
         <section class="header">
+            <nav class="navbar navbar-expand-md navbar-custom navbar-dark">
+                <!-- Navbar links -->
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav nav-custom mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="artscience.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#exhibitions">Exhibitions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#tickets">Tickets</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
             <a href="artscience.html">
                 <img src="multimedia/artscience-images/asm-logo.png" alt="ASM logo" />
             </a>
+
         </section>
 
         <section class="top">
@@ -52,71 +73,97 @@
         <hr />
 
         <section class="slideshow">
-            <h2>Exhibitions</h2>
+            <div id="exhibitions">
+                <h2>Exhibitions</h2>
+                <!-- Trigger the Modal -->
+                <div class="imgwrap">
+                    <div class="polaroid">
+                        <img class="myImg" src="multimedia/artscience-images/img1.jpg" alt="Future World" width="600" height="400" title="future world">
+                        <div class="polaroid-text">
+                            <p>Northern Lights</p>
+                        </div>
+                    </div>
+                    <div class="polaroid">
+                        <img class="myImg" src="multimedia/artscience-images/img2.jpg" alt="Planet or Plastic" width="600" height="400">
+                        <div class="polaroid-text">
+                            <p>Northern Lights</p>
+                        </div>
+                    </div>
+                    <div class="polaroid">
+                        <img class="myImg" src="multimedia/artscience-images/img3.jpg" alt="Star Wars" width="600" height="400">
+                        <div class="polaroid-text">
+                            <p>Northern Lights</p>
+                        </div>
+                    </div>
+                    <div class="polaroid">
+                        <img class="myImg" src="multimedia/artscience-images/img4.jpg" alt="Margins" width="600" height="400">
+                        <div class="polaroid-text">
+                            <p>Northern Lights</p>
+                        </div>
+                    </div>
 
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-            <!-- Trigger the Modal -->
-            <img class="myImg" src="multimedia/artscience-images/img1.jpg" alt="Future World" width="600" height="400">
-            <img class="myImg" src="multimedia/artscience-images/img2.jpg" alt="Planet or Plastic" width="600" height="400">
-            <img class="myImg" src="multimedia/artscience-images/img3.jpg" alt="Star Wars" width="600" height="400">
-            <img class="myImg" src="multimedia/artscience-images/img4.jpg" alt="Margins" width="600" height="400">
+                </div>
 
-            <!-- The Modal -->
-            <div id="myModal" class="modal">
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal" onclick="modal()">
 
-                <!-- The Close Button -->
-                <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+                        <!-- The Close Button -->
+                        <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
 
-                <!-- Modal Content (The Image) -->
-                <img class="modal-content" id="img01">
+                        <!-- Modal Content (The Image) -->
+                        <img class="modal-content" id="img01">
 
-                <!-- Modal Caption (Image Text) -->
-                <div id="caption"></div>
-            </div>
+                        <!-- Modal Caption (Image Text) -->
+                        <div id="caption"></div>
+                    </div>
+                </div>
         </section>
         <hr />
         <section class="tickets">
-            <table align="center">
-                <h2 align="center">Tickets</h2>
-                <tr>
-                    <th class="empty"></th>
-                    <th class="age">Adult</th>
-                    <th class="age">Concession</th>
-                    <th class="age">Senior</th>
-                    <th class="age">Family</th>
-                </tr>
-                <tr>
-                    <th class="exhibition-name">Future World</th>
-                    <th class="price">S$16</th>
-                    <th class="price">S$12</th>
-                    <th class="price">S$13</th>
-                    <th class="price">S$45</th>
-                </tr>
-                <tr>
-                    <th class="exhibition-name">Planet or Plastic?</th>
-                    <th class="price">S$16</th>
-                    <th class="price">S$12</th>
-                    <th class="price">S$13</th>
-                    <th class="price">S$45</th>
-                </tr>
-                <tr>
-                    <th class="exhibition-name">STAR WARS: Identities</th>
-                    <th class="price">S$25</th>
-                    <th class="price">S$20</th>
-                    <th class="price">S$22</th>
-                    <th class="price">S$80</th>
-                </tr>
-                <tr>
-                    <th class="exhibition-name">Margins: drawing pictures of home</th>
-                    <th class="price">S$6</th>
-                    <th class="price">S$6</th>
-                    <th class="price">S$5</th>
-                    <th class="price">S$18</th>
-                </tr>
-            </table>
+            <div id="tickets">
+                <table align="center">
+                    <h2 align="center">Tickets</h2>
+                    <tr>
+                        <th class="empty"></th>
+                        <th class="age">Adult</th>
+                        <th class="age">Concession</th>
+                        <th class="age">Senior</th>
+                        <th class="age">Family</th>
+                    </tr>
+                    <tr>
+                        <th class="exhibition-name">Future World</th>
+                        <th class="price">S$16</th>
+                        <th class="price">S$12</th>
+                        <th class="price">S$13</th>
+                        <th class="price">S$45</th>
+                    </tr>
+                    <tr>
+                        <th class="exhibition-name">Planet or Plastic?</th>
+                        <th class="price">S$16</th>
+                        <th class="price">S$12</th>
+                        <th class="price">S$13</th>
+                        <th class="price">S$45</th>
+                    </tr>
+                    <tr>
+                        <th class="exhibition-name">STAR WARS: Identities</th>
+                        <th class="price">S$25</th>
+                        <th class="price">S$20</th>
+                        <th class="price">S$22</th>
+                        <th class="price">S$80</th>
+                    </tr>
+                    <tr>
+                        <th class="exhibition-name">Margins: drawing pictures of home</th>
+                        <th class="price">S$6</th>
+                        <th class="price">S$6</th>
+                        <th class="price">S$5</th>
+                        <th class="price">S$18</th>
+                    </tr>
+                </table>
+            </div>
         </section>
         <hr />
-        <section class="form">
+
+        <section class="form" onsubmit="onSubmit()">
             <form>
                 <h2>Contact Us</h2>
 
@@ -140,12 +187,13 @@
                 <input type="email" placeholder="Email Address" name="email" id="email" />
                 <br />
                 <label for="contact" class="label">Contact Number:</label>
-                <input type="tel" placeholder="Contact Number" name="contact" id="contact" pattern="[+]{2}[0-9]{8}" />
+                <input type="tel" placeholder="Contact Number" name="contact" id="contact" pattern="[0-9]{8}" />
                 <br /><br />
                 <textarea name="feedback" placeholder="What do you want to tell us?" required></textarea>
                 <br /><br />
                 <input type="Submit" id="submit" />
             </form>
+
         </section>
         <hr />
         <div id="footer"></div>
