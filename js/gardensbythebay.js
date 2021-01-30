@@ -91,12 +91,12 @@ class SectionManager {
 
     setActive() {
         if (this.currentSectionIndex === -1) {
-            this.$indicators.fadeOut(400);
+            this.$indicators.fadeOut(300);
             return;
         }
 
         if (!this.$indicators.is(":visible")) {
-            this.$indicators.fadeIn(400);
+            this.$indicators.fadeIn(300);
         }
 
         for (let indicator of this.$indicators.find("li")) {
@@ -223,7 +223,9 @@ class AttractionManager {
 
 class TicketManager {
     constructor(ticketId) {
-        this.$ticketForm = $(ticketId);
+        this.$ticketSection = $(ticketId);
+        this.$ticketModal = $(`${ticketId}-modal`);
+        this.$ticketForm = $(`${ticketId}-form`);
         this.$ticketOptions = $(`${ticketId}-options`);
         this.$ticketItems = $(`${ticketId}-items`);
         this.$ticketCount = $(`${ticketId}-count`);
@@ -275,7 +277,7 @@ class TicketManager {
         $(this.$ticketOptions.find("a")[targetItem.index]).removeClass("disabled");
 
         targetItem.$item.on('transitionend webkitTransitionEnd oTransitionEnd', function () {
-            $(this).delay(300).queue(function (next) {
+            $(this).delay(180).queue(function (next) {
                 $(this).remove();
                 console.log("Removed ticket item: ", index);
                 next();
@@ -305,6 +307,10 @@ class TicketManager {
 
     parseMoney(value) {
         return `SGD ${value.toFixed(2)}`;
+    }
+    
+    OnSubmit() {
+        this.$ticketModal.modal("show");
     }
 
     buildTicketOption(index) {
@@ -524,6 +530,9 @@ $(document).ready(function () {
     }).fail(function () {
         console.log("Unable to load file: " + ticketPath);
     })
+    tm.$ticketForm.on('click', function (event) {
+        tm.OnSubmit();
+    });
 
     // Setup picker 
     // https://github.com/mojoaxel/bootstrap-select-country

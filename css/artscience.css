@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300&display=swap');
 
 body {
     text-align: center;
+    position: relative;
 }
 
 .header {
@@ -9,6 +12,28 @@ body {
     max-width: 100%;
     height: auto;
     text-align: left;
+}
+
+.top {
+}
+
+.topimage {
+    width: 100%;
+    height: auto;
+}
+
+.toptext {
+    padding-top: 80px;
+    padding-bottom: 0px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 90px;
+    text-align: left;
+}
+
+.bottomtext {
+    display: inline-block;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 78px;
 }
 
 h2 {
@@ -20,13 +45,56 @@ h2 {
 .slideshow {
     width: 1260px;
     height: 720px;
-    padding: 50px;
+    padding: 30px;
     text-align: center;
     margin: auto;
 }
 
-.carousel-control-prev, .carousel-control-next {
-    position: absolute;
+div.gallery {
+    border: 1px solid #ccc;
+}
+
+    div.gallery:hover {
+        border: 1px solid #777;
+    }
+
+    div.gallery img {
+        width: 100%;
+        height: auto;
+    }
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.responsive {
+    padding: 0 6px;
+    float: left;
+    width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+    .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .responsive {
+        width: 100%;
+    }
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 hr {
@@ -35,12 +103,33 @@ hr {
     top: 20px;
 }
 
+table {
+    width: 80%;
+}
+
 table, td, th {
-    empty-cells: show;
     text-align: center;
-    border: 2px solid black;
-    border-collapse: collapse;
-    padding: 4px;
+    padding: 20px;
+    border-bottom: 3px solid #fcd703;
+}
+
+tr:hover {
+    background-color: #e6c149;
+}
+
+.age {
+    font-family: 'Balsamiq Sans', cursive;
+    font-size: 30px;
+}
+
+.price {
+    font-family: 'Karla', sans-serif;
+    font-size: 22px;
+}
+
+.exhibition-name {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 22px;
 }
 
 .form {
@@ -76,7 +165,7 @@ input:focus {
 }
 
 select {
-    width: 280px;
+    width: 220px;
     padding: 12px 16px;
     border: none;
     border-radius: 4px;
@@ -89,6 +178,7 @@ textarea {
     width: 80%;
     border: 2px solid #fcd703;
     border-radius: 12px;
+    transition: width 0.4s ease-in-out;
 }
 
 textarea:focus {
@@ -119,3 +209,4 @@ textarea:focus {
     color: #fcd703;
     border: 2px solid #fcd703;
 }
+

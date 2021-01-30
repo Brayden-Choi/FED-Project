@@ -1,12 +1,8 @@
 /*
 Colour Palette
-https://coolors.co/e63946-f1faee-a8dadc-457b9d-1d3557
-e63946 imperial red
 f1faee honeydew
-a8dadc powder blue
-457b9d celadon blue
 1d3557 prussian blue
-#f4ac14 sentosa logo
+#f4ac14 sentosa orange
 */
 
 html {
@@ -200,6 +196,7 @@ header {
     margin: 0 auto;
     padding: 60px 0;
     text-align: center;
+    height: auto;
 }
 
 .tableheading
