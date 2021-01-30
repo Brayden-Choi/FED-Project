@@ -112,8 +112,8 @@
             <form>
                 <h2>Contact Us</h2>
 
-                <label for="salutation">Salutations:</label>
                 <select class="salutation" required>
+                    <option value="" disabled selected>You are a...</option>
                     <option>Mr</option>
                     <option>Mrs</option>
                     <option>Ms</option>
@@ -122,10 +122,21 @@
                 </select>
                 <br />
 
-                <label for="firstname">First name:</label>
-                <input type="text" placeholder="First Name" required />
-                <label for="lastname">Last name:</label>
-                <input type="text" placeholder="Last Name" required />
+                <label for="firstname" class="label">First name:</label>
+                <input type="text" placeholder="First Name" name="firstname" id="firstname" required />
+                <br />
+                <label for="lastname" class="label">Last name:</label>
+                <input type="text" placeholder="Last Name" name="lastname" id="lastname" required />
+                <br /><br />
+                <label for="email" class="label">Email Address:</label>
+                <input type="email" placeholder="Email Address" name="email" id="email" />
+                <br />
+                <label for="contact" class="label">Contact Number:</label>
+                <input type="tel" placeholder="Contact Number" name="contact" id="contact" pattern="[+]{2}[0-9]{8}" />
+                <br /><br />
+                <textarea name="feedback" placeholder="What do you want to tell us?" required></textarea>
+                <br /><br />
+                <input type="Submit" id="submit"/>
             </form>
         </section>
         <hr />
