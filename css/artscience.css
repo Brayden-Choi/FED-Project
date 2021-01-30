@@ -2,6 +2,7 @@
 
 body {
     text-align: center;
+    position: relative;
 }
 
 .header {
@@ -9,6 +10,28 @@ body {
     max-width: 100%;
     height: auto;
     text-align: left;
+}
+
+.top {
+}
+
+.topimage {
+    width: 100%;
+    height: auto;
+}
+
+.toptext {
+    padding-top: 80px;
+    padding-bottom: 0px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 90px;
+    text-align: left;
+}
+
+.bottomtext {
+    display: inline-block;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 78px;
 }
 
 h2 {
@@ -20,7 +43,7 @@ h2 {
 .slideshow {
     width: 1260px;
     height: 720px;
-    padding: 50px;
+    padding: 30px;
     text-align: center;
     margin: auto;
 }
@@ -29,18 +52,41 @@ h2 {
     position: absolute;
 }
 
+
+.carousel-caption {
+    background-color: rgba(44, 44, 44, 0.45);
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    
+}
+
+h5 {
+    font-size: 48px;
+}
+
 hr {
     margin: auto;
     padding: 100px;
     top: 20px;
 }
 
+table {
+    width: 80%;
+}
+
 table, td, th {
-    empty-cells: show;
     text-align: center;
     border: 2px solid black;
     border-collapse: collapse;
-    padding: 4px;
+    padding: 20px;
+}
+
+td {
+
+}
+
+tr:hover {
+    background-color: #e6c149;
 }
 
 .form {
@@ -76,7 +122,7 @@ input:focus {
 }
 
 select {
-    width: 280px;
+    width: 220px;
     padding: 12px 16px;
     border: none;
     border-radius: 4px;
@@ -89,6 +135,7 @@ textarea {
     width: 80%;
     border: 2px solid #fcd703;
     border-radius: 12px;
+    transition: width 0.4s ease-in-out;
 }
 
 textarea:focus {
@@ -119,3 +166,4 @@ textarea:focus {
     color: #fcd703;
     border: 2px solid #fcd703;
 }
+
