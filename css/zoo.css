@@ -510,7 +510,12 @@ dd{
 
 .social-icon {
     margin-right: 4rem;
-    animation: appear-left;
+    transition-timing-function: ease-out;
+    transition-duration: 0.5s;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
 }
 
 .fab {
@@ -531,6 +536,7 @@ dd{
     opacity: 1;
     font-size: 1.2rem;
 }
+
 
 /*Media Queries for Mobile*/
 @media (max-width: 1200px) {

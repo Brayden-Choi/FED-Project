@@ -1,6 +1,6 @@
 ﻿{
   "Tourist Attractions": {
-    "desc": "text",
+    "desc": "Known for its glitz and glamour, Singapore is a popular tourist destination. The island city-state is also undoubtedly one of the cleanest and most orderly cities in the world. From shopping frenzy, delectable culinary delights, awe-inspiring museums, adventurous theme parks, exotic gardens – Singapore has something for everyone.",
     "page": "",
     "imageFile": "sg-skyline.jpg"
   },
@@ -10,7 +10,7 @@
     "imageFile": "gardensbythebay.jpg"
   },
   "Singapore Zoo": {
-    "desc": "Set in a rainforest environment, the Singapore Zoo offers the opportunity to experience and be inspired by the wonders of nature.",
+    "desc": "Set in a rainforest environment, the Singapore Zoo offers the opportunity to experience and be inspired by the wonders of nature. The zoo is home to over 300 animal species, 15% of which are classified as threatened.",
     "page": "zoo.html",
     "imageFile": "zoo.jpg"
   }, 
