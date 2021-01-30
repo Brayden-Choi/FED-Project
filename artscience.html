@@ -25,6 +25,7 @@
     <link href="css/artscience.css" rel="stylesheet">
     <script src="js/artscience.js"></script>
     <!-- Add your own stuff here -->
+    
 </head>
 
 <div content="Art Science Museum" id="header" type="white"></div>
@@ -51,41 +52,26 @@
         <hr />
 
         <section class="slideshow">
-            <div class="responsive">
-                <div class="gallery">
-                    <a target="_blank" href="img_5terre.jpg">
-                        <img src="multimedia/artscience-images/img1.jpg" alt="Cinque Terre" width="600" height="400">
-                    </a>
-                    <div class="desc">Add a description of the image here</div>
-                </div>
-            </div>
+            <h2>Exhibitions</h2>
 
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+            <!-- Trigger the Modal -->
+            <img class="myImg" src="multimedia/artscience-images/img1.jpg" alt="Future World" width="600" height="400">
+            <img class="myImg" src="multimedia/artscience-images/img2.jpg" alt="Planet or Plastic" width="600" height="400">
+            <img class="myImg" src="multimedia/artscience-images/img3.jpg" alt="Star Wars" width="600" height="400">
+            <img class="myImg" src="multimedia/artscience-images/img4.jpg" alt="Margins" width="600" height="400">
 
-            <div class="responsive">
-                <div class="gallery">
-                    <a target="_blank" href="img_forest.jpg">
-                        <img src="multimedia/artscience-images/img2.jpg" alt="Forest" width="600" height="400">
-                    </a>
-                    <div class="desc">Add a description of the image here</div>
-                </div>
-            </div>
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
 
-            <div class="responsive">
-                <div class="gallery">
-                    <a target="_blank" href="img_lights.jpg">
-                        <img src="multimedia/artscience-images/img3.jpg" alt="Northern Lights" width="600" height="400">
-                    </a>
-                    <div class="desc">Add a description of the image here</div>
-                </div>
-            </div>
+                <!-- The Close Button -->
+                <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
 
-            <div class="responsive">
-                <div class="gallery">
-                    <a target="_blank" href="img_mountains.jpg">
-                        <img src="multimedia/artscience-images/asm-logo.jpg" alt="Mountains" width="600" height="400">
-                    </a>
-                    <div class="desc">Add a description of the image here</div>
-                </div>
+                <!-- Modal Content (The Image) -->
+                <img class="modal-content" id="img01">
+
+                <!-- Modal Caption (Image Text) -->
+                <div id="caption"></div>
             </div>
         </section>
         <hr />
