@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300&display=swap');
 
 body {
     text-align: center;
@@ -107,17 +109,27 @@ table {
 
 table, td, th {
     text-align: center;
-    border: 2px solid black;
-    border-collapse: collapse;
     padding: 20px;
-}
-
-td {
-
+    border-bottom: 3px solid #fcd703;
 }
 
 tr:hover {
     background-color: #e6c149;
+}
+
+.age {
+    font-family: 'Balsamiq Sans', cursive;
+    font-size: 30px;
+}
+
+.price {
+    font-family: 'Karla', sans-serif;
+    font-size: 22px;
+}
+
+.exhibition-name {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 22px;
 }
 
 .form {
