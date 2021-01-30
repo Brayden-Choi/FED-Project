@@ -1,32 +1,38 @@
-﻿{
-  "Tourist Attractions": {
+﻿[
+  {
+    "name": "Tourist Attractions",
     "desc": "Known for its glitz and glamour, Singapore is a popular tourist destination. The island city-state is also undoubtedly one of the cleanest and most orderly cities in the world. From shopping frenzy, delectable culinary delights, awe-inspiring museums, adventurous theme parks, exotic gardens – Singapore has something for everyone.",
     "page": "",
-    "imageFile": "sg-skyline.jpg"
-  },
-  "Gardens by the Bay": {
+    "imageFile": "home.jpg"
+  }, 
+  {
+    "name": "Gardens by the Bay",
     "desc": "Gardens by the Bay is a showpiece of horticulture and garden artistry that presents the plant kingdom in a whole new way, entertaining while educating visitors with plants seldom seen in this part of the world, ranging from species in cool, temperate climates to tropical forests and habitats.",
     "page": "gardensbythebay.html",
     "imageFile": "gardensbythebay.jpg"
-  },
-  "Singapore Zoo": {
+  }, 
+  {
+    "name": "Singapore Zoo",
     "desc": "Set in a rainforest environment, the Singapore Zoo offers the opportunity to experience and be inspired by the wonders of nature. The zoo is home to over 300 animal species, 15% of which are classified as threatened.",
     "page": "zoo.html",
     "imageFile": "zoo.jpg"
   }, 
-  "Changi Jewel": {
+  {
+    "name": "Changi Jewel",
     "desc": "Jewel Changi Airport is a nature-themed entertainment and retail complex on the inside of Changi Airport, Singapore, linked to three of its passenger terminals.",
     "page": "jewel.html",
     "imageFile": "jewel.jpg"
-  },
-  "Sentosa": {
+  }, 
+  {
+    "name": "Sentosa",
     "desc": "Sentosa is a sunny island in Singapore, home to exciting events, themed attractions, award-winning spas, lush rainforests and golden sandy beaches.",
     "page": "sentosa.html",
     "imageFile": "sentosa.jpg"
   }, 
-  "Art Science Museum": {
+  {
+    "name": "Art Science Museum",
     "desc": "ArtScience Museum is an iconic cultural landmark in Singapore. Our mission is to explore where art, science, culture and technology come together. It is here at the intersection of art and science that innovation and new ideas are formed.",
     "page": "artscience.html",
     "imageFile": "artscience.jpg"
   }
-}
+]

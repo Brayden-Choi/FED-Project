@@ -13,9 +13,21 @@
     loadData(data) {
         this.contentData = data;
         console.log("Data set to: ", this.contentData);
-        this.setOverviewTexts();
-        
         //TODO: Loop through kv pair of data and load slide image + indicator
+        let index = 0;
+        
+        console.log(this.contentData);
+        let active = true;
+        for (const singleData of this.contentData) {
+            console.log(singleData);
+            this.$slideImages.append(this.buildSlideImage(index, singleData, active));
+            this.$indicators.append(this.buildSlideIndicator(index));
+            
+            active = false;
+            index++;
+        }
+        
+        this.setOverviewTexts();
     }
 
     slideChange(event) {
@@ -43,13 +55,22 @@
             $targetItem = $(this.$slide.find(".active")[0]);
         }
 
-        const targetData = $targetItem.attr("content");
-
+        const targetIndex = $targetItem.data("index");
+        const data = this.contentData[targetIndex];
+        
         let $title = this.getTitle(0);
-        $title.text(targetData);
+        $title.text(data.name);
 
-        this.$desc.text(this.contentData[targetData].desc);
-        this.$button.attr("href", this.contentData[targetData].page);
+        this.$desc.text(data.desc);
+        
+        const targetPage = data.page;
+        if (targetPage === "") {
+            this.$button.addClass("item-hidden");
+        }
+        else {
+            this.$button.removeClass("item-hidden");
+            this.$button.attr("href", data.page);
+        }
 
         let activeIndex = $targetItem.index() - 1;
         let index = 0;
@@ -70,18 +91,18 @@
         return `<li class="indicator" data-slide-to="${index}" data-target="#overview-slides"></li>`;
     }
 
-    buildSlideImage(data) {
+    buildSlideImage(index, data, active) {
         return `
-        <div class="carousel-item active" content="Tourist Attractions">
+        <div class="carousel-item${active ? " active" : ""}" data-index="${index}">
             <div class="overview-overlay"></div>
-            <img alt="${data}" class="d-block w-100 min-vh-100" src="${data.imageDir}">
+            <img alt="${data.name}" class="d-block w-100 min-vh-100" src="multimedia/home/overview-slides/${data.imageFile}">
         </div>
         `;
     }
 }
 
 $(document).ready(function () {
-    let sm = new SlideManager("#overview-slides", "overview-slides-data", "#title-", "#overview-desc", "#overview-button", "#overview-indicators");
+    let sm = new SlideManager("#overview-slides", "#overview-slides-data", "#title-", "#overview-desc", "#overview-button", "#overview-indicators");
     const filePath = "multimedia/home/overview.json";
     $.getJSON(filePath).then(function (data) {
         sm.loadData(data);
