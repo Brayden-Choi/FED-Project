@@ -283,6 +283,17 @@
     cursor: pointer;
 }
 
+tr, th, td {
+    border: thin solid black;
+    padding: 4px;
+}
+
+table {
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
 /*Shopping*/
 .sd-title {
     color: black;
