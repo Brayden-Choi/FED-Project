@@ -1,12 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+
+body {
+    text-align: center;
+}
+
 .header {
     padding-top: 80px;
     max-width: 100%;
     height: auto;
+    text-align: left;
+}
+
+h2 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 48px;
+    padding-bottom: 12px;
 }
 
 .slideshow {
-    width: 900px;
-    height: 600px;
+    width: 1260px;
+    height: 720px;
     padding: 50px;
     text-align: center;
     margin: auto;
@@ -17,7 +30,9 @@
 }
 
 hr {
-    padding: 10px;
+    margin: auto;
+    padding: 100px;
+    top: 20px;
 }
 
 table, td, th {
@@ -29,16 +44,78 @@ table, td, th {
 }
 
 .form {
-    width: 500px;
-    margin-top: 0;
-    margin-bottom: 0;
+    display: inline-block;
+    width: 40%;
     margin-left: 50px;
     margin-right: 50px;
     padding: 20px;
     border: solid;
+    border-color: #e6c149;
 }
 
 .label {
     width: 150px;
     display: inline-block;
+    text-align: left;
+    padding: 12px 12px 12px 0;
+}
+
+input {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid #fcd703;
+    transition: width 0.4s ease-in-out;
+}
+
+input:focus {
+    background-color: #fcd703;
+    width: 60%;
+}
+
+select {
+    width: 280px;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+    width: 80%;
+    border: 2px solid #fcd703;
+    border-radius: 12px;
+}
+
+textarea:focus {
+    border-radius: 12px;
+    width: 100%;
+    background-color: #fcd703;
+}
+
+#submit {
+    display: inline-block;
+    background-color: #fcd703;
+    border: 2px solid black;
+    color: #000;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+#submit:hover {
+    background-color: black;
+    color: #fcd703;
+    border: 2px solid #fcd703;
 }
