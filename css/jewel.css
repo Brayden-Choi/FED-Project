@@ -246,6 +246,13 @@
     opacity: 1;
 }
 
+.table {
+    background-color: #baac79;
+    height: 98vh;
+    display: none;
+    overflow: hidden;
+}
+
 /*Shopping*/
 .sd-title {
     color: black;
