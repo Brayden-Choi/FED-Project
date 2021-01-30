@@ -38,8 +38,7 @@
 <div content="Gardens By The Bay" data-offset="820" data-type="white" id="header"></div>
 
 <body>
-<div aria-hidden="true" aria-labelledby="attractionsModal-title" class="modal fade" id="attractionsModal" role="dialog"
-     tabindex="-1">
+<div aria-hidden="true" aria-labelledby="attractionsModal-title" class="modal fade attractions-modal" id="attractionsModal" role="dialog" tabindex="-1">
     <div class="modal-dialog m-0 ml-sm-3 mr-sm-3 mx-lg-auto" role="document">
         <div class="modal-content mb-5">
             <div class="modal-top" id="attractionsModal-header">
@@ -51,6 +50,25 @@
             <div class="modal-body" id="attractionsModal-body"></div>
             <div class="modal-footer" id="attractionsModal-footer">
                 <button class="btn btn-secondary" data-dismiss="modal" type="button">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" data-backdrop="static" id="tickets-modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fa fa-ticket"></i> Ticket Ordered</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
@@ -132,7 +150,7 @@
                 <h1 class="header-text fancy-font">Buy Tickets</h1>
             </div>
         </div>
-        <form class="ticket-form mx-xl-auto mt-4 ml-3 mr-3" data-aos="fade-up">
+        <form class="ticket-form mx-xl-auto mt-4 ml-3 mr-3" data-aos="fade-up" id="tickets-form">
             <div class="form-group">
                 <label for="inputName">Full Name</label>
                 <input class="form-control" id="inputName" placeholder="Name" required type="text">
@@ -191,19 +209,25 @@
                 </table>
             </div>
 
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputCard">Card</label>
-                    <input class="form-control" id="inputCard" placeholder="credit card number" required type="text">
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="form-group col-md-6 mb-0">
+                        <label for="inputCard">Card</label>
+                        <input class="form-control" id="inputCard" placeholder="credit card number" required type="text">
+                    </div>
+                    <div class="form-group col-md-3 mb-0">
+                        <label for="inputExpire">Expire Date</label>
+                        <input class="form-control" id="inputExpire" placeholder="card expiry date" required type="month">
+                    </div>
+                    <div class="form-group col-md-3 mb-0">
+                        <label for="inputCheck">Security Code</label>
+                        <input class="form-control" id="inputCheck" placeholder="3-digit security code" required type="text">
+                    </div>
                 </div>
-                <div class="form-group col-md-3">
-                    <label for="inputExpire">Expire Date</label>
-                    <input class="form-control" id="inputExpire" placeholder="card expiry date" required type="month">
-                </div>
-                <div class="form-group col-md-3">
-                    <label for="inputCheck">Security Code</label>
-                    <input class="form-control" id="inputCheck" placeholder="3-digit security code" required type="text">
-                </div>
+                <small class="form-text text-muted" id="e">
+                    SG Tourist Attractions will not store your credit or debit card details. Your card credentials will be
+                    secured by the payment provider.
+                </small>
             </div>
 
             <div class="form-group">
@@ -229,6 +253,16 @@
                 Reset
             </button>
         </form>
+
+        <div class="d-flex justify-content-center btn-group-lg">
+            <button type="button" class="btn btn-primary btn-rounded social-button"><i class="fa fa-users"></i></button>
+            <button type="button" class="btn btn-dark btn-rounded social-button"><i class="fa fa-envelope-o"></i>
+            </button>
+            <button type="button" class="btn btn-danger btn-rounded social-button"><i class="fa fa-comment"></i>
+            </button>
+            <button type="button" class="btn btn-info btn-rounded social-button"><i class="fa fa-star"></i></button>
+            <button type="button" class="btn btn-success btn-rounded social-button"><i class="fa fa-plane"></i></button>
+        </div>
     </section>
 
     <div id="footer"></div>

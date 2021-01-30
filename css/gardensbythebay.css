@@ -316,15 +316,16 @@ body {
 }
 
 /* Attractions Modal Styles */
-.modal {
+.attractions-modal {
     padding-right: 0 !important;
 }
-.modal-dialog {
+
+.attractions-modal .modal-dialog {
     padding: 10px !important;
     max-width: 922px !important;
 }
 
-.modal-top {
+.attractions-modal .modal-top {
     background-size: cover;
     background-position: center;
     position: relative;
@@ -334,7 +335,7 @@ body {
     transition: all .2s;
 }
 
-.modal-title {
+.attractions-modal .modal-title {
     font-size: calc(3.5vh + 3.5vw);
     padding-left: 16px;
     width: 100%;
@@ -359,9 +360,8 @@ body {
 
 /* Ticket Form Styles */
 .tickets-background {
-    background: url("../multimedia/gardensbythebay/form-background.jpg");
     background-size: cover;
-    background-position: center;
+    background: url("../multimedia/gardensbythebay/form-background.jpg") center;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     transition: all 0.3s ease-in-out;
@@ -380,7 +380,9 @@ body {
 }
 
 .ticket-form .form-control {
+    /*
     background-color: rgba(255, 255, 255, 0.7) !important;
+    */
 }
 
 .tickets-list {
@@ -424,6 +426,7 @@ body {
     max-height: 160px;
     animation: slidein 0.3s;
     transition: all 0.3s;
+    background-color: rgba(255, 255, 255, 0.7) !important;
 }
 
 @keyframes slidein {
@@ -479,7 +482,7 @@ body {
 }
 
 @media (max-width: 768px) {
-    .modal-title {
+    .attractions-modal .modal-title {
         padding-left: 0;
         text-align: center;
     }
