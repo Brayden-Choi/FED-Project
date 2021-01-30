@@ -90,12 +90,6 @@ header {
     height: 100vh;
 }
 
-.headerbgcol {
-    background-color: white;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
 .sentosa-header {
     font-family: 'Rancho', serif;
@@ -107,6 +101,11 @@ header {
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    text-shadow:
+            -1px -1px 0 white,
+            1px -1px 0 white,
+            -1px 1px 0 white,
+            1px 1px 0 white;
 }
 
 .aka {
@@ -119,11 +118,17 @@ header {
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    text-shadow:
+            -1px -1px 0 white,
+            1px -1px 0 white,
+            -1px 1px 0 white,
+            1px 1px 0 white;
 }
 
 .about {
+    font-family: 'Rancho', serif;
     text-align: center;
-    color: #F4AC14;
+    color: black;
     margin: 0;
     position: absolute;
     top: 70%;
@@ -216,7 +221,7 @@ header {
 
 .table tr, .table td
 {
-    border: solid #F1FAEE;
+    border: solid black;
 }
 
 
@@ -309,4 +314,26 @@ header {
 */
 footer {
     background-color: #F4AC14;
+}
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width:80px;
+    text-align: center;
+    text-decoration: none;
+}
+.fa:hover {
+    opacity: 0.7;
+}
+.fa-instagram {
+    background: #c1558b;
+    color: white;
+}
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+.fa-facebook {
+    background: #3B5998;
+    color: white;
 }
