@@ -70,6 +70,32 @@
     text-align: center;
 }
 
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-family: "Open Sans", serif;
+    font-size: 20px;
+    transition: 0.4s;
+}
+
+.active, .accordion:hover {
+    background-color: #ccc;
+}
+
+.panel {
+    font-family: "Open Sans", serif;
+    padding: 1rem;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+}
+
 @media all and (max-width: 1200px) {
     .card-title {
         font-size: x-large;
