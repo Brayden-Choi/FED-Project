@@ -28,3 +28,17 @@ table, td, th {
     padding: 4px;
 }
 
+.form {
+    width: 500px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 20px;
+    border: solid;
+}
+
+.label {
+    width: 150px;
+    display: inline-block;
+}
