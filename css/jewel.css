@@ -284,14 +284,28 @@
 }
 
 tr, th, td {
-    border: thin solid black;
+    border: thin solid #a2aba5;
     padding: 4px;
 }
 
 table {
     text-align: center;
-    font-size: 15px;
+    font-size: 2vh;
     font-family: 'Josefin Sans', sans-serif;
+}
+
+.modal-body{
+    height: 100%;
+    width: 100%;
+}
+
+.modal-content {
+    height: 92%;
+    width: 92%;
+}
+
+.v-button{
+    margin-top: 3%;
 }
 
 /*Shopping*/
