@@ -48,20 +48,51 @@ h2 {
     margin: auto;
 }
 
-.carousel-control-prev, .carousel-control-next {
-    position: absolute;
+div.gallery {
+    border: 1px solid #ccc;
 }
 
+    div.gallery:hover {
+        border: 1px solid #777;
+    }
 
-.carousel-caption {
-    background-color: rgba(44, 44, 44, 0.45);
-    color: white;
-    font-family: 'Quicksand', sans-serif;
-    
+    div.gallery img {
+        width: 100%;
+        height: auto;
+    }
+
+div.desc {
+    padding: 15px;
+    text-align: center;
 }
 
-h5 {
-    font-size: 48px;
+* {
+    box-sizing: border-box;
+}
+
+.responsive {
+    padding: 0 6px;
+    float: left;
+    width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+    .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .responsive {
+        width: 100%;
+    }
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 hr {
