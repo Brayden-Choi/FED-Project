@@ -24,14 +24,24 @@
     <!-- Other dependencies -->
     <link href="css/artscience.css" rel="stylesheet">
     <script src="js/artscience.js"></script>
-    <!-- Add your own stuff here -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
 </head>
 
 <div content="Art Science Museum" id="header" type="white"></div>
 
 <body>
+    <!-- The Modal -->
+    <div id="myModal" class="modal" onclick="modal()">
+    
+        <!-- The Close Button -->
+        <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+    
+        <!-- Modal Content (The Image) -->
+        <img class="modal-content" id="img01">
+    
+        <!-- Modal Caption (Image Text) -->
+        <div id="caption"></div>
+    </div>
+
     <div class="container-fluid">
         <section class="header">
             <nav class="navbar navbar-expand-md navbar-custom navbar-dark">
@@ -39,16 +49,16 @@
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul class="navbar-nav nav-custom mx-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="artscience.html">Home</a>
+                            <a class="smooth-scrolling nav-link" href="artscience.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#exhibitions">Exhibitions</a>
+                            <a class="smooth-scrolling nav-link" href="#exhibitions">Exhibitions</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#tickets">Tickets</a>
+                            <a class="smooth-scrolling nav-link" href="#tickets">Tickets</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contact</a>
+                            <a class="smooth-scrolling nav-link" href="#contact">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -103,20 +113,7 @@
                     </div>
 
                 </div>
-
-                    <!-- The Modal -->
-                    <div id="myModal" class="modal" onclick="modal()">
-
-                        <!-- The Close Button -->
-                        <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
-
-                        <!-- Modal Content (The Image) -->
-                        <img class="modal-content" id="img01">
-
-                        <!-- Modal Caption (Image Text) -->
-                        <div id="caption"></div>
-                    </div>
-                </div>
+            </div>
         </section>
         <hr />
         <section class="tickets">

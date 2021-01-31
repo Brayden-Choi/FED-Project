@@ -76,21 +76,22 @@ h2 {
 }
 
 /* Style the Image Used to Trigger the Modal */
-.myImg {
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-    padding: 30px;
-}
-
-    .myImg:hover {
-        opacity: 0.7;
-    }
-
 div.polaroid {
+    cursor: pointer;
     width: 50%;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.myImg {
+    border-radius: 5px;
+    transition: 0.3s;
+    padding: 30px;
+    object-fit: cover;
+}
+
+.polaroid:hover .myImg {
+    opacity: 0.7;
 }
 
 div.container {
