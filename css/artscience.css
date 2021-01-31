@@ -98,19 +98,6 @@ div.container {
     text-align: center;
     padding: 10px 20px;
 }
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.3); /* Black w/ opacity */
-}
 
 /* Modal Content (Image) */
 .modal-content {
@@ -162,24 +149,6 @@ div.container {
         transform: scale(1)
     }
 }
-
-/* The Close Button */
-.close {
-    position: absolute;
-    top: 500px;
-    right: 300px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-    .close:hover,
-    .close:focus {
-        color: #bbb;
-        text-decoration: none;
-        cursor: pointer;
-    }
 
 /* 100% Image Width on Smaller Screens */
 @media only screen and (max-width: 700px) {

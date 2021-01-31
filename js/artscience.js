@@ -1,3 +1,33 @@
+data = [
+    {
+        "name": "Something",
+        "image": "multimedia/artscience-images/cutoutlogo.png",
+        "caption": "Amazing"
+    },
+    {
+        "name": "2Something",
+        "image": "multimedia/artscience-images/img2.jpg",
+        "caption": "2Amazing"
+    }
+]
+
+
+$(document).ready(function () {
+    console.log("Ready");
+    
+    $(".polaroid").on("click", function (event) {
+        const dataIndex = $(this).data("index");
+        console.log(dataIndex);
+
+        $("#modal-title").text(data[dataIndex]["name"]);
+        $("#modal-caption").text(data[dataIndex]["caption"]);
+        $("#modal-image").attr("src", data[dataIndex]["image"])
+    });
+    
+});
+
+
+/*
 function modal() {
     // Get the modal
     var modal = document.getElementById('myModal');
@@ -22,17 +52,6 @@ function modal() {
     }
 }
 
-function animateScroll() {
-    $(document).on("click", "a", function (e) {
-        e.preventDefault();
-        var id = $(this).attr("href"),
-            topSpace = 30;
-        $('html, body').animate({
-            scrollTop: $(id).offset().top - topSpace
-        }, 800);
-    });
-}
-
 function onSubmit() {
     alert("Thank you for your submission, our dedicated staff will get back to you soon!")
-}
+}*/

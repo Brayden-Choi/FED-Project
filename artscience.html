@@ -30,16 +30,24 @@
 
 <body>
     <!-- The Modal -->
-    <div id="myModal" class="modal" onclick="modal()">
-    
-        <!-- The Close Button -->
-        <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
-    
-        <!-- Modal Content (The Image) -->
-        <img class="modal-content" id="img01">
-    
-        <!-- Modal Caption (Image Text) -->
-        <div id="caption"></div>
+    <div id="myModal" class="modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img id="modal-image" src="" alt="">
+                    <p id="modal-caption">Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="container-fluid">
@@ -87,13 +95,13 @@
                 <h2>Exhibitions</h2>
                 <!-- Trigger the Modal -->
                 <div class="imgwrap">
-                    <div class="polaroid">
+                    <div class="polaroid" data-target="#myModal" data-toggle="modal" data-index="0">
                         <img class="myImg" src="multimedia/artscience-images/img1.jpg" alt="Future World" width="600" height="400" title="future world">
                         <div class="polaroid-text">
                             <p>Northern Lights</p>
                         </div>
                     </div>
-                    <div class="polaroid">
+                    <div class="polaroid" data-target="#myModal" data-toggle="modal" data-index="1">
                         <img class="myImg" src="multimedia/artscience-images/img2.jpg" alt="Planet or Plastic" width="600" height="400">
                         <div class="polaroid-text">
                             <p>Northern Lights</p>
