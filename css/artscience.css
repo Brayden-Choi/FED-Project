@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
 
 body {
-    text-align: center;
-    position: relative;
 }
 
 .header {
@@ -14,8 +13,6 @@ body {
     text-align: left;
 }
 
-.top {
-}
 
 .topimage {
     width: 100%;
@@ -23,65 +20,103 @@ body {
 }
 
 .toptext {
-    padding-top: 80px;
-    padding-bottom: 0px;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 90px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 110px;
     text-align: left;
+
 }
+    .toptext:hover {
+        color: white;
+        background-color: black;
+        transition-timing-function: linear;
+    }
 
 .bottomtext {
     display: inline-block;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 78px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 100px;
+    color: black;
+}
+
+    .bottomtext:hover {
+        color: white;
+        background-color: black;
+        transition-timing-function: linear;
+    }
+
+.title-image {
+    position: relative;
+    width: 100%;
+    object-fit: contain;
 }
 
 h2 {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 48px;
+    font-family: 'Karla', sans-serif;
+    font-size: 78px;
     padding-bottom: 12px;
 }
 
 .slideshow {
-    height: 720px;
-    padding: 30px;
+    padding: 50px;
     text-align: center;
     margin: auto;
 }
 
 /* Style the Image Used to Trigger the Modal */
-.myImg {
-    border-radius: 5px;
+.polaroid {
     cursor: pointer;
+    background-color: #e6e6e6;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+
+.myImg {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
     transition: 0.3s;
-    padding: 30px;
+    padding: 30px 30px 14px;
+    object-fit: cover;
 }
 
-    .myImg:hover {
-        opacity: 0.7;
-    }
-
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+.polaroid:hover .myImg {
+    opacity: 0.7;
 }
 
-/* Modal Content (Image) */
-.modal-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
+.polaroid-text {
+    position: relative;
+    padding-bottom: 8px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 24px;
+}
+
+div.container {
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.modal-title {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+}
+
+.modal-img {
+    position: relative;
+    width: 100%;
+}
+
+.modal-caption {
+    padding-top: 16px;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.btn-secondary {
+    background-color: #e6c149;
+    color: black;
 }
 
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
@@ -94,6 +129,9 @@ h2 {
     color: #ccc;
     padding: 10px 0;
     height: 150px;
+    font-family: 'Balsamiq Sans', cursive;
+    font-size: 22px;
+    background-color: white;
 }
 
 /* Add Animation - Zoom in the Modal */
@@ -124,36 +162,17 @@ h2 {
     }
 }
 
-/* The Close Button */
-.close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
+.artscience hr {
+    margin-top: 20px;
+    padding: 20px;
 }
 
-    .close:hover,
-    .close:focus {
-        color: #bbb;
-        text-decoration: none;
-        cursor: pointer;
-    }
-
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px) {
-    .modal-content {
-        width: 100%;
-    }
-}
-hr {
-    margin: auto;
-    padding: 100px;
+.tickets {
+    overflow-x: auto;
 }
 
 table {
+    overflow-x: auto;
     width: 80%;
 }
 
@@ -177,29 +196,55 @@ tr:hover {
     font-size: 22px;
 }
 
+.buytickets {
+    background-color: #fcd703;
+    border: none;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    display: inline-block;
+    font-family: 'Balsamiq Sans', cursive;
+    font-size: 16px;
+    margin: 4px 2px;
+    position: absolute;
+    left: 180px;
+    border-radius: 12px;
+}
+
+    .buytickets:hover {
+        background-color: black;
+        color: #fcd703;
+        border: 2px solid #fcd703;
+    }
+
 .exhibition-name {
     font-family: 'Quicksand', sans-serif;
     font-size: 22px;
 }
 
+.form-wrapper {
+    width: 100%;   
+}
+
 .form {
-    display: inline-block;
-    width: 40%;
+    max-width: 922px;
+    text-align: center;
     margin-left: 50px;
     margin-right: 50px;
     padding: 20px;
     border: solid;
     border-color: #e6c149;
+    margin-bottom: 30px;
 }
 
-.label {
+.form .label {
     width: 150px;
     display: inline-block;
     text-align: left;
     padding: 12px 12px 12px 0;
 }
 
-input {
+.form input {
     width: 50%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -209,12 +254,12 @@ input {
     transition: width 0.4s ease-in-out;
 }
 
-input:focus {
+.form input:focus {
     background-color: #fcd703;
     width: 60%;
 }
 
-select {
+.form select {
     width: 220px;
     padding: 12px 16px;
     border: none;
@@ -222,7 +267,7 @@ select {
     background-color: #f1f1f1;
 }
 
-textarea {
+.form textarea {
     resize: none;
     height: 100px;
     width: 80%;
@@ -231,7 +276,7 @@ textarea {
     transition: width 0.4s ease-in-out;
 }
 
-textarea:focus {
+.form textarea:focus {
     border-radius: 12px;
     width: 100%;
     background-color: #fcd703;

@@ -48,7 +48,6 @@ body {
     margin-top: 32px;
     text-align: center;
     font-size: calc(4.6vh + 4.2vw + 24px);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
 }
 
 .header-black {
@@ -469,6 +468,10 @@ body {
 
 .table-top {
     border-top: none !important;
+}
+
+.social-button {
+    margin: 1rem 1.8vw 0.4rem;
 }
 
 /* Media Queries */

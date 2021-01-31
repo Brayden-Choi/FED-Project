@@ -91,9 +91,12 @@
 .panel {
     font-family: "Open Sans", serif;
     padding: 1rem;
-    display: none;
     background-color: white;
     overflow: hidden;
+}
+
+.panel p:last-of-type {
+    margin-bottom: 0;
 }
 
 @media all and (max-width: 1200px) {

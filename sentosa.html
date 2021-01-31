@@ -292,7 +292,7 @@
         <section class="contact" id="feedback-form">
             <div class="content-wrap">
                 <div class="col-sm-12">
-                    <form class="contact-form">
+                    <form class="contact-form" id="form-contact">
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="FirstName">First Name</label>
@@ -312,7 +312,7 @@
                         </div>
                         <div class="form-group">
                             <label for="ContactNo">Contact No</label><br>
-                            <input type="text" id="ContactNo" class="form-control" placeholder="Contact No" required>
+                            <input type="tel" id="ContactNo" class="form-control" placeholder="Contact No" required>
                             <p></p>
                         </div>
                         <div class="form-group">
@@ -326,8 +326,8 @@
                             <div class="underform"></div>
                         </div>
                         <br>
-                        <a class="btn" id="btns" type="submit" onclick="GetInput()">Submit</a>
-                        <button class="btn" id="btnr" type="reset" onclick="reset()">Reset</button>
+                        <button class="btn" id="btns" type="submit">Submit</button>
+                        <button class="btn" id="btnr" type="reset">Reset</button>
                         
                         <hr/>
                         <p id="acknowledgement"></p>
@@ -336,9 +336,6 @@
             </div>
         </section>
     </main>
-    <script>
-        AOS.init();
-    </script>
 </body>
 <!-- *****************  FOOTER  ***************** -->
 <footer>
@@ -347,9 +344,9 @@
             <h2></h2>
             <!-- SOCIAL MEDIA -->
             <ul>
-                <a href="https://twitter.com/sentosa_island?lang=en" target="_blank" class="fa fa-twitter"></a>
-                <a href="https://www.facebook.com/sentosaofficial/" target="_blank" class="fa fa-facebook"></a>
-                <a href="https://www.instagram.com/sentosa_island/?hl=en" target="_blank" class="fa fa-instagram"></a>
+                <a href="https://twitter.com/sentosa_island?lang=en" target="_blank" class="social-icon fa fa-twitter"></a>
+                <a href="https://www.facebook.com/sentosaofficial/" target="_blank" class="social-icon fa fa-facebook"></a>
+                <a href="https://www.instagram.com/sentosa_island/?hl=en" target="_blank" class="social-icon fa fa-instagram"></a>
                 <p></p>
             </ul>
         </div>

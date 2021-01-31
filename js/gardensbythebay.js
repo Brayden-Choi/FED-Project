@@ -225,6 +225,7 @@ class TicketManager {
     constructor(ticketId) {
         this.$ticketSection = $(ticketId);
         this.$ticketModal = $(`${ticketId}-modal`);
+        this.$ticketModalText = $(`${ticketId}-modal-text`);
         this.$ticketForm = $(`${ticketId}-form`);
         this.$ticketOptions = $(`${ticketId}-options`);
         this.$ticketItems = $(`${ticketId}-items`);
@@ -233,6 +234,8 @@ class TicketManager {
         this.$ticketTotal = $(`${ticketId}-total`);
         this.itemList = [];
         this.dropdownDivider = `<div class="dropdown-divider"></div>`;
+        this.cachecTotalTickets = 0;
+        this.cachecTotalPrice = 0;
 
         this.calcuateOrderSummary();
     }
@@ -303,6 +306,9 @@ class TicketManager {
         this.$ticketCount.text(totalTickets);
         this.$ticketSubTotal.text(this.parseMoney(totalPrice));
         this.$ticketTotal.text(this.parseMoney(totalPrice));
+        
+        this.cachecTotalTickets = totalTickets;
+        this.cachecTotalPrice = totalPrice;
     }
 
     parseMoney(value) {
@@ -310,7 +316,15 @@ class TicketManager {
     }
     
     OnSubmit() {
+        this.calcuateOrderSummary();
+        
+        this.$ticketModalText.text(
+            `You have ordered ${this.cachecTotalTickets} ticket(s), and the total cost is ${this.parseMoney(this.cachecTotalPrice)}. 
+            An email confirmation of will be sent to your shortly.`
+        );
+        
         this.$ticketModal.modal("show");
+        this.$ticketForm.trigger("reset");
     }
 
     buildTicketOption(index) {
@@ -530,7 +544,8 @@ $(document).ready(function () {
     }).fail(function () {
         console.log("Unable to load file: " + ticketPath);
     })
-    tm.$ticketForm.on('click', function (event) {
+    tm.$ticketForm.on('submit', function (event) {
+        event.preventDefault();
         tm.OnSubmit();
     });
 

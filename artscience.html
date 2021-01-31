@@ -24,100 +24,154 @@
     <!-- Other dependencies -->
     <link href="css/artscience.css" rel="stylesheet">
     <script src="js/artscience.js"></script>
-    <!-- Add your own stuff here -->
-    
 </head>
 
 <div content="Art Science Museum" id="header" type="white"></div>
 
 <body>
-    <div class="container-fluid">
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img class="modal-img" id="modal-image" src="" alt="">
+                    <p class="modal-caption" id="modal-caption">Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid artscience">
         <section class="header">
             <a href="artscience.html">
                 <img src="multimedia/artscience-images/asm-logo.png" alt="ASM logo" />
             </a>
+
         </section>
 
-        <section class="top">
-            <div class="top">
-                <br />
-                <h1 class="toptext">Where Art</h1>
-                <br />
-                <h1 class="bottomtext">Meets Science</h1>
-                <div class="topimage">
-                    <img src="multimedia/artscience-images/cutoutlogo.png" width="900" height="800" />
+        <section>
+            <div class="row h-100">
+                
+                <div class="col-lg-6">
+                    <img class="title-image" src="multimedia/artscience-images/cutoutlogo.png"/>
                 </div>
+
+                <div class="col-lg-6 my-auto">
+                    <h1 class="toptext">Where Art</h1>
+                    <h1 class="bottomtext">Meets Science</h1>
+                </div>
+                
             </div>
+
         </section>
         <hr />
 
         <section class="slideshow">
-            <h2>Exhibitions</h2>
+            <div id="exhibitions">
+                <h2>Exhibitions</h2>
+                <!-- Trigger the Modal -->
+                <div class="row">
+                    
+                    <div class="col-md-6">
+                        <div class="polaroid" data-target="#myModal" data-toggle="modal" data-index="0">
+                            <img class="myImg" src="multimedia/artscience-images/img1.jpg" alt="Future World">
+                            <div class="polaroid-text">
+                                <p>Future World: Where Art Meets Science</p>
+                            </div>
+                        </div>
+                    </div>
 
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-            <!-- Trigger the Modal -->
-            <img class="myImg" src="multimedia/artscience-images/img1.jpg" alt="Future World" width="600" height="400">
-            <img class="myImg" src="multimedia/artscience-images/img2.jpg" alt="Planet or Plastic" width="600" height="400">
-            <img class="myImg" src="multimedia/artscience-images/img3.jpg" alt="Star Wars" width="600" height="400">
-            <img class="myImg" src="multimedia/artscience-images/img4.jpg" alt="Margins" width="600" height="400">
+                    <div class="col-md-6">
+                        <div class="polaroid" data-target="#myModal" data-toggle="modal" data-index="1">
+                            <img class="myImg" src="multimedia/artscience-images/img2.jpg" alt="Planet or Plastic">
+                            <div class="polaroid-text">
+                                <p>Planet or Plastic?</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
 
-            <!-- The Modal -->
-            <div id="myModal" class="modal">
+                <div class="row">
 
-                <!-- The Close Button -->
-                <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+                    <div class="col-md-6">
+                        <div class="polaroid" data-target="#myModal" data-toggle="modal" data-index="2">
+                            <img class="myImg" src="multimedia/artscience-images/img3.jpg" alt="Star Wars">
+                            <div class="polaroid-text">
+                                <p>STAR WARS™ Identities</p>
+                            </div>
+                        </div>
+                    </div>
 
-                <!-- Modal Content (The Image) -->
-                <img class="modal-content" id="img01">
+                    <div class="col-md-6">
+                        <div class="polaroid" data-target="#myModal" data-toggle="modal" data-index="3">
+                            <img class="myImg" src="multimedia/artscience-images/img4.jpg" alt="Margins">
+                            <div class="polaroid-text">
+                                <p>Margins: drawing pictures of home</p>
+                            </div>
+                        </div>
+                    </div>
 
-                <!-- Modal Caption (Image Text) -->
-                <div id="caption"></div>
+                </div>
             </div>
         </section>
         <hr />
         <section class="tickets">
-            <table align="center">
-                <h2 align="center">Tickets</h2>
-                <tr>
-                    <th class="empty"></th>
-                    <th class="age">Adult</th>
-                    <th class="age">Concession</th>
-                    <th class="age">Senior</th>
-                    <th class="age">Family</th>
-                </tr>
-                <tr>
-                    <th class="exhibition-name">Future World</th>
-                    <th class="price">S$16</th>
-                    <th class="price">S$12</th>
-                    <th class="price">S$13</th>
-                    <th class="price">S$45</th>
-                </tr>
-                <tr>
-                    <th class="exhibition-name">Planet or Plastic?</th>
-                    <th class="price">S$16</th>
-                    <th class="price">S$12</th>
-                    <th class="price">S$13</th>
-                    <th class="price">S$45</th>
-                </tr>
-                <tr>
-                    <th class="exhibition-name">STAR WARS: Identities</th>
-                    <th class="price">S$25</th>
-                    <th class="price">S$20</th>
-                    <th class="price">S$22</th>
-                    <th class="price">S$80</th>
-                </tr>
-                <tr>
-                    <th class="exhibition-name">Margins: drawing pictures of home</th>
-                    <th class="price">S$6</th>
-                    <th class="price">S$6</th>
-                    <th class="price">S$5</th>
-                    <th class="price">S$18</th>
-                </tr>
-            </table>
+            <div id="tickets">
+                <table align="center">
+                    <h2 align="center">Tickets</h2>
+                    <button type="button" class="buytickets" onclick="location.href='https://www.marinabaysands.com/museum/ticket.html'" formtarget="_blank">Buy Tickets</button>
+                    <tr>
+                        <th class="empty"></th>
+                        <th class="age">Adult</th>
+                        <th class="age">Concession</th>
+                        <th class="age">Senior</th>
+                        <th class="age">Family</th>
+                    </tr>
+                    <tr>
+                        <th class="exhibition-name">Future World</th>
+                        <th class="price">S$16</th>
+                        <th class="price">S$12</th>
+                        <th class="price">S$13</th>
+                        <th class="price">S$45</th>
+                    </tr>
+                    <tr>
+                        <th class="exhibition-name">Planet or Plastic?</th>
+                        <th class="price">S$16</th>
+                        <th class="price">S$12</th>
+                        <th class="price">S$13</th>
+                        <th class="price">S$45</th>
+                    </tr>
+                    <tr>
+                        <th class="exhibition-name">STAR WARS: Identities</th>
+                        <th class="price">S$25</th>
+                        <th class="price">S$20</th>
+                        <th class="price">S$22</th>
+                        <th class="price">S$80</th>
+                    </tr>
+                    <tr>
+                        <th class="exhibition-name">Margins: drawing pictures of home</th>
+                        <th class="price">S$6</th>
+                        <th class="price">S$6</th>
+                        <th class="price">S$5</th>
+                        <th class="price">S$18</th>
+                    </tr>
+                </table>
+            </div>
         </section>
         <hr />
-        <section class="form">
-            <form>
+
+        <section class="form-wrapper" id="form-contact">
+            <form class="form mx-auto" id="form">
                 <h2>Contact Us</h2>
 
                 <select class="salutation" required>
@@ -140,16 +194,16 @@
                 <input type="email" placeholder="Email Address" name="email" id="email" />
                 <br />
                 <label for="contact" class="label">Contact Number:</label>
-                <input type="tel" placeholder="Contact Number" name="contact" id="contact" pattern="[+]{2}[0-9]{8}" />
+                <input type="tel" placeholder="Contact Number" name="contact" id="contact" pattern="[0-9]{8}" />
                 <br /><br />
                 <textarea name="feedback" placeholder="What do you want to tell us?" required></textarea>
                 <br /><br />
-                <input type="Submit" id="submit" />
+                <button type="submit" id="submit">Submit</button>
             </form>
+
         </section>
-        <hr />
-        <div id="footer"></div>
     </div>
+    <div id="footer"></div>
 </body>
 
 </html>
