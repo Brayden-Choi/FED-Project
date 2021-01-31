@@ -196,6 +196,27 @@ tr:hover {
     font-size: 22px;
 }
 
+.buytickets {
+    background-color: #fcd703;
+    border: none;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    display: inline-block;
+    font-family: 'Balsamiq Sans', cursive;
+    font-size: 16px;
+    margin: 4px 2px;
+    position: absolute;
+    left: 180px;
+    border-radius: 12px;
+}
+
+    .buytickets:hover {
+        background-color: black;
+        color: #fcd703;
+        border: 2px solid #fcd703;
+    }
+
 .exhibition-name {
     font-family: 'Quicksand', sans-serif;
     font-size: 22px;
