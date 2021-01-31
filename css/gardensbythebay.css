@@ -357,6 +357,11 @@ body {
     white-space: pre-wrap;
 }
 
+.modal-image-full {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
 /* Ticket Form Styles */
 .tickets-background {
     background-size: cover;
