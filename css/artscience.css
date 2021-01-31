@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
 
 body {
 }
@@ -19,16 +20,29 @@ body {
 }
 
 .toptext {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 90px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 110px;
     text-align: left;
+
 }
+    .toptext:hover {
+        color: white;
+        background-color: black;
+        transition-timing-function: linear;
+    }
 
 .bottomtext {
     display: inline-block;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 78px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 100px;
+    color: black;
 }
+
+    .bottomtext:hover {
+        color: white;
+        background-color: black;
+        transition-timing-function: linear;
+    }
 
 .title-image {
     position: relative;
@@ -37,13 +51,13 @@ body {
 }
 
 h2 {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 48px;
+    font-family: 'Karla', sans-serif;
+    font-size: 78px;
     padding-bottom: 12px;
 }
 
 .slideshow {
-    padding: 30px;
+    padding: 50px;
     text-align: center;
     margin: auto;
 }
@@ -51,10 +65,12 @@ h2 {
 /* Style the Image Used to Trigger the Modal */
 .polaroid {
     cursor: pointer;
-    background-color: white;
+    background-color: #e6e6e6;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 12px;
     margin-bottom: 12px;
 }
+
 
 .myImg {
     position: relative;
@@ -73,11 +89,18 @@ h2 {
 .polaroid-text {
     position: relative;
     padding-bottom: 8px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 24px;
 }
 
 div.container {
     text-align: center;
     padding: 10px 20px;
+}
+
+.modal-title {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
 }
 
 .modal-img {
@@ -88,6 +111,12 @@ div.container {
 .modal-caption {
     padding-top: 16px;
     text-align: center;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.btn-secondary {
+    background-color: #e6c149;
+    color: black;
 }
 
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
