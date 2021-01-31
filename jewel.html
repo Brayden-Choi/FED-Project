@@ -673,6 +673,7 @@
                         </li>
                     </ul>
                 </div>
+                
                 <div id="MagicCarousel" class="carousel slide center" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#MagicCarousel" data-slide-to="0" class="active"></li>
@@ -684,22 +685,18 @@
                         <div class="carousel-item active">
                             <img class="img-fluid y-img " src="multimedia/jewel-images/yotelentrance.jpg" alt="First Slide" />
                                 <h3 class="carousel-caption1">Yotel Hotel Entrance</h3>
-                            </div>
                         </div>
                         <div class="carousel-item">
                             <img class="img-fluid y-img" src="multimedia/jewel-images/ak_yotel_0803.jpg" alt="Second Slide" />
                                 <h3 class="carousel-caption1">Yotel Hotel Corridor</h3>
-                            </div>
                         </div>
                         <div class="carousel-item">
                             <img class="img-fluid y-img" src="multimedia/jewel-images/bigmeow.png" alt="Third Slide" />
                                 <h3 class="carousel-caption1">Yotel Hotel Small Room</h3>
-                            </div>
                         </div>
                         <div class="carousel-item">
                             <img class="img-fluid y-img" src="multimedia/jewel-images/guest-cabin.jpg" alt="Fourth Slide" />
                                 <h3 class="carousel-caption1">Yotel Hotel Big Room</h3>
-                            </div>
                         </div>
                         <a class="carousel-control-prev" href="#MagicCarousel" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon"></span>
@@ -721,12 +718,15 @@
                     <article>
                         <p>We value your feedback and questions that you have for us. Leave them here and we will answer as soon as possible!</p>
                         <form action="" class="contactform">
-                            <p class="input_wrapper"><input type="text" name="contact_nom" value="" id="contact_nom" placeholder="Please type your name here" required><label for="contact_nom">NAME</label></p>
-                            <p class="input_wrapper"><input type="text" name="contact_email" value="" id="contact_email" placeholder="Please type your email here" required><label for="contact_email">EMAIL</label></p>
-                            <p class="input_wrapper"><input type="text" name="contact_subject" value="" id="contact_sujet" placeholder="Please type your subject here" required><label for="contact_sujet">SUBJECT</label></p>
+                            <p class="input_wrapper"><input type="text" name="contact_nom" value="" id="contact_nom" placeholder="Please type your name here" ><label for="contact_nom" required>NAME</label></p>
+                            <p class="input_wrapper"><input type="text" name="contact_email" value="" id="contact_email" placeholder="Please type your email here" pattern="^([0-9a-zA-Z]{[-\.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$"  ><label for="contact_email" required>EMAIL</label></p>
+                            <p class="input_wrapper"><input type="text" name="contact_subject" value="" id="contact_sujet" placeholder="Please type your subject here" ><label for="contact_sujet" required>SUBJECT</label></p>
                             <p class="textarea_wrapper"><textarea name="contact_message" id="contact_message" placeholder="Please type the details of your subject here" required></textarea></p>
                             <p class="submit_wrapper"><input type="button" value="Submit"></p>
                             <p class="reset_wrapper"><input type="reset" value="Reset"></p>
+                            <div>
+                                <p id="output"></p>
+                            </div>
                         </form>
                     </article>
                 </section>
@@ -742,9 +742,6 @@
             </div>
         </section>
     </div>
-</div>
-
 </body>
-
 <div id="footer"></div>
 </html>
