@@ -1,12 +1,13 @@
 
 $(document).ready(function () {
-    $("#form-submit").on('submit', function (event) {
+    $("#contactform").on("submit", function (event) {
         event.preventDefault();
-        var name = document.getElementById("contact_nom").value;
-        document.getElementById("output").innerHTML = "Thank you " + name + ". We will get back to you within 5 days!"
+        alert("Thank you for your submission, our dedicated staff will get back to you soon!");
+        $("#form").trigger("reset");
     });
+});
 
-    $("#contact-form").on('reset', function (event) {
+    $("#contactform").on('reset', function (event) {
         document.getElementById("p").innerHTML = "";
     });
 })
