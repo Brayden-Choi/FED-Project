@@ -15,6 +15,7 @@ data = [
 $(document).ready(function () {
     console.log("Ready");
     
+    // modal polaroid appear
     $(".polaroid").on("click", function (event) {
         const dataIndex = $(this).data("index");
         console.log(dataIndex);
@@ -24,6 +25,11 @@ $(document).ready(function () {
         $("#modal-image").attr("src", data[dataIndex]["image"])
     });
     
+    $("#form").on("submit", function (event) {
+        event.preventDefault();
+        alert("Thank you for your submission, our dedicated staff will get back to you soon!");
+        $("#form").trigger("reset");
+    });
 });
 
 
