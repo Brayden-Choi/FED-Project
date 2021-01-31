@@ -104,6 +104,7 @@ header {
             1px 1px 0 white;
 }
 
+
 .aka {
     font-family: 'Caveat Brush', cursive;
     color: #F4AC14;
@@ -221,6 +222,12 @@ header {
     border: solid black;
 }
 
+.table td:hover
+{
+    background-color: black;
+    color: #F4AC14;
+}
+
 
 /* 
     Free
@@ -286,7 +293,6 @@ header {
 .contact {
     background-color: #F1FAEE;
 }
-
 
 
 .underform {
