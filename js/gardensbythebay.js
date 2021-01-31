@@ -555,5 +555,5 @@ $(document).ready(function () {
 
     // Setup AOS animation
     // https://github.com/michalsnik/aos
-    AOS.init({debounceDelay: 76, throttleDelay: 128});
+    AOS.init();
 });

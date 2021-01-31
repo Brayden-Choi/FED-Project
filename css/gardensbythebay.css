@@ -357,6 +357,48 @@ body {
     white-space: pre-wrap;
 }
 
+.modal-image-full {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+/* Map styles */
+.map-background {
+    background-image: url("../multimedia/gardensbythebay/map-background.jpg");
+    background-size: cover;
+    overflow: hidden;
+    position: absolute;
+    height: 130%;
+    width: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    filter: blur(10px) brightness(0.5);
+    -webkit-filter: blur(8px) brightness(0.5);
+    transition: background-image 0.3s ease-in-out;
+    -webkit-transition: background-image 0.3s ease-in-out;
+}
+
+.mapouter {
+    position: relative;
+    height: 100%;
+    text-align: right;
+}
+.gmap-canvas {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    background: none !important;
+}
+
+.gmap-canvas-frame {
+    height: calc(100vw - 10vh);
+    width: 100%;
+}
+
+.abit-curved {
+    border-radius: 8px;
+}
+
 /* Ticket Form Styles */
 .tickets-background {
     background-size: cover;
@@ -379,9 +421,6 @@ body {
 }
 
 .ticket-form .form-control {
-    /*
-    background-color: rgba(255, 255, 255, 0.7) !important;
-    */
 }
 
 .tickets-list {
