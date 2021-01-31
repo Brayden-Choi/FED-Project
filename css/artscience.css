@@ -62,6 +62,10 @@ body {
     font-size: 78px;
 }
 
+.title-image {
+    object-fit: contain;
+}
+
 h2 {
     font-family: 'Quicksand', sans-serif;
     font-size: 48px;
