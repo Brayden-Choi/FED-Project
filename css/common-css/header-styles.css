@@ -135,12 +135,12 @@
 }
 
 /* Dropdown Item Styles */
-.dropdown-item-top {
-    padding-top: 5px
+.dropdown-custom li:nth-of-type(2) a {
+    padding-top: 6px !important;
 }
 
-.dropdown-item-bottom {
-    padding-bottom: 5px
+.dropdown-custom li:last-of-type a {
+    padding-bottom: 6px !important;
 }
 
 .dropdown-item-style {
