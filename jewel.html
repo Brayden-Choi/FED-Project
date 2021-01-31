@@ -718,11 +718,11 @@
                     <article>
                         <p>We value your feedback and questions that you have for us. Leave them here and we will answer as soon as possible!</p>
                         <form action="" class="contactform">
-                            <p class="input_wrapper"><input type="text" name="contact_nom" value="" id="contact_nom" placeholder="Please type your name here" ><label for="contact_nom" required>NAME</label></p>
-                            <p class="input_wrapper"><input type="text" name="contact_email" value="" id="contact_email" placeholder="Please type your email here" pattern="^([0-9a-zA-Z]{[-\.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$"  ><label for="contact_email" required>EMAIL</label></p>
-                            <p class="input_wrapper"><input type="text" name="contact_subject" value="" id="contact_sujet" placeholder="Please type your subject here" ><label for="contact_sujet" required>SUBJECT</label></p>
+                            <p class="input_wrapper"><input type="text" name="contact_nom" value="" id="contact_nom" placeholder="Please type your name here" required><label for="contact_nom">NAME</label></p>
+                            <p class="input_wrapper"><input type="text" name="contact_email" value="" id="contact_email" placeholder="Please type your email here" pattern="^([0-9a-zA-Z]{[-\.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$"  required><label for="contact_email">EMAIL</label></p>
+                            <p class="input_wrapper"><input type="text" name="contact_subject" value="" id="contact_sujet" placeholder="Please type your subject here" required><label for="contact_sujet">SUBJECT</label></p>
                             <p class="textarea_wrapper"><textarea name="contact_message" id="contact_message" placeholder="Please type the details of your subject here" required></textarea></p>
-                            <p class="submit_wrapper"><input type="button" value="Submit"></p>
+                            <p class="submit_wrapper"><input id="form-submit" type="submit" value="Submit"></p>
                             <p class="reset_wrapper"><input type="reset" value="Reset"></p>
                             <div>
                                 <p id="output"></p>
