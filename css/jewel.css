@@ -29,7 +29,7 @@
     color: black;
     position: center;
     text-align: center;
-    padding-top: 20%;
+    padding-top: 30%;
     padding-left: 0px;
 }
 
@@ -40,8 +40,8 @@
     text-align: center;
     position: center;
     padding-top: 10%;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 .about {
@@ -56,9 +56,8 @@
     background-color: rgba(0, 0, 0, .70);
     height: 85vh;
     width: 50%;
-    position: relative;
     margin-top: 3%;
-    padding-right: 400px;
+    padding-right: 40%;
 }
 
 /*Attraction Section*/
@@ -327,10 +326,12 @@ table {
 }
 
 .card-title {
-    margin-bottom: 0.1rem;
+    margin-bottom: 1%;
     color: #baac79;
-    font-size: 2vh;
+    font-size: 1.5vh;
     font-family: 'Cinzel', serif;
+    margin-bottom: 1%;
+    padding: 0%;
 }
 
 .card-text {
@@ -338,6 +339,8 @@ table {
     font-size: 1.5vh;
     color: #baac79;
     position: center;
+    margin-bottom: 1%;
+    padding: 0%;
 }
 
 .card-deck {
@@ -357,6 +360,9 @@ table {
     z-index: 0;
     overflow: hidden;
     border: 1px solid #f2f8f9;
+    height: 13vh;
+    width: 8vw;
+    padding: -1%;
 }
 
 .card:hover {
@@ -371,10 +377,10 @@ table {
     content: "";
     position: absolute;
     z-index: -1;
-    top: -16px;
-    right: -16px;
+    top: -1%;
+    right: -1%;
     background: #00838d;
-    height: 3.2vh;
+    height: 2vh;
     width: 1.5vw;
     border-radius: 32px;
     transform: scale(2);
@@ -438,25 +444,16 @@ table {
         background: #FFF;
         border: 0px solid #000;
         content: "";
-        height: 155px;
+        height: 15vh;
         left: -75px;
         opacity: .8;
         position: absolute;
-        top: -50px;
-        -webkit-transform: rotate(35deg);
-        transform: rotate(35deg);
-        width: 50px;
-        transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1); /*easeOutCirc*/
-        z-index: 1;
+        
     }
 
     .effect01:hover:after {
         background: #FFF;
         border: 20px solid #000;
-        opacity: 0;
-        left: 120%;
-        -webkit-transform: rotate(40deg);
-        transform: rotate(40deg);
     }
 
  /*Stay*/
@@ -498,7 +495,7 @@ table {
 
 .carousel-caption1 {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 25px;
+    font-size: 2.5vh;
     color: white;
     text-align: center;
     position: center;
@@ -509,6 +506,7 @@ table {
 
 .carousel-control-next{
     margin-right: 24%;
+    margin-top: 20%;
 }
 
 .carousel-control-prev {
@@ -609,7 +607,6 @@ img:nth-child(4) {
 .f-bg {
     background-color: #baac79;
     height: 120vh;
-    position: relative;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
@@ -620,25 +617,25 @@ img:nth-child(4) {
 #contact {
     margin: 2em auto;
     background: black;
-    width: 90vh;
-    border-radius: 10px;
+    width: 70vw;
+    border-radius: 2%;
 }
 
-#contact h1 {
-    background: white;
-    text-align: center;
-    font-family: Oswald, sans-serif;
-    font-size: 1.75em;
-    padding: 0.6em 0 0.6em 0.4em;
-    color: black;
-    text-shadow: 0 0.06em 0 #424242;
-}
+    #contact h1 {
+        background: #baac79;
+        text-align: center;
+        font-family: 'Cinzel', serif;
+        font-size: 5vh;
+        padding: 0 0 0.6em 0.4em;
+        color: black;
+        margin-top: -5%;
+    }
 
 #contact::after {
     content: "";
     display: block;
-    height: 30px;
-    width: 90%;
+    height: 3vh;
+    width: 100%;
     left: 5%;
     bottom: 0;
     -webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.19);
@@ -656,6 +653,7 @@ img:nth-child(4) {
     font-family: Oswald,sans-serif;
     color: white;
     text-align: center;
+    font-size: 2vh;
 }
 
 .input_wrapper {
@@ -663,7 +661,7 @@ img:nth-child(4) {
 }
 
 .textarea_wrapper textarea {
-    margin-top: 20px;
+    margin-top: 1%x;
     display: block;
     width: 100%;
     background: white;
@@ -676,6 +674,7 @@ img:nth-child(4) {
     -webkit-transition: all 250ms ease;
     color: #cfd7ff;
     border-radius: 10px;
+    font-size: 2vh;
 }
 
 .input_wrapper input[type="text"] {
@@ -693,6 +692,7 @@ img:nth-child(4) {
     color: #5E5E5E;
     text-indent: 15%;
     border-radius: 10px;
+    font-size: 2vh;
 }
 
     .input_wrapper input[type="text"]:focus {
@@ -711,11 +711,12 @@ img:nth-child(4) {
     background: #cfd7ff;
     color: black;
     font-family: 'Josefin Sans', sans-serif;
+    font-size: 2vh;
     box-sizing: border-box;
     width: 15%;
     text-align: center;
     line-height: 2.8em;
-    padding-top: 7px;
+    padding-top: 0.7vh;
     -webkit-transition: all 250ms ease;
     border-radius: 10px;
 }
@@ -725,10 +726,10 @@ img:nth-child(4) {
 }
 
 .textarea_wrapper textarea {
-    margin-top: 20px;
+    margin-top: 1%;
     display: block;
     width: 100%;
-    min-height: 150px;
+    min-height: 15vh;
     background: white;
     border: 1px solid #cfd7ff;
     box-shadow: 0 0 1px 0 #E4E4E4;
@@ -754,14 +755,14 @@ img:nth-child(4) {
         text-align: center;
         display: inline-block;
         width: 20%;
-        height: 50px;
-        margin-top: 1em;
-        margin-bottom: 6px;
+        height: 5vh;
+        margin-top: 1%;
+        margin-bottom: 1%;
         cursor: pointer;
         background: #cfd7ff;
         color: black;
         font-family: Oswald,sans-serif;
-        font-size: 1em;
+        font-size: 2vh;
         border: none;
         -webkit-box-shadow: 1px 1px 0 0 white,2px 2px 0 0 white,3px 3px 0 0 white;
         box-shadow: 1px 1px 0 0 white,2px 2px 0 0 white,3px 3px 0 0 white;
@@ -773,7 +774,7 @@ img:nth-child(4) {
         .submit_wrapper input:hover {
             -webkit-box-shadow: 1px 1px 0 0 white,0px 0px 0 0 white,0px 0px 0 0 white;
             box-shadow: 1px 1px 0 0 white,0px 0px 0 0 white,0px 0px 0 0 white;
-            margin-top: 22px;
+            margin-top: 1%;
             margin-left: 2px;
             margin-bottom: 0px;
         }
@@ -785,14 +786,14 @@ reset_wrapper {
         text-align: center;
         display: inline-block;
         width: 20%;
-        height: 50px;
-        margin-top: 1em;
-        margin-bottom: 6px;
+        height: 5vh;
+        margin-top: 1%;    
+        margin-bottom: 1%;
         cursor: pointer;
         background: #cfd7ff;
         color: black;
         font-family: Oswald,sans-serif;
-        font-size: 1em;
+        font-size: 2vh;
         border: none;
         -webkit-box-shadow: 1px 1px 0 0 white,2px 2px 0 0 white,3px 3px 0 0 white;
         box-shadow: 1px 1px 0 0 white,2px 2px 0 0 white,3px 3px 0 0 white;
@@ -810,20 +811,22 @@ reset_wrapper {
     }
 
 .sm-links{
-    position: absolute;
-    margin-left: 37.5%;
+    position: relative;
+    margin-left: 37%;
 }
 
 .sm-links a {
-    width: 100px;
-    height: 100px;
-    line-height: 50px !important;
+    position: center;
+    width: 6vw;
+    height: 10vh;
+    line-height: 5vh !important;
     position: relative;
     margin: 0 1px;
     text-align: center;
     display: inline-block;
     color: black;
     -webkit-transition: all 0.27s; 
+    margin-top: -2%;
 }
 
     .sm-links a:before {
@@ -832,7 +835,7 @@ reset_wrapper {
         -webkit-border-radius: 2px;
         -moz-border-radius: 2px;
         border-radius: 2px;
-        width: 100px;
+        width: 6vw;
         -webkit-transition: all 0.27s ;
     }
 
@@ -845,8 +848,8 @@ reset_wrapper {
 }
 
 .social-link .fa {
-    padding: 20px;
-    font-size: 70px;
+    padding: 1%;
+    font-size: 7vh;
     width: 40%;
     text-align: center;
     text-decoration: none;
