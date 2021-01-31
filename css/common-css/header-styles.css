@@ -151,7 +151,7 @@
 }
 
 /* Media Queries */
-@media all and (min-width: 992px) {
+@media all and (min-width: 1200px) {
     .navbar-main .nav-item:after {
         margin: auto;
     }
@@ -186,7 +186,7 @@
     }
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 1400px) {
     .short-text {
         display: inline-block;
     }
