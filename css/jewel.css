@@ -306,7 +306,7 @@ table {
 
 .sd-bg {
     background-color: #baac79;
-    height: 116vh;
+/*    height: 116vh;*/
 }
 
 .sd-text {
@@ -328,7 +328,7 @@ table {
 .card-title {
     margin-bottom: 1%;
     color: #baac79;
-    font-size: 1.5vh;
+    font-size: 1.6rem;
     font-family: 'Cinzel', serif;
     margin-bottom: 1%;
     padding: 0%;
@@ -336,7 +336,7 @@ table {
 
 .card-text {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 1.5vh;
+    font-size: 1.2rem;
     color: #baac79;
     position: center;
     margin-bottom: 1%;
@@ -360,8 +360,7 @@ table {
     z-index: 0;
     overflow: hidden;
     border: 1px solid #f2f8f9;
-    height: 13vh;
-    width: 8vw;
+    width: auto;
     padding: -1%;
 }
 
@@ -394,6 +393,7 @@ table {
 
 
 .btn-flashy {
+    margin-bottom: 20px;
     letter-spacing: 0.1em;
     cursor: pointer;
     font-size: 1.4vh;
@@ -877,4 +877,14 @@ reset_wrapper {
 
 .social-link .fa-tripadvisor {
     color: black;
+}
+
+
+@media (min-width: 922px) {
+    .card-title {
+        font-size: 1rem;
+    }
+    .card-text {
+        font-size: 0.8rem;
+    }
 }
