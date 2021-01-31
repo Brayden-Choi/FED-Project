@@ -40,8 +40,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img id="modal-image" src="" alt="">
-                    <p id="modal-caption">Modal body text goes here.</p>
+                    <img class="modal-img" id="modal-image" src="" alt="">
+                    <p class="modal-caption" id="modal-caption">Modal body text goes here.</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -50,7 +50,7 @@
         </div>
     </div>
 
-    <div class="container-fluid">
+    <div class="container-fluid artscience">
         <section class="header">
             <a href="artscience.html">
                 <img src="multimedia/artscience-images/asm-logo.png" alt="ASM logo" />
@@ -58,16 +58,20 @@
 
         </section>
 
-        <section class="top">
-            <div class="top">
-                <br />
-                <h1 class="toptext">Where Art</h1>
-                <br />
-                <h1 class="bottomtext">Meets Science</h1>
-                <div class="topimage">
-                    <img class="title-image" src="multimedia/artscience-images/cutoutlogo.png" width="900" height="800" />
+        <section>
+            <div class="row h-100">
+                
+                <div class="col-lg-6">
+                    <img class="title-image" src="multimedia/artscience-images/cutoutlogo.png"/>
                 </div>
+
+                <div class="col-lg-6 my-auto">
+                    <h1 class="toptext">Where Art</h1>
+                    <h1 class="bottomtext">Meets Science</h1>
+                </div>
+                
             </div>
+
         </section>
         <hr />
 
@@ -75,29 +79,45 @@
             <div id="exhibitions">
                 <h2>Exhibitions</h2>
                 <!-- Trigger the Modal -->
-                <div class="imgwrap">
-                    <div class="polaroid" data-target="#myModal" data-toggle="modal" data-index="0">
-                        <img class="myImg" src="multimedia/artscience-images/img1.jpg" alt="Future World" width="600" height="400" title="future world">
-                        <div class="polaroid-text">
-                            <p>Future World: Where Art Meets Science</p>
+                <div class="row">
+                    
+                    <div class="col-md-6">
+                        <div class="polaroid" data-target="#myModal" data-toggle="modal" data-index="0">
+                            <img class="myImg" src="multimedia/artscience-images/img1.jpg" alt="Future World" title="future world">
+                            <div class="polaroid-text">
+                                <p>Future World: Where Art Meets Science</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="polaroid" data-target="#myModal" data-toggle="modal" data-index="1">
-                        <img class="myImg" src="multimedia/artscience-images/img2.jpg" alt="Planet or Plastic" width="600" height="400">
-                        <div class="polaroid-text">
-                            <p>Planet or Plastic?</p>
+
+                    <div class="col-md-6">
+                        <div class="polaroid" data-target="#myModal" data-toggle="modal" data-index="1">
+                            <img class="myImg" src="multimedia/artscience-images/img2.jpg" alt="Planet or Plastic">
+                            <div class="polaroid-text">
+                                <p>Planet or Plastic?</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="polaroid">
-                        <img class="myImg" src="multimedia/artscience-images/img3.jpg" alt="Star Wars" width="600" height="400">
-                        <div class="polaroid-text">
-                            <p>STAR WARS™ Identities</p>
+                    
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="polaroid">
+                            <img class="myImg" src="multimedia/artscience-images/img3.jpg" alt="Star Wars">
+                            <div class="polaroid-text">
+                                <p>STAR WARS™ Identities</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="polaroid">
-                        <img class="myImg" src="multimedia/artscience-images/img4.jpg" alt="Margins" width="600" height="400">
-                        <div class="polaroid-text">
-                            <p>Margins: drawing pictures of home</p>
+
+                    <div class="col-md-6">
+                        <div class="polaroid">
+                            <img class="myImg" src="multimedia/artscience-images/img4.jpg" alt="Margins">
+                            <div class="polaroid-text">
+                                <p>Margins: drawing pictures of home</p>
+                            </div>
                         </div>
                     </div>
 
@@ -149,8 +169,8 @@
         </section>
         <hr />
 
-        <section class="form" onsubmit="onSubmit()">
-            <form>
+        <section class="form-wrapper" id="form-contact">
+            <form class="form mx-auto">
                 <h2>Contact Us</h2>
 
                 <select class="salutation" required>
@@ -181,9 +201,8 @@
             </form>
 
         </section>
-        <hr />
-        <div id="footer"></div>
     </div>
+    <div id="footer"></div>
 </body>
 
 </html>

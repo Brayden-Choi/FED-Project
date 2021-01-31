@@ -3,8 +3,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@300&display=swap');
 
 body {
-    text-align: center;
-    position: relative;
 }
 
 .header {
@@ -21,8 +19,6 @@ body {
 }
 
 .toptext {
-    padding-top: 80px;
-    padding-bottom: 0px;
     font-family: 'Quicksand', sans-serif;
     font-size: 90px;
     text-align: left;
@@ -35,6 +31,8 @@ body {
 }
 
 .title-image {
+    position: relative;
+    width: 100%;
     object-fit: contain;
 }
 
@@ -45,24 +43,26 @@ h2 {
 }
 
 .slideshow {
-    height: 720px;
     padding: 30px;
     text-align: center;
     margin: auto;
 }
 
 /* Style the Image Used to Trigger the Modal */
-div.polaroid {
+.polaroid {
     cursor: pointer;
-    width: 50%;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 12px;
 }
 
 .myImg {
+    position: relative;
+    width: 100%;
+    height: auto;
     border-radius: 5px;
     transition: 0.3s;
-    padding: 30px;
+    padding: 30px 30px 14px;
     object-fit: cover;
 }
 
@@ -70,17 +70,24 @@ div.polaroid {
     opacity: 0.7;
 }
 
+.polaroid-text {
+    position: relative;
+    padding-bottom: 8px;
+}
+
 div.container {
     text-align: center;
     padding: 10px 20px;
 }
 
-/* Modal Content (Image) */
-.modal-content {
-    margin: auto;
-    display: block;
+.modal-img {
+    position: relative;
     width: 100%;
-    max-width: 700px;
+}
+
+.modal-caption {
+    padding-top: 16px;
+    text-align: center;
 }
 
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
@@ -126,18 +133,17 @@ div.container {
     }
 }
 
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px) {
-    .modal-content {
-        width: 100%;
-    }
+.artscience hr {
+    margin-top: 20px;
+    padding: 20px;
 }
-hr {
-    margin: auto;
-    padding: 100px;
+
+.tickets {
+    overflow-x: auto;
 }
 
 table {
+    overflow-x: auto;
     width: 80%;
 }
 
@@ -166,24 +172,29 @@ tr:hover {
     font-size: 22px;
 }
 
+.form-wrapper {
+    width: 100%;   
+}
+
 .form {
-    display: inline-block;
-    width: 40%;
+    max-width: 922px;
+    text-align: center;
     margin-left: 50px;
     margin-right: 50px;
     padding: 20px;
     border: solid;
     border-color: #e6c149;
+    margin-bottom: 30px;
 }
 
-.label {
+.form .label {
     width: 150px;
     display: inline-block;
     text-align: left;
     padding: 12px 12px 12px 0;
 }
 
-input {
+.form input {
     width: 50%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -193,12 +204,12 @@ input {
     transition: width 0.4s ease-in-out;
 }
 
-input:focus {
+.form input:focus {
     background-color: #fcd703;
     width: 60%;
 }
 
-select {
+.form select {
     width: 220px;
     padding: 12px 16px;
     border: none;
@@ -206,7 +217,7 @@ select {
     background-color: #f1f1f1;
 }
 
-textarea {
+.form textarea {
     resize: none;
     height: 100px;
     width: 80%;
@@ -215,7 +226,7 @@ textarea {
     transition: width 0.4s ease-in-out;
 }
 
-textarea:focus {
+.form textarea:focus {
     border-radius: 12px;
     width: 100%;
     background-color: #fcd703;
