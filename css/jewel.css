@@ -9,7 +9,7 @@
     text-align: center;
     font-size: 8vh;
     position: center;
-    padding-top: 22%;
+    padding-top: 50%;
     font-family: 'Cinzel', serif;
 }
 
@@ -22,7 +22,6 @@
 }
 
 /*About Section*/
-
 .about-text {
     font-family: 'Cinzel', serif;
     font-size: 6.5vh;
