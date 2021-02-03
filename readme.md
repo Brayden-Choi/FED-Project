@@ -1,4 +1,4 @@
-﻿![Website home screen](website/home-screen.png "Title")
+﻿[![Website home screen](website/home-screen.png "Title")](https://tourist-attractions-web-kpdub.ondigitalocean.app/)
 
 #### This is a website we developed as part of our Front-End Development course. It showcases the iconic tourist attractions in Singapore.
 
