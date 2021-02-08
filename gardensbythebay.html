@@ -231,7 +231,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-6 mb-0">
                         <label for="inputCard">Card</label>
-                        <input class="form-control" id="inputCard" placeholder="credit card number" required type="text">
+                        <input class="form-control" id="inputCard" placeholder="credit card number" required type="text" pattern="[0-9]{19}">
                     </div>
                     <div class="form-group col-md-3 mb-0">
                         <label for="inputExpire">Expire Date</label>
@@ -242,7 +242,7 @@
                         <input class="form-control" id="inputCheck" placeholder="3-digit security code" required type="text" pattern="[0-9]{3}">
                     </div>
                 </div>
-                <small class="form-text text-muted" id="e">
+                <small class="form-text text-muted">
                     SG Tourist Attractions will not store your credit or debit card details. Your card credentials will be
                     secured by the payment provider.
                 </small>
